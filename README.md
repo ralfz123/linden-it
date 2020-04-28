@@ -1,14 +1,14 @@
 # Linden-IT
-Er was ons de opdracht gegeven om een app te maken voor Linden-IT. Bij dit bedrijf werken >250 IT Professionals. Zij doen naast hun werk nog een opleiding in Microsoft e.d. om zo nog meer "Professional" te worden. Tijdens dit leerproces moeten ze wel weten wat ze moeten leren en wanneer hun examens zijn. Daar is deze app voor! Deze app houdt de studievoortgang bij van de IT Professionals. Zo k
+Er is aan ons de opdracht gegeven om een app te maken voor Linden-IT. Bij dit bedrijf werken >250 IT Professionals. Zij doen naast hun werk nog een opleiding in Microsoft e.d. om zo nog meer "Professional" te worden. Tijdens dit leerproces moeten ze wel weten wat ze moeten leren en wanneer hun examens zijn. Daar is deze app voor! Deze app houdt de studievoortgang bij van de IT Professionals.
 
 <img src="" width="1000" />
 
-# :heart: Jobstory
+# Jobstories
 
-# :heart_eyes: Feature
+# Features
 
-# :nerd_face: Technical summary
-**Find Your Match**  is built, using:
+# Technical summary
+**Linden-IT**  is built, using:
 
 # :gear: Install
 1. Clone the repository:  
