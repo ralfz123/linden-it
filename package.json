@@ -1,0 +1,19 @@
+{
+  "name": "linden-it",
+  "version": "1.0.0",
+  "description": "A school project for Linden-IT",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralfz123/linden-it.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralfz123/linden-it/issues"
+  },
+  "homepage": "https://github.com/ralfz123/linden-it#readme"
+}
