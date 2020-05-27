@@ -1,7 +1,15 @@
-import React from "react";
+import React, {Component } from "react";
 
-const Courses = () => {
-	return <h1>Courses</h1>;
-};
 
-export default Courses;
+
+export default class Courses extends Component {
+	render() {
+		return (
+			<div>
+				<h1>Courses</h1>
+			</div>
+		)
+	}
+}
+
+
