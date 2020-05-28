@@ -35,19 +35,19 @@ export default class Tabs extends React.Component {
 		return (
 			<Tab>
 				<NavLink exact to="/">
-					<IoIosHome />
+					<IoIosHome className="react-icons"/>
 					<span>Home</span>
 				</NavLink>
 				<NavLink to="/courses">
-					<IoIosCopy />
+					<IoIosCopy className="react-icons"/>
 					<span> Courses</span>
 				</NavLink>
 				<NavLink to="/agenda">
-					<IoIosToday />
+					<IoIosToday className="react-icons"/>
 					<span> Agenda</span>
 				</NavLink>
 				<NavLink to="/settings">
-					<IoIosCog />
+					<IoIosCog className="react-icons"/>
 					<span>Settings</span>
 				</NavLink>
 			</Tab>

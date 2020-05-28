@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "lint:css":"stylelint './src/**/*.js'"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ralfz123/linden-it.git"

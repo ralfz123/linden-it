@@ -8,7 +8,7 @@ class Courses extends Component {
 		return (
 			<>
 				<Header>
-					<Title name={`Courses`} />
+					{/* <Title name={`Courses`} /> */}
 				</Header>
 				<Content>
 					<p>Course Page Content</p>
