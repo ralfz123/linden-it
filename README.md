@@ -35,10 +35,10 @@ npm run startdev
 ```
 
 2: To use the app, go to `http://localhost:8000/` in your browser.  
-   (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:)
+ (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:)
 
 3: Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. That's it! :white_check_mark:  
-   <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="900" />
+ <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="900" />
 
 ## :chart_with_upwards_trend: Database structure
 

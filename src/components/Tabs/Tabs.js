@@ -1,21 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
-
-
-const Nav = styled.nav`
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
+const Tab = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100vw;
-	background-color: var(--color-gray-light);
-	padding: 8px;
-	padding-bottom: env(safe-area-inset-bottom, 8);
-
+	box-sizing: border-box;
 	a {
 		flex-grow: 1;
 		text-align: center;
@@ -27,39 +18,39 @@ const Nav = styled.nav`
 		align-items: center;
 		color: var(--color-gray);
 		text-decoration: none;
+		padding: 3px 0;
+		font-size: 12px;
 
 		&.active {
 			color: var(--color-primary);
 		}
 		ion-icon {
-			font-size:32px;
-			}
-		
+			font-size: 24px;
+		}
 	}
-`;
+`
 
-export const Tabs = () => {
-    return (
-		<Nav>
-			<NavLink to="/">
-				<ion-icon name="home"></ion-icon>
-				<span>Home</span>
-			</NavLink>
-			<NavLink to="/courses">
-				<ion-icon name="reader"></ion-icon>
-				<span> Courses</span>
-			</NavLink>
-			<NavLink to="/agenda">
-				<ion-icon name="today"></ion-icon>
-				<span> Agenda</span>
-			</NavLink>
-			<NavLink to="/settings">
-				<ion-icon name="cog"></ion-icon>
-				<span>Settings</span>
-			</NavLink>
-		</Nav>
-	);
+export default class Tabs extends React.Component {
+	render() {
+		return (
+			<Tab>
+				<NavLink exact to='/'>
+					<ion-icon name='home'></ion-icon>
+					<span>Home</span>
+				</NavLink>
+				<NavLink to='/courses'>
+					<ion-icon name='reader'></ion-icon>
+					<span> Courses</span>
+				</NavLink>
+				<NavLink to='/agenda'>
+					<ion-icon name='today'></ion-icon>
+					<span> Agenda</span>
+				</NavLink>
+				<NavLink to='/settings'>
+					<ion-icon name='cog'></ion-icon>
+					<span>Settings</span>
+				</NavLink>
+			</Tab>
+		)
+	}
 }
-
-export default Tabs;
-
