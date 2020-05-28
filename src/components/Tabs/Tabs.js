@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { IoIosHome, IoIosCopy, IoIosToday, IoIosCog } from "react-icons/io";
 
 const Tab = styled.div`
 	display: flex;
@@ -13,7 +14,6 @@ const Tab = styled.div`
 		min-height: 50px;
 		display: flex;
 		flex-direction: column;
-		text-align: center;
 		justify-content: center;
 		align-items: center;
 		color: var(--color-gray);
@@ -24,33 +24,33 @@ const Tab = styled.div`
 		&.active {
 			color: var(--color-primary);
 		}
-		ion-icon {
+		.react-icons {
 			font-size: 24px;
 		}
 	}
-`
+`;
 
 export default class Tabs extends React.Component {
 	render() {
 		return (
 			<Tab>
-				<NavLink exact to='/'>
-					<ion-icon name='home'></ion-icon>
+				<NavLink exact to="/">
+					<IoIosHome />
 					<span>Home</span>
 				</NavLink>
-				<NavLink to='/courses'>
-					<ion-icon name='reader'></ion-icon>
+				<NavLink to="/courses">
+					<IoIosCopy />
 					<span> Courses</span>
 				</NavLink>
-				<NavLink to='/agenda'>
-					<ion-icon name='today'></ion-icon>
+				<NavLink to="/agenda">
+					<IoIosToday />
 					<span> Agenda</span>
 				</NavLink>
-				<NavLink to='/settings'>
-					<ion-icon name='cog'></ion-icon>
+				<NavLink to="/settings">
+					<IoIosCog />
 					<span>Settings</span>
 				</NavLink>
 			</Tab>
-		)
+		);
 	}
 }

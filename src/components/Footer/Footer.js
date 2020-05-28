@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const StyledFooter = styled.footer`
 	position: fixed;
@@ -10,14 +10,18 @@ const StyledFooter = styled.footer`
 	padding-left: max(8px, env(safe-area-inset-left));
 	padding-right: max(8px, env(safe-area-inset-right));
 	padding-bottom: max(8px, env(safe-area-inset-bottom));
-`
+`;
 
 class Footer extends Component {
 	render() {
-		return <StyledFooter>{this.props.children}</StyledFooter>
+		return (
+		<StyledFooter>
+			{this.props.children}
+		</StyledFooter>
+		)
 	}
 }
 
-Footer.propTypes = {}
+Footer.propTypes = {};
 
-export default Footer
+export default Footer;

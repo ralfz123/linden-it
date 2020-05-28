@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const StyledHeader = styled.header`
 	position: fixed;
@@ -11,14 +11,18 @@ const StyledHeader = styled.header`
 	width: 100vw;
 	background-color: var(--color-primary);
 	color: var(--color-light);
-`
+`;
 
-class Header extends Component {
+export default class Header extends Component {
 	render() {
-		return <StyledHeader>{this.props.children}</StyledHeader>
+		return (
+			<StyledHeader>
+				{this.props.children}
+			</StyledHeader>
+		);
 	}
 }
 
-Header.propTypes = {}
 
-export default Header
+
+

@@ -6,7 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:css":"stylelint './src/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,10 @@
     "@babel/preset-react": "^7.10.1",
     "babel-plugin-source-map-support": "^2.1.1",
     "babel-plugin-styled-components": "^1.10.7",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "stylelint": "^13.5.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }

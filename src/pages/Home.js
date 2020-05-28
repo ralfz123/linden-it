@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Title from '../components/Title/Title'
-import Header from '../components/Header/Header'
-import Content from '../components/Content/Content'
+import React, { Component } from "react";
+import Title from "../components/Title/Title";
+import Header from "../components/Header/Header";
+import Content from "../components/Content/Content";
 
 export default class Home extends Component {
 	render() {
@@ -14,6 +14,6 @@ export default class Home extends Component {
 					<p>Course Page Content</p>
 				</Content>
 			</>
-		)
+		);
 	}
 }

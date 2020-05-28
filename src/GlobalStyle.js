@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -8,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
         --color-gray: #989898;
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
-
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
 
@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
         flex-direction:column;
         margin:0;
         min-height:100vh;
-        min-height: -webkit-fill-available;
         font-family: var(--font-family);
     
         }
@@ -39,4 +38,4 @@ const GlobalStyle = createGlobalStyle`
         font-family: var(--font-family-heading)
     }
 `
-export default GlobalStyle
+export default GlobalStyle;
