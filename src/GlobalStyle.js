@@ -49,5 +49,10 @@ const GlobalStyle = createGlobalStyle`
         border: 1px solid #000000;
         
     }
+
+    a {
+        text-decoration:none;
+        color:red;
+    }
 `
 export default GlobalStyle;

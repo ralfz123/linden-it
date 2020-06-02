@@ -51,8 +51,12 @@ class Login extends Component {
               onChange={this.handleChange}
               required
             />
+            
+            <a href="/passwordforgot">Wachtwoord vergeten?</a>
 
             <button type="submit">Login</button>
+
+            <p>Je gaat akkoord met het Privacy Statement van Linden-IT</p>
           </form>
         </Content>
       </div>
