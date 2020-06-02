@@ -17,9 +17,9 @@ class Login extends Component {
   }
 
   handleChange(event) {
-      this.setState ({
-          [event.target.name]: event.target.value
-      });
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
   }
 
   handleSubmit(event) {
@@ -31,7 +31,8 @@ class Login extends Component {
       <div>
         <Header>{/* <Title name={`Login`} /> */}</Header>
         <Content>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="login">
+            <label>Email</label>
             <input
               type="email"
               name="email"
@@ -41,6 +42,7 @@ class Login extends Component {
               required
             />
 
+            <label>Password</label>
             <input
               type="password"
               name="password"

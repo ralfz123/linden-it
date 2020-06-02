@@ -37,5 +37,17 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading)
     }
+
+    .login {
+        text-align: center;
+        border: 1px solid red;
+        height: 60vh;
+        
+    }
+    input {
+        padding: 5px;
+        border: 1px solid #000000;
+        
+    }
 `
 export default GlobalStyle;
