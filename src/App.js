@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import courseList from "./courses-data.json";
+import Login from "./pages/Login";
 
 const App = () => {
 	return (
@@ -17,7 +18,12 @@ const App = () => {
 					component={Courses}
 					courses={courseList}
 				/>
-				<Route path="/" component={Home} />
+				<Route
+					path="/"
+					component={Home} />
+				<Route
+					path="/login"
+					component={Login} />
 			</Switch>
 			<Footer>
 				<Tabs />
