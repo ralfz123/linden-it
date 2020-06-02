@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:css":"stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "type": "module",
   "repository": {
