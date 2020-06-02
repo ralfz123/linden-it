@@ -1,10 +1,20 @@
 {
-    "env": {
-        "development": {
-            "sourceMaps": true,
-            "plugins": ["source-map-support"]
-        }
-    },
+	"env": {
+		"development": {
+			"sourceMaps": true,
+			"plugins": [
+        "source-map-support",
+        [
+	        "babel-plugin-styled-components",
+          {
+            "ssr": false,
+            "fileName": false,
+            "minify": false
+          }
+        ]
+      ]
+		}
+	},
 	"presets": [
 		[
 			"@babel/env",
@@ -18,18 +28,5 @@
 				"useBuiltIns": "usage"
 			}
 		]
-    ]
-    ,"plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
-        "ssr": false,
-        "displayName": false,
-        "fileName": true,
-        "minify": false,
-        "transpileTemplateLiterals": false,
-        "pure": true
-      }
-    ]
-  ]
+	]
 }
