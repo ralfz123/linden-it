@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Title from "../components/Title/Title";
 import Header from "../components/Header/Header";
 import Content from "../components/Content/Content";
+import reCAPTCHA from "react-google-recaptcha";
 
 class Login extends Component {
   constructor(props) {
@@ -58,6 +59,7 @@ class Login extends Component {
 
             <p>Je gaat akkoord met het Privacy Statement van Linden-IT</p>
           </form>
+          {/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
         </Content>
       </div>
     );
