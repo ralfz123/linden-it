@@ -13,6 +13,13 @@ class Login extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+      this.setState ({
+          [event.target.name]: event.target.value
+      });
   }
 
   handleSubmit(event) {
@@ -30,6 +37,7 @@ class Login extends Component {
               name="email"
               placeholder="Email"
               value={this.state.email}
+              onChange={this.handleChange}
               required
             />
 
@@ -38,6 +46,7 @@ class Login extends Component {
               name="password"
               placeholder="password"
               value={this.state.password}
+              onChange={this.handleChange}
               required
             />
 

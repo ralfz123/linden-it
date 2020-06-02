@@ -13,6 +13,7 @@ const App = () => {
 		<Router>
 			<GlobalStyle />
 			<Switch>
+				<Login />
 				<Route
 					path="/courses"
 					component={Courses}
