@@ -28,12 +28,13 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body, #root {
-        height:100vh;
+        ${'' /* height:100vh; */}
         display:flex;
         flex-direction:column;
         margin:0;
         min-height:100vh;
         font-family: var(--font-family);
+  
     }
     header{
         position: absolute;
@@ -42,19 +43,20 @@ const GlobalStyle = createGlobalStyle`
         right: 0;
         top: 0;
         width: 100vw;
-        z-index:2;
+        z-index:1;
         padding-left: max(8px, env(safe-area-inset-left));
         padding-right: max(8px, env(safe-area-inset-right));
         padding-top: max(8px, env(safe-area-inset-top)); 	
     }
     main {
         min-height:100vh;
-        z-index:1;
+        z-index:0;
         background-color:var(--color-light);
         padding-left: max(8px, env(safe-area-inset-left));
         padding-right: max(8px, env(safe-area-inset-right));
         padding-bottom: 100px;
-        
+        -webkit-overflow-scrolling: touch;
+     
         
     }
     footer {
