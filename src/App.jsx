@@ -17,7 +17,7 @@ const App = () => {
 				<Route 
 				name='home' 
 				exact path='/' 
-				component={Home} />
+				component={Home}/>
 
 				<Route
 				name='courses'
@@ -28,13 +28,15 @@ const App = () => {
 
 				<Route 
 				name='agenda' 
-				path='/agenda' c
-				omponent={Agenda} />
+				path='/agenda' 
+				component={Agenda} 
+				/>
 
 				<Route 
 				name='settings' 
 				path='/settings' 
-				component={Settings} />
+				component={Settings} 
+				/>
 			</Switch>
 			<Footer>
 				<Tabs />
