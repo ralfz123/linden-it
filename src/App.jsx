@@ -14,15 +14,27 @@ const App = () => {
 		<Router>
 			<GlobalStyle />
 			<Switch>
-				<Route name='home' exact path='/' component={Home} />
+				<Route 
+				name='home' 
+				exact path='/' 
+				component={Home} />
+
 				<Route
-					name='courses'
-					path='/courses'
-					component={Courses}
-					courses={courseList}
+				name='courses'
+				path='/courses'
+				component={Courses}
+				courses={courseList}
 				/>
-				<Route name='agenda' path='/agenda' component={Agenda} />
-				<Route name='settings' path='/settings' component={Settings} />
+
+				<Route 
+				name='agenda' 
+				path='/agenda' c
+				omponent={Agenda} />
+
+				<Route 
+				name='settings' 
+				path='/settings' 
+				component={Settings} />
 			</Switch>
 			<Footer>
 				<Tabs />
