@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import './title.css'
+import StyledHeading from './StyledHeading.js'
 class Title extends Component {
 	render() {
 		return (
-			<h1>
+			<StyledHeading>
 				{this.props.title}
-			</h1>
+			</StyledHeading>
 		);
 	}
 }
