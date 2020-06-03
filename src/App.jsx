@@ -9,6 +9,7 @@ import courseList from "./courses-data.json";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
+import StyledInput from "./components/Form/StyledInput";
 
 const App = () => {
 	return (
@@ -46,6 +47,7 @@ const App = () => {
 				component={Settings} 
 				/>
 			</Switch>
+			
 			<Footer>
 				<Tabs />
 			</Footer>

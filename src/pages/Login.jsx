@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import reCAPTCHA from "react-google-recaptcha";
-import FormInput from '../components/Form'
+// import reCAPTCHA from "react-google-recaptcha";
+// import FormInput from '../components/Form';
+import Input from '../components/Form/StyledInput';
 
 class Login extends Component {
   constructor(props) {
@@ -56,14 +57,12 @@ class Login extends Component {
               required
             />
             
-            < FormInput
-               label="Username"
+            <Input label="Username"
                name="username"
                type="text"
                onChange={this.handleChange}
                placeholder="Enter username..."
-               required
-            />
+               required />
 
             <a href="/passwordforgot">Wachtwoord vergeten?</a>
 
