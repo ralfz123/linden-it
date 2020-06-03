@@ -1,14 +1,21 @@
 import React, { Component } from "react";
-import Title from "../components/Title/Title";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import Content from "../components/Content/Content";
+import Title from "../components/Title";
 
 class Courses extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: "Courses",
+		};
+	}
+
 	render() {
 		return (
 			<>
 				<Header>
-					{/* <Title name={`Courses`} /> */}
+					<Title title={this.state.title} />
 				</Header>
 				<Content>
 					<p>Course Page Content</p>

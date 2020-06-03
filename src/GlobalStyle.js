@@ -13,6 +13,12 @@ const GlobalStyle = createGlobalStyle`
         --font-family: 'Lato', sans-serif;
 
     }
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
     body, #root {
         height:100%;
         display:flex;
@@ -37,5 +43,5 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading)
     }
-`
+`;
 export default GlobalStyle;
