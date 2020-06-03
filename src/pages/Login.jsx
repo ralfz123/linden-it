@@ -3,7 +3,6 @@ import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 // import reCAPTCHA from "react-google-recaptcha";
-// import FormInput from '../components/Form';
 import Input from '../components/Form/StyledInput';
 
 class Login extends Component {
@@ -38,31 +37,35 @@ class Login extends Component {
         <Content>
           <form onSubmit={this.handleSubmit} className="login">
             <label>Email</label>
-            <input
-              type="email"
+            <Input
+              label="Email"
               name="email"
+              type="email"
+              onChange={this.handleChange}
               placeholder="Email"
               value={this.state.email}
-              onChange={this.handleChange}
               required
             />
 
             <label>Password</label>
-            <input
-              type="password"
+            <Input
+              label="Password"
               name="password"
-              placeholder="password"
-              value={this.state.password}
+              type="password"
               onChange={this.handleChange}
+              placeholder="Password"
+              value={this.state.password}
               required
             />
             
-            <Input label="Username"
-               name="username"
-               type="text"
-               onChange={this.handleChange}
-               placeholder="Enter username..."
-               required />
+            <Input
+              label="Username"
+              name="username"
+              type="text"
+              onChange={this.handleChange}
+              placeholder="Enter username..."
+              value={this.state.username}
+              required />
 
             <a href="/passwordforgot">Wachtwoord vergeten?</a>
 

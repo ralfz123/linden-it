@@ -16,20 +16,20 @@ class Input extends Component {
   }
 }
 
-Input.defaultProps = {
-  type: "text",
-  className: "",
-};
+// Input.defaultProps = {
+//   type: "text",
+//   className: "",
+// };
 
-
+// Validate/check the propTypes
 Input.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["text", "number", "password"]),
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOf(["text", "number", "password", "email"]),
   className: PropTypes.string,
   value: PropTypes.any,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 export default Input;
