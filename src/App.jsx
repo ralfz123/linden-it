@@ -8,6 +8,7 @@ import Courses from "./pages/Courses";
 import courseList from "./courses-data.json";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
+import Login from "./pages/Login";
 
 const App = () => {
 	return (
@@ -15,9 +16,16 @@ const App = () => {
 			<GlobalStyle />
 			<Switch>
 				<Route 
+				name='login' 
+				path='/login' 
+				component={Login}
+				/>
+				
+				<Route 
 				name='home' 
 				exact path='/' 
-				component={Home}/>
+				component={Home}
+				/>
 
 				<Route
 				name='courses'

@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import Title from "../components/Title/Title";
+import Title from "../components/Title";
 import Header from "../components/Header/Header";
 import Content from "../components/Content/Content";
 import reCAPTCHA from "react-google-recaptcha";
+import FormInput from '../components/Form'
 
 class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       password: "",
+      title: "Login"
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +31,9 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <Header>{/* <Title name={`Login`} /> */}</Header>
+        <Header>
+          <Title title={this.state.title}  />
+        </Header>
         <Content>
           <form onSubmit={this.handleSubmit} className="login">
             <label>Email</label>
@@ -53,6 +56,15 @@ class Login extends Component {
               required
             />
             
+            < FormInput
+               label="Username"
+               name="username"
+               type="text"
+               onChange={this.handleChange}
+               placeholder="Enter username..."
+               required
+            />
+
             <a href="/passwordforgot">Wachtwoord vergeten?</a>
 
             <button type="submit">Login</button>
