@@ -13,6 +13,12 @@ const GlobalStyle = createGlobalStyle`
         --font-family: 'Lato', sans-serif;
 
     }
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
     body, #root {
         height:100%;
         display:flex;
