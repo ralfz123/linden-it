@@ -17,10 +17,20 @@ class Home extends Component {
 		return (
 			<>
 				<Header>
-					<Title title={this.state.title}/>
+					<Title title={this.state.title} />
 				</Header>
 				<Content>
 					<p>Home Page Content</p>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
+					<Button>Button</Button>
 					<Button>Button</Button>
 				</Content>
 			</>
