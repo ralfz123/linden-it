@@ -6,7 +6,8 @@ export const colors = {
         dark: "#000000",
         gray: "#989898",
         grayDark: "#3b3b3b",
-        grayLight: "#f4f4f4"
+        grayLight: "#f4f4f4",
+        grayLightTwo: "#C4C4C4"
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
         --color-gray: #989898;
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
+        --color-grayLightTwo: #C4C4C4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
     }
