@@ -18,4 +18,5 @@ const StyledInput = styled.input`
     min-height: 50px;
   }
 `;
+
 export default StyledInput;
