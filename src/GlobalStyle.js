@@ -1,5 +1,4 @@
-
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -48,18 +47,18 @@ const GlobalStyle = createGlobalStyle`
     .login {
         text-align: center;
         border: 1px solid red;
-        height: 60vh;
+        /* height: 60vh; */
         
     }
-    input {
+    /* input {
         padding: 5px;
         border: 1px solid #000000;
         
-    }
+    } */
 
     a {
         text-decoration:none;
-        color:red;
+        color: var(--color-primary);
     }
-`
+`;
 export default GlobalStyle;
