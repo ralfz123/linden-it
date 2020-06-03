@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         --color-gray: #989898;
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
+        --color-gray-light-light: #c4c4c4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
 

@@ -1,16 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-const StyledInput = styled.input `
-	/* position: fixed; */
-	/* position: -webkit-sticky;*/
-	left: 0;
-	right: 0;
-	width: 100px;
-    border-radius: 100px;
-	background-color: var(--color-primary);
-	color: var(--color-light);
-.header-toolbar {
+const StyledInput = styled.input`
+  /* position: fixed; */
+  /* position: -webkit-sticky;*/
+  left: 0;
+  right: 0;
+  width: 30rem;
+  background-color: var(--color-light);
+  color: var(--color-light);
+  border: 1px solid var(--color-gray-light-light);
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  .header-toolbar {
     min-height: 50px;
-}
-`  
+  }
+`;
 export default StyledInput;
