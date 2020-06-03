@@ -21,17 +21,9 @@ class Home extends Component {
 				</Header>
 				<Content>
 					<p>Home Page Content</p>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
-					<Button>Button</Button>
+					<Button>Primary</Button>
+					<Button secondary>Secondary</Button>
+					
 				</Content>
 			</>
 		);

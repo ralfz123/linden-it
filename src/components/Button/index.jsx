@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from "prop-types";
 import StyledButton from './StyledButton'
 
 class Button extends Component {
-	constructor(props) {
-		super(props);
-	}
 	render() {
 		return (
 			<StyledButton onClick={this.props.onCLick}>
@@ -16,8 +12,5 @@ class Button extends Component {
 }
 
 
-Button.propTypes = {
-
-};
 
 export default Button;
