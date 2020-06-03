@@ -15,9 +15,9 @@ const App = () => {
 			<GlobalStyle />
 			<Switch>
 				<Route name="courses" path="/courses" component={Courses} courses={courseList} />
-				<Route name="home" path="/" component={Home} />
 				<Route name="agenda" path="/agenda" component={Agenda} />
 				<Route name="settings" path="/settings" component={Settings} />
+				<Route name="home" path="/" component={Home} />
 			</Switch>
 			<Footer>
 				<Tabs />
