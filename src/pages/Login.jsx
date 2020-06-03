@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Title from "../components/Title";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import reCAPTCHA from "react-google-recaptcha";
 import FormInput from '../components/Form'
