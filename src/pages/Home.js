@@ -20,7 +20,7 @@ class Home extends Component {
 					<Title title={this.state.title}/>
 				</Header>
 				<Content>
-					<p>Course Page Content</p>
+					<p>Home Page Content</p>
 					<Button>Button</Button>
 				</Content>
 			</>
