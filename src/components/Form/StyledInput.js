@@ -5,7 +5,7 @@ const StyledInput = styled.input`
   /* position: -webkit-sticky;*/
   left: 0;
   right: 0;
-  width: 30rem;
+  width: 20rem;
   background-color: var(--color-light);
   border: 1px solid var(--color-gray-light-light);
   box-sizing: border-box;

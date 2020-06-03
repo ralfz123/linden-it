@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Content from "../components/Content/Content";
 // import reCAPTCHA from "react-google-recaptcha";
 import Input from "../components/Form/StyledInput";
+import Button from "../components/Button";
+
 
 class Login extends Component {
   constructor(props) {
@@ -60,7 +62,7 @@ class Login extends Component {
 
             <a href="/passwordforgot">Wachtwoord vergeten?</a>
 
-            <button type="submit">Login</button>
+            <Button type="submit">Login</Button>
 
             <p>Je gaat akkoord met het Privacy Statement van Linden-IT</p>
           </form>
