@@ -117,7 +117,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .pw-forgot {
         /* text-align:left; */
-        font-family: Lato;
+        font-family: var(--font-family);
         font-style: normal;
         font-weight: 300;
         font-size: 14px;
@@ -125,7 +125,7 @@ const GlobalStyle = createGlobalStyle`
         text-align:left;
     }
     p {
-        font-family: Lato;
+        font-family: var(--font-family);
         font-style: normal;
         font-weight: 300;
         font-size: 14px;
