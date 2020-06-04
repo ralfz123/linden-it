@@ -7,7 +7,7 @@ class Courses extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "Courses",
+			title: "Mijn cursussen",
 		};
 	}
 

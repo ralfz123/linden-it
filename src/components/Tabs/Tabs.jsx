@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { IoIosHome, IoIosCopy, IoIosToday, IoIosCog } from "react-icons/io";
+import { FiHome, FiSettings } from "react-icons/fi";
+import { RiBookLine } from "react-icons/ri";
+import { FaRegCalendar } from "react-icons/fa";
 
 const Tab = styled.div`
 	display: flex;
@@ -30,24 +32,24 @@ const Tab = styled.div`
 	}
 `;
 
-export default class Tabs extends React.Component {
+export default class Tabs extends Component {
 	render() {
 		return (
 			<Tab>
-				<NavLink exact to="/">
-					<IoIosHome className="react-icons"/>
+				<NavLink exact to='/'>
+					<FiHome className='react-icons' />
 					<span>Home</span>
 				</NavLink>
-				<NavLink to="/courses">
-					<IoIosCopy className="react-icons"/>
+				<NavLink to='/courses'>
+					<RiBookLine className='react-icons' />
 					<span>Courses</span>
 				</NavLink>
-				<NavLink to="/agenda">
-					<IoIosToday className="react-icons"/>
+				<NavLink to='/agenda'>
+					<FaRegCalendar className='react-icons' />
 					<span>Agenda</span>
 				</NavLink>
-				<NavLink to="/settings">
-					<IoIosCog className="react-icons"/>
+				<NavLink to='/settings'>
+					<FiSettings className='react-icons' />
 					<span>Settings</span>
 				</NavLink>
 			</Tab>
