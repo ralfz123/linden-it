@@ -5,7 +5,8 @@ import Content from "../components/Content/Content";
 // import reCAPTCHA from "react-google-recaptcha";
 import Input from "../components/Form/StyledInput";
 import Button from "../components/Button";
-
+// import StyledLink from "../components/Link/Link";
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class Login extends Component {
               required
             />
 
-            <a href="/passwordforgot">Wachtwoord vergeten?</a>
+            <Link className="link pw-forgot" to="/passwordforgot">Wachtwoord vergeten?</Link>
 
             <Button type="submit">Login</Button>
 

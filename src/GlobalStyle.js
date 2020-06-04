@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-        primary: "#FC7928",
-        light: "#ffffff",
-        dark: "#000000",
-        gray: "#989898",
-        grayDark: "#3b3b3b",
-        grayLight: "#f4f4f4",
-        grayLightTwo: "#C4C4C4"
+  primary: "#FC7928",
+  light: "#ffffff",
+  dark: "#000000",
+  gray: "#989898",
+  grayDark: "#3b3b3b",
+  grayLight: "#f4f4f4",
+  grayLightTwo: "#C4C4C4",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body, #root {
-        ${'' /* height:100vh; */}
+        ${"" /* height:100vh; */}
         display:flex;
         flex-direction:column;
         margin:0;
@@ -77,6 +77,13 @@ const GlobalStyle = createGlobalStyle`
     .login {
         text-align: center;
     }
+    .link {
+        text-decoration:'none';
+        color: ${colors.primary};
+        /* background-color: ${colors.primary}; */
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
 `;
 export default GlobalStyle;
-
