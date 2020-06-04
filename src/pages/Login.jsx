@@ -40,7 +40,7 @@ class Login extends Component {
 			</Header>
 			<Content className='login-wrapper'>
 				<form onSubmit={this.handleSubmit} className='login'>
-					<div class='field'>
+					<div className='field'>
 						<label for='email'>E-mail</label>
 						<Input
 							label='Email'
