@@ -75,15 +75,41 @@ const GlobalStyle = createGlobalStyle`
         font-family: var(--font-family-heading)
     }
     .login {
-        text-align: center;
+        /* text-align: center; */
+    }
+    label {
+        font-family: 'Josefin Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        /* line-height: 18px; */
+        color: ${colors.grayDark};
     }
     .link {
-        text-decoration:'none';
+        text-decoration: none;
         color: ${colors.primary};
-        /* background-color: ${colors.primary}; */
         margin: 0 auto;
         padding: 10px;
         position: relative;
+    }
+    .pw-forgot {
+        text-align:left;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    p {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: ${colors.grayDark};
     }
 `;
 export default GlobalStyle;
