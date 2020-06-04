@@ -40,7 +40,7 @@ export default class Tabs extends Component {
 				</NavLink>
 				<NavLink to="/courses">
 					<IoIosCopy className="react-icons"/>
-					<span>Courses</span>
+					<span>Cursussen</span>
 				</NavLink>
 				<NavLink to="/agenda">
 					<IoIosToday className="react-icons"/>
@@ -48,7 +48,7 @@ export default class Tabs extends Component {
 				</NavLink>
 				<NavLink to="/settings">
 					<IoIosCog className="react-icons"/>
-					<span>Settings</span>
+					<span>Profiel</span>
 				</NavLink>
 			</Tab>
 		);

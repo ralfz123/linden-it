@@ -14,7 +14,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      title: "Login",
+      title: "Inloggen",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,9 +50,9 @@ class Login extends Component {
               required
             />
 
-            <label>Password</label>
+            <label>Wachtwoord</label>
             <Input
-              label="Password"
+              label="Wachtwoord"
               name="password"
               type="password"
               onChange={this.handleChange}
@@ -63,7 +63,7 @@ class Login extends Component {
 
             <Link className="link pw-forgot" to="/passwordforgot">Wachtwoord vergeten?</Link>
 
-            <Button type="submit">Login</Button>
+            <Button type="submit">Inloggen</Button>
 
             <p>Je gaat akkoord met het Privacy Statement van Linden-IT</p>
           </form>
