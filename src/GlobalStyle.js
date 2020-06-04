@@ -79,7 +79,9 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
     }
-    .login-wrapper {}
+    .login-wrapper {
+        ${'' /* login */}
+    }
     .login {
         text-align: center;
         
