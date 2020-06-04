@@ -120,13 +120,17 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-size: 14px;
         line-height: 17px;
-        display: flex;
-        /* text-align: center; */
+        text-align: center;
         color: ${colors.grayDark};
-        width: 50vw;
+        width: 50%;
+        display: block;
+        padding: 20px 10px;
+        margin: 0px auto;
+
     }
     .privacy {
         margin-top: 30px;
+        text-align: center;
     }
     .eye {}
     i {
