@@ -120,17 +120,18 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-size: 14px;
         line-height: 17px;
-        text-align: center;
         color: ${colors.grayDark};
-        width: 50%;
         display: block;
-        padding: 20px 10px;
         margin: 0px auto;
-
+        margin: 10px 0px;
     }
     .privacy {
+        margin: 0px auto;
         margin-top: 30px;
         text-align: center;
+        padding: 20px 10px;
+        width: 50%;
+
     }
     .eye {}
     i {
