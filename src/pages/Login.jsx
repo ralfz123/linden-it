@@ -34,57 +34,56 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <Header>
-          <Title title={this.state.title} />
-        </Header>
-        <Content className="login-wrapper">
-          <form onSubmit={this.handleSubmit} className="login">
-            <div class="labelAndInput">
-              <label for="email">E-mail</label>
-              <Input
-                label="Email"
-                name="email"
-                type="email"
-                onChange={this.handleChange}
-                placeholder="E-mail"
-                value={this.state.email}
-                required
-              />
-            </div>
+		<>
+			<Header>
+				<Title title={this.state.title} />
+			</Header>
+			<Content className='login-wrapper'>
+				<form onSubmit={this.handleSubmit} className='login'>
+					<div class='labelAndInput'>
+						<label for='email'>E-mail</label>
+						<Input
+							label='Email'
+							name='email'
+							type='email'
+							onChange={this.handleChange}
+							placeholder='E-mail'
+							value={this.state.email}
+							required
+						/>
+					</div>
 
-            <div class="labelAndInput">
-              <label for="password">Wachtwoord</label>
-              <Input
-                label="Wachtwoord"
-                name="password"
-                type="password"
-                onChange={this.handleChange}
-                placeholder="Wachtwoord"
-                value={this.state.password}
-                required
-              />
-            </div>
+					<div class='labelAndInput'>
+						<label for='password'>Wachtwoord</label>
+						<Input
+							label='Wachtwoord'
+							name='password'
+							type='password'
+							onChange={this.handleChange}
+							placeholder='Wachtwoord'
+							value={this.state.password}
+							required
+						/>
+						{/* <i className='eye password-icon'></i> */}
+						{/* <AiOutlineEye className="eye password-icon" /> */}
 
-            <i className="eye password-icon"></i>
-            {/* <AiOutlineEye className="eye password-icon" /> */}
+						<Link className='link pw-forgot' to='/passwordforgot'>
+							Wachtwoord vergeten?
+						</Link>
+					</div>
 
-            <Link className="link pw-forgot" to="/passwordforgot">
-              Wachtwoord vergeten?
-            </Link>
+					<Button className='logbutt' type='submit'>
+						Inloggen
+					</Button>
 
-            <Button className="logbutt" type="submit">
-              Inloggen
-            </Button>
-
-            <p class="privacy">
-              Je gaat akkoord met het Privacy Statement van Linden-IT
-            </p>
-          </form>
-          {/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
-        </Content>
-      </div>
-    );
+					<p class='privacy'>
+						Je gaat akkoord met het Privacy Statement van Linden-IT
+					</p>
+				</form>
+				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
+			</Content>
+		</>
+	);
   }
 }
 

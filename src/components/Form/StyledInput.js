@@ -7,20 +7,15 @@ const StyledInput = styled.input`
   /* position: -webkit-sticky;*/
   left: 0;
   right: 0;
-  width: 20rem;
+  width: 100%;
   background-color: ${colors.light};
   border: 1px solid ${colors.grayLightTwo};
   color: ${colors.gray};
   box-sizing: border-box;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 30px;
   line-height: 1.5em;
   align-items: center;
-
-  .header-toolbar {
-    min-height: 50px;
-  }
 `;
 
 export default StyledInput;

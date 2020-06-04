@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { normalize } from "styled-normalize";
 export const colors = {
   primary: "#FC7928",
   light: "#ffffff",
@@ -11,6 +11,7 @@ export const colors = {
 };
 
 const GlobalStyle = createGlobalStyle`
+    ${normalize}
     :root {
         --color-primary: #FC7928;
         --color-light: #ffffff;
@@ -52,8 +53,12 @@ const GlobalStyle = createGlobalStyle`
         padding-top: max(8px, env(safe-area-inset-top)); 	
     }
     main {
+        position:relative;
+        width:100vw;
         min-height:100vh;
+        box-sizing:border-box;
         z-index:0;
+        margin:0 auto;
         background-color:var(--color-light);
         padding-left: max(8px, env(safe-area-inset-left));
         padding-right: max(8px, env(safe-area-inset-right));
@@ -62,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
     }
     footer {
         position: fixed;
+        width:100%;
         left: 0;
         right: 0;
         bottom: 0;
@@ -76,35 +82,38 @@ const GlobalStyle = createGlobalStyle`
     .login-wrapper {}
     .login {
         text-align: center;
-        width: 96vw;
+        width:80%;
         /* display: flex; */
         /* flex-direction: row; */
         /* flex-wrap: wrap; */
         /* justify-content: center; */
+        padding-top:4em;
         margin: auto;
     }
     .labelAndInput {
         /* background-color:lightgreen; */
+        text-align:left;
+        padding-bottom:20px;
     }
     label {
         display: block;
-        font-family: 'Josefin Sans';
+        font-family: var(--font-family-heading);
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
         line-height: 18px;
         color: ${colors.grayDark};
         text-align: left;
-        width: 100vw;
-        padding: 0px 20px;
+        width: 100%;
+        padding: 10px 0px;
 }
-    }
     .link {
         text-decoration: none;
         color: ${colors.primary};
         margin: 0 auto;
-        padding: 10px;
+        
         position: relative;
+        
     }
     .pw-forgot {
         /* text-align:left; */
@@ -113,6 +122,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-size: 14px;
         line-height: 17px;
+        text-align:left;
     }
     p {
         font-family: Lato;
@@ -146,4 +156,5 @@ const GlobalStyle = createGlobalStyle`
          cursor: pointer;
 }
 `;
+
 export default GlobalStyle;
