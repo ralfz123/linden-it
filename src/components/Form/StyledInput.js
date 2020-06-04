@@ -10,6 +10,7 @@ const StyledInput = styled.input`
   width: 20rem;
   background-color: ${colors.light};
   border: 1px solid ${colors.grayLightTwo};
+  color: ${colors.gray};
   box-sizing: border-box;
   border-radius: 5px;
   padding: 10px;
