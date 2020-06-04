@@ -111,5 +111,19 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
         color: ${colors.grayDark};
     }
+    .eye {
+        
+    }
+    i {
+        position: absolute;
+        top: 225px;
+        right: 60px;
+        cursor: pointer; 
+        
+    }
+    i:hover {
+        color: ${colors.primary};
+         cursor: pointer;
+}
 `;
 export default GlobalStyle;

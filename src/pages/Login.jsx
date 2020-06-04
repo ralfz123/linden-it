@@ -7,6 +7,8 @@ import Input from "../components/Form/StyledInput";
 import Button from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import {Link} from 'react-router-dom';
+// import { AiOutlineEye } from 'react-icons/ai';
+
 
 class Login extends Component {
   constructor(props) {
@@ -60,6 +62,9 @@ class Login extends Component {
               value={this.state.password}
               required
             />
+            <i className="eye password-icon"></i>
+            {/* <AiOutlineEye className="eye password-icon" /> */}
+
 
             <Link className="link pw-forgot" to="/passwordforgot">Wachtwoord vergeten?</Link>
 
