@@ -6,9 +6,8 @@ import Content from "../components/Content/Content";
 import Input from "../components/Form/StyledInput";
 import Button from "../components/Button";
 // import StyledLink from "../components/Link/Link";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
-
 
 class Login extends Component {
   constructor(props) {
@@ -39,38 +38,48 @@ class Login extends Component {
         <Header>
           <Title title={this.state.title} />
         </Header>
-        <Content>
+        <Content className="login-wrapper">
           <form onSubmit={this.handleSubmit} className="login">
-            <label>E-mail</label>
-            <Input
-              label="Email"
-              name="email"
-              type="email"
-              onChange={this.handleChange}
-              placeholder="E-mail"
-              value={this.state.email}
-              required
-            />
+            <div class="labelAndInput">
+              <label for="email">E-mail</label>
+              <Input
+                label="Email"
+                name="email"
+                type="email"
+                onChange={this.handleChange}
+                placeholder="E-mail"
+                value={this.state.email}
+                required
+              />
+            </div>
 
-            <label>Wachtwoord</label>
-            <Input
-              label="Wachtwoord"
-              name="password"
-              type="password"
-              onChange={this.handleChange}
-              placeholder="Password"
-              value={this.state.password}
-              required
-            />
+            <div class="labelAndInput">
+              <label for="password">Wachtwoord</label>
+              <Input
+                label="Wachtwoord"
+                name="password"
+                type="password"
+                onChange={this.handleChange}
+                placeholder="Wachtwoord"
+                value={this.state.password}
+                required
+              />
+            </div>
+
             <i className="eye password-icon"></i>
             {/* <AiOutlineEye className="eye password-icon" /> */}
 
+            <Link className="link pw-forgot" to="/passwordforgot">
+              Wachtwoord vergeten?
+            </Link>
 
-            <Link className="link pw-forgot" to="/passwordforgot">Wachtwoord vergeten?</Link>
+            <Button className="logbutt" type="submit">
+              Inloggen
+            </Button>
 
-            <Button type="submit">Inloggen</Button>
-
-            <p>Je gaat akkoord met het Privacy Statement van Linden-IT</p>
+            <p class="privacy">
+              Je gaat akkoord met het Privacy Statement van Linden-IT
+            </p>
           </form>
           {/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
         </Content>

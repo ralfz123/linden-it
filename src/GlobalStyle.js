@@ -7,7 +7,7 @@ export const colors = {
   gray: "#989898",
   grayDark: "#3b3b3b",
   grayLight: "#f4f4f4",
-  grayLightTwo: "#C4C4C4",
+  grayLightTwo: "#C4C4C4"
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
         flex-direction:column;
         margin:0;
         min-height:100vh;
+        max-width: 100vw;
         font-family: var(--font-family);
   
     }
@@ -58,8 +59,6 @@ const GlobalStyle = createGlobalStyle`
         padding-right: max(8px, env(safe-area-inset-right));
         padding-bottom: 100px;
         -webkit-overflow-scrolling: touch;
-     
-        
     }
     footer {
         position: fixed;
@@ -72,18 +71,33 @@ const GlobalStyle = createGlobalStyle`
         padding-bottom: max(0px, env(safe-area-inset-bottom));
     }
     h1,h2,h3,h4,h5{
-        font-family: var(--font-family-heading)
+        font-family: var(--font-family-heading);
     }
+    .login-wrapper {}
     .login {
-        /* text-align: center; */
+        text-align: center;
+        width: 96vw;
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+        /* justify-content: center; */
+        margin: auto;
+    }
+    .labelAndInput {
+        /* background-color:lightgreen; */
     }
     label {
+        display: block;
         font-family: 'Josefin Sans';
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
-        /* line-height: 18px; */
+        line-height: 18px;
         color: ${colors.grayDark};
+        text-align: left;
+        width: 100vw;
+        padding: 0px 20px;
+}
     }
     .link {
         text-decoration: none;
@@ -93,7 +107,7 @@ const GlobalStyle = createGlobalStyle`
         position: relative;
     }
     .pw-forgot {
-        text-align:left;
+        /* text-align:left; */
         font-family: Lato;
         font-style: normal;
         font-weight: 300;
@@ -107,13 +121,14 @@ const GlobalStyle = createGlobalStyle`
         font-size: 14px;
         line-height: 17px;
         display: flex;
-        align-items: center;
-        text-align: center;
+        /* text-align: center; */
         color: ${colors.grayDark};
+        width: 50vw;
     }
-    .eye {
-        
+    .privacy {
+        margin-top: 30px;
     }
+    .eye {}
     i {
         position: absolute;
         top: 225px;

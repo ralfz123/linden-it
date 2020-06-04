@@ -16,6 +16,7 @@ const StyledInput = styled.input`
   padding: 10px;
   margin-bottom: 30px;
   line-height: 1.5em;
+  align-items: center;
 
   .header-toolbar {
     min-height: 50px;
