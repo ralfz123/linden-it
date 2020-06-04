@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-// import reCAPTCHA from "react-google-recaptcha";
 import Input from "../components/Form/StyledInput";
 import Button from "../components/Button";
-// import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
 
@@ -15,7 +13,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      title: "Inloggen",
+      title: "Wachtwoord veranderen",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,47 +37,43 @@ class Login extends Component {
 				<Title title={this.state.title} />
 			</Header>
 			<Content className='login-wrapper'>
-				<form onSubmit={this.handleSubmit} className='login'>
+				<form onSubmit={this.handleSubmit} className='login' method='POST'>
 					<div className='field'>
-						<label for='email'>E-mail</label>
-						<Input
-							label='Email'
-							name='email'
-							type='email'
-							onChange={this.handleChange}
-							placeholder='E-mail'
-							value={this.state.email}
-							required
-						/>
-					</div>
-
-					<div className='field'>
-						<label for='password'>Wachtwoord</label>
+						<label for='password'>Nieuw wachtwoord</label>
 						<Input
 							label='Wachtwoord'
 							name='password'
 							type='password'
 							onChange={this.handleChange}
-							placeholder='Wachtwoord'
+							placeholder='Je nieuwe wachtwoord'
 							value={this.state.password}
 							minLength= '6'
+                            required
+						/>
+						{/* <i className='eye password-icon'></i> */}
+						{/* <AiOutlineEye className="eye password-icon" /> */}
+					</div>
+
+                    <div className='field'>
+						<label for='password'>Bevestig nieuw wachtwoord</label>
+						<Input
+							label='Wachtwoord'
+							name='password'
+							type='password'
+							onChange={this.handleChange}
+							placeholder='Je nieuwe wachtwoord'
+							value={this.state.password}
+                            minLength= '6'
 							required
 						/>
 						{/* <i className='eye password-icon'></i> */}
 						{/* <AiOutlineEye className="eye password-icon" /> */}
-
-						<Link className='link pw-forgot' to='/reset-password'>
-							Wachtwoord vergeten?
-						</Link>
 					</div>
 
 					<Button className='logbutt' type='submit'>
-						Inloggen
+						Wachtwoord opslaan
 					</Button>
 
-					<p className='privacy'>
-						Je gaat akkoord met het Privacy Statement van Linden-IT
-					</p>
 				</form>
 				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
 			</Content>

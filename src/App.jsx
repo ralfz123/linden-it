@@ -9,6 +9,7 @@ import courseList from "./courses-data.json";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
 	return (
@@ -19,6 +20,12 @@ const App = () => {
 				name='login' 
 				path='/login' 
 				component={Login}
+				/>
+
+				<Route 
+				name='reset-password' 
+				path='/reset-password' 
+				component={ResetPassword}
 				/>
 				
 				<Route 
