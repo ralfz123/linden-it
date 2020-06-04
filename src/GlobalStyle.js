@@ -41,28 +41,28 @@ const GlobalStyle = createGlobalStyle`
   
     }
     header{
-        position: absolute;
+        
         position: sticky;
         left: 0;
         right: 0;
         top: 0;
         width: 100vw;
         z-index:1;
-        padding-left: max(8px, env(safe-area-inset-left));
-        padding-right: max(8px, env(safe-area-inset-right));
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
         padding-top: max(8px, env(safe-area-inset-top)); 	
     }
     main {
         position:relative;
-        width:100vw;
+        width:100%;
         min-height:100vh;
         box-sizing:border-box;
         z-index:0;
         margin:0 auto;
         background-color:var(--color-light);
-        padding-left: max(8px, env(safe-area-inset-left));
-        padding-right: max(8px, env(safe-area-inset-right));
-        padding-bottom: 100px;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+        
         -webkit-overflow-scrolling: touch;
     }
     footer {
@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
     .login-wrapper {}
     .login {
         text-align: center;
-        width:80%;
+        
         /* display: flex; */
         /* flex-direction: row; */
         /* flex-wrap: wrap; */
@@ -90,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
         padding-top:4em;
         margin: auto;
     }
-    .labelAndInput {
+    .field {
         /* background-color:lightgreen; */
         text-align:left;
         padding-bottom:20px;
@@ -140,7 +140,7 @@ const GlobalStyle = createGlobalStyle`
         margin-top: 30px;
         text-align: center;
         padding: 20px 10px;
-        width: 50%;
+        min-width: 50%;
 
     }
     .eye {}

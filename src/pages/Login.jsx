@@ -40,7 +40,7 @@ class Login extends Component {
 			</Header>
 			<Content className='login-wrapper'>
 				<form onSubmit={this.handleSubmit} className='login'>
-					<div class='labelAndInput'>
+					<div class='field'>
 						<label for='email'>E-mail</label>
 						<Input
 							label='Email'
@@ -53,7 +53,7 @@ class Login extends Component {
 						/>
 					</div>
 
-					<div class='labelAndInput'>
+					<div className='field'>
 						<label for='password'>Wachtwoord</label>
 						<Input
 							label='Wachtwoord'
@@ -76,7 +76,7 @@ class Login extends Component {
 						Inloggen
 					</Button>
 
-					<p class='privacy'>
+					<p className='privacy'>
 						Je gaat akkoord met het Privacy Statement van Linden-IT
 					</p>
 				</form>
