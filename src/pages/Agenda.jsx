@@ -8,7 +8,7 @@ class Agenda extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "Agenda",
+			title: "Mijn agenda",
 		}
 	}
 	

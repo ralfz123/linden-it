@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { FiHome, FiSettings } from "react-icons/fi";
@@ -32,7 +32,7 @@ const Tab = styled.div`
 	}
 `;
 
-export default class Tabs extends React.Component {
+export default class Tabs extends Component {
 	render() {
 		return (
 			<Tab>
