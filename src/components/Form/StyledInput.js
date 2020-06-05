@@ -2,8 +2,6 @@ import styled from "styled-components";
 import {colors} from "../../GlobalStyle.js"
 
 export const StyledBaseTextInput = styled.input`
-  /* position: fixed; */
-  /* position: -webkit-sticky;*/
   left: 0;
   right: 0;
   width: 100%;

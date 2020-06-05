@@ -3,8 +3,8 @@ import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 // import reCAPTCHA from "react-google-recaptcha";
-import Input from "../components/Form/StyledInput";
-import Button from "../components/Button";
+import {BaseTextInput} from "../components/Form";
+import {BaseButton} from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
@@ -37,7 +37,7 @@ class Login extends Component {
 				<form onSubmit={this.handleSubmit} className='login'>
 					<div class='field'>
 						<label for='email'>E-mail</label>
-						<Input
+						<BaseTextInput
 							label='Email'
 							name='email'
 							type='email'
@@ -50,7 +50,7 @@ class Login extends Component {
 
 					<div className='field'>
 						<label for='password'>Wachtwoord</label>
-						<Input
+						<BaseTextInput
 							label='Wachtwoord'
 							name='password'
 							type='password'
@@ -67,9 +67,9 @@ class Login extends Component {
 						</Link>
 					</div>
 
-					<Button className='logbutt' type='submit'>
+					<BaseButton className='logbutt' type='submit'>
 						Inloggen
-					</Button>
+					</BaseButton>
 
 					<p className='privacy'>
 						Je gaat akkoord met het Privacy Statement van Linden-IT

@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./GlobalStyle";
-import Tabs from "./components/Tabs/Tabs";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
-import courseList from "./courses-data.json";
+import {courses} from "./data.js";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
@@ -31,7 +31,7 @@ const App = () => {
 				name='courses'
 				path='/courses'
 				component={Courses}
-				courses={courseList}
+				courses={courses}
 				/>
 
 				<Route 
@@ -48,7 +48,7 @@ const App = () => {
 			</Switch>
 			
 			<Footer>
-				<Tabs />
+				<Nav />
 			</Footer>
 		</Router>
 	);

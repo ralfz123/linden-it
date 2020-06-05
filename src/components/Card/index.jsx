@@ -1,23 +1,25 @@
 import React from "react";
 import StyledCard from './StyledCard';
-import Button from '../Button';
+import {BaseButton} from '../Button';
 import Tags from '../Tags';
 
-export default function Card({tag, content}) {
+export default function Card({tag, content, title, label}) {
 	return (
-		<BaseCard>
+		<StyledCard>
 			{tag &&
-				<CardHeader>
+				<CardHeader title={title} tag={tag} >
 					{tag}
 				</CardHeader>
 			}
 			{content &&
-				<CardContent>
+				<CardContent content={content}>
 					{content}
 				</CardContent> }
 				
-				<CardFooter></CardFooter>
-			</BaseCard>
+			<CardFooter>
+				{label}
+			</CardFooter>
+			</StyledCard>
 	)
 }
 
@@ -30,30 +32,30 @@ export const BaseCard = ({children}) => {
 }
 
 
-export const CardHeader = () => {
+export const CardHeader = ({tag,title}) => {
 	return (
-		<div className="card-header">
-			<Tags>progress</Tags>
-			<h2>Course Name</h2>
+		<div className='card-header'>
+			{tag && <Tags>{tag}</Tags>}
+
+			<h2>{title}</h2>
 		</div>
 	);
 }
-export const CardContent = () => {
+export const CardContent = ({content}) => {
 	return (
 		<div className="card-content">
-			<p><b>Short Intro</b></p>
+			<p><b>Korte Introductie</b></p>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-				dignissim tempor quam, vel vestibulum dolor tempor a.{" "}
+				{content}
 			</p>
 		</div>
 	);
 };
 
-export const CardFooter = (props) => {
+export const CardFooter = ({children}) => {
 	return (
 		<div className='card-footer'>
-			<Button>Cursus Starten</Button>
+			<BaseButton label={children} />
 		</div>
 	);
 };

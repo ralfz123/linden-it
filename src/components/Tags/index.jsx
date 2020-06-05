@@ -8,6 +8,7 @@ position:absolute;
     color:var(--color-light);
     border-radius:5px;
     left:-20px;
+    font-size:12px;
 `;
 
 class Tags extends Component {

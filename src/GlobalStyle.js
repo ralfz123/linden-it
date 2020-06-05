@@ -62,7 +62,6 @@ const GlobalStyle = createGlobalStyle`
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
-        
         -webkit-overflow-scrolling: touch;
     }
     footer {

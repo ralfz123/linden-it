@@ -32,7 +32,7 @@ const Tab = styled.div`
 	}
 `;
 
-export default class Tabs extends Component {
+export default class Nav extends Component {
 	render() {
 		return (
 			<Tab>
