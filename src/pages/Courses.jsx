@@ -5,18 +5,16 @@ import Title from "../components/Title";
 import Card from '../components/Card';
 
 class Courses extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "Mijn cursussen",
-		};
+	state = {
+		title: 'Mijn Cursussen'
 	}
 
 	render() {
+		const { title } = this.state
 		return (
 			<>
 				<Header>
-					<Title title={this.state.title} />
+					<Title title={title} />
 				</Header>
 				<Content>
 					<p>Segmented Controll</p>

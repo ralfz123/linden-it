@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-import StyledButton from './StyledButton'
+import React from 'react'
+import { StyledBaseButton, StyledLoginButton } from './StyledButton'
 
-class Button extends Component {
-	render() {
-		return (
-			<StyledButton onClick={this.props.onCLick}>
-				{this.props.children}
-			</StyledButton>
-		);
-	}
-}
+export const BaseButton = ({ onClick, label }) => {
+	return (
+		<StyledBaseButton onClick={onClick}>
+			{label}
+		</StyledBaseButton>
+	);
+};
 
-
-
-export default Button;
+export const LoginButton = ({ onClick, label }) => {
+	return (
+		<StyledLoginButton onClick={onClick}>
+			{label}
+		</StyledLoginButton>
+	);
+};

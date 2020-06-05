@@ -1,34 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import StyledCard from './StyledCard';
 import Button from '../Button';
 import Tags from '../Tags';
 
-class Card extends Component {
-	 constructor(props) {
-    super(props);
-    this.state = {
-      title: "Course",
-      password: ""
-    };
-}
-	render() {
-		return (
-			<StyledCard>
+export default function Card({tag, content}) {
+	return (
+		<BaseCard>
+			{tag &&
 				<CardHeader>
-					
+					{tag}
 				</CardHeader>
+			}
+			{content &&
 				<CardContent>
-					<p>Course Page Content</p>
-				</CardContent>
+					{content}
+				</CardContent> }
+				
 				<CardFooter></CardFooter>
-			</StyledCard>
-		);
-	}
+			</BaseCard>
+	)
 }
-export default Card;
+
+export const BaseCard = ({children}) => {
+	return (
+		<StyledCard>
+			{children}
+		</StyledCard>
+	)
+}
 
 
-const CardHeader = () => {
+export const CardHeader = () => {
 	return (
 		<div className="card-header">
 			<Tags>progress</Tags>
@@ -36,7 +38,7 @@ const CardHeader = () => {
 		</div>
 	);
 }
-const CardContent = () => {
+export const CardContent = () => {
 	return (
 		<div className="card-content">
 			<p><b>Short Intro</b></p>
@@ -48,7 +50,7 @@ const CardContent = () => {
 	);
 };
 
-const CardFooter = (props) => {
+export const CardFooter = (props) => {
 	return (
 		<div className='card-footer'>
 			<Button>Cursus Starten</Button>

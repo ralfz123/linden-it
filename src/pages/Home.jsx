@@ -6,19 +6,16 @@ import Button from "../components/Button";
 import Card from "../components/Card"
 
 class Home extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "Home",
-		}
+	state = {
+		title: 'Home'
 	}
 	
-	
 	render() {
+		const { title } = this.state;
 		return (
 			<>
 				<Header>
-					<Title title={this.state.title} />
+					<Title title={title} />
 				</Header>
 				<Content>
 					<p>Home Page Content</p>
