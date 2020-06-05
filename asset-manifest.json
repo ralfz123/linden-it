@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/linden-it/static/js/main.00883d44.chunk.js",
+    "main.js.map": "/linden-it/static/js/main.00883d44.chunk.js.map",
+    "runtime-main.js": "/linden-it/static/js/runtime-main.5d79f933.js",
+    "runtime-main.js.map": "/linden-it/static/js/runtime-main.5d79f933.js.map",
+    "static/js/2.4fbd4b4f.chunk.js": "/linden-it/static/js/2.4fbd4b4f.chunk.js",
+    "static/js/2.4fbd4b4f.chunk.js.map": "/linden-it/static/js/2.4fbd4b4f.chunk.js.map",
+    "index.html": "/linden-it/index.html",
+    "precache-manifest.943d56c7e4fe0d73bb97d04cb7de0c4a.js": "/linden-it/precache-manifest.943d56c7e4fe0d73bb97d04cb7de0c4a.js",
+    "service-worker.js": "/linden-it/service-worker.js",
+    "static/js/2.4fbd4b4f.chunk.js.LICENSE.txt": "/linden-it/static/js/2.4fbd4b4f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d79f933.js",
+    "static/js/2.4fbd4b4f.chunk.js",
+    "static/js/main.00883d44.chunk.js"
+  ]
+}
