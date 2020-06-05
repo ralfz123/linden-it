@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import Title from "../components/Title";
+import Card from '../components/Card';
 
 class Courses extends Component {
 	constructor(props) {
@@ -18,7 +19,9 @@ class Courses extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<p>Course Page Content</p>
+					<p>Segmented Controll</p>
+					<Card />
+					<Card />
 				</Content>
 			</>
 		);
