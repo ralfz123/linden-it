@@ -1,5 +1,4 @@
 {
-  "homepage": "http://ralfz123.github.io/linden-it",
   "name": "linden-it",
   "version": "1.0.0",
   "description": "A school project for Linden-IT",
@@ -49,6 +48,7 @@
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "segmented-control-react": "^2.1.3",
     "source-map-support": "^0.5.19",
     "styled-normalize": "^8.0.7",
     "typescript": "^3.9.3"

@@ -13,43 +13,27 @@ import Login from "./pages/Login";
 const App = () => {
 	return (
 		<Router>
-			<GlobalStyle />
 			<Switch>
-				<Route 
-				name='login' 
-				path='/login' 
-				component={Login}
-				/>
-				
-				<Route 
-				name='home' 
-				exact path='/' 
-				component={Home}
-				/>
+				<Route name='login' path='/login' component={Login} />
+
+				<Route name='home' exact path='/' component={Home} />
 
 				<Route
-				name='courses'
-				path='/courses'
-				component={Courses}
-				courses={courses}
+					name='courses'
+					path='/courses'
+					component={Courses}
+					courses={courses}
 				/>
 
-				<Route 
-				name='agenda' 
-				path='/agenda' 
-				component={Agenda} 
-				/>
+				<Route name='agenda' path='/agenda' component={Agenda} />
 
-				<Route 
-				name='settings' 
-				path='/settings' 
-				component={Settings} 
-				/>
+				<Route name='settings' path='/settings' component={Settings} />
 			</Switch>
-			
+
 			<Footer>
 				<Nav />
 			</Footer>
+			<GlobalStyle />
 		</Router>
 	);
 };

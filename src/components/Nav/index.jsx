@@ -48,7 +48,7 @@ export default class Nav extends Component {
 					<FaRegCalendar className='react-icons' />
 					<span>Agenda</span>
 				</NavLink>
-				<NavLink to='/settings'>
+				<NavLink to='/login'>
 					<FiSettings className='react-icons' />
 					<span>Settings</span>
 				</NavLink>

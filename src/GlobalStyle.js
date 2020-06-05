@@ -80,10 +80,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
 
-${'' /* Login page styles */}
+${"" /* Login page styles */}
 
     .login-wrapper {
-        ${'' /* login */}
+        ${"" /* login */}
     }
     .login {
         text-align: center;
@@ -161,9 +161,42 @@ ${'' /* Login page styles */}
          cursor: pointer;
 }
 
-${'' /* Card Styles */}
+${"" /* Segmented controll */}
+.r-segmented-control {
+    border-bottom:0;
 
+ ul {
+     
+    background-color:var(--color-gray-light);
+    border-radius:5px;
+    height:40px;
 
+    li {
+        border:0px solid black;
+        background-color:var(--color-gray-light);
+        border-radius:0;
+        color:var(--color-gray-dark);
+    }
+
+    li.segment {
+        height:auto;
+        font-size:11px;
+        ${'' /* border-right: 1px solid var(--color-grayLightTwo); */}
+    }
+    li.segment.selected {
+        background-color:var(--color-light);
+        border-radius: 5px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        transition:.5s;
+        z-index:1;
+        font-weight:700;
+
+    }
+}
+}
+.r-segmented-control > ul > li:last-of-type {
+    border-right:0;
+}
 `;
 
 export default GlobalStyle;

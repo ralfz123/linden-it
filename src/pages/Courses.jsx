@@ -1,9 +1,18 @@
 import React, { Component } from "react";
+
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import Title from "../components/Title";
 import PropTypes from "prop-types";
 import Card from '../components/Card';
+import {SegmentedControl} from "segmented-control-react";
+
+const segments = [
+	{ name: "ALL" },
+	{ name: "NEW" },
+	{ name: "IN PROGRESS" },
+	{ name: "FINISHED" },
+];
 
 class Courses extends Component {
 	static defaultProps = {
@@ -25,23 +34,33 @@ class Courses extends Component {
 		],
 	};
 
+
 	state = {
 		title: "Mijn Cursussen",
 		courseTitle: "Titel",
 		tag: "tag",
 		content: "short description",
+		segments: segments,
+		selected: 0,
 	};
+	
 	render() {
 		console.log(this.state);
 		const { title } = this.state;
 		const { courses } = this.props;
+		
 		return (
 			<>
 				<Header>
 					<Title title={title} />
 				</Header>
 				<Content>
-					<p>Segmented Controll</p>
+					<SegmentedControl
+						segments={this.state.segments}
+						selected={this.state.selected}
+						variant='segment'
+						// onChangeSegment={handleChange}
+					/>
 					{courses.map((course, i) => (
 						<Card
 							key={i}
@@ -56,6 +75,8 @@ class Courses extends Component {
 		);
 	}
 }
+
+
 Courses.propTypes = {
 	courses: PropTypes.array,
 }
