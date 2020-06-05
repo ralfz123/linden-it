@@ -31,13 +31,14 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body, #root {
-        ${"" /* height:100vh; */}
+        height:100%;
         display:flex;
         flex-direction:column;
         margin:0;
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
+        
   
     }
     header{
@@ -54,11 +55,10 @@ const GlobalStyle = createGlobalStyle`
     }
     main {
         position:relative;
-        width:100%;
-        min-height:100vh;
+       flex-grow:1;
         box-sizing:border-box;
         z-index:0;
-        margin:0 auto;
+        
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
@@ -79,6 +79,10 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
     }
+
+
+${'' /* Login page styles */}
+
     .login-wrapper {
         ${'' /* login */}
     }
@@ -157,6 +161,10 @@ const GlobalStyle = createGlobalStyle`
         color: ${colors.primary};
          cursor: pointer;
 }
+
+${'' /* Card Styles */}
+
+
 `;
 
 export default GlobalStyle;

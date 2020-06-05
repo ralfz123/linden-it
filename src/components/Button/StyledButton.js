@@ -7,11 +7,10 @@ const StyledButton = styled.button`
 	color: var(--color-light);
 	border-radius: 100px;
 	min-height: 50px;
-	width: 60%;
 	height: 48px;
 	line-height: 48px;
 	text-decoration: none;
-	font-size: 14px;
+	
 	padding: 0 64px;
 	cursor: pointer;
 
