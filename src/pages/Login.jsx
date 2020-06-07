@@ -39,7 +39,7 @@ class Login extends Component {
 				<Title title={this.state.title} />
 			</Header>
 			<Content className='login-wrapper'>
-				<form onSubmit={this.handleSubmit} className='login'>
+				<form onSubmit={this.handleSubmit} className='login' action='/'>
 					<div className='field'>
 						<label for='email'>E-mail</label>
 						<Input
