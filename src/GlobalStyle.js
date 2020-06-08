@@ -41,7 +41,6 @@ const GlobalStyle = createGlobalStyle`
   
     }
     header{
-        
         position: sticky;
         left: 0;
         right: 0;
@@ -62,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
-        
         -webkit-overflow-scrolling: touch;
     }
     footer {
@@ -81,7 +79,6 @@ const GlobalStyle = createGlobalStyle`
     }
     .login {
         text-align: center;
-        
         /* display: flex; */
         /* flex-direction: row; */
         /* flex-wrap: wrap; */
@@ -111,7 +108,6 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: ${colors.primary};
         margin: 0 auto;
-        
         position: relative;
         
     }
@@ -141,7 +137,6 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
         padding: 20px 10px;
         min-width: 50%;
-
     }
     .eye {}
     i {
@@ -149,11 +144,10 @@ const GlobalStyle = createGlobalStyle`
         top: 225px;
         right: 60px;
         cursor: pointer; 
-        
     }
     i:hover {
         color: ${colors.primary};
-         cursor: pointer;
+        cursor: pointer;
 }
 `;
 
