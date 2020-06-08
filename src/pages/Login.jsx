@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
@@ -8,8 +8,8 @@ import { BaseButton } from "../components/Button";
 import { LoginButton } from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
-import { Popup } from '../components/Popup';
-import { AiOutlineExclamationCircle } from 'react-icons/ai'
+import { Popup } from "../components/Popup";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 // import { AiOutlineEye } from 'react-icons/ai';
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
@@ -30,7 +30,7 @@ class Login extends Component {
 			password: "",
 			title: "Inloggen",
 			emailError: "",
-			passwordError: "",
+			passwordError: ""
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +50,8 @@ class Login extends Component {
 
 		// email error
 		if (!this.state.email.includes("@")) {
-			emailError = <AiOutlineExclamationCircle /> + "Email is incorrect";
+			// emailError = <Fragment><AiOutlineExclamationCircle className="error-icon" value={{ style: { fontSize: '2400px' } }} /> "Email is incorrect"</Fragment>  ;
+			emailError = "Email is incorrect";
 			console.log("Bevat geen '@' !");
 		}
 
@@ -67,6 +68,7 @@ class Login extends Component {
 	};
 
 	handleSubmit(event) {
+		event.preventDefault(event);
 		const { email, password } = this.state;
 		const isValid = this.validate();
 		if (isValid) {
@@ -107,15 +109,16 @@ class Login extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-				<Popup>
-					<div style={{ fontSize: 12, color: "red" }}>
-							 {this.state.emailError}
+					<Popup>
+						<div className="popup-error-text">
+							{this.state.emailError}
 						</div>
 
-						<div style={{ fontSize: 12, color: "red" }}>
+						<div className="popup-error-text">
+						{/* <div style={{ fontSize: 12, color: "red" }}> */}
 							{this.state.passwordError}
 						</div>
-				</Popup>
+					</Popup>
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
@@ -165,10 +168,7 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<LoginButton 
-						label='Inloggen' 
-						type='submit' 
-						/>
+						<LoginButton label='Inloggen' type='submit' />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van

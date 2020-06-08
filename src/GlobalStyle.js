@@ -7,8 +7,8 @@ export const colors = {
 	gray: "#989898",
 	grayDark: "#3b3b3b",
 	grayLight: "#f4f4f4",
-    grayLightTwo: "#C4C4C4",
-    red: "#D21919;"
+	grayLightTwo: "#C4C4C4",
+	red: "#D21919;",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -180,7 +180,7 @@ ${"" /* Segmented controll */}
     li.segment {
         height:auto;
         font-size:11px;
-        ${'' /* border-right: 1px solid var(--color-grayLightTwo); */}
+        ${"" /* border-right: 1px solid var(--color-grayLightTwo); */}
     }
     li.segment.selected {
         background-color:var(--color-light);
@@ -195,6 +195,15 @@ ${"" /* Segmented controll */}
 }
 .r-segmented-control > ul > li:last-of-type {
     border-right:0;
+}
+.error-icon {
+    font-size: 11px;
+    display: block;
+}
+.popup-error-text {
+    color: red;
+    font-size: 12px;
+    ${"" /* width: 80%; */}
 }
 `;
 
