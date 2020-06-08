@@ -107,14 +107,7 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         padding: 10px 0px;
     }
-    input:invalid {
-        border: 1px solid #dd7777;
-        outline: none;
-    }
-    input:valid {
-        border: 1px solid #77dd77;
-        outline: none;
-    }
+  
     .link {
         text-decoration: none;
         color: ${colors.primary};
