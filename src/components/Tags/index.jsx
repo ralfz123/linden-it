@@ -3,21 +3,21 @@ import styled from "styled-components";
 
 const handleColorType = (children) => {
   switch (children) {
-    case "NEW":
-      return "#000";
-    case "danger":
-      return "color: #fff; background: #f56342;";
-    default:
-      return " #eee";
+		case "NEW":
+			return "var(--tag-new)";
+		case "IN PROGRESS":
+			return "var(--tag-progress)";
+		case "FINISHED":
+			return "var(--tag-finished)";
+		default:
+			return "var(--color-primary)";
   }
 };
 
 const CourseTag = styled.div`
 	position: absolute;
 	padding: 4px 10px;
-	background-color: ${handleColorType};
-	
-
+	background-color: ${(({children})=>handleColorType(children))};
 	color: var(--color-light);
 	border-radius: 5px;
 	left: -20px;

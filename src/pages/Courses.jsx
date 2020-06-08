@@ -24,6 +24,13 @@ class Courses extends Component {
 					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
 				label: "Open Cursus",
 			},
+			{
+				title: "MD-100",
+				tag: "FINISHED",
+				shortDescription:
+					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
+				label: "Open Cursus",
+			},
 		],
 	};
 

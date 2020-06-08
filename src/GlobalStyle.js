@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
         --color-grayLightTwo: #C4C4C4;
         --tag-new:#5DD8A4;
         --tag-progress:#FEC32E;
-        --tag-finished:##22C7E4;
+        --tag-finished:#22C7E4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
     }
