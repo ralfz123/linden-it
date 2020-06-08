@@ -7,7 +7,8 @@ export const colors = {
 	gray: "#989898",
 	grayDark: "#3b3b3b",
 	grayLight: "#f4f4f4",
-	grayLightTwo: "#C4C4C4",
+    grayLightTwo: "#C4C4C4",
+    red: "#D21919;"
 };
 
 const GlobalStyle = createGlobalStyle`

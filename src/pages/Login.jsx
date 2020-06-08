@@ -8,6 +8,8 @@ import { BaseButton } from "../components/Button";
 import { LoginButton } from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
+import { Popup } from '../components/Popup';
+import { AiOutlineExclamationCircle } from 'react-icons/ai'
 // import { AiOutlineEye } from 'react-icons/ai';
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
@@ -105,18 +107,28 @@ class Login extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<form
-						onSubmit={this.handleSubmit}
-						className='login'
-						// action='/login'
-					>
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.emailError}
+				<Popup>
+					{/* <p>Niet goed mattie</p> */}
+					<div style={{ fontSize: 12, color: "red" }}>
+							<AiOutlineExclamationCircle /> {this.state.emailError}
 						</div>
 
 						<div style={{ fontSize: 12, color: "red" }}>
 							{this.state.passwordError}
 						</div>
+				</Popup>
+					<form
+						onSubmit={this.handleSubmit}
+						className='login'
+						// action='/login'
+					>
+						{/* <div style={{ fontSize: 12, color: "red" }}>
+							<AiOutlineExclamationCircle /> {this.state.emailError}
+						</div>
+
+						<div style={{ fontSize: 12, color: "red" }}>
+							{this.state.passwordError}
+						</div> */}
 
 						<div className='field'>
 							<label for='email'>E-mail</label>
