@@ -76,7 +76,7 @@ class Login extends Component {
 				<Header>
 					<Title title={this.state.title} />
 				</Header>
-				<Content className='login-wrapper'>
+				<Content>
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
