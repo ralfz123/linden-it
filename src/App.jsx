@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./GlobalStyle";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 
 const App = () => {
 	return (
-		<Router>
+		<HashRouter>
 			<Switch>
 				<Route name='login' path='/login' component={Login} />
 
@@ -34,7 +34,7 @@ const App = () => {
 				<Nav />
 			</Footer>
 			<GlobalStyle />
-		</Router>
+		</HashRouter>
 	);
 };
 
