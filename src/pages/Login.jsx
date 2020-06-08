@@ -126,7 +126,7 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<Button className='logbutt' type='button'>
+						<Button type='submit'>
 							Inloggen
 						</Button>
 
