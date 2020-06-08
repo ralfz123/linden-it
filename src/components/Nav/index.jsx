@@ -41,13 +41,13 @@ export const Nav = ({ children }) => {
 			</NavLink>
 			<NavLink to='/courses'>
 				<RiBookLine className='react-icons' />
-				<span>Courses</span>
+				<span>Cursussen</span>
 			</NavLink>
 			<NavLink to='/agenda'>
 				<FaRegCalendar className='react-icons' />
 				<span>Agenda</span>
 			</NavLink>
-			<NavLink to='/login'>
+			<NavLink to='/settings'>
 				<FiSettings className='react-icons' />
 				<span>Settings</span>
 			</NavLink>
