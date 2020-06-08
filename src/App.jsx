@@ -9,14 +9,31 @@ import {courses} from "./data.js";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
 	return (
 		<HashRouter>
 			<Switch>
-				<Route name='login' path='/login' component={Login} />
 
-				<Route name='home' exact path='/' component={Home} />
+				<Route 
+				name='login' 
+				path='/login' 
+				component={Login}
+				/>
+
+				<Route 
+				name='reset-password' 
+				path='/reset-password' 
+				component={ResetPassword}
+				/>
+				
+				<Route 
+				name='home' 
+				exact path='/' 
+				component={Home}
+				/>
+
 
 				<Route
 					name='courses'
