@@ -8,7 +8,16 @@ import Card from '../components/Card';
 import {SegmentedControl} from "segmented-control-react";
 
 const segments = [
-	{ name: "ALL" },
+	{
+		name: "ALL",
+		courses: [{
+			title: "MD-100",
+			tag: "IN PROGRESS",
+			shortDescription:
+				"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
+			label: "Open Cursus",
+		}]
+	},
 	{ name: "NEW" },
 	{ name: "IN PROGRESS" },
 	{ name: "FINISHED" },
@@ -35,6 +44,7 @@ class Courses extends Component {
 	};
 
 
+
 	state = {
 		title: "Mijn Cursussen",
 		courseTitle: "Titel",
@@ -44,11 +54,16 @@ class Courses extends Component {
 		selected: 0,
 	};
 	
+	
+
 	render() {
 		console.log(this.state);
 		const { title } = this.state;
 		const { courses } = this.props;
-		
+		const handleChange = (index) => {
+			console.log(index);
+			console.log(this.state.segments[index].name)
+		}; 
 		return (
 			<>
 				<Header>
@@ -59,8 +74,9 @@ class Courses extends Component {
 						segments={this.state.segments}
 						selected={this.state.selected}
 						variant='segment'
-						// onChangeSegment={handleChange}
+						onChangeSegment={handleChange}
 					/>
+				
 					{courses.map((course, i) => (
 						<Card
 							key={i}
@@ -75,6 +91,7 @@ class Courses extends Component {
 		);
 	}
 }
+
 
 
 Courses.propTypes = {

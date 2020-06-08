@@ -31,7 +31,6 @@ export const BaseCard = ({children}) => {
 	)
 }
 
-
 export const CardHeader = ({tag,title}) => {
 	return (
 		<div className='card-header'>

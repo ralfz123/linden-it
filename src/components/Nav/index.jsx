@@ -45,7 +45,7 @@ export const Nav = ({ children }) => {
 				<FiCalendar className='react-icons' />
 				<span>Agenda</span>
 			</NavLink>
-			<NavLink to='/login'>
+			<NavLink to='/settings'>
 				<FiSettings className='react-icons' />
 				<span>Settings</span>
 			</NavLink>
