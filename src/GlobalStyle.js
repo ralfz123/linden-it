@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 export const colors = {
-  primary: "#FC7928",
-  light: "#ffffff",
-  dark: "#000000",
-  gray: "#989898",
-  grayDark: "#3b3b3b",
-  grayLight: "#f4f4f4",
-  grayLightTwo: "#C4C4C4"
+	primary: "#FC7928",
+	light: "#ffffff",
+	dark: "#000000",
+	gray: "#989898",
+	grayDark: "#3b3b3b",
+	grayLight: "#f4f4f4",
+	grayLightTwo: "#C4C4C4",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -106,7 +106,15 @@ const GlobalStyle = createGlobalStyle`
         text-align: left;
         width: 100%;
         padding: 10px 0px;
-}
+    }
+    input:invalid {
+        border: 1px solid #dd7777;
+        outline: none;
+    }
+    input:valid {
+        border: 1px solid #77dd77;
+        outline: none;
+    }
     .link {
         text-decoration: none;
         color: ${colors.primary};
