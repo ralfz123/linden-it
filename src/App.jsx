@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./GlobalStyle";
-import Tabs from "./components/Tabs/Tabs";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
-import courseList from "./courses-data.json";
+import {courses} from "./data.js";
 import Agenda from "./pages/Agenda";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
@@ -13,9 +13,9 @@ import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
 	return (
-		<Router>
-			<GlobalStyle />
+		<HashRouter>
 			<Switch>
+
 				<Route 
 				name='login' 
 				path='/login' 
@@ -34,30 +34,24 @@ const App = () => {
 				component={Home}
 				/>
 
+
 				<Route
-				name='courses'
-				path='/courses'
-				component={Courses}
-				courses={courseList}
+					name='courses'
+					path='/courses'
+					component={Courses}
+					courses={courses}
 				/>
 
-				<Route 
-				name='agenda' 
-				path='/agenda' 
-				component={Agenda} 
-				/>
+				<Route name='agenda' path='/agenda' component={Agenda} />
 
-				<Route 
-				name='settings' 
-				path='/settings' 
-				component={Settings} 
-				/>
+				<Route name='settings' path='/settings' component={Settings} />
 			</Switch>
-			
+
 			<Footer>
-				<Tabs />
+				<Nav />
 			</Footer>
-		</Router>
+			<GlobalStyle />
+		</HashRouter>
 	);
 };
 

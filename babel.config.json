@@ -8,7 +8,7 @@
 	        "babel-plugin-styled-components",
           {
             "ssr": false,
-            "fileName": false,
+            "fileName": true,
             "minify": false
           }
         ]

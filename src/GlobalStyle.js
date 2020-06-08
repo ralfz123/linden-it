@@ -31,13 +31,14 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body, #root {
-        ${"" /* height:100vh; */}
+        height:100%;
         display:flex;
         flex-direction:column;
         margin:0;
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
+        
   
     }
     header{
@@ -53,11 +54,10 @@ const GlobalStyle = createGlobalStyle`
     }
     main {
         position:relative;
-        width:100%;
-        min-height:100vh;
+       flex-grow:1;
         box-sizing:border-box;
         z-index:0;
-        margin:0 auto;
+        
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
@@ -77,6 +77,15 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
     }
+
+
+
+${"" /* Login page styles */}
+
+    .login-wrapper {
+        ${"" /* login */}
+    }
+
     .login {
         text-align: center;
         /* display: flex; */
@@ -148,6 +157,43 @@ const GlobalStyle = createGlobalStyle`
     i:hover {
         color: ${colors.primary};
         cursor: pointer;
+}
+
+${"" /* Segmented controll */}
+.r-segmented-control {
+    border-bottom:0;
+
+ ul {
+     
+    background-color:var(--color-gray-light);
+    border-radius:5px;
+    height:40px;
+
+    li {
+        border:0px solid black;
+        background-color:var(--color-gray-light);
+        border-radius:0;
+        color:var(--color-gray-dark);
+    }
+
+    li.segment {
+        height:auto;
+        font-size:11px;
+        ${'' /* border-right: 1px solid var(--color-grayLightTwo); */}
+    }
+    li.segment.selected {
+        background-color:var(--color-light);
+        border-radius: 5px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        transition:.5s;
+        z-index:1;
+        font-weight:700;
+
+    }
+}
+}
+.r-segmented-control > ul > li:last-of-type {
+    border-right:0;
 }
 `;
 

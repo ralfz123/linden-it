@@ -1,15 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const StyledMain = styled.main`
 	height:100%;
+	padding-bottom:50px;
 `;
-export default class Content extends Component {
-	render() {
+export const Content = ({children}) => {
+	
 		return (
 			<StyledMain>
-				{this.props.children}
+				{children}
 			</StyledMain>
 		)
-	}
+	
 }
+
+export default Content

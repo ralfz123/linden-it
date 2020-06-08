@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import Title from "../components/Title";
-import Button from "../components/Button";
+import {BaseButton} from "../components/Button";
 
 class Agenda extends Component {
 	constructor(props) {
@@ -21,7 +21,7 @@ class Agenda extends Component {
 				</Header>
 				<Content>
 					<p>Agenda Content</p>
-					<Button>Button</Button>
+					<BaseButton>Button</BaseButton>
 				</Content>
 			</>
 		);

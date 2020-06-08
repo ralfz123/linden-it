@@ -1,16 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import StyledFooter from './StyledFooter';
 
-class Footer extends Component {
-	render() {
-		return (
+const Footer = ({ children }) => {
+	return (
 		<StyledFooter>
-			{this.props.children}
+			{children}
 		</StyledFooter>
-		)
-	}
-}
-
-Footer.propTypes = {};
+	)
+};
 
 export default Footer;
