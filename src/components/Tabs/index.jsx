@@ -13,7 +13,7 @@ export default function TabBar({ tabs }) {
 						active={activeTab === index}
 						onClick={() => setActiveTab(index)}
 					>
-						<Title active={activeTab === index}>{tab.title}</Title>
+						{tab.title}
 					</TabButton>
 				))}
 			</TabContainer>
@@ -30,38 +30,29 @@ const TabContainer = styled.section`
 	background-color: var(--color-gray-light);
 	border-radius: 5px;
     margin:10px 0 20px;
+    padding:0 3px;
+    
 	
 `;
 const TabButton = styled.button`
-	border: 0px solid black;
+	border: 0;
 	border-radius: 5px;
 	color: var(--color-gray-dark);
 	width: 100%;
 	height: auto;
-	margin: 3px;
-	display: flex;
-	flex-direction: column;
+	margin: 3px 0;
 	align-items: center;
 	position: relative;
 	transition: 0.3s;
-	font-size: 12px;
+	padding: 0;
+	overflow: auto;
+	font-size: 11px;
 	font-weight: ${(props) => (props.active ? "700" : "500")};
 	box-shadow: ${(props) =>
-		props.active ? "0px 1px 4px rgba(0, 0, 0, 0.25)" : "0"};
+		props.active ? "1px 1px 4px rgba(0, 0, 0, 0.25)" : "0"};
+	z-index: ${(props) => (props.active ? "1" : "auto")};
 	background: ${(props) => (props.active ? "var(--color-light)" : "#f2f2f2")};
 	&:focus {
 		outline: none;
 	}
-`;
-const Title = styled.span`
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-    width:100%;
-	text-transform: uppercase;
-	font-size: 11px;
-	color: var(--color-gray-dark);
-	transition: 0.6s;
 `;

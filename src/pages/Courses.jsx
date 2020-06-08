@@ -86,19 +86,19 @@ class Courses extends Component {
 							{
 								title: "NEW",
 								render: () => (
-									<h2>Content Two renders here!</h2>
+									<p>Hier komen de nieuwe courses</p>
 								),
 							},
 							{
 								title: "IN PROGRESS",
 								render: () => (
-									<h2>Content Three renders here!</h2>
+									<p>Hier komen de in progress courses</p>
 								),
 							},
 							{
 								title: "FINISHED",
 								render: () => (
-									<h2>Content Three renders here!</h2>
+									<p>Hier komen de afgeronde courses</p>
 								),
 							},
 						]}
