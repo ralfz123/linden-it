@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { FiHome, FiSettings } from "react-icons/fi";
-import { RiBookLine } from "react-icons/ri";
-import { FaRegCalendar } from "react-icons/fa";
+import { FiHome, FiSettings, FiBook, FiCalendar } from "react-icons/fi";
 
 const Tab = styled.div`
 	display: flex;
@@ -40,11 +38,11 @@ export const Nav = ({ children }) => {
 				<span>Home</span>
 			</NavLink>
 			<NavLink to='/courses'>
-				<RiBookLine className='react-icons' />
+				<FiBook className='react-icons' />
 				<span>Courses</span>
 			</NavLink>
 			<NavLink to='/agenda'>
-				<FaRegCalendar className='react-icons' />
+				<FiCalendar className='react-icons' />
 				<span>Agenda</span>
 			</NavLink>
 			<NavLink to='/login'>
