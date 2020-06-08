@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
         --color-grayLightTwo: #C4C4C4;
+        --tag-new:#5DD8A4;
+        --tag-progress:#FEC32E;
+        --tag-finished:##22C7E4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
     }
@@ -38,9 +41,8 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        
-  
     }
+    
     header{
         
         position: sticky;
@@ -181,7 +183,7 @@ ${"" /* Segmented controll */}
     li.segment {
         height:auto;
         font-size:11px;
-        ${'' /* border-right: 1px solid var(--color-grayLightTwo); */}
+        ${"" /* border-right: 1px solid var(--color-grayLightTwo); */}
     }
     li.segment.selected {
         background-color:var(--color-light);

@@ -7,24 +7,6 @@ import PropTypes from "prop-types";
 import Card from "../components/Card";
 import TabBar from "../components/Tabs";
 
-const segments = [
-	{
-		name: "ALL",
-		courses: [
-			{
-				title: "MD-100",
-				tag: "IN PROGRESS",
-				shortDescription:
-					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
-				label: "Open Cursus",
-			},
-		],
-	},
-	{ name: "NEW" },
-	{ name: "IN PROGRESS" },
-	{ name: "FINISHED" },
-];
-
 class Courses extends Component {
 	static defaultProps = {
 		courses: [
@@ -53,7 +35,6 @@ class Courses extends Component {
 	};
 
 	render() {
-		console.log(this.state);
 		const { title } = this.state;
 		const { courses } = this.props;
 

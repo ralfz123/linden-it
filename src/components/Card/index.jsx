@@ -1,7 +1,7 @@
 import React from "react";
 import StyledCard from './StyledCard';
 import {BaseButton} from '../Button';
-import Tags from '../Tags';
+import {CourseTags} from '../Tags';
 
 export default function Card({tag, content, title, label}) {
 	return (
@@ -34,7 +34,7 @@ export const BaseCard = ({children}) => {
 export const CardHeader = ({tag,title}) => {
 	return (
 		<div className='card-header'>
-			{tag && <Tags>{tag}</Tags>}
+			{tag && <CourseTags>{tag}</CourseTags>}
 
 			<h2>{title}</h2>
 		</div>
