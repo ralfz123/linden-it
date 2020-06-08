@@ -11,20 +11,6 @@ position:absolute;
     font-size:12px;
 `;
 
-// class Tags extends Component {
-//     render() {
-//         return (
-//               <Tag>{this.props.children}</Tag>  
-//         );
-//     }
-// }
-
-
-// Tags.propTypes = {
-
-// };
-
-
 export const Tags = ({ children }) => {
     return (
         <Tag>{children}</Tag>  
