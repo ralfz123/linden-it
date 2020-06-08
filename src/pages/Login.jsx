@@ -8,6 +8,9 @@ import Button from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
+// import { Formik } from 'formik';
+// import * as Emailvalidator from 'email-validator';
+// import * as Yup from 'yup';
 
 // const initialState = {
 // 	email: "",
@@ -69,6 +72,30 @@ class Login extends Component {
 			this.setState(this.state);
 		}
 	}
+
+	// const ValidatedLoginForm = () => {
+	// 	<Formik
+	// 		initialValues={{ email: "", password: "" }}
+	// 		onSubmit={( values )}
+	// 	>
+	// 	{props => {
+	// 			const {
+	// 				values,
+	// 				touched,
+	// 				errors,
+	// 				handleChange,
+	// 				handleBlur,
+	// 				handleSubmit
+	// 			} = props;
+	// 			return (
+	// 				<div>
+	// 					<h1>Formpieee</h1>
+	// 				</div>
+	// 			);
+	// 		}
+	// 	}
+	// 	</Formik>
+	// }
 
 	render() {
 		return (
