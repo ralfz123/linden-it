@@ -4,7 +4,7 @@
 	"theme_color": "#fc7928",
 	"background_color": "#ffffff",
 	"display": "fullscreen",
-	"start_url": "/",
+	"start_url": "/linden-it",
 	"icons": [
 		{
 			"src": "images/icons/android-chrome-192x192.png",

@@ -1,38 +1,69 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
-import StyledInput from "./StyledInput";
+import { StyledBaseTextInput, StyledBaseNumberInput} from "./StyledInput";
 
 
-class Input extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <StyledInput onClick={this.props.onCLick}>
-        {this.props.children}
-      </StyledInput>
-    );
-  }
+/**
+ *
+ * Base text input element
+ *
+ * @export
+ * @param {*} { name, placeholder, value, onChange, type, children }
+ * @returns
+ */
+export function BaseTextInput ({ name, placeholder, value, onChange, type, children }) {
+  return (
+    <StyledBaseTextInput
+      value={value}
+      placeholder={placeholder}
+      name={name}
+      type={type}
+      onChange={onchange}>
+      {children}
+    </StyledBaseTextInput>
+  )
 }
 
-// Input.defaultProps = {
-//   type: "text",
-//   className: "",
-// };
+BaseTextInput.defaultProps = {
+  type: 'text'
+}
 
-// Validate/check the propTypes
-Input.propTypes = {
+BaseTextInput.propTypes = {
   name: PropTypes.string,
-  type: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(["text", "number", "password", "email"]),
+  type: PropTypes.string.isRequired,
   className: PropTypes.string,
   value: PropTypes.any,
   onChange: PropTypes.func,
 };
 
-export default Input;
+export const BaseNumberInput = ({ name, placeholder, value, onChange, type, children }) => {
+  return (
+    <StyledBaseNumberInput
+      value={value}
+      placeholder={placeholder}
+      name={name}
+      type={type}
+      onChange={onchange}>
+      {children}
+    </StyledBaseNumberInput>
+  )
+}
+
+BaseNumberInput.defaultProps = {
+  type: 'number'
+}
+
+BaseNumberInput.propTypes = {
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  value: PropTypes.any,
+  onChange: PropTypes.func,
+};
+
+
 
 
 // const FormInput = ({

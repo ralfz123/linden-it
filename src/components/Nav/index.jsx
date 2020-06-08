@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { FiHome, FiSettings } from "react-icons/fi";
@@ -32,27 +32,27 @@ const Tab = styled.div`
 	}
 `;
 
-export default class Tabs extends Component {
-	render() {
-		return (
-			<Tab>
-				<NavLink exact to='/'>
-					<FiHome className='react-icons' />
-					<span>Home</span>
-				</NavLink>
-				<NavLink to='/courses'>
-					<RiBookLine className='react-icons' />
-					<span>Courses</span>
-				</NavLink>
-				<NavLink to='/agenda'>
-					<FaRegCalendar className='react-icons' />
-					<span>Agenda</span>
-				</NavLink>
-				<NavLink to='/settings'>
-					<FiSettings className='react-icons' />
-					<span>Settings</span>
-				</NavLink>
-			</Tab>
-		);
-	}
+export const Nav = ({ children }) => {
+	return (
+		<Tab>
+			<NavLink exact to='/'>
+				<FiHome className='react-icons' />
+				<span>Home</span>
+			</NavLink>
+			<NavLink to='/courses'>
+				<RiBookLine className='react-icons' />
+				<span>Courses</span>
+			</NavLink>
+			<NavLink to='/agenda'>
+				<FaRegCalendar className='react-icons' />
+				<span>Agenda</span>
+			</NavLink>
+			<NavLink to='/login'>
+				<FiSettings className='react-icons' />
+				<span>Settings</span>
+			</NavLink>
+		</Tab>
+	);
 }
+
+export default Nav;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import Title from "../components/Title";
-import Button from "../components/Button";
+import {BaseButton} from "../components/Button";
 
 class Settings extends Component {
 	constructor(props) {
@@ -21,7 +21,7 @@ class Settings extends Component {
 				</Header>
 				<Content>
 					<p>Settings Content</p>
-					<Button>Button</Button>
+					<BaseButton>Button</BaseButton>
 				</Content>
 			</>
 		);

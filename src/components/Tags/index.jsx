@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from "styled-components";
 
 const Tag = styled.div`
@@ -8,20 +8,13 @@ position:absolute;
     color:var(--color-light);
     border-radius:5px;
     left:-20px;
+    font-size:12px;
 `;
 
-class Tags extends Component {
-    render() {
-        return (
-              <Tag>{this.props.children}</Tag>  
-        );
-    }
+export const Tags = ({ children }) => {
+    return (
+        <Tag>{children}</Tag>  
+  );
 }
-
-
-Tags.propTypes = {
-
-};
-
 
 export default Tags;

@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import {colors} from "../../GlobalStyle.js"
 
-
-const StyledInput = styled.input`
-  /* position: fixed; */
-  /* position: -webkit-sticky;*/
+export const StyledBaseTextInput = styled.input`
   left: 0;
   right: 0;
   width: 100%;
@@ -18,4 +15,8 @@ const StyledInput = styled.input`
   align-items: center;
 `;
 
-export default StyledInput;
+export const StyledBaseNumberInput = styled.input`
+  width: 100%;
+`
+
+
