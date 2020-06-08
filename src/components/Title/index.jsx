@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import StyledHeading from './StyledHeading.js'
 
 export const Title = ({ title }) => {
