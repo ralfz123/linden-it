@@ -8,6 +8,7 @@ const StyledPopup = styled.div`
 	background-color: ${colors.grayLight};
 	text-align: center;
     width: 100%;
+    display: block;
 
 	p {
 		font-family: Lato;
