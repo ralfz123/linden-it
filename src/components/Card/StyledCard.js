@@ -6,6 +6,7 @@ const StyledCard = styled.div`
     margin: 10px 20px 25px 20px ;
 
     
+    
 
 .card-header {
     background-color: var(--color-gray-light);
@@ -29,4 +30,3 @@ const StyledCard = styled.div`
     }
 `;
 export default StyledCard;
-
