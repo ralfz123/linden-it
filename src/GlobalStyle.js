@@ -34,11 +34,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body, #root {
-<<<<<<< HEAD
-        ${'' /* height:100vh; */}
-=======
         height:100%;
->>>>>>> 2a0e4d61fd2de9f52d3ab7ce8fa1ab6855015add
         display:flex;
         flex-direction:column;
         margin:0;
@@ -55,21 +51,6 @@ const GlobalStyle = createGlobalStyle`
         top: 0;
         width: 100vw;
         z-index:1;
-<<<<<<< HEAD
-        padding-left: max(8px, env(safe-area-inset-left));
-        padding-right: max(8px, env(safe-area-inset-right));
-        padding-top: max(8px, env(safe-area-inset-top)); 	
-    }
-    main {
-        min-height:100vh;
-        z-index:0;
-        background-color:var(--color-light);
-        padding-left: max(8px, env(safe-area-inset-left));
-        padding-right: max(8px, env(safe-area-inset-right));
-        padding-bottom: 100px;
-        -webkit-overflow-scrolling: touch;
-     
-=======
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
         padding-top: max(8px, env(safe-area-inset-top)); 	
@@ -79,7 +60,6 @@ const GlobalStyle = createGlobalStyle`
        flex-grow:1;
         box-sizing:border-box;
         z-index:0;
->>>>>>> 2a0e4d61fd2de9f52d3ab7ce8fa1ab6855015add
         
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
