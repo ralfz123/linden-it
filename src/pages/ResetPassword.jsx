@@ -69,9 +69,7 @@ class Login extends Component {
 						{/* <AiOutlineEye className="eye password-icon" /> */}
 					</div>
 
-					<PrimaryButton className='logbutt' type='submit'>
-						Wachtwoord opslaan
-					</PrimaryButton>
+					<PrimaryButton label="Wachtwoord opslaan" type='submit' />
 
 				</form>
 				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
