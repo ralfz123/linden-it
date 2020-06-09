@@ -25,7 +25,7 @@ const StyledPopup = styled.div`
 		color: red;
 	}
 
-	.icoontje {
+	.error-icon {
 		font-size: 30px;
 		text-align: left;
 		color: red;
@@ -35,7 +35,7 @@ const StyledPopup = styled.div`
 `;
 export const Popup = ({ children }) => {
 	return <StyledPopup>
-				<AiOutlineExclamationCircle className="icoontje"/>
+				<AiOutlineExclamationCircle className="error-icon"/>
 				{children}
 			</StyledPopup>;
 };

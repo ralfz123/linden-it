@@ -50,7 +50,6 @@ class Login extends Component {
 
 		// email error
 		if (!this.state.email.includes("@")) {
-			// emailError = <Fragment><AiOutlineExclamationCircle className="error-icon" value={{ style: { fontSize: '2400px' } }} /> "Email is incorrect"</Fragment>  ;
 			emailError = "Email is incorrect";
 			console.log("Bevat geen '@' !");
 		}
@@ -115,7 +114,6 @@ class Login extends Component {
 						</div>
 
 						<div className="popup-error-text">
-						{/* <div style={{ fontSize: 12, color: "red" }}> */}
 							{this.state.passwordError}
 						</div>
 					</Popup>
@@ -124,14 +122,6 @@ class Login extends Component {
 						className='login'
 						// action='/login'
 					>
-						{/* <div style={{ fontSize: 12, color: "red" }}>
-							<AiOutlineExclamationCircle /> {this.state.emailError}
-						</div>
-
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.passwordError}
-						</div> */}
-
 						<div className='field'>
 							<label for='email'>E-mail</label>
 							<BaseTextInput

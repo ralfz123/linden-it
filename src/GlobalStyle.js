@@ -39,8 +39,6 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        
-  
     }
     header{
         position: sticky;
@@ -58,7 +56,6 @@ const GlobalStyle = createGlobalStyle`
        flex-grow:1;
         box-sizing:border-box;
         z-index:0;
-        
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
@@ -119,7 +116,6 @@ ${"" /* Login page styles */}
         color: ${colors.primary};
         margin: 0 auto;
         position: relative;
-        
     }
     .pw-forgot {
         /* text-align:left; */
@@ -165,7 +161,6 @@ ${"" /* Segmented controll */}
     border-bottom:0;
 
  ul {
-     
     background-color:var(--color-gray-light);
     border-radius:5px;
     height:40px;
@@ -189,16 +184,11 @@ ${"" /* Segmented controll */}
         transition:.5s;
         z-index:1;
         font-weight:700;
-
     }
 }
 }
 .r-segmented-control > ul > li:last-of-type {
     border-right:0;
-}
-.error-icon {
-    font-size: 11px;
-    display: block;
 }
 .popup-error-text {
     color: red;
