@@ -18,7 +18,7 @@ export function BaseTextInput ({ name, placeholder, value, onChange, type, child
       placeholder={placeholder}
       name={name}
       type={type}
-      onChange={onchange}>
+      onChange={onChange}>
       {children}
     </StyledBaseTextInput>
   )
