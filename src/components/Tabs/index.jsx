@@ -49,7 +49,7 @@ const TabButton = styled.button`
 	font-size: 11px;
 	font-weight: ${(props) => (props.active ? "700" : "500")};
 	box-shadow: ${(props) =>
-		props.active ? "1px 1px 4px rgba(0, 0, 0, 0.25)" : "0"};
+		props.active ? "1px 1px 4px rgba(0, 0, 0, 0.25)" : ""};
 	z-index: ${(props) => (props.active ? "1" : "auto")};
 	background: ${(props) => (props.active ? "var(--color-light)" : "#f2f2f2")};
 	&:focus {
