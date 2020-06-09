@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-// import reCAPTCHA from "react-google-recaptcha";
+import reCAPTCHA from "react-google-recaptcha";
 import { BaseTextInput } from "../components/Form";
 import { BaseButton } from "../components/Button";
 import { LoginButton } from "../components/Button";
@@ -54,7 +54,7 @@ class Login extends Component {
 		}
 
 		// password error
-		if (this.state.password < 6) {
+		if (this.state.password.length < 6) {
 			passwordError = "Wachtwoord moet minimaal 6 tekens bevatten";
 		}
 
@@ -66,14 +66,24 @@ class Login extends Component {
 	};
 
 	handleSubmit(event) {
+		const recaptchaRef = React.createRef();
 		event.preventDefault(event);
+		
 		const { email, password } = this.state;
 		const isValid = this.validate();
+		const recaptchaValue = recaptchaRef.current.getValue({email, password});
+		this.props.handleSubmit(recaptchaValue);
 		if (isValid) {
 			console.log(this.state);
 			// clear form
 			this.setState(this.state);
 		}
+
+		
+	}
+
+	succesfulRecaptcha() {
+		
 	}
 
 	// const ValidatedLoginForm = () => {
@@ -108,16 +118,17 @@ class Login extends Component {
 				</Header>
 				<Content>
 					<Popup>
-						<div className="popup-error-text">
+						<div className='popup-error-text'>
 							{this.state.emailError}
 						</div>
 
-						<div className="popup-error-text">
+						<div className='popup-error-text'>
 							{this.state.passwordError}
 						</div>
 					</Popup>
 					<form
-						onSubmit={this.handleSubmit}
+						// onSubmit={this.handleSubmit}
+						onSubmit={() => {this.recaptchaRef.current.execute(); }}
 						className='login'
 						// action='/login'
 					>
@@ -156,15 +167,22 @@ class Login extends Component {
 								Wachtwoord vergeten?
 							</Link>
 						</div>
-
+						
 						<LoginButton label='Inloggen' type='submit' />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
 							Linden-IT
 						</p>
+						
+						<reCAPTCHA
+						ref={this.recaptchaRef}
+						sitekey='Your client site key'
+						onChange={this.succesfulRecaptcha}
+						size="invisible"
+					/>
 					</form>
-					{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
+					
 				</Content>
 			</>
 		);
