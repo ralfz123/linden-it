@@ -11,7 +11,7 @@ export const colors = {
 };
 
 const GlobalStyle = createGlobalStyle`
-    ${normalize}
+    ${normalize};
     :root {
         --color-primary: #FC7928;
         --color-light: #ffffff;
@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
         --color-grayLightTwo: #C4C4C4;
+        --tag-new:#5DD8A4;
+        --tag-progress:#FEC32E;
+        --tag-finished:#22C7E4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
     }
@@ -28,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--color-primary);
     }
     *, *:before, *:after {
-        box-sizing: inherit;
+        box-sizing: border-box;
     }
     body, #root {
         height:100%;
@@ -38,9 +41,8 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        
-  
     }
+    
     header{
         position: sticky;
         left: 0;
@@ -159,42 +161,7 @@ ${"" /* Login page styles */}
         cursor: pointer;
 }
 
-${"" /* Segmented controll */}
-.r-segmented-control {
-    border-bottom:0;
 
- ul {
-     
-    background-color:var(--color-gray-light);
-    border-radius:5px;
-    height:40px;
-
-    li {
-        border:0px solid black;
-        background-color:var(--color-gray-light);
-        border-radius:0;
-        color:var(--color-gray-dark);
-    }
-
-    li.segment {
-        height:auto;
-        font-size:11px;
-        ${'' /* border-right: 1px solid var(--color-grayLightTwo); */}
-    }
-    li.segment.selected {
-        background-color:var(--color-light);
-        border-radius: 5px;
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-        transition:.5s;
-        z-index:1;
-        font-weight:700;
-
-    }
-}
-}
-.r-segmented-control > ul > li:last-of-type {
-    border-right:0;
-}
 `;
 
 export default GlobalStyle;
