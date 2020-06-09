@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
@@ -9,7 +9,6 @@ import { LoginButton } from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
 import { Popup } from "../components/Popup";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
 // import { AiOutlineEye } from 'react-icons/ai';
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
