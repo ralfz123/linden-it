@@ -6,7 +6,6 @@ import Title from "../components/Title";
 import PropTypes from "prop-types";
 import Card from "../components/Card";
 import TabBar from "../components/Tabs";
-import { PrimaryButton } from "../components/Button";
 
 class Courses extends Component {
 	static defaultProps = {

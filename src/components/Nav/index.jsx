@@ -51,6 +51,6 @@ export const Nav = ({ children }) => {
 			</NavLink>
 		</Tab>
 	);
-}
+};
 
 export default Nav;

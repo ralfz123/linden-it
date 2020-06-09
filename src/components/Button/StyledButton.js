@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "../../GlobalStyle.js"
+import { colors } from "../../GlobalStyle.js";
 
 export const StyledPrimaryButton = styled.button`
 	background-color: ${colors.primary};
@@ -10,7 +10,7 @@ export const StyledPrimaryButton = styled.button`
 	height: 48px;
 	line-height: 48px;
 	text-decoration: none;
-	
+
 	padding: 0 64px;
 	cursor: pointer;
 
@@ -21,11 +21,11 @@ export const StyledPrimaryButton = styled.button`
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
-background-color: ${colors.light};
-			color: ${colors.primary};
+	background-color: ${colors.light};
+	color: ${colors.primary};
 
-			:hover {
-				background-color: ${colors.primary};
-				color: ${colors.light};
-			}
-`
+	:hover {
+		background-color: ${colors.primary};
+		color: ${colors.light};
+	}
+`;

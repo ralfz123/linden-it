@@ -18,16 +18,14 @@ export const StyledBaseTextInput = styled.input`
 
 	:invalid {
 		outline: none;
-    border: 1px solid #dd7777;
+		border: 1px solid #dd7777;
 	}
 	:valid {
 		outline: none;
-    border: 1px solid #77dd77;
+		border: 1px solid #77dd77;
 	}
 `;
 
 export const StyledBaseNumberInput = styled.input`
-  width: 100%;
-`
-
-
+	width: 100%;
+`;
