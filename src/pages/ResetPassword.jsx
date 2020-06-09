@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import Input from "../components/Form/StyledInput";
-import Button from "../components/Button";
+import {BaseTextInput} from '../components/Form';
+import {BaseButton} from "../components/Button";
+import {LoginButton} from "../components/Button";
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
 
@@ -39,7 +40,7 @@ class Login extends Component {
 				<form onSubmit={this.handleSubmit} className='login' method='POST'>
 					<div className='field'>
 						<label for='password'>Nieuw wachtwoord</label>
-						<Input
+						<BaseTextInput
 							label='Wachtwoord'
 							name='password'
 							type='password'
@@ -55,7 +56,7 @@ class Login extends Component {
 
                     <div className='field'>
 						<label for='password'>Bevestig nieuw wachtwoord</label>
-						<Input
+						<BaseTextInput
 							label='Wachtwoord'
 							name='password'
 							type='password'
@@ -69,9 +70,9 @@ class Login extends Component {
 						{/* <AiOutlineEye className="eye password-icon" /> */}
 					</div>
 
-					<Button className='logbutt' type='submit'>
+					<BaseButton className='logbutt' type='submit'>
 						Wachtwoord opslaan
-					</Button>
+					</BaseButton>
 
 				</form>
 				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}

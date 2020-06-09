@@ -8,6 +8,7 @@ export const colors = {
 	grayDark: "#3b3b3b",
 	grayLight: "#f4f4f4",
 	grayLightTwo: "#C4C4C4",
+	red: "#D21919;",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -41,7 +42,6 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-  
     }
     
     header{
@@ -60,7 +60,6 @@ const GlobalStyle = createGlobalStyle`
        flex-grow:1;
         box-sizing:border-box;
         z-index:0;
-        
         background-color:var(--color-light);
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
@@ -95,7 +94,7 @@ ${"" /* Login page styles */}
         /* flex-direction: row; */
         /* flex-wrap: wrap; */
         /* justify-content: center; */
-        padding-top:4em;
+        padding-top: 4em;
         margin: auto;
     }
     .field {
@@ -121,7 +120,6 @@ ${"" /* Login page styles */}
         color: ${colors.primary};
         margin: 0 auto;
         position: relative;
-        
     }
     .pw-forgot {
         /* text-align:left; */

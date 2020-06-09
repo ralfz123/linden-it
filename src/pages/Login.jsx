@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-// import reCAPTCHA from "react-google-recaptcha";
-import Input from "../components/Form/StyledInput";
-import Button from "../components/Button";
+import { BaseTextInput } from "../components/Form";
+import { BaseButton } from "../components/Button";
+import { LoginButton } from "../components/Button";
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
+import { Popup } from "../components/Popup";
 // import { AiOutlineEye } from 'react-icons/ai';
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
@@ -27,7 +28,7 @@ class Login extends Component {
 			password: "",
 			title: "Inloggen",
 			emailError: "",
-			passwordError: "",
+			passwordError: ""
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,7 +53,7 @@ class Login extends Component {
 		}
 
 		// password error
-		if (this.state.password < 6) {
+		if (this.state.password.length < 6) {
 			passwordError = "Wachtwoord moet minimaal 6 tekens bevatten";
 		}
 
@@ -64,6 +65,7 @@ class Login extends Component {
 	};
 
 	handleSubmit(event) {
+		event.preventDefault(event);
 		const { email, password } = this.state;
 		const isValid = this.validate();
 		if (isValid) {
@@ -104,25 +106,26 @@ class Login extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
+					<Popup>
+						<div className='popup-error-text'>
+							{this.state.emailError}
+						</div>
+
+						<div className='popup-error-text'>
+							{this.state.passwordError}
+						</div>
+					</Popup>
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
 						// action='/login'
 					>
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.emailError}
-						</div>
-
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.passwordError}
-						</div>
-
 						<div className='field'>
 							<label for='email'>E-mail</label>
-							<Input
+							<BaseTextInput
 								label='Email'
 								name='email'
-								// type='email'
+								type='email'
 								onChange={this.handleChange}
 								placeholder='E-mail'
 								value={this.state.email}
@@ -132,10 +135,10 @@ class Login extends Component {
 
 						<div className='field'>
 							<label for='password'>Wachtwoord</label>
-							<Input
+							<BaseTextInput
 								label='Wachtwoord'
 								name='password'
-								// type='password'
+								type='password'
 								onChange={this.handleChange}
 								placeholder='Wachtwoord'
 								value={this.state.password}
@@ -152,17 +155,16 @@ class Login extends Component {
 								Wachtwoord vergeten?
 							</Link>
 						</div>
-
-						<Button type='submit'>
-							Inloggen
-						</Button>
+						
+						<LoginButton label='Inloggen' type='submit' />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
 							Linden-IT
 						</p>
+						
 					</form>
-					{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
+					
 				</Content>
 			</>
 		);
