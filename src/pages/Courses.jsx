@@ -44,7 +44,9 @@ class Courses extends Component {
 	render() {
 		const { title } = this.state;
 		const { courses } = this.props;
-
+		const coursesNew = courses.filter(course => course.tag === "NEW")
+		const coursesInProgress = courses.filter((course) => course.tag === "IN PROGRESS")
+		const coursesFinished = courses.filter((course) => course.tag === "FINISHED")
 		return (
 			<>
 				<Header>
@@ -74,19 +76,55 @@ class Courses extends Component {
 							{
 								title: "NEW",
 								render: () => (
-									<p>Hier komen de nieuwe courses</p>
+									<>
+										{coursesNew.map((course, i) => (
+											<Card
+												key={i}
+												title={course.title}
+												tag={course.tag}
+												content={
+													course.shortDescription
+												}
+												label={course.label}
+											/>
+										))}
+									</>
 								),
 							},
 							{
 								title: "IN PROGRESS",
 								render: () => (
-									<p>Hier komen de in progress courses</p>
+									<>
+										{coursesInProgress.map((course, i) => (
+											<Card
+												key={i}
+												title={course.title}
+												tag={course.tag}
+												content={
+													course.shortDescription
+												}
+												label={course.label}
+											/>
+										))}
+									</>
 								),
 							},
 							{
 								title: "FINISHED",
 								render: () => (
-									<p>Hier komen de afgeronde courses</p>
+									<>
+										{coursesFinished.map((course, i) => (
+											<Card
+												key={i}
+												title={course.title}
+												tag={course.tag}
+												content={
+													course.shortDescription
+												}
+												label={course.label}
+											/>
+										))}
+									</>
 								),
 							},
 						]}
