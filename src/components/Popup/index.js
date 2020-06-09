@@ -9,10 +9,10 @@ const StyledPopup = styled.div`
 	background-color: ${colors.grayLight};
 	text-align: left;
 	width: 100%;
-	display: block;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 
 
 	p {

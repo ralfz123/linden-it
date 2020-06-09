@@ -203,7 +203,7 @@ ${"" /* Segmented controll */}
 .popup-error-text {
     color: red;
     font-size: 12px;
-    ${"" /* width: 80%; */}
+    margin: 2px 0px;
 }
 `;
 
