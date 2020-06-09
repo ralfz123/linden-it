@@ -12,6 +12,9 @@ Er is aan ons de opdracht gegeven om een app te maken voor Linden-IT. Bij dit be
 
 **Linden-IT** is built, using:
 
+- [NPM](https://www.npmjs.com/)
+- [React framework](https://reactjs.org/)
+- [Styled components](https://styled-components.com/)
 ## :gear: Install
 
 1: Clone the repository:
@@ -31,15 +34,10 @@ npm install
 1. Run the app
 
 ```bash
-npm run startdev
+npm start
 ```
 
-2: To use the app, go to `http://localhost:8000/` in your browser.  
- (:heavy_exclamation_mark: Ask me the link to connect to my database :heavy_exclamation_mark:)
-
-3: Use the Inspector by pressing Cmd + Option + I (Mac) or F12 (Windows). Then click on the button to change your screen to mobile (iPhone 6/7/8). The app currently works only on Mobile Device. That's it! :white_check_mark:  
- <img src="https://github.com/ralfz123/prototype_datingapp/blob/master/docs/readme/mobileinspect.png?raw=true" width="900" />
-
+2: To use the app, go to `http://localhost:3000/` in your browser. Voila!
 ## :chart_with_upwards_trend: Database structure
 
 ## :file_folder: Links resources

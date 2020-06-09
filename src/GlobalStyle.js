@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 export const colors = {
-  primary: "#FC7928",
-  light: "#ffffff",
-  dark: "#000000",
-  gray: "#989898",
-  grayDark: "#3b3b3b",
-  grayLight: "#f4f4f4",
-  grayLightTwo: "#C4C4C4"
+	primary: "#FC7928",
+	light: "#ffffff",
+	dark: "#000000",
+	gray: "#989898",
+	grayDark: "#3b3b3b",
+	grayLight: "#f4f4f4",
+	grayLightTwo: "#C4C4C4",
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -44,7 +44,6 @@ const GlobalStyle = createGlobalStyle`
     }
     
     header{
-        
         position: sticky;
         left: 0;
         right: 0;
@@ -82,14 +81,15 @@ const GlobalStyle = createGlobalStyle`
     }
 
 
+
 ${"" /* Login page styles */}
 
     .login-wrapper {
         ${"" /* login */}
     }
+
     .login {
         text-align: center;
-        
         /* display: flex; */
         /* flex-direction: row; */
         /* flex-wrap: wrap; */
@@ -113,12 +113,12 @@ ${"" /* Login page styles */}
         text-align: left;
         width: 100%;
         padding: 10px 0px;
-}
+    }
+  
     .link {
         text-decoration: none;
         color: ${colors.primary};
         margin: 0 auto;
-        
         position: relative;
         
     }
@@ -148,7 +148,6 @@ ${"" /* Login page styles */}
         text-align: center;
         padding: 20px 10px;
         min-width: 50%;
-
     }
     .eye {}
     i {
@@ -156,12 +155,13 @@ ${"" /* Login page styles */}
         top: 225px;
         right: 60px;
         cursor: pointer; 
-        
     }
     i:hover {
         color: ${colors.primary};
-         cursor: pointer;
-    }
+        cursor: pointer;
+}
+
+
 `;
 
 export default GlobalStyle;
