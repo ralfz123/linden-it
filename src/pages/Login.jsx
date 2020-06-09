@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import reCAPTCHA from "react-google-recaptcha";
 import { BaseTextInput } from "../components/Form";
 import { BaseButton } from "../components/Button";
 import { LoginButton } from "../components/Button";
@@ -66,24 +65,14 @@ class Login extends Component {
 	};
 
 	handleSubmit(event) {
-		const recaptchaRef = React.createRef();
 		event.preventDefault(event);
-		
 		const { email, password } = this.state;
 		const isValid = this.validate();
-		const recaptchaValue = recaptchaRef.current.getValue({email, password});
-		this.props.handleSubmit(recaptchaValue);
 		if (isValid) {
 			console.log(this.state);
 			// clear form
 			this.setState(this.state);
 		}
-
-		
-	}
-
-	succesfulRecaptcha() {
-		
 	}
 
 	// const ValidatedLoginForm = () => {
@@ -127,8 +116,7 @@ class Login extends Component {
 						</div>
 					</Popup>
 					<form
-						// onSubmit={this.handleSubmit}
-						onSubmit={() => {this.recaptchaRef.current.execute(); }}
+						onSubmit={this.handleSubmit}
 						className='login'
 						// action='/login'
 					>
@@ -175,12 +163,6 @@ class Login extends Component {
 							Linden-IT
 						</p>
 						
-						<reCAPTCHA
-						ref={this.recaptchaRef}
-						sitekey='Your client site key'
-						onChange={this.succesfulRecaptcha}
-						size="invisible"
-					/>
 					</form>
 					
 				</Content>
