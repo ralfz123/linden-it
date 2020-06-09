@@ -32,7 +32,6 @@ const Tag = styled.div`
 `;
 
 export const CourseTags = ({ children }) => {
-    console.log(handleColorType(children))
 	return <CourseTag>{children}</CourseTag>;
 };
 
