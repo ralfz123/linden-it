@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
+  
     }
     
     header{

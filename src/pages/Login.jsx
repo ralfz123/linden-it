@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import { BaseTextInput } from "../components/Form";
-import { BaseButton } from "../components/Button";
-import { LoginButton } from "../components/Button";
-// import StyledLink from "../components/Link/Link";
+import {BaseTextInput} from "../components/Form/";
+import {PrimaryButton} from "../components/Button";
 import { Link } from "react-router-dom";
 import { Popup } from "../components/Popup";
-// import { AiOutlineEye } from 'react-icons/ai';
+
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
 // import * as Yup from 'yup';
@@ -155,8 +153,8 @@ class Login extends Component {
 								Wachtwoord vergeten?
 							</Link>
 						</div>
-						
-						<LoginButton label='Inloggen' type='submit' />
+
+						<PrimaryButton type='submit' label="Inloggen" />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
@@ -164,7 +162,7 @@ class Login extends Component {
 						</p>
 						
 					</form>
-					
+
 				</Content>
 			</>
 		);
