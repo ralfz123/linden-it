@@ -3,10 +3,8 @@ import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
-import {BaseButton} from "../components/Button";
-// import StyledLink from "../components/Link/Link";
+import {PrimaryButton} from "../components/Button";
 import { Link } from "react-router-dom";
-// import { AiOutlineEye } from 'react-icons/ai';
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
 // import * as Yup from 'yup';
@@ -152,16 +150,13 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<BaseButton type='submit'>
-							Inloggen
-						</BaseButton>
+						<PrimaryButton type='submit' label="Inloggen" />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
 							Linden-IT
 						</p>
 					</form>
-					{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
 				</Content>
 			</>
 		);

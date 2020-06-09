@@ -3,7 +3,7 @@ import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
-import {BaseButton} from "../components/Button";
+import {PrimaryButton} from "../components/Button";
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
 
@@ -69,9 +69,9 @@ class Login extends Component {
 						{/* <AiOutlineEye className="eye password-icon" /> */}
 					</div>
 
-					<BaseButton className='logbutt' type='submit'>
+					<PrimaryButton className='logbutt' type='submit'>
 						Wachtwoord opslaan
-					</BaseButton>
+					</PrimaryButton>
 
 				</form>
 				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {colors} from "../../GlobalStyle.js"
 
-export const StyledBaseButton = styled.button`
+export const StyledPrimaryButton = styled.button`
 	background-color: ${colors.primary};
 	border: 2px solid ${colors.primary};
-	color: var(--color-light);
+	color: white;
 	border-radius: 100px;
 	min-height: 50px;
 	height: 48px;
@@ -20,19 +20,9 @@ export const StyledBaseButton = styled.button`
 	}
 `;
 
-export const StyledLoginButton = styled(StyledBaseButton)`
+export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 background-color: ${colors.light};
 			color: ${colors.primary};
-
-			:hover {
-				background-color: ${colors.primary};
-				color: ${colors.light};
-			}
-`
-
-export const PrimaryButton = styled(StyledBaseButton)`
-background-color: ${colors.light};
-			color: red;
 
 			:hover {
 				background-color: ${colors.primary};
