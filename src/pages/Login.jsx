@@ -5,6 +5,7 @@ import Content from "../components/Content/Content";
 import { BaseTextInput } from "../components/Form";
 import { BaseButton } from "../components/Button";
 import { LoginButton } from "../components/Button";
+import { PrimaryButton } from "../components/Button"; 
 // import StyledLink from "../components/Link/Link";
 import { Link } from "react-router-dom";
 import { Popup } from "../components/Popup";
@@ -156,7 +157,7 @@ class Login extends Component {
 							</Link>
 						</div>
 						
-						<LoginButton label='Inloggen' type='submit' />
+						<PrimaryButton label='Inloggen' type='submit' />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
