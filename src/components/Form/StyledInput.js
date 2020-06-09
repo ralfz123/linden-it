@@ -17,7 +17,8 @@ export const StyledBaseTextInput = styled.input`
 	padding: 10px;
 	line-height: 1.5em;
 	align-items: center;
-
+	appearance: none;
+	
 	:invalid {
 		outline: none;
     	border: 1px solid #dd7777;

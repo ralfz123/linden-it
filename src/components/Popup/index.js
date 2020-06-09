@@ -8,11 +8,15 @@ const StyledPopup = styled.div`
 	padding: 8px;
 	background-color: ${colors.grayLight};
 	text-align: left;
-	width: 100%;
+	/* width: 100%; */
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	width: 100vw;
+    position: absolute;
+    z-index: 10;
+    left: 0;
 
 
 	p {
