@@ -1,8 +1,11 @@
 {
   "name": "linden-it",
+  "homepage": "https://.ralfz123.github.io/linden-it",
   "version": "1.0.0",
   "description": "A school project for Linden-IT",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,18 +39,23 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
-    "@ionic/react": "^5.1.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "email-validator": "^2.0.4",
+    "formik": "^2.1.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha": "^2.0.1",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "segmented-control-react": "^2.1.3",
     "source-map-support": "^0.5.19",
-    "typescript": "^3.9.3"
+    "styled-normalize": "^8.0.7",
+    "typescript": "^3.9.3",
+    "yup": "^0.29.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -56,6 +64,7 @@
     "@babel/preset-react": "^7.10.1",
     "babel-plugin-source-map-support": "^2.1.1",
     "babel-plugin-styled-components": "^1.10.7",
+    "gh-pages": "^3.0.0",
     "styled-components": "^5.1.1",
     "stylelint": "^13.5.0",
     "stylelint-config-recommended": "^3.0.0",
