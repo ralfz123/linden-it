@@ -1,6 +1,6 @@
 import React from "react";
 import StyledCard from './StyledCard';
-import {BaseButton} from '../Button';
+import {PrimaryButton} from '../Button';
 import {CourseTags} from '../Tags';
 
 export default function Card({tag, content, title, label}) {
@@ -54,7 +54,7 @@ export const CardContent = ({content}) => {
 export const CardFooter = ({children}) => {
 	return (
 		<div className='card-footer'>
-			<BaseButton label={children} />
+			<PrimaryButton label={children} />
 		</div>
 	);
 };

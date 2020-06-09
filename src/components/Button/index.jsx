@@ -16,3 +16,11 @@ export const LoginButton = ({ onClick, label }) => {
 		</StyledLoginButton>
 	);
 };
+
+export const PrimaryButton = ({ onClick, label }) => {
+	return (
+		<PrimaryButton onClick={onClick}>
+			{label}
+		</PrimaryButton>
+	);
+};

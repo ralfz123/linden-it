@@ -29,3 +29,13 @@ background-color: ${colors.light};
 				color: ${colors.light};
 			}
 `
+
+export const PrimaryButton = styled(StyledBaseButton)`
+background-color: ${colors.light};
+			color: red;
+
+			:hover {
+				background-color: ${colors.primary};
+				color: ${colors.light};
+			}
+`
