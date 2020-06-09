@@ -8,7 +8,9 @@ export const StyledBaseTextInput = styled.input`
 	right: 0;
 	width: 100%;
 	background-color: ${colors.light};
-	border: 1px solid ${colors.grayLightTwo};
+	/* border: 1px solid ${colors.grayLightTwo}; */
+	border: 1px solid #dd7777;
+	outline: none;	
 	color: ${colors.gray};
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -23,6 +25,7 @@ export const StyledBaseTextInput = styled.input`
 	:valid {
 		outline: none;
 		border: 1px solid #77dd77;
+
 	}
 `;
 

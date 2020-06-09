@@ -5,6 +5,8 @@ import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
 import {PrimaryButton} from "../components/Button";
 import { Link } from "react-router-dom";
+import { Popup } from "../components/Popup";
+
 // import { Formik } from 'formik';
 // import * as Emailvalidator from 'email-validator';
 // import * as Yup from 'yup';
@@ -24,7 +26,7 @@ class Login extends Component {
 			password: "",
 			title: "Inloggen",
 			emailError: "",
-			passwordError: "",
+			passwordError: ""
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,7 +51,7 @@ class Login extends Component {
 		}
 
 		// password error
-		if (this.state.password < 6) {
+		if (this.state.password.length < 6) {
 			passwordError = "Wachtwoord moet minimaal 6 tekens bevatten";
 		}
 
@@ -61,6 +63,7 @@ class Login extends Component {
 	};
 
 	handleSubmit(event) {
+		event.preventDefault(event);
 		const { email, password } = this.state;
 		const isValid = this.validate();
 		if (isValid) {
@@ -101,25 +104,26 @@ class Login extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
+					<Popup>
+						<div className='popup-error-text'>
+							{this.state.emailError}
+						</div>
+
+						<div className='popup-error-text'>
+							{this.state.passwordError}
+						</div>
+					</Popup>
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
 						// action='/login'
 					>
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.emailError}
-						</div>
-
-						<div style={{ fontSize: 12, color: "red" }}>
-							{this.state.passwordError}
-						</div>
-
 						<div className='field'>
 							<label for='email'>E-mail</label>
 							<BaseTextInput
 								label='Email'
 								name='email'
-								// type='email'
+								type='email'
 								onChange={this.handleChange}
 								placeholder='E-mail'
 								value={this.state.email}
@@ -132,7 +136,7 @@ class Login extends Component {
 							<BaseTextInput
 								label='Wachtwoord'
 								name='password'
-								// type='password'
+								type='password'
 								onChange={this.handleChange}
 								placeholder='Wachtwoord'
 								value={this.state.password}
@@ -156,7 +160,9 @@ class Login extends Component {
 							Je gaat akkoord met het Privacy Statement van
 							Linden-IT
 						</p>
+						
 					</form>
+
 				</Content>
 			</>
 		);

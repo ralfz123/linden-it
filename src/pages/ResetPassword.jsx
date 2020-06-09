@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
 import {PrimaryButton} from "../components/Button";
+
 import { Link } from "react-router-dom";
 // import { AiOutlineEye } from 'react-icons/ai';
 
@@ -72,7 +73,7 @@ class Login extends Component {
 					<PrimaryButton label="Wachtwoord opslaan" type='submit' />
 
 				</form>
-				{/* <reCAPTCHA sitekey="Your client site key" onChange={onChange} /> */}
+          
 			</Content>
 		</>
 	);
