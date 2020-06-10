@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
+import PrivateRoute from './pages/PrivateRoute'
 import GlobalStyle from "./GlobalStyle";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -29,23 +30,23 @@ const App = (props) => {
 				component={ResetPassword}
 				/>
 				
-				<Route 
+				<PrivateRoute 
 				name='home' 
 				exact path='/' 
 				component={Home}
 				/>
 
 
-				<Route
+				<PrivateRoute
 					name='courses'
 					path='/courses'
 					component={Courses}
 					courses={courses}
 				/>
 
-				<Route name='agenda' path='/agenda' component={Agenda} />
+				<PrivateRoute name='agenda' path='/agenda' component={Agenda} />
 
-				<Route name='settings' path='/settings' component={Settings} />
+				<PrivateRoute name='settings' path='/settings' component={Settings} />
 			</Switch>
 
 			<Footer>

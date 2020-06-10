@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { getLoginLoadingState, getUserAuthState, getLoginErrorState } from '../store/reducers/selectors/LoginSelectors';
+import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
@@ -7,24 +10,12 @@ import {PrimaryButton} from "../components/Button";
 import { Link, Redirect } from "react-router-dom";
 import { Popup } from "../components/Popup";
 
-// import { Formik } from 'formik';
-// import * as Emailvalidator from 'email-validator';
-// import * as Yup from 'yup';
-
-// const initialState = {
-// 	email: "",
-// 	password: "",
-// 	title: "Inloggen",
-// 	emailError: "",
-// 	passwordError: "",
-// }
 class Login extends Component {
 	state = {
 		email: "",
 		password: "",
 		title: "Inloggen",
-		loginError: null,
-		redirectToDashboard: false
+
 	};
 
 	handleChange = (event) => {
@@ -33,24 +24,9 @@ class Login extends Component {
 		});
 	}
 
-	validate = () => {
-		const { email, password} = this.state
-		const validEmail = 'ralf_zonneveld@hotmail.com';
-		const validPassword = 'welkom123'
-		return email.includes("@") && email === validEmail && password.length > 6 && password === validPassword
-	};
-	
-
 	handleSubmit = (event) => {
 		event.preventDefault(event);
-		const isValid = this.validate();
-		console.log(isValid)
-		this.setState({
-			loginError: isValid ? null : 'Email of wachtwoord onjuist.',
-			email: '',
-			password: '',
-			redirectToDashboard: isValid
-		})
+		this.props.ValidateLogin(this.state.email, this.state.password);
 	}
 
 	checkButtonEnabledState = () => {
@@ -58,44 +34,24 @@ class Login extends Component {
 		return email.length < 5 && password.length < 6;
 	}
 
-	// const ValidatedLoginForm = () => {
-	// 	<Formik
-	// 		initialValues={{ email: "", password: "" }}
-	// 		onSubmit={( values )}
-	// 	>
-	// 	{props => {
-	// 			const {
-	// 				values,
-	// 				touched,
-	// 				errors,
-	// 				handleChange,
-	// 				handleBlur,
-	// 				handleSubmit
-	// 			} = props;
-	// 			return (
-	// 				<div>
-	// 					<h1>Formpieee</h1>
-	// 				</div>
-	// 			);
-	// 		}
-	// 	}
-	// 	</Formik>
-	// }
-
 	render() {
-		const { loginError, redirectToDashboard } = this.state;
+
+		const { isLoading, isAuthenticated, loginError } = this.props;
 		const buttonState = this.checkButtonEnabledState();
-	
+		console.log(this.props)
+		if (isLoading) {
+			return <div>LADEN.....</div>
+		}
 		return (
 			<>
-				{redirectToDashboard && <Redirect to="/" />}
+				{isAuthenticated && <Redirect to="/" />}
 				<Header>
 					<Title title='Inloggen' />
 				</Header>
 				<Content>
 					{loginError && <Popup>
 						<div className='popup-error-text'>
-							{loginError}
+							Wachtwoord of email incorrect.
 						</div>
 
 						
@@ -156,4 +112,18 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+	return {
+		isLoading: getLoginLoadingState(state),
+		isAuthenticated: getUserAuthState(state),
+		loginError: getLoginErrorState(state)
+	};
+  };
+  
+const actions = {
+	ValidateLogin
+};
+  
+  export default connect(mapStateToProps, actions)(Login);
+  
+

@@ -1,4 +1,4 @@
-import ValidationController from './controllers/ValidationController';
+import ValidationController from './ValidationController';
 // import SessionController from '../../../controllers/SessionController';
 // import SentryDispatcher from '../../../utils/SentryDispatcher';
 // import { toast } from 'react-toastify';
@@ -18,13 +18,24 @@ function setLoading(value) {
   };
 }
 
+function setError(value) {
+  return {
+    type: 'LOGIN::SET_ERROR',
+    value,
+  };
+}
+
 
 export const ValidateLogin = (email, password) => dispatch => {
     dispatch(setLoading(true));
     const loginIsValid = ValidationController.validateLoginWithCredentials(email, password);
     if (loginIsValid) {
         dispatch(setAuthenticated(true))
+        dispatch(setError(false))
     } else {
         dispatch(setAuthenticated(false))
-    }   
-};s
+        dispatch(setError(true))
+    }
+  // FAKE WACHTTIJD VOOR INLOGGEN
+   setTimeout(() => { dispatch(setLoading(false))}, 2000)
+};
