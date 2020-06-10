@@ -36,7 +36,7 @@ const TabContainer = styled.section`
 `;
 const TabButton = styled.button`
 	border: 0;
-	border-radius: 5px;
+	border-radius: ${(props) => (props.active ? "5px" : "0")};
 	color: var(--color-gray-dark);
 	width: 100%;
 	height: auto;
