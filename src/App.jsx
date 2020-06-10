@@ -11,7 +11,8 @@ import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 
-const App = () => {
+const App = (props) => {
+	console.log(props)
 	return (
 		<HashRouter>
 			<Switch>
