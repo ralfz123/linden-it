@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
 import {PrimaryButton} from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Popup } from "../components/Popup";
 
 // import { Formik } from 'formik';
@@ -19,58 +19,43 @@ import { Popup } from "../components/Popup";
 // 	passwordError: "",
 // }
 class Login extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: "",
-			password: "",
-			title: "Inloggen",
-			emailError: "",
-			passwordError: ""
-		};
+	state = {
+		email: "",
+		password: "",
+		title: "Inloggen",
+		loginError: null,
+		redirectToDashboard: false
+	};
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.validate = this.validate.bind(this);
-	}
-
-	handleChange(event) {
+	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
 	}
 
 	validate = () => {
-		let emailError = "";
-		let passwordError = "";
-
-		// email error
-		if (!this.state.email.includes("@")) {
-			emailError = "Email is incorrect";
-			console.log("Bevat geen '@' !");
-		}
-
-		// password error
-		if (this.state.password.length < 6) {
-			passwordError = "Wachtwoord moet minimaal 6 tekens bevatten";
-		}
-
-		if (emailError || passwordError) {
-			this.setState({ emailError, passwordError });
-			return false;
-		}
-		return true;
+		const { email, password} = this.state
+		const validEmail = 'ralf_zonneveld@hotmail.com';
+		const validPassword = 'welkom123'
+		return email.includes("@") && email === validEmail && password.length > 6 && password === validPassword
 	};
+	
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault(event);
-		const { email, password } = this.state;
 		const isValid = this.validate();
-		if (isValid) {
-			console.log(this.state);
-			// clear form
-			this.setState(this.state);
-		}
+		console.log(isValid)
+		this.setState({
+			loginError: isValid ? null : 'Email of wachtwoord onjuist.',
+			email: '',
+			password: '',
+			redirectToDashboard: isValid
+		})
+	}
+
+	checkButtonEnabledState = () => {
+		const { email, password } = this.state;
+		return email.length < 5 && password.length < 6;
 	}
 
 	// const ValidatedLoginForm = () => {
@@ -98,28 +83,30 @@ class Login extends Component {
 	// }
 
 	render() {
+		const { loginError, redirectToDashboard } = this.state;
+		const buttonState = this.checkButtonEnabledState();
+	
 		return (
 			<>
+				{redirectToDashboard && <Redirect to="/" />}
 				<Header>
-					<Title title={this.state.title} />
+					<Title title='Inloggen' />
 				</Header>
 				<Content>
-					<Popup>
+					{loginError && <Popup>
 						<div className='popup-error-text'>
-							{this.state.emailError}
+							{loginError}
 						</div>
 
-						<div className='popup-error-text'>
-							{this.state.passwordError}
-						</div>
-					</Popup>
+						
+					</Popup>}
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
 						// action='/login'
 					>
 						<div className='field'>
-							<label for='email'>E-mail</label>
+							<label htmlFor='email'>E-mail</label>
 							<BaseTextInput
 								label='Email'
 								name='email'
@@ -132,7 +119,7 @@ class Login extends Component {
 						</div>
 
 						<div className='field'>
-							<label for='password'>Wachtwoord</label>
+							<label htmlFor='password'>Wachtwoord</label>
 							<BaseTextInput
 								label='Wachtwoord'
 								name='password'
@@ -154,7 +141,7 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<PrimaryButton type='submit' label="Inloggen" />
+						<PrimaryButton disabled={buttonState} type='submit' label="Inloggen" />
 
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
