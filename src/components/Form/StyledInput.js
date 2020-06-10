@@ -30,4 +30,4 @@ export const StyledBaseTextInput = styled.input`
 
 export const StyledBaseNumberInput = styled.input`
   width: 100%;
-`
+     `

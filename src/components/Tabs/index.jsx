@@ -29,10 +29,8 @@ const TabContainer = styled.section`
 	height: 40px;
 	background-color: var(--color-gray-light);
 	border-radius: 5px;
-    margin:10px 0 20px;
-    padding:0 3px;
-    
-	
+	margin: 10px 0 20px;
+	padding: 0 3px;
 `;
 const TabButton = styled.button`
 	border: 0;

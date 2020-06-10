@@ -1,18 +1,18 @@
 import React from 'react'
-import { StyledBaseButton, StyledLoginButton } from './StyledButton'
+import { StyledPrimaryButton, StyledSecondaryButton } from './StyledButton'
 
-export const BaseButton = ({ onClick, label }) => {
+export const PrimaryButton = ({ onClick, label }) => {
 	return (
-		<StyledBaseButton onClick={onClick}>
+		<StyledPrimaryButton onClick={onClick}>
 			{label}
-		</StyledBaseButton>
+		</StyledPrimaryButton>
 	);
 };
 
-export const LoginButton = ({ onClick, label }) => {
+export const SecondaryButton = ({ onClick, label }) => {
 	return (
-		<StyledLoginButton onClick={onClick}>
+		<StyledSecondaryButton onClick={onClick}>
 			{label}
-		</StyledLoginButton>
+		</StyledSecondaryButton>
 	);
 };
