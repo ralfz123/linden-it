@@ -37,5 +37,5 @@ export const ValidateLogin = (email, password) => dispatch => {
         dispatch(setError(true))
     }
   // FAKE WACHTTIJD VOOR INLOGGEN
-   setTimeout(() => { dispatch(setLoading(false))}, 2000)
+   setTimeout(() => { dispatch(setLoading(false))}, 100000)
 };
