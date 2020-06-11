@@ -5,10 +5,11 @@ import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import {BaseTextInput} from "../components/Form/";
-import {PrimaryButton} from "../components/Button";
+import { BaseTextInput } from "../components/Form";
+import { PrimaryButton } from "../components/Button";
 import { Link, Redirect } from "react-router-dom";
 import { Popup } from "../components/Popup";
+import { Spinner } from "../components/Spinner";
 
 class Login extends Component {
 	state = {
@@ -40,7 +41,7 @@ class Login extends Component {
 		const buttonState = this.checkButtonEnabledState();
 		console.log(this.props)
 		if (isLoading) {
-			return <div>LADEN.....</div>
+			return <Spinner />
 		}
 		return (
 			<>
@@ -50,8 +51,9 @@ class Login extends Component {
 				</Header>
 				<Content>
 					{loginError && <Popup>
-						<div className='popup-error-text'>
-							Wachtwoord of email incorrect.
+						<div>
+							Oeps! Het lijkt erop dat het e-mailadres en/of het wachtwoord niet klopt.
+							Probeer het opnieuw of reset je wachtwoord.
 						</div>
 
 						
@@ -100,8 +102,7 @@ class Login extends Component {
 						<PrimaryButton disabled={buttonState} type='submit' label="Inloggen" />
 
 						<p className='privacy'>
-							Je gaat akkoord met het Privacy Statement van
-							Linden-IT
+							Je gaat akkoord met het Privacy Statement van Linden-IT
 						</p>
 						
 					</form>
