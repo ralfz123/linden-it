@@ -1,125 +1,70 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { getLoginLoadingState, getUserAuthState, getLoginErrorState } from '../store/reducers/selectors/LoginSelectors';
+import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import {BaseTextInput} from "../components/Form/";
-import {PrimaryButton} from "../components/Button";
-import { Link } from "react-router-dom";
+import { BaseTextInput } from "../components/Form";
+import { PrimaryButton } from "../components/Button";
+import { Link, Redirect } from "react-router-dom";
 import { Popup } from "../components/Popup";
+import { Spinner } from "../components/Spinner";
 
-// import { Formik } from 'formik';
-// import * as Emailvalidator from 'email-validator';
-// import * as Yup from 'yup';
-
-// const initialState = {
-// 	email: "",
-// 	password: "",
-// 	title: "Inloggen",
-// 	emailError: "",
-// 	passwordError: "",
-// }
 class Login extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: "",
-			password: "",
-			title: "Inloggen",
-			emailError: "",
-			passwordError: ""
-		};
+	state = {
+		email: "",
+		password: "",
+		title: "Inloggen",
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.validate = this.validate.bind(this);
-	}
+	};
 
-	handleChange(event) {
+	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
 	}
 
-	validate = () => {
-		let emailError = "";
-		let passwordError = "";
-
-		// email error
-		if (!this.state.email.includes("@")) {
-			emailError = "Email is incorrect";
-			console.log("Bevat geen '@' !");
-		}
-
-		// password error
-		if (this.state.password.length < 6) {
-			passwordError = "Wachtwoord moet minimaal 6 tekens bevatten";
-		}
-
-		if (emailError || passwordError) {
-			this.setState({ emailError, passwordError });
-			return false;
-		}
-		return true;
-	};
-
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault(event);
-		const { email, password } = this.state;
-		const isValid = this.validate();
-		if (isValid) {
-			console.log(this.state);
-			// clear form
-			this.setState(this.state);
-		}
+		this.props.ValidateLogin(this.state.email, this.state.password);
 	}
 
-	// const ValidatedLoginForm = () => {
-	// 	<Formik
-	// 		initialValues={{ email: "", password: "" }}
-	// 		onSubmit={( values )}
-	// 	>
-	// 	{props => {
-	// 			const {
-	// 				values,
-	// 				touched,
-	// 				errors,
-	// 				handleChange,
-	// 				handleBlur,
-	// 				handleSubmit
-	// 			} = props;
-	// 			return (
-	// 				<div>
-	// 					<h1>Formpieee</h1>
-	// 				</div>
-	// 			);
-	// 		}
-	// 	}
-	// 	</Formik>
-	// }
+	checkButtonEnabledState = () => {
+		const { email, password } = this.state;
+		return email.length < 5 && password.length < 6;
+	}
 
 	render() {
+
+		const { isLoading, isAuthenticated, loginError } = this.props;
+		const buttonState = this.checkButtonEnabledState();
+		console.log(this.props)
+		if (isLoading) {
+			return <Spinner />
+		}
 		return (
 			<>
+				{isAuthenticated && <Redirect to="/" />}
 				<Header>
-					<Title title={this.state.title} />
+					<Title title='Inloggen' />
 				</Header>
 				<Content>
-					<Popup>
-						<div className='popup-error-text'>
-							{this.state.emailError}
+					{loginError && <Popup>
+						<div>
+							Oeps! Het lijkt erop dat het e-mailadres en/of het wachtwoord niet klopt.
+							Probeer het opnieuw of reset je wachtwoord.
 						</div>
 
-						<div className='popup-error-text'>
-							{this.state.passwordError}
-						</div>
-					</Popup>
+						
+					</Popup>}
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
 						// action='/login'
 					>
 						<div className='field'>
-							<label for='email'>E-mail</label>
+							<label htmlFor='email'>E-mail</label>
 							<BaseTextInput
 								label='Email'
 								name='email'
@@ -132,7 +77,7 @@ class Login extends Component {
 						</div>
 
 						<div className='field'>
-							<label for='password'>Wachtwoord</label>
+							<label htmlFor='password'>Wachtwoord</label>
 							<BaseTextInput
 								label='Wachtwoord'
 								name='password'
@@ -154,11 +99,10 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<PrimaryButton type='submit' label="Inloggen" />
+						<PrimaryButton disabled={buttonState} type='submit' label="Inloggen" />
 
 						<p className='privacy'>
-							Je gaat akkoord met het Privacy Statement van
-							Linden-IT
+							Je gaat akkoord met het Privacy Statement van Linden-IT
 						</p>
 						
 					</form>
@@ -169,4 +113,18 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+	return {
+		isLoading: getLoginLoadingState(state),
+		isAuthenticated: getUserAuthState(state),
+		loginError: getLoginErrorState(state)
+	};
+  };
+  
+const actions = {
+	ValidateLogin
+};
+  
+  export default connect(mapStateToProps, actions)(Login);
+  
+

@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../../GlobalStyle.js";
 
 const handleColorType = (children) => {
 	switch (children) {
 		case "NEW":
-			return "var(--tag-new)";
+			return colors.tagNew;
 		case "IN PROGRESS":
-			return "var(--tag-progress)";
+			return colors.tagProgress;
 		case "FINISHED":
-			return "var(--tag-finished)";
+			return colors.tagFinished;
 		default:
-			return "var(--color-primary)";
+			return colors.primary;
 	}
 };
 
@@ -18,15 +19,15 @@ const CourseTag = styled.div`
 	position: absolute;
 	padding: 4px 10px;
 	background-color: ${({ children }) => handleColorType(children)};
-	color: var(--color-light);
+	color: ${colors.dark};
 	border-radius: 5px;
 	left: -20px;
 	font-size: 12px;
 `;
 const Tag = styled.div`
 	padding: 4px 10px;
-	background-color: var(--color-primary);
-	color: var(--color-light);
+	background-color: ${colors.primary};
+	color: ${colors.light};
 	border-radius: 5px;
 	font-size: 12px;
 `;

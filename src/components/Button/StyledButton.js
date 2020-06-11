@@ -17,6 +17,12 @@ export const StyledPrimaryButton = styled.button`
 		background-color: ${colors.light};
 		color: ${colors.primary};
 	}
+	&:disabled {
+		background-color: lightgrey;
+		color: white;
+		pointer-events: none;
+		border-color: lightgrey;
+	}
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
