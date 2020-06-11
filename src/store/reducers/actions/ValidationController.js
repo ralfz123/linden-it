@@ -1,8 +1,8 @@
 
 class ValidationController {
   validateLoginWithCredentials = (email, password) => {
-    const validEmail = 'ralf_zonneveld@hotmail.com';
-	const validPassword = 'welkom123'
+    const validEmail = 'mike@lindenit.nl';
+	const validPassword = '1234567'
 	return email.includes("@") && email === validEmail && password.length > 6 && password === validPassword
   };
 
