@@ -164,11 +164,6 @@ ${"" /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
-.popup-error-text {
-    color: red;
-    font-size: 12px;
-    margin: 2px 0px;
-}
 `;
 
 export default GlobalStyle;

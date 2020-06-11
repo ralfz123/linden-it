@@ -1,12 +1,12 @@
+  
+  // Deze is NIET af - validating - submitting
+
 import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import {BaseTextInput} from "../components/Form/";
 import {PrimaryButton} from "../components/Button";
-
-import { Link } from "react-router-dom";
-// import { AiOutlineEye } from 'react-icons/ai';
 
 class Login extends Component {
   constructor(props) {
@@ -27,7 +27,8 @@ class Login extends Component {
   }
 
   handleSubmit(event) {
-    const { email, password } = this.state;
+	event.preventDefault(event);
+    const {password } = this.state;
   }
 
   render() {

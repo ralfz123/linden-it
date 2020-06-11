@@ -50,8 +50,9 @@ class Login extends Component {
 				</Header>
 				<Content>
 					{loginError && <Popup>
-						<div className='popup-error-text'>
-							Wachtwoord of email incorrect.
+						<div>
+							Oeps! Het lijkt erop dat het e-mailadres en/of het wachtwoord niet klopt.
+							Probeer het opnieuw of reset je wachtwoord.
 						</div>
 
 						

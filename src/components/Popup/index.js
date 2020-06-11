@@ -4,11 +4,12 @@ import { colors } from "../../GlobalStyle";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 const StyledPopup = styled.div`
+	background-color: ${colors.grayLight};
 	height: 50px;
 	padding: 8px;
-	background-color: ${colors.grayLight};
-	text-align: left;
+	margin: 0 auto;
 	/* width: 100%; */
+	text-align: left;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -18,22 +19,21 @@ const StyledPopup = styled.div`
 	z-index: 10;
 	left: 0;
 
-	p {
+	div {
 		font-family: Lato;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 11px;
 		line-height: 13px;
 		color: ${colors.red};
-		color: ${colors.red};
+		width: 80vw;
 	}
-
 	.error-icon {
 		font-size: 30px;
 		text-align: left;
 		color: ${colors.red};
-		margin: 0 auto;
-		width: 20%;
+		/* margin: 0 auto; */
+		width: 10%;
 	}
 `;
 export const Popup = ({ children }) => {
