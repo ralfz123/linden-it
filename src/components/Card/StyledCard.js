@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../GlobalStyle.js";
 
 const StyledCard = styled.div`
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -6,7 +7,7 @@ const StyledCard = styled.div`
 	margin: 10px 20px 25px 20px;
 
 	.card-header {
-		background-color: var(--color-gray-light);
+		background-color: ${colors.grayLight};
 		padding: 20px;
 		position: relative;
 	}
@@ -20,7 +21,7 @@ const StyledCard = styled.div`
 	}
 
 	h2 {
-		color: var(--color-primary);
+		color: ${colors.primary};
 		margin: 0;
 		padding-top: 45px;
 	}

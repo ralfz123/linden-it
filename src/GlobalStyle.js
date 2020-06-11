@@ -8,7 +8,11 @@ export const colors = {
 	grayDark: "#3b3b3b",
 	grayLight: "#f4f4f4",
 	grayLightTwo: "#C4C4C4",
-	red: "#D21919;",
+    red: "#D21919;",
+    green: "#77dd77",
+    tagNew: "#5DD8A4",
+    tagProgress:"#FEC32E",
+    tagFinished:"#22C7E4"
 };
 
 const GlobalStyle = createGlobalStyle`

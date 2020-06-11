@@ -14,10 +14,9 @@ const StyledPopup = styled.div`
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 100vw;
-    position: absolute;
-    z-index: 10;
-    left: 0;
-
+	position: absolute;
+	z-index: 10;
+	left: 0;
 
 	p {
 		font-family: Lato;
@@ -26,22 +25,24 @@ const StyledPopup = styled.div`
 		font-size: 11px;
 		line-height: 13px;
 		color: ${colors.red};
-		color: red;
+		color: ${colors.red};
 	}
 
 	.error-icon {
 		font-size: 30px;
 		text-align: left;
-		color: red;
+		color: ${colors.red};
 		margin: 0 auto;
 		width: 20%;
 	}
 `;
 export const Popup = ({ children }) => {
-	return <StyledPopup>
-				<AiOutlineExclamationCircle className="error-icon"/>
-				{children}
-			</StyledPopup>;
+	return (
+		<StyledPopup>
+			<AiOutlineExclamationCircle className='error-icon' />
+			{children}
+		</StyledPopup>
+	);
 };
 
 export default Popup;
