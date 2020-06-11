@@ -9,6 +9,7 @@ import {BaseTextInput} from "../components/Form/";
 import {PrimaryButton} from "../components/Button";
 import { Link, Redirect } from "react-router-dom";
 import { Popup } from "../components/Popup";
+import { Spinner } from "../components/Spinner";
 
 class Login extends Component {
 	state = {
@@ -40,7 +41,7 @@ class Login extends Component {
 		const buttonState = this.checkButtonEnabledState();
 		console.log(this.props)
 		if (isLoading) {
-			return <div>LADEN.....</div>
+			return <Spinner />
 		}
 		return (
 			<>
