@@ -102,8 +102,7 @@ class Login extends Component {
 						<PrimaryButton disabled={buttonState} type='submit' label="Inloggen" />
 
 						<p className='privacy'>
-							Je gaat akkoord met het Privacy Statement van
-							Linden-IT
+							Je gaat akkoord met het Privacy Statement van Linden-IT
 						</p>
 						
 					</form>
