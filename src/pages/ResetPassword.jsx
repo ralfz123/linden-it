@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
-import { BaseTextInput } from "../components/Form/";
+import { BaseTextInput } from "../components/Form";
 import { PrimaryButton } from "../components/Button";
 
 class Login extends Component {

@@ -8,7 +8,6 @@ const StyledPopup = styled.div`
 	height: 50px;
 	padding: 8px;
 	margin: 0 auto;
-	/* width: 100%; */
 	text-align: left;
 	display: flex;
 	flex-direction: column;
@@ -26,7 +25,7 @@ const StyledPopup = styled.div`
 		font-size: 11px;
 		line-height: 13px;
 		color: ${colors.red};
-		width: 80vw;
+		width: 84%;
 	}
 	.error-icon {
 		font-size: 30px;
