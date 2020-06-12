@@ -42,7 +42,7 @@ export const BaseCard = ({children}) => {
 
 // Proptypes BaseCard
 BaseCard.propTypes = {
-	children: PropTypes.children
+	// children: PropTypes.children
 };
 
 
