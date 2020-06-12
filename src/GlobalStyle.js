@@ -161,8 +161,6 @@ padding-top: var(--safe-area-inset-top, 12px);
         padding:5px 0;
     }
 
-
-
 ${'' /* Login page styles */}
 
     .login-wrapper {
@@ -241,9 +239,72 @@ ${'' /* Login page styles */}
 }
 ${'' /* ***************** Home page ***************** */}
 
-.homepage-header {
-    ${'' /* min-height: 240px; */}
+${'' /* ********************* Agenda page ********************* */}
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    ${'' /* flex-direction: column; */}
+    width: 100%
 }
+.task-container p {
+    width: 100%;
+    text-align: left;
+    margin-left: 12px;
+    font-size: 1em
+}
+
+.task-container div {
+    background-color: ${colors.grayLight};
+    color: ${colors.grayLightThree};
+    border-radius: 100%;
+    padding: 14px 20px;
+}
+
+.agenda-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.agenda-container .left {
+    ${'' /* margin-right: 20px;    */}
+    ${'' /* padding-right: 70px; */}
+    width: 150px;
+}
+
+.agenda-container .left h2 {
+    margin-bottom: 0px;
+    font-family: var(--font-family);    
+}
+
+.agenda-container .left .arrowdown-icon {
+    margin-bottom: 0px;
+    
+}
+
+.agenda-container .right {
+    ${'' /* margin-left: 20px; */}
+    padding: 100px;
+    padding-bottom: 100px;
+}
+
+.agenda-icon {
+    font-size: 30px;
+}
+
+.change-icon {	
+    fill: ${colors.primary};
+	background-color: ${colors.light};
+    ${'' /* stroke-width: 1; */}
+    ${'' /* stroke: ${colors.grayLightThree}; */}
+	width: 20px;
+	height: 20px;
+	border-radius: 60px;
+	padding: 1px;
+    }
+
 
 ${'' /* ***************** Setting goals ***************** */}
     .settinggoals-container {

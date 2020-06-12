@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledPrimaryButton, StyledSecondaryButton } from './StyledButton';
+import { StyledPrimaryButton, StyledSecondaryButton, StyledAgendaButton } from './StyledButton';
 import PropTypes from 'prop-types';
 
 
@@ -33,4 +33,18 @@ SecondaryButton.propTypes = {
 	className: PropTypes.string,
 	onClick: PropTypes.func,
 	label: PropTypes.string,
+};
+
+export const AgendaButton = ({ onClick, label }) => {
+	return (
+		<StyledAgendaButton onClick={onClick} >
+			{label}
+		</StyledAgendaButton>
+	);
+};
+
+StyledAgendaButton.propTypes = {
+	disabled: PropTypes.any,
+	label: PropTypes.string,
+	onClick: PropTypes.func,
 };
