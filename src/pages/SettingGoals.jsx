@@ -9,7 +9,7 @@ class SettingGoals extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: 'Mijn agenda',
+			title: 'Doelen vaststellen',
 		};
 	}
 
