@@ -12,7 +12,6 @@ import Courses from './pages/Courses';
 import { courses } from './data.js';
 import Agenda from './pages/Agenda';
 import Settings from './pages/Settings';
-import SettingGoals from './pages/SettingGoals';
 
 const App = (props) => {
 	console.log(props);
@@ -43,13 +42,6 @@ const App = (props) => {
 					path='/settings'
 					component={Settings}
 				/>
-
-				<PrivateRoute 
-					name='setting-goals'
-					path='setting-goals'
-					component={SettingGoals}
-				/>
-
 			</Switch>
 
 			<Footer>
