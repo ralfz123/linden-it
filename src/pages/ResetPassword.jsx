@@ -1,18 +1,18 @@
 // Deze is NIET af - validating - submitting
 
-import React, { Component } from "react";
-import Title from "../components/Title";
-import Header from "../components/Header";
-import Content from "../components/Content/Content";
-import { BaseTextInput } from "../components/Form";
-import { PrimaryButton } from "../components/Button";
+import React, { Component } from 'react';
+import Title from '../components/Title';
+import Header from '../components/Header';
+import Content from '../components/Content/Content';
+import { BaseTextInput } from '../components/Form';
+import { PrimaryButton } from '../components/Button';
 
 class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			password: "",
-			title: "Wachtwoord veranderen",
+			password: '',
+			title: 'Wachtwoord veranderen',
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,7 +43,7 @@ class Login extends Component {
 						method='POST'
 					>
 						<div className='field'>
-							<label for='password'>Nieuw wachtwoord</label>
+							<label htmlFor='password'>Nieuw wachtwoord</label>
 							<BaseTextInput
 								label='Wachtwoord'
 								name='password'
@@ -59,7 +59,7 @@ class Login extends Component {
 						</div>
 
 						<div className='field'>
-							<label for='password'>
+							<label htmlFor='password'>
 								Bevestig nieuw wachtwoord
 							</label>
 							<BaseTextInput

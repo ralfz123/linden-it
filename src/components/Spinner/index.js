@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "../../GlobalStyle";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle';
 
 const StyledSpinner = styled.div`
 	color: ${colors.light};
@@ -63,6 +64,10 @@ const StyledSpinner = styled.div`
 
 export const Spinner = ({ children }) => {
 	return <StyledSpinner>{children}</StyledSpinner>;
+};
+
+Spinner.propTypes = {
+	children: PropTypes.object
 };
 
 export default Spinner;

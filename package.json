@@ -64,6 +64,7 @@
     "@babel/preset-react": "^7.10.1",
     "babel-plugin-source-map-support": "^2.1.1",
     "babel-plugin-styled-components": "^1.10.7",
+    "eslint": "^7.2.0",
     "gh-pages": "^3.0.0",
     "styled-components": "^5.1.1",
     "stylelint": "^13.5.0",

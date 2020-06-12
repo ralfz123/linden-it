@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { FiHome, FiSettings, FiBook, FiCalendar } from "react-icons/fi";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { FiHome, FiSettings, FiBook, FiCalendar } from 'react-icons/fi';
 
 const Tab = styled.div`
 	display: flex;
@@ -53,4 +54,8 @@ export const Nav = ({ children }) => {
 	);
 };
 
+// Do not understand which propTypes have to be here? Because see Ln.34
+// Nav.propTypes = {
+// 	children: PropTypes.object
+// };
 export default Nav;

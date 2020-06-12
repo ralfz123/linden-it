@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../../GlobalStyle.js";
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle.js';
 
 export const StyledPrimaryButton = styled.button`
 	background-color: ${colors.primary};

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledBaseTextInput, StyledBaseNumberInput} from "./StyledInput";
+import { StyledBaseTextInput, StyledBaseNumberInput} from './StyledInput';
 
 
 /**
@@ -12,55 +12,55 @@ import { StyledBaseTextInput, StyledBaseNumberInput} from "./StyledInput";
  * @returns
  */
 export function BaseTextInput ({ name, placeholder, value, onChange, type, children }) {
-  return (
-    <StyledBaseTextInput
-      value={value}
-      placeholder={placeholder}
-      name={name}
-      type={type}
-      onChange={onChange}>
-      {children}
-    </StyledBaseTextInput>
-  )
+	return (
+		<StyledBaseTextInput
+			name={name}
+			placeholder={placeholder}
+			value={value}
+			onChange={onChange}
+			type={type}>
+			{children}
+		</StyledBaseTextInput>
+	);
 }
 
 BaseTextInput.defaultProps = {
-  type: 'text'
-}
+	type: 'text'
+};
 
 BaseTextInput.propTypes = {
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  value: PropTypes.any,
-  onChange: PropTypes.func,
+	name: PropTypes.string,
+	placeholder: PropTypes.string,
+	type: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	value: PropTypes.any,
+	onChange: PropTypes.func
 };
 
 export const BaseNumberInput = ({ name, placeholder, value, onChange, type, children }) => {
-  return (
-    <StyledBaseNumberInput
-      value={value}
-      placeholder={placeholder}
-      name={name}
-      type={type}
-      onChange={onchange}>
-      {children}
-    </StyledBaseNumberInput>
-  )
-}
+	return (
+		<StyledBaseNumberInput
+			value={value}
+			placeholder={placeholder}
+			name={name}
+			type={type}
+			onChange={onchange}>
+			{children}
+		</StyledBaseNumberInput>
+	);
+};
 
 BaseNumberInput.defaultProps = {
-  type: 'number'
-}
+	type: 'number'
+};
 
 BaseNumberInput.propTypes = {
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  value: PropTypes.any,
-  onChange: PropTypes.func,
+	name: PropTypes.string,
+	placeholder: PropTypes.string,
+	type: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	value: PropTypes.any,
+	onChange: PropTypes.func,
 };
 
 

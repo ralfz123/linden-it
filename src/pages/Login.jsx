@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getLoginLoadingState, getUserAuthState, getLoginErrorState } from '../store/reducers/selectors/LoginSelectors';
 import { ValidateLogin } from '../store/reducers/actions/LoginActions';
-import Title from "../components/Title";
-import Header from "../components/Header";
-import Content from "../components/Content/Content";
-import { BaseTextInput } from "../components/Form";
-import { PrimaryButton } from "../components/Button";
-import { Link, Redirect } from "react-router-dom";
-import { Popup } from "../components/Popup";
-import { Spinner } from "../components/Spinner";
+import Title from '../components/Title';
+import Header from '../components/Header';
+import Content from '../components/Content/Content';
+import { BaseTextInput } from '../components/Form';
+import { PrimaryButton } from '../components/Button';
+import { Link, Redirect } from 'react-router-dom';
+import { Popup } from '../components/Popup';
+import { Spinner } from '../components/Spinner';
 
 class Login extends Component {
 	state = {
