@@ -11,6 +11,7 @@ import Agenda from './pages/Agenda';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
 import ResetPassword from './pages/ResetPassword';
+import SettingGoals from './pages/SettingGoals';
 
 const App = (props) => {
 	console.log(props);
@@ -41,6 +42,13 @@ const App = (props) => {
 					path='/settings'
 					component={Settings}
 				/>
+
+				<PrivateRoute 
+					name='setting-goals'
+					path='setting-goals'
+					component={SettingGoals}
+				/>
+
 			</Switch>
 
 			<Footer>

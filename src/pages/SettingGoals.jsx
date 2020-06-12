@@ -5,7 +5,7 @@ import Title from '../components/Title';
 import { PrimaryButton } from '../components/Button';
 import { SecondaryButton } from '../components/Button';
 
-class Goals extends Component {
+class SettingGoals extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -20,7 +20,7 @@ class Goals extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<p>Agenda Content</p>
+					<p>Setting Goals Content</p>
 					<PrimaryButton label='Dit is een primaire button' />
 					<SecondaryButton label='Dit is een secundaire button' />
 				</Content>
@@ -28,4 +28,4 @@ class Goals extends Component {
 		);
 	}
 }
-export default Goals;
+export default SettingGoals;
