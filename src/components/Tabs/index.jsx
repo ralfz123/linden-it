@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { colors } from "../../GlobalStyle";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle';
 
 export default function TabBar({ tabs }) {
 	const [activeTab, setActiveTab] = useState(0);
@@ -23,6 +24,11 @@ export default function TabBar({ tabs }) {
 	);
 }
 
+
+TabBar.propTypes = {
+	tabs: PropTypes.object
+};
+
 const TabContainer = styled.section`
 	display: flex;
 	flex-direction: row;
@@ -35,7 +41,7 @@ const TabContainer = styled.section`
 `;
 const TabButton = styled.button`
 	border: 0;
-	border-radius: ${(props) => (props.active ? "5px" : "0")};
+	border-radius: ${(props) => (props.active ? '5px' : '0')};
 	color: ${colors.grayDark};
 	width: 100%;
 	height: auto;
@@ -46,11 +52,11 @@ const TabButton = styled.button`
 	padding: 0;
 	overflow: auto;
 	font-size: 11px;
-	font-weight: ${(props) => (props.active ? "700" : "500")};
+	font-weight: ${(props) => (props.active ? '700' : '500')};
 	box-shadow: ${(props) =>
-		props.active ? "1px 1px 4px rgba(0, 0, 0, 0.25)" : ""};
-	z-index: ${(props) => (props.active ? "1" : "auto")};
-	background: ${(props) => (props.active ? colors.light : "#f2f2f2")};
+		props.active ? '1px 1px 4px rgba(0, 0, 0, 0.25)' : ''};
+	z-index: ${(props) => (props.active ? '1' : 'auto')};
+	background: ${(props) => (props.active ? colors.light : '#f2f2f2')};
 	&:focus {
 		outline: none;
 	}

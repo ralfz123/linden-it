@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-
-import Header from "../components/Header";
-import Content from "../components/Content/Content";
-import Title from "../components/Title";
-import PropTypes from "prop-types";
-import Card from "../components/Card";
-import TabBar from "../components/Tabs";
+import React, { Component } from 'react';
+import Header from '../components/Header';
+import Content from '../components/Content/Content';
+import Title from '../components/Title';
+import PropTypes from 'prop-types';
+import Card from '../components/Card';
+import TabBar from '../components/Tabs';
 
 class Courses extends Component {
 	static defaultProps = {

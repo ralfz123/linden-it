@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { colors } from "../../GlobalStyle";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle';
+import { AiOutlineExclamationCircle } from 'react-icons/ai';
 
 const StyledPopup = styled.div`
 	background-color: ${colors.grayLight};
@@ -42,6 +43,10 @@ export const Popup = ({ children }) => {
 			{children}
 		</StyledPopup>
 	);
+};
+
+Popup.propTypes = {
+	children: PropTypes.object
 };
 
 export default Popup;
