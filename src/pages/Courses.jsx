@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Card from '../components/Card';
 import TabBar from '../components/Tabs';
 import Goals from '../components/SettingGoals';
-import { PrimaryButton } from '../components/Button';
+import { SecondaryButton } from '../components/Button';
 class Courses extends Component {
 	static defaultProps = {
 		courses: [
@@ -60,9 +60,10 @@ class Courses extends Component {
 					<Goals>
 					<Title title={'Je doelen vaststellen voor ' + 'ITIL3'} />
 						<p>Voordat je aan de cursus kan beginnen,
-						stel je eerst je doelen vast,
+						stel je ee
+						rst je doelen vast,
 						die automatisch met je recruiter worden gedeeld.</p>
-						<PrimaryButton
+						<SecondaryButton
 							type='button'
 							to='/goals'
 							label='Doelen vaststellen'

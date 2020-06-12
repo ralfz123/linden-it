@@ -2,51 +2,65 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors } from '../../GlobalStyle';
-import { AiOutlineExclamationCircle } from 'react-icons/ai';
+import { FiCalendar } from 'react-icons/fi';
 
 const StyledGoals = styled.div`
 	background-color: ${colors.red};
+	color: ${colors.light};
+	font-family: Josefin Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 41px;
+	text-align: center;
+
 	height: 100vh;
 	padding: 8px;
 	margin: 0 auto;
-	text-align: left;
+	position: absolute;
+	z-index: 10;
+	width: 100vw;
+	left: 0;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	width: 100vw;
-	position: absolute;
-	z-index: 10;
-	left: 0;
 
-	div {
+	p {
+		color: ${colors.light};
+		position: absolute;
+
 		font-family: Lato;
 		font-style: normal;
-		font-weight: normal;
-		font-size: 11px;
-		line-height: 13px;
-		color: ${colors.red};
-		width: 84%;
+		font-weight: 300;
+		font-size: 15px;
+		/* line-height: 17px; */
 	}
-	.error-icon {
+
+	button {
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	.course-icon {
 		font-size: 30px;
-		text-align: left;
-		color: ${colors.red};
-		/* margin: 0 auto; */
-		width: 10%;
+		text-align: center;
+		color: ${colors.light};
+		width: 100%;
 	}
 `;
 export const Goals = ({ children }) => {
 	return (
 		<StyledGoals>
-			<AiOutlineExclamationCircle className='course-icon' />
+			<FiCalendar className='course-icon' />
 			{children}
 		</StyledGoals>
 	);
 };
 
 Goals.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.object,
 };
 
 export default Goals;
