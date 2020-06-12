@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { colors } from '../../GlobalStyle';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 
-const StyledPopup = styled.div`
-	background-color: ${colors.grayLight};
+const StyledGoals = styled.div`
+	background-color: ${colors.red};
 	height: 50px;
 	padding: 8px;
 	margin: 0 auto;
@@ -36,17 +36,17 @@ const StyledPopup = styled.div`
 		width: 10%;
 	}
 `;
-export const Popup = ({ children }) => {
+export const Goals = ({ children }) => {
 	return (
-		<StyledPopup>
-			<AiOutlineExclamationCircle className='error-icon' />
+		<StyledGoals>
+			<AiOutlineExclamationCircle className='course-icon' />
 			{children}
-		</StyledPopup>
+		</StyledGoals>
 	);
 };
 
-Popup.propTypes = {
+Goals.propTypes = {
 	children: PropTypes.object
 };
 
-export default Popup;
+export default Goals;

@@ -5,57 +5,73 @@ import Title from '../components/Title';
 import PropTypes from 'prop-types';
 import Card from '../components/Card';
 import TabBar from '../components/Tabs';
-
+import Goals from '../components/SettingGoals';
+import { PrimaryButton } from '../components/Button';
 class Courses extends Component {
 	static defaultProps = {
 		courses: [
 			{
-				title: "Hier worden al jouw cursussen weergegeven. ",
-				tag: "NEW",
+				title: 'Hier worden al jouw cursussen weergegeven. ',
+				tag: 'NEW',
 				shortDescription:
-					"Wanneer jouw recruiter een cursus voor jou heeft opengesteld kun je direct beginnen.",
-				label: "Cursus starten",
+					'Wanneer jouw recruiter een cursus voor jou heeft opengesteld kun je direct beginnen.',
+				label: 'Cursus starten',
 			},
 			{
-				title: "MD-100",
-				tag: "IN PROGRESS",
+				title: 'MD-100',
+				tag: 'IN PROGRESS',
 				shortDescription:
-					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
-				label: "Open Cursus",
+					'This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ',
+				label: 'Open Cursus',
 			},
 			{
-				title: "MD-100",
-				tag: "FINISHED",
+				title: 'MD-100',
+				tag: 'FINISHED',
 				shortDescription:
-					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
-				label: "Open Cursus",
+					'This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ',
+				label: 'Open Cursus',
 			},
 		],
 	};
 
 	state = {
-		title: "Mijn Cursussen",
-		courseTitle: "Titel",
-		tag: "tag",
-		content: "short description",
+		title: 'Mijn Cursussen',
+		courseTitle: 'Titel',
+		tag: 'tag',
+		content: 'short description',
 	};
 
 	render() {
 		const { title } = this.state;
 		const { courses } = this.props;
-		const coursesNew = courses.filter(course => course.tag === "NEW")
-		const coursesInProgress = courses.filter((course) => course.tag === "IN PROGRESS")
-		const coursesFinished = courses.filter((course) => course.tag === "FINISHED")
+		const coursesNew = courses.filter((course) => course.tag === 'NEW');
+		const coursesInProgress = courses.filter(
+			(course) => course.tag === 'IN PROGRESS'
+		);
+		const coursesFinished = courses.filter(
+			(course) => course.tag === 'FINISHED'
+		);
 		return (
 			<>
 				<Header>
 					<Title title={title} />
 				</Header>
 				<Content>
+					<Goals>
+					<Title title={'Je doelen vaststellen voor ' + 'ITIL3'} />
+						<p>Voordat je aan de cursus kan beginnen,
+						stel je eerst je doelen vast,
+						die automatisch met je recruiter worden gedeeld.</p>
+						<PrimaryButton
+							type='button'
+							to='/goals'
+							label='Doelen vaststellen'
+						/>
+					</Goals>
 					<TabBar
 						tabs={[
 							{
-								title: "ALL",
+								title: 'ALL',
 								render: () => (
 									<>
 										{courses.map((course, i) => (
@@ -73,7 +89,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "NEW",
+								title: 'NEW',
 								render: () => (
 									<>
 										{coursesNew.map((course, i) => (
@@ -91,7 +107,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "IN PROGRESS",
+								title: 'IN PROGRESS',
 								render: () => (
 									<>
 										{coursesInProgress.map((course, i) => (
@@ -109,7 +125,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "FINISHED",
+								title: 'FINISHED',
 								render: () => (
 									<>
 										{coursesFinished.map((course, i) => (
