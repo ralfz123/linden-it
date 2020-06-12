@@ -6,7 +6,7 @@ import { AiOutlineExclamationCircle } from 'react-icons/ai';
 
 const StyledGoals = styled.div`
 	background-color: ${colors.red};
-	height: 50px;
+	height: 100vh;
 	padding: 8px;
 	margin: 0 auto;
 	text-align: left;
