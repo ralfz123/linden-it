@@ -1,9 +1,9 @@
 import React from "react";
 import StyledCard from './StyledCard';
-import {PrimaryButton} from '../Button';
 import {CourseTags} from '../Tags';
+import {StyledLink} from '../Link'
 
-export default function Card({tag, content, title, label}) {
+export default function Card({tag, content, title, label, id}) {
 	return (
 		<StyledCard>
 			{tag &&
@@ -16,7 +16,7 @@ export default function Card({tag, content, title, label}) {
 					{content}
 				</CardContent> }
 				
-			<CardFooter>
+			<CardFooter title={title} id={id}>
 				{label}
 			</CardFooter>
 			</StyledCard>
@@ -51,10 +51,10 @@ export const CardContent = ({content}) => {
 	);
 };
 
-export const CardFooter = ({children}) => {
+export const CardFooter = ({children, id}) => {
 	return (
 		<div className='card-footer'>
-			<PrimaryButton label={children} />
+			<StyledLink label={children} to={`/courses/${id}`}>{children}</StyledLink>
 		</div>
 	);
 };

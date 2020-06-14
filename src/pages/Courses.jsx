@@ -1,52 +1,68 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import {
+	getCourses,
+	getCoursesPending,
+	getCoursesError,
+} from "../store/reducers/selectors/CoursesSelectors";
 
+import { bindActionCreators } from "redux";
+
+import {fetchCourses} from "../store/reducers/actions/CoursesActions";
 import Header from "../components/Header";
 import Content from "../components/Content/Content";
 import Title from "../components/Title";
-import PropTypes from "prop-types";
 import Card from "../components/Card";
 import TabBar from "../components/Tabs";
-
+import { Spinner } from "../components/Spinner";
 class Courses extends Component {
+	
 	static defaultProps = {
 		courses: [
 			{
+				id: "1",
 				title: "Hier worden al jouw cursussen weergegeven. ",
 				tag: "NEW",
 				shortDescription:
 					"Wanneer jouw recruiter een cursus voor jou heeft opengesteld kun je direct beginnen.",
 				label: "Cursus starten",
-			},
-			{
-				title: "MD-100",
-				tag: "IN PROGRESS",
-				shortDescription:
-					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
-				label: "Open Cursus",
-			},
-			{
-				title: "MD-100",
-				tag: "FINISHED",
-				shortDescription:
-					"This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
-				label: "Open Cursus",
-			},
-		],
-	};
+			}
+		]
+	}
+
 
 	state = {
 		title: "Mijn Cursussen",
 		courseTitle: "Titel",
 		tag: "tag",
 		content: "short description",
+		courses:[]
 	};
-
+	componentDidMount() {
+		
+		const { fetchCourses } = this.props;
+		fetchCourses();
+		console.log(fetchCourses)
+		
+	}
+	componentDidUpdate() {
+		console.log("hallo" + this.props.courses);
+		const { pending } = this.props;
+		if (pending === false) return false;
+		// more tests
+		return true;
+	}
 	render() {
+		const { courses, pending, error } = this.props;
+		if (pending) return <Spinner />;
 		const { title } = this.state;
-		const { courses } = this.props;
-		const coursesNew = courses.filter(course => course.tag === "NEW")
-		const coursesInProgress = courses.filter((course) => course.tag === "IN PROGRESS")
-		const coursesFinished = courses.filter((course) => course.tag === "FINISHED")
+		const coursesNew = courses.filter((course) => course.tag === "NEW");
+		const coursesInProgress = courses.filter(
+			(course) => course.tag === "IN PROGRESS"
+		);
+		const coursesFinished = courses.filter(
+			(course) => course.tag === "FINISHED"
+		);
 		return (
 			<>
 				<Header>
@@ -68,6 +84,8 @@ class Courses extends Component {
 													course.shortDescription
 												}
 												label={course.label}
+												id={course.id}
+												to={`course/:id`}
 											/>
 										))}
 									</>
@@ -86,6 +104,7 @@ class Courses extends Component {
 													course.shortDescription
 												}
 												label={course.label}
+												id={course.id}
 											/>
 										))}
 									</>
@@ -104,6 +123,7 @@ class Courses extends Component {
 													course.shortDescription
 												}
 												label={course.label}
+												id={course.id}
 											/>
 										))}
 									</>
@@ -130,13 +150,32 @@ class Courses extends Component {
 						]}
 					/>
 				</Content>
+				{/* <Switch>
+					<Route path={`${match.path}/:id`}>
+						<Course />
+					</Route>
+					<Route path={match.path}>
+						<h3>Please select a topic.</h3>
+					</Route>
+				</Switch> */}
 			</>
 		);
 	}
 }
 
-Courses.propTypes = {
-	courses: PropTypes.array,
-};
 
-export default Courses;
+const mapStateToProps = (state) => ({
+	error: getCoursesError(state),
+	courses: getCourses(state),
+	pending: getCoursesPending(state),
+});
+
+const mapDispatchToProps = (dispatch) =>
+	bindActionCreators(
+		{
+			fetchCourses: fetchCourses,
+		},
+		dispatch
+	);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Courses);
