@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import StyledCard from './StyledCard';
 import {CourseTags} from '../Tags';
 import {StyledLink} from '../Link'
@@ -19,17 +20,31 @@ export default function Card({tag, content, title, label, id}) {
 			<CardFooter title={title} id={id}>
 				{label}
 			</CardFooter>
-			</StyledCard>
-	)
+		</StyledCard>
+	);
 }
+
+// Proptypes Card
+Card.propTypes = {
+	tag: PropTypes.string,
+	content: PropTypes.string,
+	title: PropTypes.string,
+	label: PropTypes.string
+};
 
 export const BaseCard = ({children}) => {
 	return (
 		<StyledCard>
 			{children}
 		</StyledCard>
-	)
-}
+	);
+};
+
+// Proptypes BaseCard
+BaseCard.propTypes = {
+	// children: PropTypes.children
+};
+
 
 export const CardHeader = ({tag,title}) => {
 	return (
@@ -39,7 +54,15 @@ export const CardHeader = ({tag,title}) => {
 			<h2>{title}</h2>
 		</div>
 	);
-}
+};
+
+// Proptypes CardHeader
+CardHeader.propTypes = {
+	tag: PropTypes.string,
+	title: PropTypes.string
+};
+
+
 export const CardContent = ({content}) => {
 	return (
 		<div className="card-content">
@@ -51,6 +74,12 @@ export const CardContent = ({content}) => {
 	);
 };
 
+// Proptypes CardContent
+CardContent.propTypes = {
+	content: PropTypes.string
+};
+
+
 export const CardFooter = ({children, id}) => {
 	return (
 		<div className='card-footer'>
@@ -59,3 +88,7 @@ export const CardFooter = ({children, id}) => {
 	);
 };
 
+// Proptypes CardFooter - ???
+// CardFooter.propTypes = {
+// 	children: PropTypes.children
+// };

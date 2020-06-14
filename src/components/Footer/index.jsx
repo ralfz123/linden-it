@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import StyledFooter from './StyledFooter';
 
 const Footer = ({ children }) => {
@@ -6,7 +7,11 @@ const Footer = ({ children }) => {
 		<StyledFooter>
 			{children}
 		</StyledFooter>
-	)
+	);
+};
+
+Footer.propTypes = {
+	children: PropTypes.object
 };
 
 export default Footer;

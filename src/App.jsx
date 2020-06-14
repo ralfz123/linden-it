@@ -1,22 +1,19 @@
-import React from "react";
-import {
-	HashRouter,
-	Switch,
-	Route
-} from "react-router-dom";
-import PrivateRoute from './pages/PrivateRoute'
-import GlobalStyle from "./GlobalStyle";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Courses from "./pages/Courses";
-import Course from "./pages/Course";
-import Agenda from "./pages/Agenda";
-import Settings from "./pages/Settings";
-import Login from "./pages/Login";
-import ResetPassword from "./pages/ResetPassword";
+import React from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import PrivateRoute from './pages/PrivateRoute';
+import GlobalStyle from './GlobalStyle';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Courses from './pages/Courses';
+import Course from './pages/Course';
+import Agenda from './pages/Agenda';
+import Settings from './pages/Settings';
+import Login from './pages/Login';
+import ResetPassword from './pages/ResetPassword';
 
-const App = () => {
+const App = (props) => {
+	console.log(props);
 	return (
 		<HashRouter>
 			<Switch>

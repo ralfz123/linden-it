@@ -1,18 +1,18 @@
-import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 export const colors = {
-	primary: "#FC7928",
-	light: "#ffffff",
-	dark: "#000000",
-	gray: "#989898",
-	grayDark: "#3b3b3b",
-	grayLight: "#f4f4f4",
-	grayLightTwo: "#C4C4C4",
-    red: "#D21919;",
-    green: "#77dd77",
-    tagNew: "#5DD8A4",
-    tagProgress:"#FEC32E",
-    tagFinished:"#22C7E4"
+	primary: '#FC7928',
+	light: '#ffffff',
+	dark: '#000000',
+	gray: '#989898',
+	grayDark: '#3b3b3b',
+	grayLight: '#f4f4f4',
+	grayLightTwo: '#C4C4C4',
+	red: '#D21919;',
+	green: '#77dd77',
+	tagNew: '#5DD8A4',
+	tagProgress:'#FEC32E',
+	tagFinished:'#22C7E4'
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -87,10 +87,10 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-${"" /* Login page styles */}
+${'' /* Login page styles */}
 
     .login-wrapper {
-        ${"" /* login */}
+        ${'' /* login */}
     }
 
     .login {

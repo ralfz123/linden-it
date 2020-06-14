@@ -1,52 +1,48 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
 	getCourses,
 	getCoursesPending,
 	getCoursesError,
-} from "../store/reducers/selectors/CoursesSelectors";
+} from '../store/reducers/selectors/CoursesSelectors';
 
-import { bindActionCreators } from "redux";
+import { bindActionCreators } from 'redux';
 
-import {fetchCourses} from "../store/reducers/actions/CoursesActions";
-import Header from "../components/Header";
-import Content from "../components/Content/Content";
-import Title from "../components/Title";
-import Card from "../components/Card";
-import TabBar from "../components/Tabs";
-import { Spinner } from "../components/Spinner";
+import { fetchCourses } from '../store/reducers/actions/CoursesActions';
+import Header from '../components/Header';
+import Content from '../components/Content/Content';
+import Title from '../components/Title';
+import Card from '../components/Card';
+import TabBar from '../components/Tabs';
+import { Spinner } from '../components/Spinner';
 class Courses extends Component {
-	
 	static defaultProps = {
 		courses: [
 			{
-				id: "1",
-				title: "Hier worden al jouw cursussen weergegeven. ",
-				tag: "NEW",
+				id: '1',
+				title: 'Hier worden al jouw cursussen weergegeven. ',
+				tag: 'NEW',
 				shortDescription:
-					"Wanneer jouw recruiter een cursus voor jou heeft opengesteld kun je direct beginnen.",
-				label: "Cursus starten",
-			}
-		]
-	}
-
+					'Wanneer jouw recruiter een cursus voor jou heeft opengesteld kun je direct beginnen.',
+				label: 'Cursus starten',
+			},
+		],
+	};
 
 	state = {
-		title: "Mijn Cursussen",
-		courseTitle: "Titel",
-		tag: "tag",
-		content: "short description",
-		courses:[]
+		title: 'Mijn Cursussen',
+		courseTitle: 'Titel',
+		tag: 'tag',
+		content: 'short description',
+		courses: [],
 	};
 	componentDidMount() {
-		
 		const { fetchCourses } = this.props;
 		fetchCourses();
-		console.log(fetchCourses)
-		
+		console.log(fetchCourses);
 	}
 	componentDidUpdate() {
-		console.log("hallo" + this.props.courses);
+		console.log('hallo' + this.props.courses);
 		const { pending } = this.props;
 		if (pending === false) return false;
 		// more tests
@@ -56,12 +52,12 @@ class Courses extends Component {
 		const { courses, pending, error } = this.props;
 		if (pending) return <Spinner />;
 		const { title } = this.state;
-		const coursesNew = courses.filter((course) => course.tag === "NEW");
+		const coursesNew = courses.filter((course) => course.tag === 'NEW');
 		const coursesInProgress = courses.filter(
-			(course) => course.tag === "IN PROGRESS"
+			(course) => course.tag === 'IN PROGRESS'
 		);
 		const coursesFinished = courses.filter(
-			(course) => course.tag === "FINISHED"
+			(course) => course.tag === 'FINISHED'
 		);
 		return (
 			<>
@@ -72,7 +68,7 @@ class Courses extends Component {
 					<TabBar
 						tabs={[
 							{
-								title: "ALL",
+								title: 'ALL',
 								render: () => (
 									<>
 										{courses.map((course, i) => (
@@ -92,7 +88,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "NEW",
+								title: 'NEW',
 								render: () => (
 									<>
 										{coursesNew.map((course, i) => (
@@ -111,7 +107,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "IN PROGRESS",
+								title: 'IN PROGRESS',
 								render: () => (
 									<>
 										{coursesInProgress.map((course, i) => (
@@ -130,7 +126,7 @@ class Courses extends Component {
 								),
 							},
 							{
-								title: "FINISHED",
+								title: 'FINISHED',
 								render: () => (
 									<>
 										{coursesFinished.map((course, i) => (
@@ -162,7 +158,6 @@ class Courses extends Component {
 		);
 	}
 }
-
 
 const mapStateToProps = (state) => ({
 	error: getCoursesError(state),
