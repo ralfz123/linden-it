@@ -1,27 +1,22 @@
-import React, { Component } from "react";
-import Header from "../components/Header";
-import Content from "../components/Content/Content";
-import Title from "../components/Title";
+import React, { Component } from 'react';
+import Header from '../components/Header';
+import Content from '../components/Content/Content';
+import Title from '../components/Title';
 
-
-import TabBar from "../components/Tabs";
-
-
+import TabBar from '../components/Tabs';
 
 class Course extends Component {
 	state = {
-		title: "Course Titel",
-		courseTitle: "Titel",
-		tag: "tag",
-		content: "short description",
+		title: 'Course Titel',
+		courseTitle: 'Titel',
+		tag: 'tag',
+		content: 'short description',
 	};
 
 	render() {
-			
-		console.log("hallooo")
+		console.log('hallooo');
 		const { title } = this.state;
-		
-		
+
 		return (
 			<>
 				<Header>
@@ -31,15 +26,15 @@ class Course extends Component {
 					<TabBar
 						tabs={[
 							{
-								title: "ALL",
+								title: 'ALL',
 								render: () => (
 									<>
-									<div>fhuiw</div>
+										<div>fhuiw</div>
 									</>
 								),
 							},
 							{
-								title: "NEW",
+								title: 'NEW',
 								render: () => (
 									<>
 										<div>doei</div>
@@ -47,11 +42,10 @@ class Course extends Component {
 								),
 							},
 							{
-								title: "IN PROGRESS",
+								title: 'IN PROGRESS',
 								render: () => (
 									<>
 										<div>hallo</div>
-									
 									</>
 								),
 							},
@@ -62,6 +56,5 @@ class Course extends Component {
 		);
 	}
 }
-
 
 export default Course;

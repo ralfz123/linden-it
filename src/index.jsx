@@ -7,7 +7,6 @@ import AppStore from './store/appstore';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
@@ -16,7 +15,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={AppStore}>
 			<App />
-    	</Provider>	
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

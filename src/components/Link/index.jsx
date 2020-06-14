@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { colors } from "../../GlobalStyle";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle';
 export const StyledLink = styled(Link)`
 	background-color: ${colors.primary};
 	border: 2px solid ${colors.primary};
@@ -13,7 +13,7 @@ export const StyledLink = styled(Link)`
 	text-decoration: none;
 	padding: 0 64px;
 	cursor: pointer;
-	display:inline-block;
+	display: inline-block;
 
 	:hover {
 		background-color: ${colors.light};
@@ -37,6 +37,7 @@ export const StyledSecondaryLink = styled(StyledLink)`
 	}
 `;
 
+// eslint-disable-next-line react/display-name
 export default (props) => {
-    return <StyledLink {...props} />;
+	return <StyledLink {...props} />;
 };

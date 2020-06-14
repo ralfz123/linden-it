@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledCard from './StyledCard';
 import {CourseTags} from '../Tags';
-import {StyledLink} from '../Link'
+import { StyledLink } from '../Link';
 
 export default function Card({tag, content, title, label, id}) {
 	return (
@@ -26,10 +26,11 @@ export default function Card({tag, content, title, label, id}) {
 
 // Proptypes Card
 Card.propTypes = {
+	id: PropTypes.string,
 	tag: PropTypes.string,
 	content: PropTypes.string,
 	title: PropTypes.string,
-	label: PropTypes.string
+	label: PropTypes.string,
 };
 
 export const BaseCard = ({children}) => {
@@ -42,7 +43,7 @@ export const BaseCard = ({children}) => {
 
 // Proptypes BaseCard
 BaseCard.propTypes = {
-	// children: PropTypes.children
+	children: PropTypes.string
 };
 
 
@@ -88,7 +89,8 @@ export const CardFooter = ({children, id}) => {
 	);
 };
 
-// Proptypes CardFooter - ???
-// CardFooter.propTypes = {
-// 	children: PropTypes.children
-// };
+
+CardFooter.propTypes = {
+	children: PropTypes.string,
+	id: PropTypes.string
+};
