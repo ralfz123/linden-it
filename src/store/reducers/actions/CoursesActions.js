@@ -2,56 +2,54 @@ import data from '../../../data.json';
 
 function fetchCoursesSuccess(courses) {
 	return {
-        type: "COURSES::FETCH_SUCCESS",
-        courses: courses,
+		type: 'COURSES::FETCH_SUCCESS',
+		courses: courses,
 	};
 }
 
 function fetchCoursesPending(value) {
 	return {
-		type: "COURSES::FETCH_PENDING",
+		type: 'COURSES::FETCH_PENDING',
 		pending: value,
 	};
 }
 
 function fetchCoursesError(error) {
 	return {
-		type: "COURSES::FETCH_ERROR",
+		type: 'COURSES::FETCH_ERROR',
 		error: error,
-		courses: []
+		courses: [],
 	};
 }
 
 let myInit = {
 	method: 'GET',
 	headers: {
-		'Content-Type': 'applications/json'
+		'Content-Type': 'applications/json',
 	},
 	mode: 'cors',
-	cache: 'default'
-
+	cache: 'default',
 };
 
 let reqData = new Request(data, myInit);
 
 export const fetchCourses = () => (dispatch) => {
-    dispatch(fetchCoursesPending());
-    fetch(reqData)
-        .then(res => res.json())
-        .then(res => {
-            if (res.error) {
-              dispatch(fetchCoursesSuccess(false));
+	dispatch(fetchCoursesPending());
+	fetch(reqData)
+		.then((res) => res.json())
+		.then((res) => {
+			if (res.error) {
+				dispatch(fetchCoursesSuccess(false));
 				dispatch(fetchCoursesError(true));
-            }
-            dispatch(fetchCoursesError(false));
+			}
+			dispatch(fetchCoursesError(false));
 			dispatch(fetchCoursesSuccess(res.data.courses));
-			console.log("hallo" + data)
-            return data.courses;  
-    })
-	
+			console.log('hallo' + data);
+			return data.courses;
+		});
+
 	// FAKE WACHTTIJD VOOR Courses
 	setTimeout(() => {
 		dispatch(fetchCoursesSuccess(data.courses));
 	}, 1000);
 };
-
