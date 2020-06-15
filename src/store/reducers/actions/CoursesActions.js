@@ -43,7 +43,7 @@ export const fetchCourses = () => (dispatch) => {
 				dispatch(fetchCoursesError(true));
 			}
 			dispatch(fetchCoursesError(false));
-			dispatch(fetchCoursesSuccess(res.data.courses));
+			dispatch(fetchCoursesSuccess(data.courses));
 			console.log('hallo' + data);
 			return data.courses;
 		});
@@ -51,5 +51,5 @@ export const fetchCourses = () => (dispatch) => {
 	// FAKE WACHTTIJD VOOR Courses
 	setTimeout(() => {
 		dispatch(fetchCoursesSuccess(data.courses));
-	}, 1000);
+	});
 };

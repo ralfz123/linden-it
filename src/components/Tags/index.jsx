@@ -31,6 +31,7 @@ const Tag = styled.div`
 	color: ${colors.light};
 	border-radius: 5px;
 	font-size: 12px;
+	
 `;
 
 export const CourseTags = ({ children }) => {

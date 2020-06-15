@@ -4,21 +4,20 @@ import StyledCard from './StyledCard';
 import {CourseTags} from '../Tags';
 import { StyledLink } from '../Link';
 
-export default function Card({tag, content, title, label, id}) {
+export default function Card({tag, content, title, label, id, path}) {
 	return (
 		<StyledCard>
-			{tag &&
-				<CardHeader title={title} tag={tag} >
+			{tag && (
+				<CardHeader title={title} tag={tag}>
 					{tag}
 				</CardHeader>
-			}
-			{content &&
-				<CardContent content={content}>
-					{content}
-				</CardContent> }
-				
+			)}
+			{content && <CardContent content={content}>{content}</CardContent>}
+
 			<CardFooter title={title} id={id}>
-				{label}
+				<StyledLink label={label} key={id} to={`${path}/${id}`}>
+					{label}
+				</StyledLink>
 			</CardFooter>
 		</StyledCard>
 	);
@@ -26,11 +25,12 @@ export default function Card({tag, content, title, label, id}) {
 
 // Proptypes Card
 Card.propTypes = {
-	id: PropTypes.string,
+	id: PropTypes.number,
 	tag: PropTypes.string,
 	content: PropTypes.string,
 	title: PropTypes.string,
 	label: PropTypes.string,
+	path: PropTypes.string
 };
 
 export const BaseCard = ({children}) => {
@@ -81,10 +81,10 @@ CardContent.propTypes = {
 };
 
 
-export const CardFooter = ({children, id}) => {
+export const CardFooter = ({children}) => {
 	return (
 		<div className='card-footer'>
-			<StyledLink label={children} to={`/courses/${id}`}>{children}</StyledLink>
+			{children}
 		</div>
 	);
 };

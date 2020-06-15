@@ -49,6 +49,7 @@
 		},
 		{
 			"title": "MD-200",
+			"id": "2",
 			"tag": "IN PROGRESS",
 			"label": "Open Cursus",
 			"shortDescription": "This exam measures your ability to accomplish the following technical tasks: deploy and update operating systems; manage policies and profiles; manage and protect devices; and manage apps and data. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification.  ",

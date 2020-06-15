@@ -1,5 +1,5 @@
 const initialState = {
-	pending: true,
+	pending: false,
 	courses: [],
 	error: null,
 };

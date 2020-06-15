@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {
+	HashRouter,
+	Switch,
+	Route,
+	Link,
+	useParams,
+	useRouteMatch,
+} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
 	getCourses,
@@ -9,6 +18,8 @@ import {
 import { bindActionCreators } from 'redux';
 
 import { fetchCourses } from '../store/reducers/actions/CoursesActions';
+import Course from '../pages/Course';
+import CourseDetail from '../pages/CourseDetail';
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
@@ -36,22 +47,26 @@ class Courses extends Component {
 		content: 'short description',
 		courses: [],
 	};
+	
 	componentDidMount() {
 		const { fetchCourses } = this.props;
 		fetchCourses();
+
 		console.log(fetchCourses);
 	}
-	componentDidUpdate() {
+	componentDidUpdate(prevProps, prevState) {
 		const { pending } = this.props;
 		if (pending === false) return false;
 		// more tests
 		return true;
 	}
 	render() {
-		const { courses, pending, error } = this.props;
+		const { courses, pending, error, match, url } = this.props;
 		if (pending) return <Spinner />;
+		console.log(this.state);
 		const { title } = this.state;
 		const coursesNew = courses.filter((course) => course.tag === 'NEW');
+		const course = courses.map((course) => (course.id));
 		const coursesInProgress = courses.filter(
 			(course) => course.tag === 'IN PROGRESS'
 		);
@@ -70,9 +85,9 @@ class Courses extends Component {
 								title: 'ALL',
 								render: () => (
 									<>
-										{courses.map((course, id) => (
+										{courses.map((course) => (
 											<Card
-												key={id}
+												key={course.id}
 												title={course.title}
 												tag={course.tag}
 												content={
@@ -80,6 +95,7 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												path={url}
 											/>
 										))}
 									</>
@@ -89,9 +105,9 @@ class Courses extends Component {
 								title: 'NEW',
 								render: () => (
 									<>
-										{coursesNew.map((course, i) => (
+										{coursesNew.map((course) => (
 											<Card
-												key={i}
+												key={course.id}
 												title={course.title}
 												tag={course.tag}
 												content={
@@ -108,18 +124,20 @@ class Courses extends Component {
 								title: 'IN PROGRESS',
 								render: () => (
 									<>
-										{coursesInProgress.map((course, i) => (
-											<Card
-												key={i}
-												title={course.title}
-												tag={course.tag}
-												content={
-													course.shortDescription
-												}
-												label={course.label}
-												id={course.id}
-											/>
-										))}
+										{coursesInProgress.map(
+											(course) => (
+												<Card
+													key={course.id}
+													title={course.title}
+													tag={course.tag}
+													content={
+														course.shortDescription
+													}
+													label={course.label}
+													id={course.id}
+												/>
+											)
+										)}
 									</>
 								),
 							},
@@ -127,41 +145,54 @@ class Courses extends Component {
 								title: 'FINISHED',
 								render: () => (
 									<>
-										{coursesFinished.map((course, i) => (
-											<Card
-												key={i}
-												title={course.title}
-												tag={course.tag}
-												content={
-													course.shortDescription
-												}
-												label={course.label}
-											/>
-										))}
+										{coursesFinished.map(
+											(course, i) => (
+												<Card
+													key={i}
+													title={course.title}
+													tag={course.tag}
+													content={
+														course.shortDescription
+													}
+													label={course.label}
+												/>
+											)
+										)}
 									</>
 								),
 							},
 						]}
 					/>
+						
+					{/* <Route
+							name='course'
+							path={`${url}/:id`}
+
+							component={Course}
+						/> */}
+						
+					
 				</Content>
-				{/* <Switch>
-					<Route path={`${match.path}/:id`}>
-						<Course />
-					</Route>
-					<Route path={match.path}>
-						<h3>Please select a topic.</h3>
-					</Route>
-				</Switch> */}
 			</>
 		);
 	}
 }
+Courses.propTypes = {
+	pathname: PropTypes.string,
+	hash: PropTypes.string,
+};
 
-const mapStateToProps = (state) => ({
-	error: getCoursesError(state),
-	courses: getCourses(state),
-	pending: getCoursesPending(state),
-});
+const mapStateToProps = (state, ownProps) => {
+	const courseId = ownProps.params;
+	console.log(ownProps.params);
+	return {
+		error: getCoursesError(state),
+		courses: getCourses(state),
+		pending: getCoursesPending(state),
+		pathname: state.router.location.pathname,
+		hash: state.router.location.hash,
+	};
+};
 
 const mapDispatchToProps = (dispatch) =>
 	bindActionCreators(
