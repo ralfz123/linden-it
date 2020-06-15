@@ -42,7 +42,6 @@ class Courses extends Component {
 		console.log(fetchCourses);
 	}
 	componentDidUpdate() {
-		console.log('hallo' + this.props.courses);
 		const { pending } = this.props;
 		if (pending === false) return false;
 		// more tests
@@ -71,9 +70,9 @@ class Courses extends Component {
 								title: 'ALL',
 								render: () => (
 									<>
-										{courses.map((course, i) => (
+										{courses.map((course, id) => (
 											<Card
-												key={i}
+												key={id}
 												title={course.title}
 												tag={course.tag}
 												content={
@@ -81,7 +80,6 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
-												to={`course/:id`}
 											/>
 										))}
 									</>

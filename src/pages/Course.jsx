@@ -14,7 +14,6 @@ class Course extends Component {
 	};
 
 	render() {
-		console.log('hallooo');
 		const { title } = this.state;
 
 		return (
