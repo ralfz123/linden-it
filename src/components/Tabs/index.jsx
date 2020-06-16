@@ -26,8 +26,8 @@ export default function TabBar({ tabs }) {
 
 
 TabBar.propTypes = {
-    tabs: PropTypes.array,
-    map: PropTypes.func
+	tabs: PropTypes.array,
+	map: PropTypes.func
 };
 
 const TabContainer = styled.section`
