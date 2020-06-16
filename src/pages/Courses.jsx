@@ -85,9 +85,7 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={
-													`Korte Introductie`
-												}
+												contentTitle={`Korte Introductie`}
 												content={
 													course.shortDescription
 												}
@@ -105,14 +103,19 @@ class Courses extends Component {
 									<>
 										{coursesNew.map((course) => (
 											<Card
+												onClick={() =>
+													selectCourse(course)
+												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
+												contentTitle={`Korte Introductie`}
 												content={
 													course.shortDescription
 												}
 												label={course.label}
 												id={course.id}
+												path={url}
 											/>
 										))}
 									</>
@@ -141,15 +144,21 @@ class Courses extends Component {
 								title: 'FINISHED',
 								render: () => (
 									<>
-										{coursesFinished.map((course, i) => (
+										{coursesFinished.map((course) => (
 											<Card
-												key={i}
+												onClick={() =>
+													selectCourse(course)
+												}
+												key={course.id}
 												title={course.title}
 												tag={course.tag}
+												contentTitle={`Korte Introductie`}
 												content={
 													course.shortDescription
 												}
 												label={course.label}
+												id={course.id}
+												path={url}
 											/>
 										))}
 									</>

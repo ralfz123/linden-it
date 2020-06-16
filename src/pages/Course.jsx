@@ -30,11 +30,12 @@ class Course extends Component {
 		return true;
 	}
 	render() {
-		
-		const { course, params, path, match, pending } = this.props;
-		
 		console.log(this.state);
 		console.log(this.props);
+		const { course, params, path, match, pending, history } = this.props;
+		
+		console.log("state" + this.state);
+		console.log("props" + this.props);
 		
 		if (!course) {
 			return (
@@ -50,7 +51,7 @@ class Course extends Component {
 	
 			return (
 				<>
-					<Header>
+					<Header history={history}>
 						<Title title={course.title} />
 					</Header>
 					<Content>
