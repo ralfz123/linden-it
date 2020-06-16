@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle.js';
 
 const StyledFooter = styled.footer`
-	background-color: var(--color-gray-light);
-	
-`
-export default StyledFooter
+	background-color: ${colors.grayLight};
+`;
+export default StyledFooter;

@@ -1,5 +1,6 @@
 import React from 'react';
-import StyledHeading from './StyledHeading.js'
+import PropTypes from 'prop-types';
+import StyledHeading from './StyledHeading.js';
 
 export const Title = ({ title }) => {
 	return (
@@ -7,6 +8,10 @@ export const Title = ({ title }) => {
 			{title}
 		</StyledHeading>
 	);
-}
+};
+
+Title.propTypes = {
+	title: PropTypes.string
+};
 
 export default Title;

@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import StyledHeader from "./StyledHeader";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import StyledHeader from './StyledHeader';
 
 class Header extends Component {
 	constructor(props) {
@@ -19,6 +20,8 @@ class Header extends Component {
 	}
 }
 
-Header.propTypes = {};
+Header.propTypes = {
+	children: PropTypes.object
+};
 
 export default Header;

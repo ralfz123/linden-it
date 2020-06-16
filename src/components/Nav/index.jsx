@@ -1,7 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { FiHome, FiSettings, FiBook, FiCalendar } from "react-icons/fi";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { colors } from '../../GlobalStyle.js';
+import { NavLink } from 'react-router-dom';
+import { FiHome, FiSettings, FiBook, FiCalendar } from 'react-icons/fi';
 
 const Tab = styled.div`
 	display: flex;
@@ -16,13 +18,13 @@ const Tab = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		color: var(--color-gray);
+		color: ${colors.gray};
 		text-decoration: none;
 		padding: 3px 0;
 		font-size: 12px;
 
 		&.active {
-			color: var(--color-primary);
+			color: ${colors.primary};
 		}
 		.react-icons {
 			font-size: 24px;
@@ -53,4 +55,8 @@ export const Nav = ({ children }) => {
 	);
 };
 
+// Do not understand which propTypes have to be here? Because see Ln.34
+// Nav.propTypes = {
+// 	children: PropTypes.object
+// };
 export default Nav;
