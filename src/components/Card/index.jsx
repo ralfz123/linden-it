@@ -1,35 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledCard from './StyledCard';
-import {PrimaryButton} from '../Button';
 import {CourseTags} from '../Tags';
+import { StyledLink } from '../Link';
 
-export default function Card({tag, content, title, label}) {
+export default function Card({tag, content, title, label, id, path, onClick, contentTitle }) {
 	return (
 		<StyledCard>
-			{tag &&
-				<CardHeader title={title} tag={tag} >
+			{tag && (
+				<CardHeader title={title} tag={tag}>
 					{tag}
 				</CardHeader>
-			}
-			{content &&
-				<CardContent content={content}>
-					{content}
-				</CardContent> }
-				
-			<CardFooter>
-				{label}
-			</CardFooter>
+			)}
+			{content && <CardContent contentTitle={contentTitle} content={content}>{content}</CardContent>}
+
+			{label && <CardFooter title={title} id={id}>
+				<StyledLink label={label} key={id} to={`${path}/${id}`}>
+					{label}
+				</StyledLink>
+			</CardFooter>}
 		</StyledCard>
 	);
 }
 
 // Proptypes Card
 Card.propTypes = {
-	tag: PropTypes.string,
-	content: PropTypes.string,
-	title: PropTypes.string,
-	label: PropTypes.string
+	content: PropTypes.any,
+	contentTitle: PropTypes.any,
+	id: PropTypes.any,
+	label: PropTypes.any,
+	onClick: PropTypes.func,
+	path: PropTypes.any,
+	tag: PropTypes.any,
+	title: PropTypes.any
 };
 
 export const BaseCard = ({children}) => {
@@ -42,7 +45,7 @@ export const BaseCard = ({children}) => {
 
 // Proptypes BaseCard
 BaseCard.propTypes = {
-	// children: PropTypes.children
+	children: PropTypes.any,
 };
 
 
@@ -63,10 +66,10 @@ CardHeader.propTypes = {
 };
 
 
-export const CardContent = ({content}) => {
+export const CardContent = ({content, contentTitle}) => {
 	return (
 		<div className="card-content">
-			<p><b>Korte Introductie</b></p>
+			<p><b>{contentTitle}</b></p>
 			<p>
 				{content}
 			</p>
@@ -76,19 +79,20 @@ export const CardContent = ({content}) => {
 
 // Proptypes CardContent
 CardContent.propTypes = {
-	content: PropTypes.string
+	content: PropTypes.string,
+	contentTitle: PropTypes.any,
 };
 
 
 export const CardFooter = ({children}) => {
 	return (
 		<div className='card-footer'>
-			<PrimaryButton label={children} />
+			{children}
 		</div>
 	);
 };
 
-// Proptypes CardFooter - ???
-// CardFooter.propTypes = {
-// 	children: PropTypes.children
-// };
+
+CardFooter.propTypes = {
+	children: PropTypes.any
+};

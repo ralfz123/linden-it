@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledMain = styled.main`
 	height: 100%;
-	padding-bottom: 50px;
+	padding-bottom: calc(50px + env(save-area-inset-bottom, 25px));
 `;
 export const Content = ({children}) => {
 	
@@ -17,7 +17,7 @@ export const Content = ({children}) => {
 };
 
 Content.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.any,
 };
 
 export default Content;

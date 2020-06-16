@@ -7,7 +7,7 @@ import { SecondaryButton } from '../components/Button';
 
 class Home extends Component {
 	state = {
-		title: "Home",
+		title: 'Home',
 	};
 
 	render() {
