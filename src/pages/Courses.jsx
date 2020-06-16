@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import {
-	getCourses,
 	getCoursesPending,
 	getCoursesError,
 } from '../store/reducers/selectors/CoursesSelectors';
@@ -11,7 +10,6 @@ import {
 import { bindActionCreators } from 'redux';
 
 import { fetchCourses } from '../store/reducers/actions/CoursesActions';
-import { selectCourse } from '../store/reducers/actions/CourseSelectAction';
 
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
@@ -79,9 +77,7 @@ class Courses extends Component {
 									<>
 										{courses.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
+
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -202,7 +198,7 @@ Courses.propTypes = {
 const mapStateToProps = (state) => {
 	return {
 		error: getCoursesError(state),
-		courses: getCourses(state),
+		courses: state.courses.courses,
 		pending: getCoursesPending(state),
 	};
 };
@@ -211,7 +207,6 @@ const mapDispatchToProps = (dispatch) =>
 	bindActionCreators(
 		{
 			fetchCourses: fetchCourses,
-			selectCourse: selectCourse
 		},
 		dispatch
 	);

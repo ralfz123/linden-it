@@ -1,7 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ConnectedRouter } from 'connected-react-router';
 import PrivateRoute from './pages/PrivateRoute';
 import GlobalStyle from './GlobalStyle';
 import Nav from './components/Nav';
@@ -14,9 +13,9 @@ import Settings from './pages/Settings';
 import Login from './pages/Login';
 import ResetPassword from './pages/ResetPassword';
 
-const App = ({ history, context }) => {
+const App = () => {
 	return (
-		<ConnectedRouter history={history} context={context}>
+		<HashRouter>
 			<Switch>
 				<Route name='login' path='/login' component={Login} />
 
@@ -53,7 +52,7 @@ const App = ({ history, context }) => {
 				<Nav />
 			</Footer>
 			<GlobalStyle />
-		</ConnectedRouter>
+		</HashRouter>
 	);
 };
 App.propTypes = {

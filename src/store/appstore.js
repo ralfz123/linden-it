@@ -1,12 +1,10 @@
-import { createBrowserHistory } from 'history';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
+
 import thunk from 'redux-thunk';
-import createRootReducer from './reducers/RootReducer';
+import RootReducer from './reducers/RootReducer';
 
 const middleware = [thunk];
 const isProduction = process.env.NODE_ENV === 'production';
-export const history = createBrowserHistory();
 const composeEnhancers =
 	typeof window === 'object' &&
 	!isProduction &&
@@ -16,13 +14,8 @@ const composeEnhancers =
 		})
 		: compose;
 
-const enhancer = composeEnhancers(applyMiddleware(routerMiddleware(history), ...middleware));
+const enhancer = composeEnhancers(applyMiddleware(...middleware));
 
-export default function  configureStore(preloadedState) {
-	const AppStore = createStore(
-		createRootReducer(history),
-		preloadedState,
-		enhancer
-	);
-	return AppStore;
-}
+const AppStore = createStore(RootReducer, enhancer);
+
+export default AppStore;

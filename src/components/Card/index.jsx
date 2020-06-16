@@ -14,8 +14,8 @@ export default function Card({tag, content, title, label, id, path, onClick, con
 			)}
 			{content && <CardContent contentTitle={contentTitle} content={content}>{content}</CardContent>}
 
-			{onClick && <CardFooter title={title} id={id}>
-				<StyledLink label={label} key={id} to={`${path}/${id}`} onClick={onClick} >
+			{label && <CardFooter title={title} id={id}>
+				<StyledLink label={label} key={id} to={`${path}/${id}`}>
 					{label}
 				</StyledLink>
 			</CardFooter>}

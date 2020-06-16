@@ -93,14 +93,20 @@ class Course extends Component {
 
 Course.propTypes = {
 	course: PropTypes.object,
+	courses: PropTypes.shape({
+		find: PropTypes.func,
+		length: PropTypes.number,
+	}),
 	history: PropTypes.any,
 	match: PropTypes.any,
-	params: PropTypes.any,
+	params: PropTypes.shape({
+		id: PropTypes.any,
+	}),
 	path: PropTypes.any,
-	pending: PropTypes.bool
+	pending: PropTypes.bool,
 };
 
-const mapStateToProps = (state,ownProps) => {
+const mapStateToProps = (state) => {
 
 	return {
 		courses: state.courses.courses
