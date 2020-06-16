@@ -29,4 +29,36 @@ export const StyledBaseTextInput = styled.input`
 
 export const StyledBaseNumberInput = styled.input`
 	width: 100%;
+	background-color: ${colors.light};
+	border: 1px solid ${colors.grayLightTwo};
+	border-radius: 5px;
+	padding: 10px;
+
+`;
+
+export const StyledBaseTimeInput = styled.input`
+	width: 30%;
+	background-color: ${colors.light};
+	border: 1px solid ${colors.grayLightTwo};
+	border-radius: 5px;
+	padding: 10px;
+
+`;
+
+export const StyledBaseDateInput = styled.input`
+	width: 20%;
+	background-color: ${colors.light};
+	border: 1px solid ${colors.grayLightTwo};
+	border-radius: 5px;
+	padding: 10px;
+
+`;
+
+export const StyledBaseCheckboxInput = styled.input.attrs({ type: 'checkbox' })`
+	/* width: 20%; */
+	background-color: ${colors.green};
+	/* border: 1px solid ${colors.grayLightTwo}; */
+	border-radius: 5px;
+	/* padding: 10px; */
+
 `;

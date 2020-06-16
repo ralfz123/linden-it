@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 // import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 import { BaseTextInput } from '../Form';
 import { BaseNumberInput } from '../Form';
+import { BaseDateInput } from '../Form';
 import { PrimaryButton } from '../Button';
+import { ToggleButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
 
@@ -31,8 +33,8 @@ class Step1 extends Component {
 				</div>
 
 				<div className='section'>
-					<h3>Datum examen:</h3>
-					<input
+					<label htmlFor='pages'>Datum examen:</label>
+					<BaseDateInput
 						className='form-control'
 						id='date'
 						name='date'
@@ -43,23 +45,86 @@ class Step1 extends Component {
 					/>
 				</div>
 
-				<div className='section'>
-					<h3>Welke dagen ben je beschikbaar voor je studie?</h3>
-					
-					{/* round toggle buttons monday-sunday */}
-					<input
-						className='form-control'
-						id='studyDays'
-						name='date'
-						type='radio'
-						// placeholder=''
-						value={this.props.studyDays} // Prop: The email input data
-						onChange={this.props.handleChange} // Prop: Puts data into state
-					/>
+				<div className='container-pushbuttons'>
+					<label htmlFor='pages'>
+						Welke dagen ben je beschikbaar voor je studie?
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='maandag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Ma</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='dinsdag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Di</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='woensdag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Wo</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='donderdag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Do</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='vrijdag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Vr</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='zaterdag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Za</div>
+					</label>
+
+					<label className='pushbuttons'>
+						<input
+							type='checkbox'
+							value='zondag'
+							htmlFor='studyDays'
+							name='studyDays'
+						/>
+						<div>Zo</div>
+					</label>
 				</div>
 
 				<div className='button'>
-					<h3>Hoeveel uren per studiedag ben je beschikbaar?</h3>
+					<label htmlFor='pages'>
+						Hoeveel uren per studiedag ben je beschikbaar?
+					</label>
 
 					<BaseNumberInput
 						className='form-control'

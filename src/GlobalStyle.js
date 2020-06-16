@@ -11,8 +11,8 @@ export const colors = {
 	red: '#D21919;',
 	green: '#77dd77',
 	tagNew: '#5DD8A4',
-	tagProgress:'#FEC32E',
-	tagFinished:'#22C7E4'
+	tagProgress: '#FEC32E',
+	tagFinished: '#22C7E4',
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     }
     html {
         box-sizing: border-box;
-        background-color: var(--color-primary);
+        background-color: ${colors.primary};
     }
     *, *:before, *:after {
         box-sizing: border-box;
@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
        flex-grow:1;
         box-sizing:border-box;
         z-index:0;
-        background-color:var(--color-light);
+        background-color: ${colors.light};
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
         -webkit-overflow-scrolling: touch;
@@ -163,7 +163,48 @@ ${'' /* Login page styles */}
     i:hover {
         color: ${colors.primary};
         cursor: pointer;
-}
+    }
+
+${'' /* ***************** pushbuttons ***************** */}
+    .container-pushbuttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .pushbuttons {
+        position: relative;
+        width: 10%;
+    }
+
+    .pushbuttons > div {
+        width: 35px;
+        height: 35px;
+        padding: 5px 7px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        background-color: ${colors.light};
+        color: ${colors.grayLightTwo};
+        border: 1px solid ${colors.gray};
+        border-radius: 100%;
+    }
+
+    .pushbuttons input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    .pushbuttons input:checked + div {
+        background-color: ${colors.primary};
+        color: ${colors.light};
+        border: 1px solid ${colors.primary};
+    }
+    
 `;
 
 export default GlobalStyle;

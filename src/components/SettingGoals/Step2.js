@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 // import { BaseTextInput } from '../components/Form';
 import { BaseNumberInput } from '../Form';
+import { BaseTimeInput } from '../Form';
 import { PrimaryButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
@@ -17,7 +18,7 @@ class Step2 extends Component {
 			<>
 				<div className='form-group'>
 					<label htmlFor='pages'>
-						Ons advies voor ITIL 3,lees elke studiedag:
+						Ons advies voor ITIL 3, lees elke studiedag:
 					</label>
 					<input
 						className='form-control'
@@ -28,11 +29,13 @@ class Step2 extends Component {
 						value={this.props.pageNumbers} // Prop: The email input data
 						onChange={this.props.handleChange} // Prop: Puts data into state
 					/>
-					<h3>pagina's</h3>
+					<label htmlFor='pages'>pagina's</label>
 				</div>
 
 				<div className='section'>
-					<h3>Herinner mij om te studeren</h3>
+					<label htmlFor='pages'>
+						Herinner mij om te studeren
+					</label>
 					<PrimaryButton label='toggle' />
 					<p>
 						Selecteer een tijd wanneer je een melding wilt
@@ -40,7 +43,7 @@ class Step2 extends Component {
 					</p>
 
 					{/* map over all inputfields max < 7 */}
-					<input
+					<BaseTimeInput
 						id='studyTimeDay'
 						name='studyTimeDay'
 						type='time'
@@ -55,8 +58,7 @@ class Step2 extends Component {
 					<PrimaryButton label='toggle' />
 				</div>
 
-				<input
-					className='form-control'
+				<BaseTimeInput
 					id='sameStudyTimeDay'
 					name='sameStudyTimeDay'
 					type='time'
