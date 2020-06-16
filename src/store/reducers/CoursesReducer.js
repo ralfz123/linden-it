@@ -1,7 +1,9 @@
+const data = require('../../data.json');
 const initialState = {
-	pending: false,
-	courses: [],
+	pending: true,
+	courses: data.courses,
 	error: null,
+	course: null
 };
 
 export const CoursesReducer = (state = initialState, action) => {
@@ -23,6 +25,12 @@ export const CoursesReducer = (state = initialState, action) => {
 			...state,
 			pending: true,
 			error: action.error,
+		};
+	case 'COURSE::SELECTED':
+		return {
+			...state,
+			pending: false,
+			course: action.payload,
 		};
 	default:
 		return state;

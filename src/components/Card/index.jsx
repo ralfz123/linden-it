@@ -4,7 +4,7 @@ import StyledCard from './StyledCard';
 import {CourseTags} from '../Tags';
 import { StyledLink } from '../Link';
 
-export default function Card({tag, content, title, label, id, path}) {
+export default function Card({tag, content, title, label, id, path, onClick, contentTitle }) {
 	return (
 		<StyledCard>
 			{tag && (
@@ -12,25 +12,26 @@ export default function Card({tag, content, title, label, id, path}) {
 					{tag}
 				</CardHeader>
 			)}
-			{content && <CardContent content={content}>{content}</CardContent>}
+			{content && <CardContent contentTitle={contentTitle} content={content}>{content}</CardContent>}
 
-			<CardFooter title={title} id={id}>
-				<StyledLink label={label} key={id} to={`${path}/${id}`}>
+			{onClick && <CardFooter title={title} id={id}>
+				<StyledLink label={label} key={id} to={`${path}/${id}`} onClick={onClick} >
 					{label}
 				</StyledLink>
-			</CardFooter>
+			</CardFooter>}
 		</StyledCard>
 	);
 }
 
 // Proptypes Card
 Card.propTypes = {
-	id: PropTypes.number,
-	tag: PropTypes.string,
-	content: PropTypes.string,
-	title: PropTypes.string,
-	label: PropTypes.string,
-	path: PropTypes.string
+	id: PropTypes.any,
+	tag: PropTypes.any,
+	content: PropTypes.any,
+	title: PropTypes.any,
+	label: PropTypes.any,
+	path: PropTypes.any,
+	onClick: PropTypes.func
 };
 
 export const BaseCard = ({children}) => {
@@ -43,7 +44,7 @@ export const BaseCard = ({children}) => {
 
 // Proptypes BaseCard
 BaseCard.propTypes = {
-	children: PropTypes.string
+	// children: PropTypes.string
 };
 
 
@@ -64,10 +65,10 @@ CardHeader.propTypes = {
 };
 
 
-export const CardContent = ({content}) => {
+export const CardContent = ({content, contentTitle}) => {
 	return (
 		<div className="card-content">
-			<p><b>Korte Introductie</b></p>
+			<p><b>{contentTitle}</b></p>
 			<p>
 				{content}
 			</p>
@@ -91,6 +92,5 @@ export const CardFooter = ({children}) => {
 
 
 CardFooter.propTypes = {
-	children: PropTypes.string,
 	id: PropTypes.string
 };

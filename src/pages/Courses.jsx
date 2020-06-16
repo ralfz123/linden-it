@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-	HashRouter,
-	Switch,
-	Route,
-	Link,
-	useParams,
-	useRouteMatch,
-} from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import {
 	getCourses,
@@ -18,8 +11,8 @@ import {
 import { bindActionCreators } from 'redux';
 
 import { fetchCourses } from '../store/reducers/actions/CoursesActions';
-import Course from '../pages/Course';
-import CourseDetail from '../pages/CourseDetail';
+import { selectCourse } from '../store/reducers/actions/CourseSelectAction';
+
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
@@ -61,12 +54,11 @@ class Courses extends Component {
 		return true;
 	}
 	render() {
-		const { courses, pending, error, match, url } = this.props;
+		const { courses, pending, error, match, url, selectCourse } = this.props;
 		if (pending) return <Spinner />;
-		console.log(this.state);
 		const { title } = this.state;
+		// const course = courses.map((course) => (course.id));
 		const coursesNew = courses.filter((course) => course.tag === 'NEW');
-		const course = courses.map((course) => (course.id));
 		const coursesInProgress = courses.filter(
 			(course) => course.tag === 'IN PROGRESS'
 		);
@@ -87,9 +79,15 @@ class Courses extends Component {
 									<>
 										{courses.map((course) => (
 											<Card
+												onClick={() =>
+													selectCourse(course)
+												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
+												contentTitle={
+													`Korte Introductie`
+												}
 												content={
 													course.shortDescription
 												}
@@ -124,20 +122,18 @@ class Courses extends Component {
 								title: 'IN PROGRESS',
 								render: () => (
 									<>
-										{coursesInProgress.map(
-											(course) => (
-												<Card
-													key={course.id}
-													title={course.title}
-													tag={course.tag}
-													content={
-														course.shortDescription
-													}
-													label={course.label}
-													id={course.id}
-												/>
-											)
-										)}
+										{coursesInProgress.map((course) => (
+											<Card
+												key={course.id}
+												title={course.title}
+												tag={course.tag}
+												content={
+													course.shortDescription
+												}
+												label={course.label}
+												id={course.id}
+											/>
+										))}
 									</>
 								),
 							},
@@ -145,33 +141,29 @@ class Courses extends Component {
 								title: 'FINISHED',
 								render: () => (
 									<>
-										{coursesFinished.map(
-											(course, i) => (
-												<Card
-													key={i}
-													title={course.title}
-													tag={course.tag}
-													content={
-														course.shortDescription
-													}
-													label={course.label}
-												/>
-											)
-										)}
+										{coursesFinished.map((course, i) => (
+											<Card
+												key={i}
+												title={course.title}
+												tag={course.tag}
+												content={
+													course.shortDescription
+												}
+												label={course.label}
+											/>
+										))}
 									</>
 								),
 							},
 						]}
 					/>
-						
+
 					{/* <Route
 							name='course'
 							path={`${url}/:id`}
 
 							component={Course}
 						/> */}
-						
-					
 				</Content>
 			</>
 		);
@@ -179,25 +171,23 @@ class Courses extends Component {
 }
 Courses.propTypes = {
 	pathname: PropTypes.string,
-	hash: PropTypes.string,
+	
+	courses: PropTypes.object,
 };
 
-const mapStateToProps = (state, ownProps) => {
-	const courseId = ownProps.params;
-	console.log(ownProps.params);
+const mapStateToProps = (state) => {
 	return {
 		error: getCoursesError(state),
 		courses: getCourses(state),
 		pending: getCoursesPending(state),
-		pathname: state.router.location.pathname,
-		hash: state.router.location.hash,
 	};
 };
 
-const mapDispatchToProps = (dispatch) =>
+const mapDispatchToProps = (dispatch) => 
 	bindActionCreators(
 		{
 			fetchCourses: fetchCourses,
+			selectCourse: selectCourse
 		},
 		dispatch
 	);

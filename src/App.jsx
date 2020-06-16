@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'connected-react-router';
 import PrivateRoute from './pages/PrivateRoute';

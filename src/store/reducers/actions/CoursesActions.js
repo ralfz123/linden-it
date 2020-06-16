@@ -21,7 +21,6 @@ function fetchCoursesError(error) {
 		courses: [],
 	};
 }
-
 let myInit = {
 	method: 'GET',
 	headers: {
@@ -44,7 +43,7 @@ export const fetchCourses = () => (dispatch) => {
 			}
 			dispatch(fetchCoursesError(false));
 			dispatch(fetchCoursesSuccess(data.courses));
-			console.log('hallo' + data);
+			console.log('hallo' + data.courses);
 			return data.courses;
 		});
 

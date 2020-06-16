@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchCourses } from '../store/reducers/actions/CoursesActions';
-import {
-	getCourses,
-	getCoursesPending,
-	getCoursesError,
-} from '../store/reducers/selectors/CoursesSelectors';
+import selectCourse from '../store/reducers/actions/CourseSelectAction';
+
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import TabBar from '../components/Tabs';
 import { Spinner } from '../components/Spinner';
+import Card from '../components/Card';
+import { Redirect } from 'react-router';
 class Course extends Component {
 	state = {
 		title: 'Cursus Detail',
 		courseTitle: 'Titel',
 		tag: 'tag',
 		content: 'short description',
-		courses: [],
-		course: [],
+		course: {},
+		
 	};
 	componentDidMount() {
-		// if (this.props.course.id != nextProps.course.id) {
-		// 	this.setState({course: nextProps.course});
-		// }
-		// this.setState({saving: false, isEditing: false});
-		const { fetchCourses } = this.props;
-		fetchCourses();
-
+		
+		
 	}
 	componentDidUpdate(prevProps, prevState) {
 		const { pending } = this.props;
@@ -38,93 +30,76 @@ class Course extends Component {
 		return true;
 	}
 	render() {
-		const { courses, params, path, match, pending } = this.props;
-		// let id = params.id;
-		if (pending) return <Spinner />;
 		
+		const { course, params, path, match, pending } = this.props;
 		
+		console.log(this.state);
+		console.log(this.props);
 		
-		
-		
-		const { title } = this.state;
-		let course = courses.find(course => course.id == params.id);
-		
-		console.log(course);
-		return (
-			<>
-				<Header>
-					<Title title={title} />
-				</Header>
-				<Content>
-					<TabBar
-						tabs={[
-							{
-								title: 'NOTITIES',
-								render: () => (
-									<>
-										<div>{`${course}`}</div>
-									</>
-								),
-							},
-							{
-								title: 'LEERSTOF',
-								render: () => (
-									<>
-										<div>doei</div>
-									</>
-								),
-							},
-							{
-								title: 'FORUM',
-								render: () => (
-									<>
-										<div>hallo</div>
-									</>
-								),
-							},
-						]}
-					/>
-				</Content>
-			</>
-		);
+		if (!course) {
+			return (
+				<Redirect
+					to={{
+						pathname: '/login',
+						
+					}}
+				/>
+			);
+		} else {
+	
+	
+			return (
+				<>
+					<Header>
+						<Title title={course.title} />
+					</Header>
+					<Content>
+						<TabBar
+							tabs={[
+								{
+									title: 'NOTITIES',
+									render: () => (
+										<>
+											<Card
+												contentTitle={`Titel van de notitie`}
+												content={`Hier komt de eerste alinea/tekst die geschreven is in deze notitie. Hier komt de eerste alinea/tekst die geschreven is in deze notitie. `}
+											/>
+										</>
+									),
+								},
+								{
+									title: 'LEERSTOF',
+									render: () => (
+										<>
+											<div>doei</div>
+										</>
+									),
+								},
+								{
+									title: 'FORUM',
+									render: () => (
+										<>
+											<div>hallo</div>
+										</>
+									),
+								},
+							]}
+						/>
+					</Content>
+				</>
+			);
+		}
 	}
 }
 
 Course.propTypes = {
 	course: PropTypes.object.isRequired,
 };
-// function getCourseById(courses, id) {
-// 	let course = courses.find((course) => course.id == id);
-// 	return Object.assign({}, course);
-// }
-const mapStateToProps = (state, ownProps) => {
-	let id = ownProps.match.params.id;
+
+const mapStateToProps = (state) => {
 	return {
-		error: getCoursesError(state),
-		courses: getCourses(state),
-		pending: getCoursesPending(state),
-		pathname: state.router.location.pathname,
-		// course: state.courses.find(course => course.id === id),
+		course: state.activeCourse,
 	};
-	// const courseId = ownProps.params;
-
-	// return {
-	// 	error: getCoursesError(state),
-	// 	courses: getCourses(state),
-	// 	pending: getCoursesPending(state),
-	// let course = { title: '', tag: '', shortDescription: '', label: '', chapters: [], },
-
-	// if (courses.length > 0) {
-	// 	course = Object.assign({}, state.courses.find(course => course.id == id)
-	// }
-	// return {course: course};
 };
-const mapDispatchToProps = (dispatch) =>
-	bindActionCreators(
-		{
-			fetchCourses: fetchCourses,
-		},
-		dispatch
-	);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Course);
+export default connect(mapStateToProps)(Course);
