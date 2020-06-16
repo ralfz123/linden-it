@@ -28,12 +28,13 @@ export const StyledBaseTextInput = styled.input`
 `;
 
 export const StyledBaseNumberInput = styled.input`
-	width: 100%;
+	width: 25%;
 	background-color: ${colors.light};
 	border: 1px solid ${colors.grayLightTwo};
 	border-radius: 5px;
 	padding: 10px;
-
+	color: ${colors.gray};
+	outline: none;
 `;
 
 export const StyledBaseTimeInput = styled.input`
@@ -42,16 +43,17 @@ export const StyledBaseTimeInput = styled.input`
 	border: 1px solid ${colors.grayLightTwo};
 	border-radius: 5px;
 	padding: 10px;
-
+	outline: none;
 `;
 
 export const StyledBaseDateInput = styled.input`
-	width: 20%;
+	width: 100%;
 	background-color: ${colors.light};
 	border: 1px solid ${colors.grayLightTwo};
 	border-radius: 5px;
 	padding: 10px;
-
+	color: ${colors.grayLightThree};
+	outline: none;
 `;
 
 export const StyledBaseCheckboxInput = styled.input.attrs({ type: 'checkbox' })`
@@ -60,5 +62,5 @@ export const StyledBaseCheckboxInput = styled.input.attrs({ type: 'checkbox' })`
 	/* border: 1px solid ${colors.grayLightTwo}; */
 	border-radius: 5px;
 	/* padding: 10px; */
-
+	outline: none;
 `;

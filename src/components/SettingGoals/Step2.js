@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 // import {getLoginLoadingState, getUserAuthState, getLoginErrorState} from '../store/reducers/selectors/LoginSelectors';
 // import { ValidateLogin } from '../store/reducers/actions/LoginActions';
@@ -16,57 +16,62 @@ class Step2 extends Component {
 		}
 		return (
 			<>
-				<div className='form-group'>
-					<label htmlFor='pages'>
-						Ons advies voor ITIL 3, lees elke studiedag:
-					</label>
-					<input
-						className='form-control'
-						id='pageNumbers'
-						name='pageNumbers'
-						type='number'
-						// placeholder=''
-						value={this.props.pageNumbers} // Prop: The email input data
-						onChange={this.props.handleChange} // Prop: Puts data into state
-					/>
-					<label htmlFor='pages'>pagina's</label>
-				</div>
+				<div className='settinggoals-container'>
+					<div className='container advice'>
+						<label htmlFor='pages'>
+							Ons advies voor ITIL 3, lees elke studiedag:
+							{/* ipv ITIL 3 --> {this.state.courseName} */}
+						</label>
+						<BaseNumberInput
+							className='form-control'
+							id='pageNumbers'
+							name='pageNumbers'
+							type='number'
+							// placeholder=''
+							value={this.props.pageNumbers} 
+							onChange={this.props.handleChange} 
+						/>
+						<label htmlFor='pages'>pagina's</label>
+					</div>
 
-				<div className='section'>
-					<label htmlFor='pages'>
-						Herinner mij om te studeren
-					</label>
-					<PrimaryButton label='toggle' />
-					<p>
-						Selecteer een tijd wanneer je een melding wilt
-						ontvangen.{' '}
-					</p>
+					<div className='container'>
+						<label htmlFor='pages'>
+							Herinner mij om te studeren
+						</label>
+						<PrimaryButton label='toggle' />
+						<p>
+							Selecteer een tijd wanneer je een melding wilt
+							ontvangen.{' '}
+						</p>
 
-					{/* map over all inputfields max < 7 */}
+						{/* map over all inputfields max < 7 */}
+						<BaseTimeInput
+							id='studyTimeDay'
+							name='studyTimeDay'
+							type='time'
+							placeholder='10:00'
+							value={this.props.studyTimeDay} 
+							onChange={this.props.handleChange} 
+						/>
+					</div>
+
+					<div className='container'>
+						<label>
+							Hetzelfde tijdstip voor elke studiedag herinnering
+						</label>
+						<PrimaryButton label='toggle' />
+					</div>
+
 					<BaseTimeInput
-						id='studyTimeDay'
-						name='studyTimeDay'
+						id='sameStudyTimeDay'
+						name='sameStudyTimeDay'
 						type='time'
-						placeholder='10:00'
-						value={this.props.studyTimeDay} // Prop: The email input data
+						placeholder='00:00'
+						value={this.props.sameStudyTimeDay} // Prop: The email input data
 						onChange={this.props.handleChange} // Prop: Puts data into state
 					/>
+					{/* <PrimaryButton label='Doelen opslaan'/> */}
 				</div>
-
-				<div className='button'>
-					<h3>Hetzelfde tijdstip voor elke studiedag herinnering</h3>
-					<PrimaryButton label='toggle' />
-				</div>
-
-				<BaseTimeInput
-					id='sameStudyTimeDay'
-					name='sameStudyTimeDay'
-					type='time'
-					placeholder='00:00'
-					value={this.props.sameStudyTimeDay} // Prop: The email input data
-					onChange={this.props.handleChange} // Prop: Puts data into state
-				/>
-				{/* <PrimaryButton label='Doelen opslaan'/> */}
 			</>
 		);
 	}

@@ -58,18 +58,6 @@ class Courses extends Component {
 					<Title title={title} />
 				</Header>
 				<Content>
-					{/* <Goals>
-					<Title title={'Je doelen vaststellen voor ' + 'ITIL3'} />
-						<p>Voordat je aan de cursus kan beginnen,
-						stel je ee
-						rst je doelen vast,
-						die automatisch met je recruiter worden gedeeld.</p>
-						<SecondaryButton
-							type='button'
-							to='/goals'
-							label='Doelen vaststellen'
-						/>
-					</Goals> */}
 					<Goals />
 
 					<TabBar

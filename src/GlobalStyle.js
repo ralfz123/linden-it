@@ -8,6 +8,7 @@ export const colors = {
 	grayDark: '#3b3b3b',
 	grayLight: '#f4f4f4',
 	grayLightTwo: '#C4C4C4',
+	grayLightThree: '#717171',
 	red: '#D21919;',
 	green: '#77dd77',
 	tagNew: '#5DD8A4',
@@ -165,6 +166,16 @@ ${'' /* Login page styles */}
         cursor: pointer;
     }
 
+    .settinggoals-container label {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;   
+        color: ${colors.grayLightThree};
+    }
+
+    .container {
+        margin-bottom: 20px;
+    }
 ${'' /* ***************** pushbuttons ***************** */}
     .container-pushbuttons {
         display: flex;
@@ -172,6 +183,7 @@ ${'' /* ***************** pushbuttons ***************** */}
         flex-wrap: wrap;
         flex-direction: row;
         width: 100%;
+        margin-bottom: 30px;
     }
 
     .pushbuttons {
@@ -187,7 +199,7 @@ ${'' /* ***************** pushbuttons ***************** */}
         font-style: normal;
         font-weight: normal;
         background-color: ${colors.light};
-        color: ${colors.grayLightTwo};
+        color: ${colors.grayLightThree};
         border: 1px solid ${colors.gray};
         border-radius: 100%;
     }
@@ -205,6 +217,24 @@ ${'' /* ***************** pushbuttons ***************** */}
         border: 1px solid ${colors.primary};
     }
     
+
+    .advice {
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .advice label:nth-child(3) {
+        width: 30%;
+        color: ${colors.grayLightThree};
+        margin: 0px 10px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1em;
+    }
 `;
 
 export default GlobalStyle;
