@@ -57,6 +57,7 @@ const App = ({ history, context }) => {
 	);
 };
 App.propTypes = {
-	history: PropTypes.object,
+	context: PropTypes.any,
+	history: PropTypes.any,
 };
 export default App;

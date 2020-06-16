@@ -66,7 +66,7 @@ export const Spinner = ({ children }) => {
 };
 
 Spinner.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.any
 };
 
 export default Spinner;

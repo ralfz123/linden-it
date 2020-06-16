@@ -1,9 +1,9 @@
 
-export default function CourseSelectReducer(state = null, action) {
+export default function CourseSelectReducer(state = {}, action) {
 	switch(action.type) {
 	case 'COURSE::SELECTED':
 		return action.payload;
-		break;
+	default:
+		return state ={};
 	}
-	return state;
 }

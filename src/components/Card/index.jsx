@@ -25,13 +25,14 @@ export default function Card({tag, content, title, label, id, path, onClick, con
 
 // Proptypes Card
 Card.propTypes = {
-	id: PropTypes.any,
-	tag: PropTypes.any,
 	content: PropTypes.any,
-	title: PropTypes.any,
+	contentTitle: PropTypes.any,
+	id: PropTypes.any,
 	label: PropTypes.any,
+	onClick: PropTypes.func,
 	path: PropTypes.any,
-	onClick: PropTypes.func
+	tag: PropTypes.any,
+	title: PropTypes.any
 };
 
 export const BaseCard = ({children}) => {
@@ -44,7 +45,7 @@ export const BaseCard = ({children}) => {
 
 // Proptypes BaseCard
 BaseCard.propTypes = {
-	// children: PropTypes.string
+	children: PropTypes.any,
 };
 
 
@@ -78,7 +79,8 @@ export const CardContent = ({content, contentTitle}) => {
 
 // Proptypes CardContent
 CardContent.propTypes = {
-	content: PropTypes.string
+	content: PropTypes.string,
+	contentTitle: PropTypes.any,
 };
 
 
@@ -92,5 +94,5 @@ export const CardFooter = ({children}) => {
 
 
 CardFooter.propTypes = {
-	id: PropTypes.string
+	children: PropTypes.any
 };

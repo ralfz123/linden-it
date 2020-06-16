@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StyledHeader from './StyledHeader';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
 import styled from 'styled-components';
 class Header extends Component {
 	
 	render() {
-		console.log(this.props.history)
+		console.log(this.props.history);
 		return (
 			<StyledHeader>
 				
@@ -21,7 +21,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.object,
+	history: PropTypes.any,
 };
 
 export default Header;
@@ -47,4 +48,9 @@ export const BackButton = ({ history }) => {
 			Back
 		</StyledBackButton>
 	);
+};
+BackButton.propTypes = {
+	history: PropTypes.shape({
+		goBack: PropTypes.func
+	})
 };

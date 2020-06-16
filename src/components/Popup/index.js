@@ -20,7 +20,7 @@ const StyledPopup = styled.div`
 	left: 0;
 
 	div {
-		font-family: Lato;
+		font-family: var(--font-family);
 		font-style: normal;
 		font-weight: normal;
 		font-size: 11px;
@@ -46,7 +46,7 @@ export const Popup = ({ children }) => {
 };
 
 Popup.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.any,
 };
 
 export default Popup;

@@ -17,7 +17,7 @@ export const Content = ({children}) => {
 };
 
 Content.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.any,
 };
 
 export default Content;

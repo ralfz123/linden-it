@@ -47,14 +47,14 @@ class Courses extends Component {
 
 		console.log(fetchCourses);
 	}
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate() {
 		const { pending } = this.props;
 		if (pending === false) return false;
 		// more tests
 		return true;
 	}
 	render() {
-		const { courses, pending, error, match, url, selectCourse } = this.props;
+		const { courses, pending, url, selectCourse } = this.props;
 		if (pending) return <Spinner />;
 		const { title } = this.state;
 		// const course = courses.map((course) => (course.id));
@@ -85,7 +85,7 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={`Korte Introductie`}
+												contentTitle={'Korte Introductie'}
 												content={
 													course.shortDescription
 												}
@@ -109,7 +109,7 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={`Korte Introductie`}
+												contentTitle={'Korte Introductie'}
 												content={
 													course.shortDescription
 												}
@@ -127,14 +127,19 @@ class Courses extends Component {
 									<>
 										{coursesInProgress.map((course) => (
 											<Card
+												onClick={() =>
+													selectCourse(course)
+												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
+												contentTitle={'Korte Introductie'}
 												content={
 													course.shortDescription
 												}
 												label={course.label}
 												id={course.id}
+												path={url}
 											/>
 										))}
 									</>
@@ -152,7 +157,7 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={`Korte Introductie`}
+												contentTitle={'Korte Introductie'}
 												content={
 													course.shortDescription
 												}
@@ -179,9 +184,19 @@ class Courses extends Component {
 	}
 }
 Courses.propTypes = {
+	courses: PropTypes.array,
+	error: PropTypes.any,
+	fetchCourses: PropTypes.func,
+	id: PropTypes.string,
+	label: PropTypes.string,
+	match: PropTypes.any,
 	pathname: PropTypes.string,
-	
-	courses: PropTypes.object,
+	pending: PropTypes.bool,
+	selectCourse: PropTypes.func,
+	shortDescription: PropTypes.string,
+	tag: PropTypes.string,
+	title: PropTypes.string,
+	url: PropTypes.any
 };
 
 const mapStateToProps = (state) => {

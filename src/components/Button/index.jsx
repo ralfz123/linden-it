@@ -15,9 +15,9 @@ export const PrimaryButton = ({ onClick, label, disabled }) => {
 };
 
 PrimaryButton.propTypes = {
-	onClick: PropTypes.func,
+	disabled: PropTypes.any,
 	label: PropTypes.string,
-	// disabled: PropTypes.disable
+	onClick: PropTypes.func,
 };
 
 export const SecondaryButton = ({ onClick, label, disabled }) => {
@@ -29,8 +29,8 @@ export const SecondaryButton = ({ onClick, label, disabled }) => {
 };
 
 SecondaryButton.propTypes = {
-	onClick: PropTypes.func,
+	disabled: PropTypes.any,
 	label: PropTypes.string,
-	// disabled: PropTypes.disable
+	onClick: PropTypes.func,
 };
 

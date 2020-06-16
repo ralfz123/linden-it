@@ -39,7 +39,7 @@ export const CourseTags = ({ children }) => {
 };
 
 CourseTags.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.string
 };
 
 export const Tags = ({ children }) => {
@@ -47,7 +47,7 @@ export const Tags = ({ children }) => {
 };
 
 Tags.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.string
 };
 
 export default Tags;
