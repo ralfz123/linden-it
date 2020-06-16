@@ -1,6 +1,6 @@
-const data = require('../../data.json');
+import data from '../../data.json';
 const initialState = {
-	pending: true,
+	pending: false,
 	courses: data.courses,
 	error: null,
 };

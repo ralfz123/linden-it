@@ -7,7 +7,6 @@ import styled from 'styled-components';
 class Header extends Component {
 	
 	render() {
-		console.log(this.props.history);
 		return (
 			<StyledHeader>
 				

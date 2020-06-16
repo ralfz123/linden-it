@@ -43,7 +43,6 @@ export const fetchCourses = () => (dispatch) => {
 			}
 			dispatch(fetchCoursesError(false));
 			dispatch(fetchCoursesSuccess(data.courses));
-			console.log('hallo' + data.courses);
 			return data.courses;
 		});
 

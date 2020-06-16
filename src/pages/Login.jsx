@@ -41,7 +41,6 @@ class Login extends Component {
 	render() {
 		const { isLoading, isAuthenticated, loginError } = this.props;
 		const buttonState = this.checkButtonEnabledState();
-		console.log(this.props);
 		if (isLoading) {
 			return <Spinner />;
 		}

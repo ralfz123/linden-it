@@ -38,12 +38,9 @@ class Courses extends Component {
 		content: 'short description',
 		courses: [],
 	};
-	
 	componentDidMount() {
 		const { fetchCourses } = this.props;
 		fetchCourses();
-
-		console.log(fetchCourses);
 	}
 	componentDidUpdate() {
 		const { pending } = this.props;
