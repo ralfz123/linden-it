@@ -153,7 +153,6 @@ ${'' /* Login page styles */}
         padding: 20px 10px;
         min-width: 50%;
     }
-    .eye {}
     i {
         position: absolute;
         top: 225px;

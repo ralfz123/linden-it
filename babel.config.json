@@ -3,16 +3,17 @@
 		"development": {
 			"sourceMaps": true,
 			"plugins": [
-        "source-map-support",
-        [
-	        "babel-plugin-styled-components",
-          {
-            "ssr": false,
-            "fileName": true,
-            "minify": false
-          }
-        ]
-      ]
+				"source-map-support",
+				[
+					"babel-plugin-styled-components",
+					{
+						"ssr": false,
+						"fileName": true,
+						"minify": false
+					}
+				],
+				"@babel/plugin-syntax-dynamic-import"
+			]
 		}
 	},
 	"presets": [
@@ -26,7 +27,8 @@
 					"safari": "11.1"
 				},
 				"useBuiltIns": "usage"
-			}
+			},
+			"@babel/preset-react"
 		]
 	]
 }

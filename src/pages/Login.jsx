@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getLoginLoadingState, getUserAuthState, getLoginErrorState } from '../store/reducers/selectors/LoginSelectors';
+import {
+	getLoginLoadingState,
+	getUserAuthState,
+	getLoginErrorState,
+} from '../store/reducers/selectors/LoginSelectors';
 import { ValidateLogin } from '../store/reducers/actions/LoginActions';
 import Title from '../components/Title';
 import Header from '../components/Header';
@@ -13,51 +17,49 @@ import { Spinner } from '../components/Spinner';
 
 class Login extends Component {
 	state = {
-		email: "",
-		password: "",
-		title: "Inloggen",
-
+		email: '',
+		password: '',
+		title: 'Inloggen',
 	};
 
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
-	}
+	};
 
 	handleSubmit = (event) => {
 		event.preventDefault(event);
 		this.props.ValidateLogin(this.state.email, this.state.password);
-	}
+	};
 
 	checkButtonEnabledState = () => {
 		const { email, password } = this.state;
 		return email.length < 5 && password.length < 6;
-	}
+	};
 
 	render() {
-
 		const { isLoading, isAuthenticated, loginError } = this.props;
 		const buttonState = this.checkButtonEnabledState();
-		console.log(this.props)
 		if (isLoading) {
-			return <Spinner />
+			return <Spinner />;
 		}
 		return (
 			<>
-				{isAuthenticated && <Redirect to="/" />}
+				{isAuthenticated && <Redirect to='/' />}
 				<Header>
 					<Title title='Inloggen' />
 				</Header>
 				<Content>
-					{loginError && <Popup>
-						<div>
-							Oeps! Het lijkt erop dat het e-mailadres en/of het wachtwoord niet klopt.
-							Probeer het opnieuw of reset je wachtwoord.
-						</div>
-
-						
-					</Popup>}
+					{loginError && (
+						<Popup>
+							<div>
+								Oeps! Het lijkt erop dat het e-mailadres en/of
+								het wachtwoord niet klopt. Probeer het opnieuw
+								of reset je wachtwoord.
+							</div>
+						</Popup>
+					)}
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
@@ -99,14 +101,17 @@ class Login extends Component {
 							</Link>
 						</div>
 
-						<PrimaryButton disabled={buttonState} type='submit' label="Inloggen" />
+						<PrimaryButton
+							disabled={buttonState}
+							type='submit'
+							label='Inloggen'
+						/>
 
 						<p className='privacy'>
-							Je gaat akkoord met het Privacy Statement van Linden-IT
+							Je gaat akkoord met het Privacy Statement van
+							Linden-IT
 						</p>
-						
 					</form>
-
 				</Content>
 			</>
 		);
@@ -117,14 +122,12 @@ const mapStateToProps = (state) => {
 	return {
 		isLoading: getLoginLoadingState(state),
 		isAuthenticated: getUserAuthState(state),
-		loginError: getLoginErrorState(state)
+		loginError: getLoginErrorState(state),
 	};
-  };
-  
-const actions = {
-	ValidateLogin
 };
-  
-  export default connect(mapStateToProps, actions)(Login);
-  
 
+const actions = {
+	ValidateLogin,
+};
+
+export default connect(mapStateToProps, actions)(Login);

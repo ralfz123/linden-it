@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 import { colors } from '../../GlobalStyle.js';
 import { NavLink } from 'react-router-dom';
@@ -32,7 +32,7 @@ const Tab = styled.div`
 	}
 `;
 
-export const Nav = ({ children }) => {
+export const Nav = () => {
 	return (
 		<Tab>
 			<NavLink exact to='/'>

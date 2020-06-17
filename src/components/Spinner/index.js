@@ -52,11 +52,10 @@ const StyledSpinner = styled.div`
 
 	@keyframes round {
 		0% {
-			-webkit-transform: rotate(0deg);
+			
 			transform: rotate(0deg);
 		}
 		100% {
-			-webkit-transform: rotate(360deg);
 			transform: rotate(360deg);
 		}
 	}
@@ -67,7 +66,7 @@ export const Spinner = ({ children }) => {
 };
 
 Spinner.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.any
 };
 
 export default Spinner;
