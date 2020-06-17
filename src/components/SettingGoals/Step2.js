@@ -8,6 +8,7 @@ import { BaseTimeInput } from '../Form';
 import { PrimaryButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
+import Toggle from '../Toggle';
 
 class Step2 extends Component {
 	render() {
@@ -28,8 +29,8 @@ class Step2 extends Component {
 							name='pageNumbers'
 							type='number'
 							// placeholder=''
-							value={this.props.pageNumbers} 
-							onChange={this.props.handleChange} 
+							value={this.props.pageNumbers}
+							onChange={this.props.handleChange}
 						/>
 						<label htmlFor='pages'>pagina's</label>
 					</div>
@@ -38,21 +39,21 @@ class Step2 extends Component {
 						<label htmlFor='pages'>
 							Herinner mij om te studeren
 						</label>
-						<PrimaryButton label='toggle' />
 						<p>
 							Selecteer een tijd wanneer je een melding wilt
 							ontvangen.{' '}
 						</p>
-
-						{/* map over all inputfields max < 7 */}
-						<BaseTimeInput
-							id='studyTimeDay'
-							name='studyTimeDay'
-							type='time'
-							placeholder='10:00'
-							value={this.props.studyTimeDay} 
-							onChange={this.props.handleChange} 
-						/>
+						<Toggle>
+							{/* map over all inputfields max < 7 */}
+							<BaseTimeInput
+								id='studyTimeDay'
+								name='studyTimeDay'
+								type='time'
+								placeholder='10:00'
+								value={this.props.studyTimeDay}
+								onChange={this.props.handleChange}
+							/>
+						</Toggle>
 					</div>
 
 					<div className='container'>
