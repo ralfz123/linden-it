@@ -4,7 +4,7 @@ import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import { PrimaryButton } from '../components/Button';
 import { SecondaryButton } from '../components/Button';
-
+import {Task} from '../components/Tasks';
 class Agenda extends Component {
 	constructor(props) {
 		super(props);
@@ -20,9 +20,7 @@ class Agenda extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<p>Agenda Content</p>
-					<PrimaryButton label='Dit is een primaire button' />
-					<SecondaryButton label='Dit is een secundaire button' />
+					<Task />
 				</Content>
 			</>
 		);
