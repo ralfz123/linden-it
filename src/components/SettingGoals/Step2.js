@@ -43,34 +43,38 @@ class Step2 extends Component {
 							Selecteer een tijd wanneer je een melding wilt
 							ontvangen.{' '}
 						</p>
-						<Toggle>
-							{/* map over all inputfields max < 7 */}
-							<BaseTimeInput
-								id='studyTimeDay'
-								name='studyTimeDay'
-								type='time'
-								placeholder='10:00'
-								value={this.props.studyTimeDay}
-								onChange={this.props.handleChange}
-							/>
-						</Toggle>
+
+						{/* map over all inputfields max < 7 */}
+
+						<Toggle />
+						{/* This toggle has to toggle BaseTimeInput and multiply (sync with {studyDays.length} ) */}
+						<BaseTimeInput
+							id='studyTimeDay'
+							name='studyTimeDay'
+							type='time'
+							placeholder='10:00'
+							value={this.props.studyTimeDay}
+							onChange={this.props.handleChange}
+						/>
 					</div>
 
 					<div className='container'>
 						<label>
 							Hetzelfde tijdstip voor elke studiedag herinnering
 						</label>
-						<PrimaryButton label='toggle' />
+
+						<Toggle />
+						{/* This toggle has to toggle BaseTimeInput */}
+						<BaseTimeInput
+							id='sameStudyTimeDay'
+							name='sameStudyTimeDay'
+							type='time'
+							placeholder='00:00'
+							value={this.props.sameStudyTimeDay} // Prop: The email input data
+							onChange={this.props.handleChange} // Prop: Puts data into state
+						/>
 					</div>
 
-					<BaseTimeInput
-						id='sameStudyTimeDay'
-						name='sameStudyTimeDay'
-						type='time'
-						placeholder='00:00'
-						value={this.props.sameStudyTimeDay} // Prop: The email input data
-						onChange={this.props.handleChange} // Prop: Puts data into state
-					/>
 					{/* <PrimaryButton label='Doelen opslaan'/> */}
 				</div>
 			</>

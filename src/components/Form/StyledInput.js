@@ -33,8 +33,12 @@ export const StyledBaseNumberInput = styled.input`
 	border: 1px solid ${colors.grayLightTwo};
 	border-radius: 5px;
 	padding: 10px;
-	color: ${colors.gray};
+	color: ${colors.grayLightThree};
 	outline: none;
+
+	:focus {
+		color: ${colors.dark};
+	}
 `;
 
 export const StyledBaseTimeInput = styled.input`

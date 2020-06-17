@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledPrimaryButton, StyledSecondaryButton, StyledToggleButton } from './StyledButton';
+import { StyledPrimaryButton, StyledSecondaryButton } from './StyledButton';
 import PropTypes from 'prop-types';
 
 
@@ -33,17 +33,3 @@ SecondaryButton.propTypes = {
 	label: PropTypes.string,
 	// disabled: PropTypes.disable
 };
-
-export const ToggleButton = ({ onClick, label, children }) => {
-	return (
-		<StyledToggleButton onClick={onClick} >
-			{children}
-		</StyledToggleButton>
-	);
-};
-
-ToggleButton.propTypes = {
-	onClick: PropTypes.func,
-	label: PropTypes.string,
-};
-

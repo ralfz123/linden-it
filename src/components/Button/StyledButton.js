@@ -37,37 +37,3 @@ export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 		color: ${colors.light};
 	}
 `;
-
-export const StyledToggleButton = styled.button`
-	width: 30%;
-	border-radius: 50px;
-	padding: 5px 20px;
-	position: relative;
-	/* top: 30vh; */
-	/* z-index: 10; */
-
-	background-color: ${colors.green};
-	color: ${colors.light};
-	border: 2px solid ${colors.light};
-
-	div {
-		background-color: red;
-		width: 40%;
-		border-radius: 50px;
-		cursor: pointer;
-	}
-	
-	 /* &:active div {
-		background-color: purple;
-		transform: translateX(40px);
-	}  */
-	
-
-	/* &:active:not(:focus) {
-		border-color: ${colors.pink};
-	}
-
-	&:focus:not(:active) {
-		border-color: ${colors.pink};
-	} */
-`; 
