@@ -42,9 +42,9 @@ export const StyledToggleButton = styled.button`
 	width: 30%;
 	border-radius: 50px;
 	padding: 5px 20px;
-	position: absolute;
-	top: 30vh;
-	z-index: 10;
+	position: relative;
+	/* top: 30vh; */
+	/* z-index: 10; */
 
 	background-color: ${colors.green};
 	color: ${colors.light};
