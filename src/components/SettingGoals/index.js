@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import { colors } from '../../GlobalStyle';
 // import Overlay from 'react-overlays/Overlay';
+import Start from './Start';
 import Step1 from './Step1';
 import Step2 from './Step2';
-import { FaCheckCircle } from 'react-icons/fa';
-import { SecondaryButton } from '../Button';
+import End from './End';
 
 // const StyledOverlay = styled.div`
 // 	background-color: green;
@@ -33,8 +33,8 @@ class Goals extends Component {
 
 	_next() {
 		let currentStep = this.state.currentStep;
-		currentStep = currentStep >= 1 ? 2 : currentStep + 1;
-		
+		currentStep = currentStep >= 3 ? 4 : currentStep + 1;
+
 		this.setState({
 			currentStep: currentStep,
 		});
@@ -43,7 +43,7 @@ class Goals extends Component {
 	_prev() {
 		let currentStep = this.state.currentStep;
 		currentStep = currentStep <= 1 ? 1 : currentStep - 1;
-		
+
 		this.setState({
 			currentStep: currentStep,
 		});
@@ -71,13 +71,13 @@ class Goals extends Component {
 					Volgende stap
 				</button>
 			);
-		} else if (currentStep = 2) {
+		} else if ((currentStep = 2)) {
 			return (
 				<button className='' type='submit' onClick={this._next}>
 					Doelen opslaan
 				</button>
 			);
-			}
+		}
 		return null;
 	}
 
@@ -105,9 +105,14 @@ class Goals extends Component {
 		return (
 			<>
 				{/* <OnboardingPage /> // not started */}
-				<p>Stap {this.state.currentStep} van 2</p>
+				<p>Stap {this.state.currentStep - 1} van 2</p>
 
 				<form onSubmit={this.handleSubmit}>
+					<Start
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+					/>
+
 					<Step1
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
@@ -124,18 +129,14 @@ class Goals extends Component {
 						studyTimeDay={this.state.studyTimeDay}
 						sameStudyTimeDay={this.state.sameStudyTimeDay}
 					/>
-
+					
+					<End
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+					/>
 					{this.previousButton}
 					{this.nextButton}
 				</form>
-
-				<div className='finish-page'>
-					<FaCheckCircle />
-					<div>Goed bezig! Jouw doelen zijn vastgesteld.</div>
-					<p>Happy learning!</p>
-					<p>Je kunt je doelen altijd nog aanpassen via de agenda.</p>
-					<SecondaryButton label='Start cursus' />
-				</div>
 			</>
 		);
 	}

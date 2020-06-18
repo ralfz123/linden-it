@@ -235,6 +235,10 @@ ${'' /* ***************** pushbuttons ***************** */}
         font-weight: normal;
         font-size: 1em;
     }
+
+    .onboarding-page {
+        color: ${colors.red};
+    }
 `;
 
 export default GlobalStyle;

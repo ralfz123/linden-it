@@ -5,13 +5,13 @@ import React, { Component } from 'react';
 import { BaseTextInput } from '../Form';
 import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
-import { ToggleButton } from '../Button';
+// import { ToggleButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
 
 class Step1 extends Component {
 	render() {
-		if (this.props.currentStep !== 1) {
+		if (this.props.currentStep !== 2) {
 			return null;
 		}
 		return (
