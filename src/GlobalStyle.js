@@ -239,6 +239,18 @@ ${'' /* ***************** pushbuttons ***************** */}
     .onboarding-page {
         color: ${colors.red};
     }
+
+    .onboarding-page onboarding-icon{
+
+    }
+
+    .onboarding-page onboarding-icon div{
+
+}
+
+.onboarding-page onboarding-icon{
+
+}
 `;
 
 export default GlobalStyle;

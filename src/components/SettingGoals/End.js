@@ -20,7 +20,7 @@ class End extends Component {
 			<>
 				<div className='settinggoals-container'>
 					<div className='onboarding-page'>
-						<FaCheckCircle />
+						<FaCheckCircle className='onboarding-icon' />
 						<div>Goed bezig! Jouw doelen zijn vastgesteld.</div>
 						<p>Happy learning!</p>
 						<p>
