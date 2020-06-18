@@ -8,6 +8,7 @@ import Title from '../components/Title';
 import TabBar from '../components/Tabs';
 
 import Card from '../components/Card';
+import Accordion, {AccordionWrapper} from '../components/Accordion';
 import { Redirect } from 'react-router';
 class Course extends Component {
 	state = {
@@ -15,8 +16,12 @@ class Course extends Component {
 		courseTitle: 'Titel',
 		tag: 'tag',
 		content: 'short description',
-		course: {}
-		
+		course: {},
+		size: {},
+	};
+	props = {
+		progress: 'IN PROGRESS',
+		next: 'NEXT',
 	};
 	componentDidMount() {
 		const { courses, params } = this.props;
@@ -24,45 +29,58 @@ class Course extends Component {
 			const course = courses.find((course) => course.id == params.id);
 			return this.setState({ course });
 		}
-
 	}
 	componentDidUpdate() {
+		console.log(this.state.size);
 		const { pending } = this.props;
 		if (pending === false) return false;
 		return true;
 	}
 	render() {
 		const { history } = this.props;
-		const { course } = this.state;
-			
+		const { course, size } = this.state;
+		const { progress, next } = this.props;
+		 const isActive = true;
+		console.log(size);
 		if (!course) {
 			return (
 				<Redirect
 					to={{
 						pathname: '/courses',
-						
 					}}
 				/>
 			);
 		} else {
-	
-	
 			return (
 				<>
-					<Header history={history}>
-						<Title title={course.title} />
-					</Header>
+					<Header
+						title={course.title}
+						getSize={(size) => this.setState({ size })}
+						history={history}
+					/>
+
 					<Content>
 						<TabBar
+							setPadding={size}
 							tabs={[
 								{
 									title: 'NOTITIES',
 									render: () => (
 										<>
-											<Card
-												contentTitle={'Titel van de notitie'}
-												content={'Hier komt de eerste alinea/tekst die geschreven is in deze notitie. Hier komt de eerste alinea/tekst die geschreven is in deze notitie. '}
-											/>
+											<AccordionWrapper>
+												<Accordion
+													active={isActive}
+													tag={`${'IN PROGRESS'}`}
+													label={'Hoofdstuk afronden'}
+													content={
+														'Beschrijving van dit hoofdstuk enzo'
+													}
+												/>
+												<Accordion
+													tag={`${'NEXT'}`}
+													
+												/>
+											</AccordionWrapper>
 										</>
 									),
 								},
@@ -70,7 +88,14 @@ class Course extends Component {
 									title: 'LEERSTOF',
 									render: () => (
 										<>
-											<div>doei</div>
+											<Card
+												contentTitle={
+													'Titel van de notitie'
+												}
+												content={
+													'Hier komt de eerste alinea/tekst die geschreven is in deze notitie. Hier komt de eerste alinea/tekst die geschreven is in deze notitie. '
+												}
+											/>
 										</>
 									),
 								},
@@ -107,9 +132,8 @@ Course.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-
 	return {
-		courses: state.courses.courses
+		courses: state.courses.courses,
 	};
 };
 

@@ -1,25 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledCard from './StyledCard';
+import StyledCard, {CardWrapper} from './StyledCard';
 import {CourseTags} from '../Tags';
 import { StyledLink } from '../Link';
 
 export default function Card({tag, content, title, label, id, path, onClick, contentTitle }) {
 	return (
-		<StyledCard>
-			{tag && (
-				<CardHeader title={title} tag={tag}>
-					{tag}
-				</CardHeader>
-			)}
-			{content && <CardContent contentTitle={contentTitle} content={content}>{content}</CardContent>}
+		<CardWrapper>
+			<StyledCard>
+				{tag && (
+					<CardHeader title={title} tag={tag}>
+						{tag}
+					</CardHeader>
+				)}
+				{content && (
+					<CardContent contentTitle={contentTitle} content={content}>
+						{content}
+					</CardContent>
+				)}
 
-			{label && <CardFooter title={title} id={id}>
-				<StyledLink label={label} key={id} to={`${path}/${id}`}>
-					{label}
-				</StyledLink>
-			</CardFooter>}
-		</StyledCard>
+				{label && (
+					<CardFooter title={title} id={id}>
+						<StyledLink label={label} key={id} to={`${path}/${id}`}>
+							{label}
+						</StyledLink>
+					</CardFooter>
+				)}
+			</StyledCard>
+		</CardWrapper>
 	);
 }
 
