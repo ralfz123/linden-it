@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors, sizes } from '../../GlobalStyle.js';
 
 const StyledAccordion = styled.div`
-	margin: 0 0 0 20px;
+	margin: 0 0 0 16px;
 	padding-left: ${sizes.paddingLeft};
 
 	.accordion-header,
@@ -13,10 +13,10 @@ const StyledAccordion = styled.div`
 
 	.accordion-header {
 		background-color: ${(props) =>
-			props.active ? colors.grayLight : colors.light};
+		props.active ? colors.grayLight : colors.light};
 		padding: 20px;
 		position: relative;
-		border: 1px 0 0 solid ${colors.grayLight};
+		border-top: 1px solid ${colors.grayLight};
 	}
 	.accordion-content {
 		padding: 20px;

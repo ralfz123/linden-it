@@ -12,7 +12,9 @@ export default function AccordionItem({tag, content, title, label, id, path, onC
 				{tag}
 			</AccordionHeader>
 			
-			<AccordionContent contentTitle={contentTitle} content={content}>{content}</AccordionContent>
+			{content && <AccordionContent contentTitle={contentTitle} content={content}>{content}</AccordionContent>}
+
+
 			{label &&
 				<AccordionFooter title={title} id={id}>
 					<SecondaryButton label={label} key={id} to={`${path}/${id}`}>

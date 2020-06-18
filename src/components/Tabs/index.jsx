@@ -37,7 +37,7 @@ const TabContainer = styled.div`
 	background-color: ${colors.light};
 	width: 100%;
 	top: ${(props) => (props.padding ? props.padding + 'px' : 0)};
-	padding: 16px 0 16px;
+	padding: 12px 0 12px;
 	z-index: 2;
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};

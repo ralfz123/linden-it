@@ -122,6 +122,8 @@ ${'' /* Login page styles */}
         /* justify-content: center; */
         padding-top: 4em;
         margin: auto;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
     }
     .field {
         /* background-color:lightgreen; */

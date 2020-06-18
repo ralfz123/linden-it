@@ -64,7 +64,7 @@ class Course extends Component {
 							setPadding={size}
 							tabs={[
 								{
-									title: 'NOTITIES',
+									title: 'LEERSTOF',
 									render: () => (
 										<>
 											<AccordionWrapper>
@@ -76,16 +76,23 @@ class Course extends Component {
 														'Beschrijving van dit hoofdstuk enzo'
 													}
 												/>
-												<Accordion
-													tag={`${'NEXT'}`}
-													
-												/>
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
+												<Accordion tag={`${'NEXT'}`} />
 											</AccordionWrapper>
 										</>
 									),
 								},
 								{
-									title: 'LEERSTOF',
+									title: 'NOTITIES',
 									render: () => (
 										<>
 											<Card
