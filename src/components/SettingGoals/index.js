@@ -34,6 +34,7 @@ class Goals extends Component {
 	_next() {
 		let currentStep = this.state.currentStep;
 		currentStep = currentStep >= 1 ? 2 : currentStep + 1;
+		
 		this.setState({
 			currentStep: currentStep,
 		});
@@ -42,6 +43,7 @@ class Goals extends Component {
 	_prev() {
 		let currentStep = this.state.currentStep;
 		currentStep = currentStep <= 1 ? 1 : currentStep - 1;
+		
 		this.setState({
 			currentStep: currentStep,
 		});
@@ -71,7 +73,7 @@ class Goals extends Component {
 			);
 		} else if (currentStep = 2) {
 			return (
-				<button className='' type='button' onClick={this._next}>
+				<button className='' type='submit' onClick={this._next}>
 					Doelen opslaan
 				</button>
 			);
