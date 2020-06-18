@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { colors } from '../../GlobalStyle';
+import { colors, sizes } from '../../GlobalStyle';
 
-export default function TabBar({ tabs }) {
+
+export default function TabBar({ tabs, setPadding }) {
 	const [activeTab, setActiveTab] = useState(0);
-
+	console.log("hallo"+setPadding)
 	return (
 		<>
-			<TabContainer>
-				{tabs.map((tab, index) => (
-					<TabButton
-						key={index}
-						active={activeTab === index}
-						onClick={() => setActiveTab(index)}
-					>
-						{tab.title}
-					</TabButton>
-				))}
+			<TabContainer padding={setPadding}>
+				<TabButtonGroup>
+					{tabs.map((tab, index) => (
+						<TabButton
+							key={index}
+							active={activeTab === index}
+							onClick={() => setActiveTab(index)}
+						>
+							{tab.title}
+						</TabButton>
+					))}
+				</TabButtonGroup>
 			</TabContainer>
 			{tabs[activeTab].render()}
 		</>
@@ -29,15 +32,36 @@ TabBar.propTypes = {
 	tabs: PropTypes.array,
 	map: PropTypes.func
 };
+const TabContainer = styled.div`
+	position: sticky;
+	background-color: ${colors.light};
+	width: 100%;
+	top: ${(props) => (props.padding ? props.padding + 'px' : 0)};
+	padding: 12px 0 12px;
+	z-index: 2;
+	padding-left: ${sizes.paddingLeft};
+	padding-right: ${sizes.paddingRight};
 
-const TabContainer = styled.section`
+	/* :after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		z-index: 0;
+		height: 4px;
+		display:flex;
+		bottom:3px;
+		padding:0 -16px;
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.7);
+	} */
+`;
+const TabButtonGroup = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	height: 40px;
 	background-color: ${colors.grayLight};
 	border-radius: 5px;
-	margin: 10px 0 20px;
+	
 	padding: 0 3px;
 `;
 const TabButton = styled.button`

@@ -14,6 +14,12 @@ export const colors = {
 	tagProgress:'#FEC32E',
 	tagFinished:'#22C7E4'
 };
+export const sizes = {
+	paddingTop: '',
+	paddingLeft: 'max(16px, env(safe-area-inset-left))',
+	paddingRight:'max(16px, env(safe-area-inset-right))',
+	paddingBottom: '',
+};
 
 const GlobalStyle = createGlobalStyle`
     ${normalize};
@@ -33,7 +39,8 @@ const GlobalStyle = createGlobalStyle`
     }
     html {
         box-sizing: border-box;
-        background-color: var(--color-primary);
+       
+        
     }
     *, *:before, *:after {
         box-sizing: border-box;
@@ -46,29 +53,43 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
+        -webkit-overflow-scrolling: touch;
   
+    }
+    #root{
+         &:after {
+		content:'';
+		position: fixed;
+		background-color: ${colors.primary};
+		top:0;
+		right:0;
+		left:0;
+		width: 100vw;
+		min-height:50%;
+		z-index:0;
+	}
     }
     
     header{
-        position: sticky;
-        left: 0;
-        right: 0;
+        ${'' /* position: sticky; */}
         top: 0;
-        width: 100vw;
-        z-index:1;
+        width: 100%;
+        
+       z-index: 2;
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
-        padding-top: max(8px, env(safe-area-inset-top)); 	
+        padding-top: max(0px, env(safe-area-inset-top)); 	
+        background-color: ${colors.primary};
+        
     }
     main {
         position:relative;
        flex-grow:1;
         box-sizing:border-box;
-        z-index:0;
+        z-index:1;
         background-color:var(--color-light);
-        padding-left: max(16px, env(safe-area-inset-left));
-        padding-right: max(16px, env(safe-area-inset-right));
-        -webkit-overflow-scrolling: touch;
+        height:auto;
+        padding-bottom: calc(50px + max(0px, env(safe-area-inset-bottom)))
     }
     footer {
         position: fixed;
@@ -76,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
         left: 0;
         right: 0;
         bottom: 0;
-        z-index:2;
+        z-index:3;
         padding-left: max(0px, env(safe-area-inset-left));
         padding-right: max(0px, env(safe-area-inset-right));
         padding-bottom: max(0px, env(safe-area-inset-bottom));
@@ -101,6 +122,8 @@ ${'' /* Login page styles */}
         /* justify-content: center; */
         padding-top: 4em;
         margin: auto;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
     }
     .field {
         /* background-color:lightgreen; */

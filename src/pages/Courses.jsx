@@ -37,6 +37,7 @@ class Courses extends Component {
 		tag: 'tag',
 		content: 'short description',
 		courses: [],
+		size: {},
 	};
 	componentDidMount() {
 		const { fetchCourses } = this.props;
@@ -51,7 +52,7 @@ class Courses extends Component {
 	render() {
 		const { courses, pending, url, selectCourse } = this.props;
 		if (pending) return <Spinner />;
-		const { title } = this.state;
+		const { title, size } = this.state;
 		// const course = courses.map((course) => (course.id));
 		const coursesNew = courses.filter((course) => course.tag === 'NEW');
 		const coursesInProgress = courses.filter(
@@ -62,11 +63,13 @@ class Courses extends Component {
 		);
 		return (
 			<>
-				<Header>
-					<Title title={title} />
-				</Header>
+				<Header
+					title={title}
+					getSize={(size) => this.setState({ size })}
+				/>
 				<Content>
 					<TabBar
+						setPadding={size}
 						tabs={[
 							{
 								title: 'ALL',
@@ -74,11 +77,12 @@ class Courses extends Component {
 									<>
 										{courses.map((course) => (
 											<Card
-
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={'Korte Introductie'}
+												contentTitle={
+													'Korte Introductie'
+												}
 												content={
 													course.shortDescription
 												}
@@ -102,7 +106,9 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={'Korte Introductie'}
+												contentTitle={
+													'Korte Introductie'
+												}
 												content={
 													course.shortDescription
 												}
@@ -126,7 +132,9 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={'Korte Introductie'}
+												contentTitle={
+													'Korte Introductie'
+												}
 												content={
 													course.shortDescription
 												}
@@ -150,7 +158,9 @@ class Courses extends Component {
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
-												contentTitle={'Korte Introductie'}
+												contentTitle={
+													'Korte Introductie'
+												}
 												content={
 													course.shortDescription
 												}
@@ -194,7 +204,7 @@ Courses.propTypes = {
 
 const mapStateToProps = (state) => {
 	return {
-		error: getCoursesError(state),
+		error: state.courses.error,
 		courses: state.courses.courses,
 		pending: getCoursesPending(state),
 	};
