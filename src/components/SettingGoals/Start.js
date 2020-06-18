@@ -7,7 +7,6 @@ import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
 import { ToggleButton } from '../Button';
 import { FiCalendar } from 'react-icons/fi';
-import { SecondaryButton } from '../Button';
 
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
@@ -28,7 +27,6 @@ class Start extends Component {
 							je doelen vast, die automatisch met je recruiter
 							worden gedeeld.
 						</p>
-						<SecondaryButton label='Doelen vaststellen' />
 					</div>
 				</div>
 			</>

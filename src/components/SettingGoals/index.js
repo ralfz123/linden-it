@@ -7,6 +7,8 @@ import Start from './Start';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import End from './End';
+import { PrimaryButton } from '../Button';
+import { SecondaryButton } from '../Button';
 
 // const StyledOverlay = styled.div`
 // 	background-color: green;
@@ -65,17 +67,41 @@ class Goals extends Component {
 	// get next button
 	get nextButton() {
 		let currentStep = this.state.currentStep;
-		if (currentStep < 2) {
+		if (currentStep == 1) {
 			return (
-				<button className='' type='button' onClick={this._next}>
-					Volgende stap
-				</button>
+				<SecondaryButton
+					className=''
+					type='button'
+					onClick={this._next}
+					label='Doelen vaststellen'
+				/>
 			);
-		} else if ((currentStep = 2)) {
+		} else if (currentStep == 2) {
 			return (
-				<button className='' type='submit' onClick={this._next}>
-					Doelen opslaan
-				</button>
+				<PrimaryButton
+					className=''
+					type='button'
+					onClick={this._next}
+					label='Volgende stap'
+				/>
+			);
+		} else if (currentStep == 3) {
+			return (
+				<PrimaryButton
+					className=''
+					type='submit'
+					onClick={this._next}
+					label='Doelen opslaan'
+				/>
+			);
+		}else if (currentStep == 4) {
+			return (
+				<SecondaryButton
+					className=''
+					type='submit'
+					onClick={this._next}
+					label='Start cursus'
+				/>
 			);
 		}
 		return null;
@@ -129,7 +155,7 @@ class Goals extends Component {
 						studyTimeDay={this.state.studyTimeDay}
 						sameStudyTimeDay={this.state.sameStudyTimeDay}
 					/>
-					
+
 					<End
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}

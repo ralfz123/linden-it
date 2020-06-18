@@ -7,7 +7,6 @@ import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
 import { ToggleButton } from '../Button';
 import { FaCheckCircle } from 'react-icons/fa';
-import { SecondaryButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
 
@@ -28,7 +27,6 @@ class End extends Component {
 							Je kunt je doelen altijd nog aanpassen via de
 							agenda.
 						</p>
-						<SecondaryButton label='Start cursus' />
 					</div>
 				</div>
 			</>

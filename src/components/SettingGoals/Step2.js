@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 // import { BaseTextInput } from '../components/Form';
 import { BaseNumberInput } from '../Form';
 import { BaseTimeInput } from '../Form';
-import { PrimaryButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
 import Toggle from '../Toggle';
@@ -74,8 +73,6 @@ class Step2 extends Component {
 							onChange={this.props.handleChange} // Prop: Puts data into state
 						/>
 					</div>
-
-					{/* <PrimaryButton label='Doelen opslaan'/> */}
 				</div>
 			</>
 		);
