@@ -3,50 +3,44 @@ import React, { Component } from 'react';
 import Switch from 'react-switch';
 
 export default class Toggle extends Component {
-	// state = { on: false}
-
-	// toggle = () => {
-	//     this.setState ({
-	//         on: !this.state.on
-	//     })
+	// static defaultProps = {
+	// 		checked:false,
 	// }
-
-	// render() {
-	// 	return (
-	// 		<div>{this.state.on && this.props.children}
-	// 			<ToggleButton
-	// 				onClick={this.toggle}
-	// 					>
-	//                 <div>&nbsp;</div>
-	//             </ToggleButton>
-	// 		</div>
-	// 	);
-	// }
-
-	constructor() {
-		super();
-		this.state = { checked: false };
-		this.handleChange = this.handleChange.bind(this);
-	}
+	state = {
+		checked: false,
+	};
 
 	toggle = () => {
-	    this.setState ({
-	        on: !this.state.on
-	    })
+		this.setState({
+			on: !this.state.on,
+		});
+	};
+	// componentDidMount() {
+	// 		 this.handleChange(this.state);
+	// 	}
+	// 	componentDidUpdate() {
+	// 		this.handleChange(this.state);
+	// 	}
+	// 	componentWillUnmount() {
+	// 		window.removeEventListener('click', this.handleClick(this.state), false);
+	// 	}
+	toggleChecked() {
+		this.setState((prevState) => ({
+			checked: !prevState.checked,
+		}));
 	}
 
 	handleChange(checked) {
 		this.setState({ checked });
 	}
 
-	onClick(checked) {
-		this.setState({ checked });
-	}
-
+	// onClick(checked) {
+	// 	this.setState({ checked });
+	// }
 
 	render() {
 		return (
-			<div>{this.state.on && this.props.label}
+			<div>
 				<label>
 					<Switch
 						onColor='#FC7928'
@@ -58,7 +52,7 @@ export default class Toggle extends Component {
 						className='toggle'
 						onChange={this.handleChange}
 						checked={this.state.checked}
-						onClick={this.onClick} 
+						onClick={this.toggleChecked}
 						// onClick needs to have a FUNCTION.
 					/>
 				</label>

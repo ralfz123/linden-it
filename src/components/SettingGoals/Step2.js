@@ -7,13 +7,35 @@ import { BaseNumberInput } from '../Form';
 import { BaseTimeInput } from '../Form';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
-import Toggle from '../Toggle';
+// import Toggle from '../Toggle';
+import Switch from 'react-switch';
 
 class Step2 extends Component {
+	state = {
+		checked: true,
+	};
+
+	handleChange = (checked) => {
+		this.setState({ checked });
+	};
+
+	// onChange(checked) {
+	// 	this.setState({ checked });
+	// }
+
+	// toggleSwitch = () => {
+	// 	this.setState((prevState) => ({
+	// 		checked: !prevState.checked,
+	// 	}));
+	// };
+
 	render() {
+		console.log(this.state.checked);
 		if (this.props.currentStep !== 3) {
 			return null;
 		}
+		const { checked } = this.state;
+
 		return (
 			<>
 				<div className='settinggoals-container'>
@@ -45,7 +67,17 @@ class Step2 extends Component {
 
 						{/* map over all inputfields max < 7 */}
 
-						<Toggle />
+						<Switch
+							onColor='#FC7928'
+							ofColor='#717171'
+							uncheckedIcon={false}
+							checkedIcon={false}
+							handleDiameter={18}
+							width={60}
+							className={'toggle'}
+							onChange={(checked, this.handleChange, '0')}
+							onClick={this.toggleSwitch}
+						/>
 						{/* This toggle has to toggle BaseTimeInput and multiply (sync with {studyDays.length} ) */}
 						<BaseTimeInput
 							id='studyTimeDay'
@@ -62,7 +94,15 @@ class Step2 extends Component {
 							Hetzelfde tijdstip voor elke studiedag herinnering
 						</label>
 
-						<Toggle />
+						<Switch
+							onColor='#FC7928'
+							ofColor='#717171'
+							uncheckedIcon={false}
+							checkedIcon={false}
+							handleDiameter={18}
+							width={60}
+							className={'toggle'}
+						/>
 						{/* This toggle has to toggle BaseTimeInput */}
 						<BaseTimeInput
 							id='sameStudyTimeDay'
