@@ -33,7 +33,7 @@ class Goals extends Component {
 
 	_next() {
 		let currentStep = this.state.currentStep;
-		currentStep = currentStep >= 2 ? 3 : currentStep + 1;
+		currentStep = currentStep >= 1 ? 2 : currentStep + 1;
 		this.setState({
 			currentStep: currentStep,
 		});
@@ -63,13 +63,19 @@ class Goals extends Component {
 	// get next button
 	get nextButton() {
 		let currentStep = this.state.currentStep;
-		if (currentStep < 3) {
+		if (currentStep < 2) {
 			return (
 				<button className='' type='button' onClick={this._next}>
 					Volgende stap
 				</button>
 			);
-		}
+		} else if (currentStep = 2) {
+			return (
+				<button className='' type='button' onClick={this._next}>
+					Doelen opslaan
+				</button>
+			);
+			}
 		return null;
 	}
 
