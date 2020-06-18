@@ -34,3 +34,16 @@ export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 		color: ${colors.light};
 	}
 `;
+
+export const StyledAgendaButton = styled(StyledPrimaryButton)`
+	background-color: ${colors.primary};
+	color: ${colors.light};
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	margin: 0 auto;
+
+	:hover {
+		background-color: ${colors.primary};
+		color: ${colors.light};
+	}
+`;

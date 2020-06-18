@@ -8,11 +8,12 @@ export const colors = {
 	grayDark: '#3b3b3b',
 	grayLight: '#f4f4f4',
 	grayLightTwo: '#C4C4C4',
+	grayLightThree: '#717171',
 	red: '#D21919;',
 	green: '#77dd77',
 	tagNew: '#5DD8A4',
-	tagProgress:'#FEC32E',
-	tagFinished:'#22C7E4'
+	tagProgress: '#FEC32E',
+	tagFinished: '#22C7E4',
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -163,6 +164,29 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
+
+${'' /* ********************* Agenda page ********************* */}
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    ${'' /* flex-direction: column; */}
+    width: 100%
+}
+.task-container p {
+    width: 100%;
+    text-align: left;
+    margin-left: 12px;
+    font-size: 1em
+}
+
+.task-container div {
+    background-color: ${colors.grayLight};
+    color: ${colors.grayLightThree};
+    border-radius: 100%;
+    padding: 14px 20px;
+}
+
 `;
 
 export default GlobalStyle;

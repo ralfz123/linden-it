@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
-import { PrimaryButton } from '../components/Button';
-import { SecondaryButton } from '../components/Button';
+import { AgendaButton } from '../components/Button';
 import {Task} from '../components/Tasks';
 class Agenda extends Component {
 	constructor(props) {
@@ -20,7 +19,12 @@ class Agenda extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<Task />
+					<Task>13 pagina's lezen</Task>
+					<Task>13 pagina's lezen</Task>
+					<Task>13 pagina's lezen</Task>
+					<Task>13 pagina's lezen</Task>
+					<AgendaButton label='Examen in 10 dagen' to='routeToExamDay' />
+					{/* dayToExamen */}
 				</Content>
 			</>
 		);
