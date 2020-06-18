@@ -53,10 +53,11 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        -webkit-overflow-scrolling: touch;
+        
   
     }
     #root{
+        -webkit-overflow-scrolling: touch;
          &:after {
 		content:'';
 		position: fixed;
@@ -70,7 +71,7 @@ const GlobalStyle = createGlobalStyle`
 	}
     }
     
-    header{
+    header {
         ${'' /* position: sticky; */}
         top: 0;
         width: 100%;
