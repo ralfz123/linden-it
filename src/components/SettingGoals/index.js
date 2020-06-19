@@ -70,7 +70,7 @@ class Goals extends Component {
 		if (currentStep == 1) {
 			return (
 				<SecondaryButton
-					className=''
+					className='onboarding-button'
 					type='button'
 					onClick={this._next}
 					label='Doelen vaststellen'
@@ -97,7 +97,7 @@ class Goals extends Component {
 		}else if (currentStep == 4) {
 			return (
 				<SecondaryButton
-					className=''
+					className='onboarding-button'
 					type='submit'
 					onClick={this._next}
 					label='Start cursus'
@@ -130,8 +130,7 @@ class Goals extends Component {
 	render() {
 		return (
 			<>
-				{/* <OnboardingPage /> // not started */}
-				<p>Stap {this.state.currentStep - 1} van 2</p>
+				<h4 classname='step-counter'>Stap {this.state.currentStep - 1} van 2</h4>
 
 				<form onSubmit={this.handleSubmit}>
 					<Start

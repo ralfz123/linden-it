@@ -7,6 +7,7 @@ import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
 import { ToggleButton } from '../Button';
 import { FaCheckCircle } from 'react-icons/fa';
+import { SecondaryButton } from '../Button';
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
 
@@ -21,12 +22,20 @@ class End extends Component {
 				<div className='settinggoals-container'>
 					<div className='onboarding-page'>
 						<FaCheckCircle className='onboarding-icon' />
-						<div>Goed bezig! Jouw doelen zijn vastgesteld.</div>
-						<p>Happy learning!</p>
+						<h2>Goed bezig! Jouw doelen zijn vastgesteld.</h2>
+						<div>Happy learning!</div>
 						<p>
 							Je kunt je doelen altijd nog aanpassen via de
 							agenda.
 						</p>
+
+						{/* <SecondaryButton
+							to='/course'
+							className='onboarding-button'
+							type='submit'
+							onClick={this._next}
+							label='Start cursus'
+						/> */}
 					</div>
 				</div>
 			</>

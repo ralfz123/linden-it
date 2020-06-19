@@ -7,6 +7,7 @@ import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
 import { ToggleButton } from '../Button';
 import { FiCalendar } from 'react-icons/fi';
+import { SecondaryButton } from '../Button';
 
 // import { Popup } from '../components/Popup';
 // import { Spinner } from '../components/Spinner';
@@ -20,13 +21,21 @@ class Start extends Component {
 			<>
 				<div className='settinggoals-container'>
 					<div className='onboarding-page'>
-						<FiCalendar />
-						<div>Je doelen vaststellen voor ITIL 3</div>
+						<FiCalendar className='onboarding-icon' />
+						<h2>Je doelen vaststellen voor ITIL 3</h2>
 						<p>
 							Voordat je aan de cursus kan beginnen, stel je eerst
 							je doelen vast, die automatisch met je recruiter
 							worden gedeeld.
 						</p>
+
+						{/* <SecondaryButton
+							to='/step1'
+							className='onboarding-button'
+							type='button'
+							onClick={this._next}
+							label='Doelen vaststellen'
+						/> */}
 					</div>
 				</div>
 			</>

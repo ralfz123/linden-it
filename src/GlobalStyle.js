@@ -165,6 +165,8 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
     }
+    
+${'' /* ***************** Setting goals ***************** */}
 
     .settinggoals-container label {
         font-family: Lato;
@@ -176,7 +178,9 @@ ${'' /* Login page styles */}
     .container {
         margin-bottom: 20px;
     }
-${'' /* ***************** pushbuttons ***************** */}
+
+                ${'' /* ***************** pushbuttons ***************** */}
+
     .container-pushbuttons {
         display: flex;
         justify-content: space-between;
@@ -186,6 +190,11 @@ ${'' /* ***************** pushbuttons ***************** */}
         margin-bottom: 30px;
     }
 
+    .container-pushbuttons {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+    }
     .pushbuttons {
         position: relative;
         width: 10%;
@@ -223,7 +232,7 @@ ${'' /* ***************** pushbuttons ***************** */}
         flex-wrap:wrap;
         flex-direction: row;
         justify-content: flex-start;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
     }
 
     .advice label:nth-child(3) {
@@ -235,22 +244,52 @@ ${'' /* ***************** pushbuttons ***************** */}
         font-weight: normal;
         font-size: 1em;
     }
+    
+    .step-counter {
+        font-family: Josefin Sans;
+        color: ${colors.primary};
+
+    }
+
+    ${'' /* ********************** onboarding pages ********************** */}
 
     .onboarding-page {
-        color: ${colors.red};
+        background-color: ${colors.primary};
+        color: ${colors.light};
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        
     }
 
-    .onboarding-page onboarding-icon{
-
+    .onboarding-page .onboarding-icon { 
+        font-size: 40px;
+        width: 100%;
     }
 
-    .onboarding-page onboarding-icon div{
+    .onboarding-page h2 { 
+        ${'' /* color: ${colors.light}; */}
+        width: 50%;
+        text-align: center;
+        margin: 10px 10px 30px 10px;
+    }
+    
+    .onboarding-page div {
+        font-weight: normal;
+    }
 
-}
+    .onboarding-page p {
+        color: ${colors.light};
+        font-size: .7em;
+        text-align: center;
+        width: 60%;
+        margin: 10px 10px 30px 10px;
+    }
 
-.onboarding-page onboarding-icon{
-
-}
+    .onboarding-button {
+        
+    }
 `;
 
 export default GlobalStyle;
