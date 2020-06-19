@@ -9,40 +9,41 @@
 			"chapters": [
 				{
 					"id": 1,
-					"title": "H1: Configure language packs",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
-				},{
+					"title": "CHAPTER 1 Deploy Windows",
+					"subjects": [
+						{
+							"title": "Deploy Windows 10",
+							"content": [
+								"configure language packs",
+								"migrate user data",
+								"perform a clean installation",
+								"perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.)",
+								"select the appropriate Windows edition",
+								"troubleshoot activation issues"
+							]
+						},
+						{
+							"title": "Perform post-installation configuration",
+							"content": [
+								"configure Edge and Internet Explorer",
+								"configure mobility settings",
+								"configure sign-in options",
+								"customize the Windows desktop"
+							]
+						}
+					]
+				},
+				{
 					"id": 2,
-					"title": "H1: migrate user data",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
-				},{
+					"title": "Chapter 2 Manage Devices and Data"
+				},
+				{
 					"id": 3,
-					"title": "H1: perform a clean installation",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
-				},{
+					"title": "Chapter 3 Configure Connectivity"
+				},
+				{
 					"id": 4,
-					"title": "H1: perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
-				},{
-					"id": 5,
-					"title": "H1: select the appropriate Windows edition",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
-				},{
-					"id": 6,
-					"title": "H1: select the appropriate Windows edition",
-					"tag": "NEW",
-					"pages": "32-34",
-					"label": "Hoofdstuk afronden"
+					"title": "Chapter 4 Maintain Windows"
 				}
 			]
 		},

@@ -42,7 +42,7 @@ const CourseTag = styled.div`
 	position: absolute;
 	padding: 4px 10px;
 	background-color: ${({ children }) => handleColorCourses(children)};
-	color: ${colors.dark};
+	color: ${colors.grayDark};
 	border-radius: 5px;
 	left: -20px;
 	font-size: 12px;

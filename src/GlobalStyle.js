@@ -1,19 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 export const colors = {
-	primary: '#FC7928',
-	light: '#ffffff',
-	dark: '#000000',
-	gray: '#989898',
-	grayDark: '#3b3b3b',
-	grayLight: '#f4f4f4',
-	grayLightTwo: '#C4C4C4',
-	red: '#D21919;',
-	green: '#77dd77',
-	tagNew: '#5DD8A4',
-	tagProgress:'#FEC32E',
-	tagFinished:'#22C7E4'
-};
+			primary: '#FC7928',
+			light: '#ffffff',
+			dark: '#000000',
+			gray: '#717171',
+			grayDark: '#3b3b3b',
+			grayLight: '#f4f4f4',
+			grayLighter: '#f8f8f8',
+			grayLightTwo: '#C4C4C4',
+			red: '#D21919;',
+			green: '#77dd77',
+			tagNew: '#5DD8A4',
+			tagProgress: '#FEC32E',
+			tagFinished: '#22C7E4',
+		};
 export const sizes = {
 	paddingTop: '',
 	paddingLeft: 'max(16px, env(safe-area-inset-left))',
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         --color-gray: #989898;
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
+        --color-gray-lighter: #f8f8f8;
         --color-grayLightTwo: #C4C4C4;
         --tag-new:#5DD8A4;
         --tag-progress:#FEC32E;
@@ -53,10 +55,11 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        -webkit-overflow-scrolling: touch;
+        
   
     }
     #root{
+        -webkit-overflow-scrolling: touch;
          &:after {
 		content:'';
 		position: fixed;
@@ -70,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
 	}
     }
     
-    header{
+    header {
         ${'' /* position: sticky; */}
         top: 0;
         width: 100%;
@@ -89,7 +92,9 @@ const GlobalStyle = createGlobalStyle`
         z-index:1;
         background-color:var(--color-light);
         height:auto;
+        padding-bottom:50px;
         padding-bottom: calc(50px + max(0px, env(safe-area-inset-bottom)))
+        -webkit-overflow-scrolling: touch;
     }
     footer {
         position: fixed;
@@ -104,6 +109,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
+        font-weight:600;
     }
 
 

@@ -10,7 +10,7 @@ export const StyledPrimaryButton = styled.button`
 	height: 48px;
 	line-height: 48px;
 	text-decoration: none;
-	padding: 0 64px;
+	padding: 0 35px;
 	cursor: pointer;
 
 	:hover {
