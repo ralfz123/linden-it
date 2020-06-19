@@ -92,6 +92,7 @@ const GlobalStyle = createGlobalStyle`
         z-index:1;
         background-color:var(--color-light);
         height:auto;
+        padding-bottom:50px;
         padding-bottom: calc(50px + max(0px, env(safe-area-inset-bottom)))
         -webkit-overflow-scrolling: touch;
     }

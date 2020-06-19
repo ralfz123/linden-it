@@ -8,7 +8,7 @@ import Title from '../components/Title';
 import TabBar from '../components/Tabs';
 
 import Card from '../components/Card';
-import Accordion, {AccordionWrapper} from '../components/Accordion';
+import Accordion from '../components/Accordion';
 import { Redirect } from 'react-router';
 class Course extends Component {
 	state = {
@@ -39,8 +39,8 @@ class Course extends Component {
 	render() {
 		const { history } = this.props;
 		const { course, size } = this.state;
+		console.log(course.chapters)
 		const { progress, next } = this.props;
-		 const isActive = true;
 		console.log(size);
 		if (!course) {
 			return (
@@ -67,27 +67,7 @@ class Course extends Component {
 									title: 'LEERSTOF',
 									render: () => (
 										<>
-											<AccordionWrapper>
-												<Accordion
-													active={isActive}
-													tag={`${'IN PROGRESS'}`}
-													label={'Hoofdstuk afronden'}
-													content={
-														'Beschrijving van dit hoofdstuk enzo'
-													}
-												/>
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-												<Accordion tag={`${'NEXT'}`} />
-											</AccordionWrapper>
+											<Accordion chapters={course.chapters} />				
 										</>
 									),
 								},
