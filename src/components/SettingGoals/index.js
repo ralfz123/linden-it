@@ -130,7 +130,7 @@ class Goals extends Component {
 	render() {
 		return (
 			<>
-				<h4 classname='step-counter'>Stap {this.state.currentStep - 1} van 2</h4>
+				<p classname='step-counter'>Stap {this.state.currentStep - 1} van 2</p>
 
 				<form onSubmit={this.handleSubmit}>
 					<Start
