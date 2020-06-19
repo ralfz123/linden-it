@@ -247,8 +247,9 @@ ${'' /* ***************** Setting goals ***************** */}
     
     .step-counter {
         font-family: Josefin Sans;
+        font-size: 1em;
         color: ${colors.primary};
-
+        margin-top: 30px;
     }
 
     ${'' /* ********************** onboarding pages ********************** */}
