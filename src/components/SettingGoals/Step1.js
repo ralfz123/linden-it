@@ -18,7 +18,9 @@ class Step1 extends Component {
 			<>
 				<div className='settinggoals-container'>
 					<div className='container'>
-						<label htmlFor='pages'>
+						<label 
+						// htmlFor='pages'
+						>
 							Jouw doelen worden gedeeld met:
 						</label>
 						<BaseTextInput
@@ -27,26 +29,32 @@ class Step1 extends Component {
 							name='nameRecruiter'
 							type='text'
 							placeholder='Naam van jouw Recruiter'
-							value={this.props.nameRecruiter} 
-							onChange={this.props.handleChange} 
+							value={this.props.nameRecruiter}
+							onChange={this.props.handleChange}
 						/>
 					</div>
 
 					<div className='container'>
-						<label htmlFor='pages'>Datum examen:</label>
+						<label 
+						// htmlFor='pages'
+						>
+						Datum examen:
+						</label>
 						<BaseDateInput
 							className='form-control'
 							id='date'
 							name='date'
 							type='date'
 							placeholder='Datum'
-							value={this.props.date} 
-							onChange={this.props.handleChange} 
+							value={this.props.date}
+							onChange={this.props.handleChange}
 						/>
 					</div>
 
 					<div className='container-pushbuttons'>
-						<label htmlFor='pages'>
+						<label 
+						// htmlFor='pages'
+						>
 							Welke dagen ben je beschikbaar voor je studie?
 						</label>
 
@@ -54,8 +62,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='maandag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Ma</div>
 						</label>
@@ -64,8 +75,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='dinsdag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Di</div>
 						</label>
@@ -74,8 +88,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='woensdag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Wo</div>
 						</label>
@@ -84,8 +101,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='donderdag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Do</div>
 						</label>
@@ -94,8 +114,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='vrijdag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Vr</div>
 						</label>
@@ -104,8 +127,11 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='zaterdag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Za</div>
 						</label>
@@ -114,15 +140,20 @@ class Step1 extends Component {
 							<input
 								type='checkbox'
 								value='zondag'
-								htmlFor='studyDays'
-								name='studyDays'
+								// htmlFor='setStudyDays'
+								name='setStudyDays'
+								id='setStudyDays'
+								checked={this.props.setDays}
+								onChange={this.props.setStudyDaysChange}
 							/>
 							<div>Zo</div>
 						</label>
 					</div>
 
 					<div className='container advice'>
-						<label htmlFor='pages'>
+						<label 
+						// htmlFor='pages'
+						>
 							Hoeveel uren per studiedag ben je beschikbaar?
 						</label>
 
@@ -135,7 +166,9 @@ class Step1 extends Component {
 							value={this.props.studyHours} // Prop: The email input data
 							onChange={this.props.handleChange} // Prop: Puts data into state
 						/>
-						<label htmlFor='pages'>uren</label>
+						<label
+						//  htmlFor='pages'
+						 >uren</label>
 					</div>
 				</div>
 			</>
