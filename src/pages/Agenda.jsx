@@ -19,11 +19,9 @@ class Agenda extends Component {
 					<Title title={this.state.title} />
 				</Header>
 				<Content>
-					<Task>13 pagina's lezen</Task>
-					<Task>13 pagina's lezen</Task>
-					<Task>13 pagina's lezen</Task>
-					<Task>13 pagina's lezen</Task>
-					<AgendaButton label='Examen in 10 dagen' to='routeToExamDay' />
+					<Task></Task>
+					{/* 13 pagina's lezen */}
+					{/* <AgendaButton label='Examen in 10 dagen' to='#idRouteToExamDay' /> */}
 					{/* dayToExamen */}
 				</Content>
 			</>

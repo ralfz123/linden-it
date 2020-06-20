@@ -10,12 +10,31 @@ export const StyledTask = styled.section`
 	line-height: 48px;
 	text-decoration: none;
 	margin-left: 10px;
-    width: 50%;
+    width: 70%;
     padding: 0 40px;
+
+    .bell-icon-background {
+        background-color: ${colors.grayLightTwo};
+        display: inline-block;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        margin: 0;
+    }
+
+    .bell-icon {
+        fill: ${colors.grayLightThree};
+        position: absolute;
+    }
+
+    .pencil-icon {
+
+    }
 
     /* current day */
     p:active. div:active {
         background-color: ${colors.primary};
-        color: ${colors.light}
+        color: ${colors.light};
+        font-weight: 400;
     }
 `;

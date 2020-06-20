@@ -2,6 +2,7 @@ import React from 'react';
 import { StyledTask } from './StyledTask';
 import PropTypes from 'prop-types';
 import { FaPencilAlt } from 'react-icons/fa';
+import { FiBell } from 'react-icons/fi';
 
 export const Task = ({ onClick, label, children }) => {
 	return (
@@ -9,9 +10,12 @@ export const Task = ({ onClick, label, children }) => {
 			<p>Ma</p>
 			<div>8</div>
 			<StyledTask onClick={onClick} label={label}>
+				<div className='bell-icon-background'>
+					<FiBell className='bell-icon'/>
+				</div>
 				{children}
 				{/* Or a dynamic pageNumbers AND dayNumber */}
-				<FaPencilAlt />
+				<FaPencilAlt className='pencil-icon' />
 			</StyledTask>
 		</div>
 	);
