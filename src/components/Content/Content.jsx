@@ -7,14 +7,8 @@ const StyledMain = styled(motion.main)`
 	/* height: 100%; */
 	
 `;
-export const Content = ({children}) => {
-	
-	return (
-		<StyledMain>
-			{children}
-		</StyledMain>
-	);
-	
+export const Content = ({ children }) => {
+	return <StyledMain>{children}</StyledMain>;
 };
 
 Content.propTypes = {

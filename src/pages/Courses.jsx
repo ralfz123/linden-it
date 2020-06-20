@@ -16,7 +16,13 @@ import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import Card from '../components/Card';
 import TabBar from '../components/Tabs';
+
+// import Goals from '../components/SettingGoals';
+import Goals from '../components/SettingGoals/index'
+import { SecondaryButton } from '../components/Button';
 import { Spinner } from '../components/Spinner';
+
+  
 class Courses extends Component {
 	static defaultProps = {
 		courses: [
@@ -68,6 +74,8 @@ class Courses extends Component {
 					getSize={(size) => this.setState({ size })}
 				/>
 				<Content>
+					<Goals />
+
 					<TabBar
 						setPadding={size}
 						tabs={[

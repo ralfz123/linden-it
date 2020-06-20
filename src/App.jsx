@@ -5,13 +5,14 @@ import PrivateRoute from './pages/PrivateRoute';
 import GlobalStyle from './GlobalStyle';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+
+import Login from './pages/Login';
+import ResetPassword from './pages/ResetPassword';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import Course from './pages/Course';
 import Agenda from './pages/Agenda';
 import Settings from './pages/Settings';
-import Login from './pages/Login';
-import ResetPassword from './pages/ResetPassword';
 
 const App = () => {
 	return (

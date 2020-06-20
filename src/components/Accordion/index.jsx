@@ -14,15 +14,6 @@ export class Panel extends Component {
 			height: 0,
 		};
 	}
-	// componentDidMount() {
-	// 	window.setTimeout(() => {
-	// 		const el = ReactDOM.findDOMNode(this);
-	// 		const height = el.querySelector('.panel__inner').scrollHeight;
-	// 		this.setState({
-	// 			height,
-	// 		});
-	// 	}, 333);
-	// }
 
 	render() {
 		const {
@@ -206,15 +197,8 @@ class Accordion extends React.Component {
 		};
 		this.activatePanel = this.activatePanel.bind(this);
 		this.activateNextPanel = this.activatePanel.bind(this);
-		this.currentInProgress = this.activatePanel.bind(this);
 	}
-	// componentDidMount() {
-	// 	const { chapters } = this.props;
-	// 	const index = chapters
-	// 		.findIndex(chapter => chapter.tag === 'IN PROGRESS');
-	// 	console.log('this' + index);
-	// 	// this.setState({ activePanel: index });
-	// }
+
 	componentDidUpdate(prevProps, prevState) {
 		const { chapters } = this.props;
 		
@@ -224,12 +208,7 @@ class Accordion extends React.Component {
 			this.setState({ activePanel: index });
 		console.log('this' + index);
 	}
-	// currentInProgress(index) {
-	// 	this.setState((current) => ({
-	// 		activePanel: current.activePanel === index ? -1 : index,
-	// 	}));
-	// }
-
+	
 	activatePanel(index) {
 		this.setState((prev) => ({
 			activePanel: prev.activePanel === index ? -1 : index,
@@ -240,16 +219,7 @@ class Accordion extends React.Component {
 			activePanel: next.activePanel === index ? +1 : index,
 		}));
 	}
-	// const {
-	// 			id,
-	// 			title,
-	// 			tag,
-	// 			pages,
-	// 			label,
-	// 			activePanel,
-	// 			index,
-	// 			activatePanel,
-	// 		} = this.props;
+	
 	render() {
 		const { chapters } = this.props;
 		const { activePanel } = this.state;
