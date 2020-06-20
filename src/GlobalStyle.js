@@ -96,15 +96,10 @@ ${'' /* Login page styles */}
 
     .login {
         text-align: center;
-        /* display: flex; */
-        /* flex-direction: row; */
-        /* flex-wrap: wrap; */
-        /* justify-content: center; */
         padding-top: 4em;
         margin: auto;
     }
     .field {
-        /* background-color:lightgreen; */
         text-align:left;
         padding-bottom:20px;
     }
@@ -128,7 +123,6 @@ ${'' /* Login page styles */}
         position: relative;
     }
     .pw-forgot {
-        /* text-align:left; */
         font-family: var(--font-family);
         font-style: normal;
         font-weight: 300;
@@ -179,6 +173,18 @@ ${'' /* ***************** Setting goals ***************** */}
         margin-bottom: 20px;
     }
 
+    .timereminders {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+    }
+
+    .timereminders > label {
+        width: 80%;
+    }
+
                 ${'' /* ***************** pushbuttons ***************** */}
 
     .container-pushbuttons {
@@ -226,7 +232,6 @@ ${'' /* ***************** Setting goals ***************** */}
         border: 1px solid ${colors.primary};
     }
     
-
     .advice {
         display:flex;
         flex-wrap:wrap;
@@ -270,7 +275,6 @@ ${'' /* ***************** Setting goals ***************** */}
     }
 
     .onboarding-page h2 { 
-        ${'' /* color: ${colors.light}; */}
         width: 50%;
         text-align: center;
         margin: 10px 10px 30px 10px;

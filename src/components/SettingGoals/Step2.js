@@ -34,17 +34,12 @@ class Step2 extends Component {
 						<label htmlFor='pages'>pagina's</label>
 					</div>
 
-					<div className='container'>
+					<div className='container timereminders'>
 						<label htmlFor='pages'>
 							Herinner mij om te studeren
 						</label>
-						<p>
-							Selecteer een tijd wanneer je een melding wilt
-							ontvangen.{' '}
-						</p>
 
 						{/* map over all inputfields max < 7 */}
-
 						<Switch
 							checked={this.props.showStudyReminder}
 							onColor='#FC7928'
@@ -56,6 +51,14 @@ class Step2 extends Component {
 							className='toggle'
 							onChange={this.props.setStudyReminderChange}
 						/>
+
+						<p>
+							Selecteer een tijd wanneer je een melding wilt
+							ontvangen.{' '}
+						</p>
+
+
+						
 						{/* This toggle has to toggle BaseTimeInput and multiply (sync with {studyDays.length} ) */}
 						<BaseTimeInput
 							id='studyTimeDay'
@@ -67,7 +70,7 @@ class Step2 extends Component {
 						/>
 					</div>
 
-					<div className='container'>
+					<div className='container timereminders'>
 						<label>
 							Hetzelfde tijdstip voor elke studiedag herinnering
 						</label>
@@ -89,7 +92,7 @@ class Step2 extends Component {
 							name='sameStudyTimeDay'
 							type='time'
 							placeholder='00:00'
-							value={this.props.sameStudyTimeDay} // Prop: The email input data
+							value={this.props.setReminderTimeForAllDays} // Prop: The email input data
 							onChange={this.props.handleChange} // Prop: Puts data into state
 						/>
 					</div>
