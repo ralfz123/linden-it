@@ -179,7 +179,6 @@ ${'' /* ***************** Setting goals ***************** */}
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: row;
-
     }
 
     .timereminders .question {
@@ -298,7 +297,6 @@ ${'' /* ***************** Setting goals ***************** */}
         font-style: normal;
         font-weight: 400;
         font-size: .8em;
-        ${'' /* line-height: 18px; */}
         margin-bottom: -5px;
     }
 `;

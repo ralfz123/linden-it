@@ -18,7 +18,7 @@ class Step1 extends Component {
 			<>
 				<div className='settinggoals-container'>
 					<div className='container'>
-						<label 
+						<label
 						// htmlFor='pages'
 						>
 							Jouw doelen worden gedeeld met:
@@ -35,10 +35,10 @@ class Step1 extends Component {
 					</div>
 
 					<div className='container'>
-						<label 
+						<label
 						// htmlFor='pages'
 						>
-						Datum examen:
+							Datum examen:
 						</label>
 						<BaseDateInput
 							className='form-control'
@@ -52,7 +52,7 @@ class Step1 extends Component {
 					</div>
 
 					<div className='container-pushbuttons'>
-						<label 
+						<label
 						// htmlFor='pages'
 						>
 							Welke dagen ben je beschikbaar voor je studie?
@@ -151,7 +151,7 @@ class Step1 extends Component {
 					</div>
 
 					<div className='container advice'>
-						<label 
+						<label
 						// htmlFor='pages'
 						>
 							Hoeveel uren per studiedag ben je beschikbaar?
@@ -168,7 +168,9 @@ class Step1 extends Component {
 						/>
 						<label
 						//  htmlFor='pages'
-						 >uren</label>
+						>
+							uren
+						</label>
 					</div>
 				</div>
 			</>
