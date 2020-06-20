@@ -10,6 +10,17 @@ const StyledCard = styled.div`
 		background-color: ${colors.grayLight};
 		padding: 20px;
 		position: relative;
+
+		.card-header-content {
+
+			display:flex;
+			align-items:flex-end;
+			justify-content: space-between;
+
+			p {
+				padding-bottom:0;
+			}
+		}
 	}
 	.card-content {
 		/* position:relative; */

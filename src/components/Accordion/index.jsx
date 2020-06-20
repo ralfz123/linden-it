@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import StyledPanel, {StyledAccordion} from './StyledAccordion';
 import {ChapterTags} from '../Tags';
 import { SecondaryButton } from '../Button';
-import { FiUsers, FiVideo, FiFileText, FiPlus } from 'react-icons/fi';
+import { FiUsers, FiVideo, FiFileText, FiPlus, FiMinus } from 'react-icons/fi';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { colors, sizes, addAlpha } from '../../GlobalStyle.js';
 export class Panel extends Component {
@@ -39,6 +39,7 @@ export class Panel extends Component {
 			onClick,
 		} = this.props;
 		const { height } = this.state;
+
 		const isActive = activePanel === index;
 		return (
 			<StyledPanel animate active={isActive}>
@@ -68,12 +69,13 @@ export class Panel extends Component {
 					<motion.div
 						animate={{
 							transition: index === activePanel ? 1 : 0,
-							rotate: index === activePanel ? 45 : 0,
+							rotate: index === activePanel ? 180 : 0,
 						}}
 						className={`toggle-icon 
 							${index === activePanel && 'open'}`}
 					>
-						<FiPlus />
+						{index === activePanel ? <FiMinus /> : <FiPlus />}
+						
 					</motion.div>
 				</PanelHeader>
 				<AnimatePresence exitBeforeEnter initial={false}>
@@ -200,11 +202,33 @@ class Accordion extends React.Component {
 		super(props);
 
 		this.state = {
-			activePanel: 0,
+			activePanel: null,
 		};
 		this.activatePanel = this.activatePanel.bind(this);
 		this.activateNextPanel = this.activatePanel.bind(this);
+		this.currentInProgress = this.activatePanel.bind(this);
 	}
+	// componentDidMount() {
+	// 	const { chapters } = this.props;
+	// 	const index = chapters
+	// 		.findIndex(chapter => chapter.tag === 'IN PROGRESS');
+	// 	console.log('this' + index);
+	// 	// this.setState({ activePanel: index });
+	// }
+	componentDidUpdate(prevProps, prevState) {
+		const { chapters } = this.props;
+		
+		const index = chapters.findIndex((chapter) => chapter.tag === 'IN PROGRESS');
+		
+		if (prevState.activePanel !== index && prevProps.chapters !== chapters)
+			this.setState({ activePanel: index });
+		console.log('this' + index);
+	}
+	// currentInProgress(index) {
+	// 	this.setState((current) => ({
+	// 		activePanel: current.activePanel === index ? -1 : index,
+	// 	}));
+	// }
 
 	activatePanel(index) {
 		this.setState((prev) => ({

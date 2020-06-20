@@ -9,7 +9,7 @@ export default function Card({tag, content, title, label, id, path, onClick, con
 		<CardWrapper>
 			<StyledCard>
 				{tag && (
-					<CardHeader title={title} tag={tag}>
+					<CardHeader title={title} tag={tag} startDate={startDate}>
 						{tag}
 					</CardHeader>
 				)}
@@ -73,12 +73,21 @@ BaseCard.propTypes = {
 };
 
 
-export const CardHeader = ({tag,title}) => {
+export const CardHeader = ({tag,title, startDate}) => {
 	return (
 		<div className='card-header'>
 			{tag && <CourseTags>{tag}</CourseTags>}
-
-			<h2>{title}</h2>
+			<div className='card-header-content'>
+				<h2>{title}</h2>
+				{startDate && (
+					<div>
+						<p>
+							<b>Startdatum:</b> <br></br>
+							{startDate}
+						</p>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };

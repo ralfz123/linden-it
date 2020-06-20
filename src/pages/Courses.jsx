@@ -73,7 +73,6 @@ class Courses extends Component {
 						tabs={[
 							{
 								title: 'ALL',
-								color: '#000',
 								render: () => (
 									<>
 										{courses.map((course) => (
@@ -100,7 +99,6 @@ class Courses extends Component {
 							},
 							{
 								title: 'NEW',
-								color: '#035',
 								render: () => (
 									<>
 										{coursesNew.map((course) => (
@@ -127,7 +125,6 @@ class Courses extends Component {
 							},
 							{
 								title: 'IN PROGRESS',
-								color: '#489',
 								render: () => (
 									<>
 										{coursesInProgress.map((course) => (
@@ -154,7 +151,6 @@ class Courses extends Component {
 							},
 							{
 								title: 'FINISHED',
-								color: '#fff',
 								render: () => (
 									<>
 										{coursesFinished.map((course) => (

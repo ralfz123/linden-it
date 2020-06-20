@@ -19,6 +19,7 @@ const StyledPanel = styled(motion.div)`
 		width:30px;
 		color:${colors.gray};
 		font-size:30px;
+		cursor:pointer;
 		  
 	}
 	.toggle-icon.open {

@@ -97,35 +97,35 @@
 				{
 					"id": 1,
 					"title": "H1: Configure language packs",
-					"tag": "IN PROGRESS",
+					"tag": "DONE",
 					"pages": "32-34",
 					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 2,
 					"title": "H1: migrate user data",
-					"tag": "IN PROGRESS",
+					"tag": "DONE",
 					"pages": "32-34",
 					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 3,
 					"title": "H1: perform a clean installation",
-					"tag": "IN PROGRESS",
+					"tag": "DONE",
 					"pages": "32-34",
 					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 4,
 					"title": "H1: perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.",
-					"tag": "IN PROGRESS",
+					"tag": "DONE",
 					"pages": "32-34",
 					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 5,
 					"title": "H1: select the appropriate Windows edition",
-					"tag": "IN PROGRESS",
+					"tag": "DONE",
 					"pages": "32-34",
 					"label": "Hoofdstuk afronden"
 				},

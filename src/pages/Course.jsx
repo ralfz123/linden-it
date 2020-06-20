@@ -19,10 +19,6 @@ class Course extends Component {
 		course: {},
 		size: {},
 	};
-	props = {
-		progress: 'IN PROGRESS',
-		next: 'NEXT',
-	};
 	componentDidMount() {
 		const { courses, params } = this.props;
 		if (courses && courses.length > 0) {
@@ -31,7 +27,7 @@ class Course extends Component {
 		}
 	}
 	componentDidUpdate() {
-		console.log(this.state.size);
+		
 		const { pending } = this.props;
 		if (pending === false) return false;
 		return true;
@@ -39,8 +35,6 @@ class Course extends Component {
 	render() {
 		const { history } = this.props;
 		const { course, size } = this.state;
-		console.log(course.chapters);
-		console.log(size);
 		if (!course) {
 			return (
 				<Redirect
@@ -66,7 +60,7 @@ class Course extends Component {
 									title: 'LEERSTOF',
 									render: () => (
 										<>
-											<Accordion chapters={course.chapters} />				
+											<Accordion chapters={course.chapters} currentChapter={course} />				
 										</>
 									),
 								},
