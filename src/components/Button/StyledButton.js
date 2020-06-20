@@ -12,6 +12,8 @@ export const StyledPrimaryButton = styled.button`
 	text-decoration: none;
 	padding: 0 35px;
 	cursor: pointer;
+	font-family: Lato;
+	font-size: 14px;
 
 	:hover {
 		background-color: ${colors.light};
@@ -28,6 +30,7 @@ export const StyledPrimaryButton = styled.button`
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 	background-color: ${colors.light};
 	color: ${colors.primary};
+	border: 2px solid ${colors.light};
 
 	:hover {
 		background-color: ${colors.primary};

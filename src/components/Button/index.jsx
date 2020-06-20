@@ -20,17 +20,17 @@ PrimaryButton.propTypes = {
 	onClick: PropTypes.func,
 };
 
-export const SecondaryButton = ({ onClick, label, disabled }) => {
+export const SecondaryButton = ({ to, className, onClick, label, disabled }) => {
 	return (
-		<StyledSecondaryButton onClick={onClick} disabled={disabled}>
+		<StyledSecondaryButton to={to} className={className} onClick={onClick} disabled={disabled}>
 			{label}
 		</StyledSecondaryButton>
 	);
 };
 
 SecondaryButton.propTypes = {
-	disabled: PropTypes.any,
-	label: PropTypes.string,
+	to: PropTypes.string,
+	className: PropTypes.string,
 	onClick: PropTypes.func,
+	label: PropTypes.string,
 };
-
