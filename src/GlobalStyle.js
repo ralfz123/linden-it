@@ -14,6 +14,12 @@ export const colors = {
 	tagNew: '#5DD8A4',
 	tagProgress: '#FEC32E',
 	tagFinished: '#22C7E4',
+		};
+export const sizes = {
+	paddingTop: '',
+	paddingLeft: 'max(16px, env(safe-area-inset-left))',
+	paddingRight:'max(16px, env(safe-area-inset-right))',
+	paddingBottom: '',
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -25,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         --color-gray: #989898;
         --color-gray-dark: #3b3b3b;
         --color-gray-light: #f4f4f4;
+        --color-gray-lighter: #f8f8f8;
         --color-grayLightTwo: #C4C4C4;
         --tag-new:#5DD8A4;
         --tag-progress:#FEC32E;
@@ -36,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
         background-color: ${colors.primary};
+
     }
     *, *:before, *:after {
         box-sizing: border-box;
@@ -48,19 +56,35 @@ const GlobalStyle = createGlobalStyle`
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
+        
   
     }
+    #root{
+        -webkit-overflow-scrolling: touch;
+         &:after {
+		content:'';
+		position: fixed;
+		background-color: ${colors.primary};
+		top:0;
+		right:0;
+		left:0;
+		width: 100vw;
+		min-height:50%;
+		z-index:0;
+	}
+    }
     
-    header{
-        position: sticky;
-        left: 0;
-        right: 0;
+    header {
+        ${'' /* position: sticky; */}
         top: 0;
-        width: 100vw;
-        z-index:1;
+        width: 100%;
+        
+       z-index: 2;
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
-        padding-top: max(8px, env(safe-area-inset-top)); 	
+        padding-top: max(0px, env(safe-area-inset-top)); 	
+        background-color: ${colors.primary};
+        
     }
     main {
         position:relative;
@@ -78,13 +102,14 @@ const GlobalStyle = createGlobalStyle`
         left: 0;
         right: 0;
         bottom: 0;
-        z-index:2;
+        z-index:3;
         padding-left: max(0px, env(safe-area-inset-left));
         padding-right: max(0px, env(safe-area-inset-right));
         padding-bottom: max(0px, env(safe-area-inset-bottom));
     }
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
+        font-weight:600;
     }
 
 
@@ -99,6 +124,8 @@ ${'' /* Login page styles */}
         text-align: center;
         padding-top: 4em;
         margin: auto;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
     }
     .field {
         text-align:left;
@@ -149,7 +176,6 @@ ${'' /* Login page styles */}
         padding: 20px 10px;
         min-width: 50%;
     }
-    .eye {}
     i {
         position: absolute;
         top: 225px;

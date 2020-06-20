@@ -7,16 +7,14 @@ import { SecondaryButton } from '../components/Button';
 
 class Home extends Component {
 	state = {
-		title: "Home",
+		title: 'Home',
 	};
 
 	render() {
 		const { title } = this.state;
 		return (
 			<>
-				<Header>
-					<Title title={title} />
-				</Header>
+				<Header title={title} />
 				<Content>
 					<p>Home Page Content</p>
 					<PrimaryButton label='Dit is een primaire button' />

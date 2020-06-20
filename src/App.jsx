@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import PrivateRoute from './pages/PrivateRoute';
 import GlobalStyle from './GlobalStyle';
 import Nav from './components/Nav';
@@ -9,12 +10,11 @@ import Login from './pages/Login';
 import ResetPassword from './pages/ResetPassword';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
-import { courses } from './data.js';
+import Course from './pages/Course';
 import Agenda from './pages/Agenda';
 import Settings from './pages/Settings';
 
-const App = (props) => {
-	console.log(props);
+const App = () => {
 	return (
 		<HashRouter>
 			<Switch>
@@ -30,11 +30,16 @@ const App = (props) => {
 
 				<PrivateRoute
 					name='courses'
+					exact
 					path='/courses'
 					component={Courses}
-					courses={courses}
 				/>
-
+				<PrivateRoute
+					name='courses'
+					exact
+					path='/courses/:id'
+					component={Course}
+				/>
 				<PrivateRoute name='agenda' path='/agenda' component={Agenda} />
 
 				<PrivateRoute
@@ -51,5 +56,8 @@ const App = (props) => {
 		</HashRouter>
 	);
 };
-
+App.propTypes = {
+	context: PropTypes.any,
+	history: PropTypes.any,
+};
 export default App;

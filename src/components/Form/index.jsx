@@ -29,12 +29,13 @@ BaseTextInput.defaultProps = {
 };
 
 BaseTextInput.propTypes = {
+	children: PropTypes.any,
+	className: PropTypes.string,
 	name: PropTypes.string,
+	onChange: PropTypes.func,
 	placeholder: PropTypes.string,
 	type: PropTypes.string.isRequired,
-	className: PropTypes.string,
 	value: PropTypes.any,
-	onChange: PropTypes.func
 };
 
 export const BaseNumberInput = ({ name, placeholder, value, onChange, type, children }) => {
@@ -50,17 +51,14 @@ export const BaseNumberInput = ({ name, placeholder, value, onChange, type, chil
 	);
 };
 
-BaseNumberInput.defaultProps = {
-	type: 'number'
-};
-
 BaseNumberInput.propTypes = {
+	children: PropTypes.any,
+	className: PropTypes.string,
 	name: PropTypes.string,
+	onChange: PropTypes.func,
 	placeholder: PropTypes.string,
 	type: PropTypes.string.isRequired,
-	className: PropTypes.string,
 	value: PropTypes.any,
-	onChange: PropTypes.func,
 };
 
 
