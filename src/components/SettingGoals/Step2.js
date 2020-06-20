@@ -31,7 +31,7 @@ class Step2 extends Component {
 							value={this.props.pageNumbers}
 							onChange={this.props.handleChange}
 						/>
-						<label htmlFor='pages'>pagina's</label>
+						<label htmlFor='pages'>pagina&apos;s</label>
 					</div>
 
 					<div className='container timereminders'>
