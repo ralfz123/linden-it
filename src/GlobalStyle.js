@@ -1,27 +1,38 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 export const colors = {
-			primary: '#FC7928',
-			light: '#ffffff',
-			dark: '#000000',
-			gray: '#717171',
-			grayDark: '#3b3b3b',
-			grayLight: '#f4f4f4',
-			grayLighter: '#f8f8f8',
-			grayLightTwo: '#C4C4C4',
-			red: '#D21919;',
-			green: '#77dd77',
-			tagNew: '#5DD8A4',
-			tagProgress: '#FEC32E',
-			tagFinished: '#22C7E4',
-		};
+	primary: '#FC7928',
+	light: '#ffffff',
+	dark: '#000000',
+	gray: '#717171',
+	grayDark: '#3b3b3b',
+	grayLight: '#f4f4f4',
+	grayLighter: '#f8f8f8',
+	grayLightTwo: '#C4C4C4',
+	red: '#D21919;',
+	green: '#77dd77',
+	tagNew: '#5DD8A4',
+	tagProgress: '#FEC32E',
+	tagFinished: '#22C7E4',
+};
 export const sizes = {
 	paddingTop: '',
 	paddingLeft: 'max(16px, env(safe-area-inset-left))',
 	paddingRight:'max(16px, env(safe-area-inset-right))',
 	paddingBottom: '',
 };
-
+/**
+ * Converts a CSS hex color value to RGBA.
+ * @param {string} hex - Expanded hexadecimal CSS color value.
+ * @param {number} alpha - Alpha as a decimal.
+ * @returns {string} RGBA CSS color value.
+ */
+export const addAlpha = (hex, alpha) => {
+	const r = parseInt(hex.substring(1, 3), 16);
+	const g = parseInt(hex.substring(3, 5), 16);
+	const b = parseInt(hex.substring(5, 7), 16);
+	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 const GlobalStyle = createGlobalStyle`
     ${normalize};
     :root {
@@ -93,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
         background-color:var(--color-light);
         height:auto;
         padding-bottom:50px;
-        padding-bottom: calc(50px + max(0px, env(safe-area-inset-bottom)))
+        padding-bottom: calc(50px + env(safe-area-inset-bottom));
         -webkit-overflow-scrolling: touch;
     }
     footer {
@@ -110,6 +121,10 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
         font-weight:600;
+    }
+    p {
+        margin:0;
+        padding:5px 0;
     }
 
 
@@ -173,7 +188,7 @@ ${'' /* Login page styles */}
         color: ${colors.grayDark};
         display: block;
         margin: 0px auto;
-        margin: 10px 0px;
+        padding: 10px 0px;
     }
     .privacy {
         margin: 0px auto;

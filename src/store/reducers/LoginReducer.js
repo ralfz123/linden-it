@@ -2,6 +2,7 @@ const initialState = {
 	isAuthenticated: true,
 	isLoading: false,
 	loginError: false,
+	user: {username:'Mike'}
 };
 
 export const LoginReducer = (state = initialState, action) => {
@@ -15,6 +16,7 @@ export const LoginReducer = (state = initialState, action) => {
 		return {
 			...state,
 			isAuthenticated: action.value,
+			user: action.value,
 		};
 	case 'LOGIN::SET_ERROR':
 		return {

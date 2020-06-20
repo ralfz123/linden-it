@@ -26,7 +26,8 @@ export const StyledPrimaryButton = styled.button`
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
-	background-color: ${colors.light};
+	background-color: transparent;
+	
 	color: ${colors.primary};
 
 	:hover {

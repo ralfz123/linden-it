@@ -2,7 +2,7 @@ import React, { useState, Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors, sizes } from '../../GlobalStyle';
-import { render } from '@testing-library/react';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 
 class TabBar extends Component {
@@ -14,16 +14,17 @@ class TabBar extends Component {
 	// };
 	state = {
 		activeTab: 0,
-		scrolling: true,
+		scrolling: false,
 	};
 
 	componentDidMount() {
 		// window.addEventListener('scroll', this.handleScroll(this.state), true);
 		window.addEventListener('scroll', this.listenToScroll);
 	}
-	// componentDidUpdate() {
-	// 	window.addEventListener('scroll', this.handleScroll(this.state), true);
-	// }
+	componentDidUpdate() {
+		// window.removeEventListener('scroll', this.listenToScroll);
+		window.addEventListener('scroll', this.listenToScroll);
+	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.listenToScroll);
 	}
@@ -43,7 +44,7 @@ class TabBar extends Component {
 			document.documentElement.clientHeight;
 		const scrolled = winScroll / height;
 
-		if (scrolled <= 0 && this.state.scrolling === true) {
+		if (scrolled <= 0.009 ) {
 			this.setState({ scrolling: false });
 		} else  {
 			this.setState({ scrolling: true });
@@ -60,21 +61,24 @@ class TabBar extends Component {
 		return (
 			<>
 				<TabContainer padding={setPadding} scrolling={scrolling}>
-					<TabButtonGroup>
-						{tabs.map((tab, index) => (
-							<TabButton
-								key={index}
-								active={activeTab === index}
-								onClick={() =>
-									this.setState({
-										activeTab: index,
-									})
-								}
-							>
-								{tab.title}
-							</TabButton>
-						))}
-					</TabButtonGroup>
+					<AnimateSharedLayout>
+						<TabButtonGroup>
+							{tabs.map((tab, index) => (
+								<TabButton
+									
+									key={index}
+									active={activeTab === index}
+									onClick={() =>
+										this.setState({
+											activeTab: index,
+										})
+									}
+								>
+									{tab.title}
+								</TabButton>
+							))}
+						</TabButtonGroup>
+					</AnimateSharedLayout>
 				</TabContainer>
 				{tabs[activeTab].render()}
 			</>
@@ -131,7 +135,7 @@ const TabButtonGroup = styled.div`
 	
 	padding: 0 3px;
 `;
-const TabButton = styled.button`
+const TabButton = styled(motion.button)`
 	border: 0;
 	border-radius: ${(state) => (state.active ? '5px' : '0')};
 	color: ${colors.gray};
@@ -146,7 +150,7 @@ const TabButton = styled.button`
 	font-size: 12px;
 	font-weight: ${(state) => (state.active ? '700' : '500')};
 	box-shadow: ${(state) =>
-		state.active ? '1px 1px 4px rgba(0, 0, 0, 0.25)' : ''};
+		state.active ? '0px 1px 4px rgba(156, 156, 156, 0.25)' : ''};
 	z-index: ${(state) => (state.active ? '1' : 'auto')};
 	background: ${(state) => (state.active ? colors.light : colors.grayLighter)};
 	&:focus {

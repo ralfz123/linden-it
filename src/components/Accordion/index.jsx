@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import StyledPanel, {StyledAccordion} from './StyledAccordion';
 import {ChapterTags} from '../Tags';
 import { SecondaryButton } from '../Button';
-
+import { FiUsers, FiVideo, FiFileText, FiPlus } from 'react-icons/fi';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { colors, sizes, addAlpha } from '../../GlobalStyle.js';
 export class Panel extends Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +14,6 @@ export class Panel extends Component {
 			height: 0,
 		};
 	}
-
 	// componentDidMount() {
 	// 	window.setTimeout(() => {
 	// 		const el = ReactDOM.findDOMNode(this);
@@ -34,25 +35,85 @@ export class Panel extends Component {
 			index,
 			activateTab,
 			activateNextTab,
+			isOpen,
+			onClick,
 		} = this.props;
 		const { height } = this.state;
 		const isActive = activeTab === index;
 		return (
-			<StyledPanel active={isActive}>
-				<PanelHeader title={title} tag={tag} onClick={activateTab}>
-					{tag}
-				</PanelHeader>
-				<PanelContent pages={pages}>
-					<PanelFooter title={title} id={id}>
-						<SecondaryButton
-							label={label}
-							onClick={activateNextTab}
+			<StyledPanel animate active={isActive}>
+				<PanelHeader
+					animate
+					title={title}
+					tag={tag}
+					onClick={activateTab}
+				>
+					<motion.div>
+						<ChapterTags animate>{tag}</ChapterTags>
+						<motion.p
+							animate
+							style={{
+								color:
+									index === activeTab
+										? colors.primary
+										: colors.gray,
+							}}
+							className={`chapter-title ${
+								index === activeTab && 'active'
+							}`}
 						>
-							{label}
-						</SecondaryButton>
-					</PanelFooter>
-				</PanelContent>
-				
+							{title}
+						</motion.p>
+					</motion.div>
+					<motion.div
+						animate={{
+							transition: index === activeTab ? 1 : 0,
+							rotate: index === activeTab ? 45 : 0,
+						}}
+						className={`toggle-icon 
+							${index === activeTab && 'open'}`}
+					>
+						<FiPlus />
+					</motion.div>
+				</PanelHeader>
+				<AnimatePresence exitBeforeEnter initial={false}>
+					{isActive && (
+						<PanelContent animate key={activeTab} pages={pages}>
+							<motion.p animate className='chapter-description'>
+								Beschrijving van dit hoofdstuk
+							</motion.p>
+							<motion.ul animate className='chapter-resources'>
+								<motion.li>
+									<FiFileText />
+									<motion.span animate>
+										Pagina {pages}
+									</motion.span>
+								</motion.li>
+								<motion.li>
+									<FiVideo />
+									<motion.span animate>
+										Bekijk Video
+									</motion.span>
+								</motion.li>
+								<motion.li animate>
+									<FiUsers />
+									<motion.span animate>
+										Tips van collegas
+									</motion.span>
+								</motion.li>
+							</motion.ul>
+							<PanelFooter animate title={title} id={id}>
+								<SecondaryButton
+									animate
+									label={label}
+									onClick={activateNextTab}
+								>
+									{label}
+								</SecondaryButton>
+							</PanelFooter>
+						</PanelContent>
+					)}
+				</AnimatePresence>
 
 				{/* {label && (
 					<PanelFooter title={title} id={id}>
@@ -65,7 +126,46 @@ export class Panel extends Component {
 		);
 	}
 }
+export const PanelHeader = ({ tag, title, children, onClick }) => {
+	return (
+		<motion.div animate onClick={onClick} className='panel-header'>
+			{children}
+		</motion.div>
+	);
+};
 
+// Proptypes AccordionHeader
+PanelHeader.propTypes = {
+	tag: PropTypes.string,
+	title: PropTypes.string,
+};
+
+export const PanelContent = ({ children }) => {
+	return (
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className='panel-content'
+		>
+			{children}
+		</motion.div>
+	);
+};
+
+// Proptypes panelContent
+PanelContent.propTypes = {
+	content: PropTypes.string,
+	contentTitle: PropTypes.any,
+};
+
+export const PanelFooter = ({ children }) => {
+	return <motion.div animate className='panel-footer'>{children}</motion.div>;
+};
+
+PanelFooter.propTypes = {
+	children: PropTypes.any,
+};
 
 
 // Proptypes Accordion
@@ -130,22 +230,35 @@ class Accordion extends React.Component {
 		const { chapters } = this.props;
 		const { activeTab } = this.state;
 		return (
-			<StyledAccordion className='accordion' role='tablist'>
-				{chapters.map((chapter, index) => (
-					<Panel
-						key={index}
-						activeTab={activeTab}
-						index={index}
-						title={chapter.title}
-						pages={chapter.pages}
-						label={chapter.label}
-						tag={chapter.tag}
-						{...chapter}
-						activateTab={this.activateTab.bind(null, index)}
-						activateNextTab={this.activateNextTab.bind(null, index + 1)}
-					/>
-				))}
-			</StyledAccordion>
+			<AnimateSharedLayout>
+				<StyledAccordion
+					animate
+					className='accordion'
+					transition={{ ease: 'easeOut' }}
+					role='tablist'
+				>
+					{chapters.map((chapter, index) => (
+						<Panel
+							key={index}
+							activeTab={activeTab}
+							index={index}
+							title={chapter.title}
+							pages={chapter.pages}
+							label={chapter.label}
+							tag={chapter.tag}
+							onClick={() =>
+								this.activateTab(activeTab === chapter)
+							}
+							{...chapter}
+							activateTab={this.activateTab.bind(null, index)}
+							activateNextTab={this.activateNextTab.bind(
+								null,
+								index + 1
+							)}
+						/>
+					))}
+				</StyledAccordion>
+			</AnimateSharedLayout>
 		);
 	}
 }
@@ -156,51 +269,3 @@ Accordion.propTypes = {
 };
 
 
-export const PanelHeader = ({tag ,title}) => {
-	return (
-		<div className='panel-header'>
-			{tag && <ChapterTags>{tag}</ChapterTags>}
-
-			<p>{title}</p>
-		</div>
-	);
-};
-
-// Proptypes AccordionHeader
-PanelHeader.propTypes = {
-	tag: PropTypes.string,
-	title: PropTypes.string
-};
-
-
-export const PanelContent = ({pages, contentTitle, children}) => {
-	return (
-		<div className="panel-content">
-			<p><b>{contentTitle}</b></p>
-			<p>
-				{pages}
-			</p>
-			{children}
-		</div>
-	);
-};
-
-// Proptypes panelContent
-PanelContent.propTypes = {
-	content: PropTypes.string,
-	contentTitle: PropTypes.any,
-};
-
-
-export const PanelFooter = ({children}) => {
-	return (
-		<div className='panel-footer'>
-			{children}
-		</div>
-	);
-};
-
-
-PanelFooter.propTypes = {
-	children: PropTypes.any
-};
