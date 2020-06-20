@@ -35,7 +35,7 @@ class Step2 extends Component {
 					</div>
 
 					<div className='container timereminders'>
-						<label htmlFor='pages'>
+						<label className='question' htmlFor='pages'>
 							Herinner mij om te studeren
 						</label>
 
@@ -54,11 +54,11 @@ class Step2 extends Component {
 
 						<p>
 							Selecteer een tijd wanneer je een melding wilt
-							ontvangen.{' '}
+							ontvangen.
 						</p>
 
-
-						
+						{/* This should be a dynamic value */}
+						<label className='studyday-label'>Maandag</label>
 						{/* This toggle has to toggle BaseTimeInput and multiply (sync with {studyDays.length} ) */}
 						<BaseTimeInput
 							id='studyTimeDay'
@@ -71,7 +71,7 @@ class Step2 extends Component {
 					</div>
 
 					<div className='container timereminders'>
-						<label>
+						<label className='question'>
 							Hetzelfde tijdstip voor elke studiedag herinnering
 						</label>
 
@@ -87,6 +87,8 @@ class Step2 extends Component {
 							onChange={this.props.setReminderTimeChange}
 						/>
 						{/* This toggle has to toggle BaseTimeInput */}
+						<label className='studyday-label'>Tijdstip</label>
+
 						<BaseTimeInput
 							id='sameStudyTimeDay'
 							name='sameStudyTimeDay'

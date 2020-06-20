@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         --tag-finished:#22C7E4;
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
+        --font-weight-thin: 100;
     }
     html {
         box-sizing: border-box;
@@ -181,7 +182,7 @@ ${'' /* ***************** Setting goals ***************** */}
 
     }
 
-    .timereminders > label {
+    .timereminders .question {
         width: 80%;
     }
 
@@ -193,7 +194,7 @@ ${'' /* ***************** Setting goals ***************** */}
         flex-wrap: wrap;
         flex-direction: row;
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .container-pushbuttons {
@@ -237,7 +238,7 @@ ${'' /* ***************** Setting goals ***************** */}
         flex-wrap:wrap;
         flex-direction: row;
         justify-content: flex-start;
-        margin-bottom: 60px;
+        margin-bottom: 20px;
     }
 
     .advice label:nth-child(3) {
@@ -292,8 +293,13 @@ ${'' /* ***************** Setting goals ***************** */}
         margin: 10px 10px 30px 10px;
     }
 
-    .onboarding-button {
-        
+    .settinggoals-container .studyday-label {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 400;
+        font-size: .8em;
+        ${'' /* line-height: 18px; */}
+        margin-bottom: -5px;
     }
 `;
 
