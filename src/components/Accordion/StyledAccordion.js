@@ -32,14 +32,12 @@ const StyledPanel = styled(motion.div)`
 
 	.panel-header {
 		padding: 20px 20px 10px 20px;
-		/* padding: ${(props) =>
-			props.active ? '20px 20px 0px 20px' : '20px 20px 10px 20px'}; */
+		
 		position: relative;
 		border-top: 1px solid ${colors.grayLight};
 		height:100%;
 
 		.chapter-title {
-			/* color:  ${colors.gray}; */
 				font-weight: 300;
 				font-size:  16px;
 				transition: font-weight .1s;
@@ -53,19 +51,13 @@ const StyledPanel = styled(motion.div)`
 				}
 	}
 	.panel-content {
-		/* padding: ${(props) => (props.active ? '20px' : 0)}; */
+	
 		padding: 0 20px 20px 20px;
-		/* overflow: ${(props) => (props.active ? 'auto' : 'hidden')}; */
+	
 		
 		border: 0 1px 0 solid ${colors.grayLight};
-		/* height: ${(props) => (props.active ? 'auto' : 0)};
-		height: auto; */
-		/* will-change: height; */
-		/* transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1); */
-		/* opacity: ${(props) => (props.active ? 1 : 0)}; */
-		/* visibility: ${(props) => (props.active ? 'auto' : 'hidden')}; */
-		/* display: ${(props) => (props.active ? 'block' : 'none')}; */
-height:auto;
+	
+
 		.chapter-description {
 			padding-top: 0;
 font-style:normal;

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StyledMain = styled.main`
+const StyledMain = styled(motion.main)`
 	/* height: 100%; */
 	
 `;

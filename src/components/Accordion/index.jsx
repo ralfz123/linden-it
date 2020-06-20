@@ -31,22 +31,22 @@ export class Panel extends Component {
 			tag,
 			pages,
 			label,
-			activeTab,
+			activePanel,
 			index,
-			activateTab,
-			activateNextTab,
+			activatePanel,
+			activateNextPanel,
 			isOpen,
 			onClick,
 		} = this.props;
 		const { height } = this.state;
-		const isActive = activeTab === index;
+		const isActive = activePanel === index;
 		return (
 			<StyledPanel animate active={isActive}>
 				<PanelHeader
 					animate
 					title={title}
 					tag={tag}
-					onClick={activateTab}
+					onClick={activatePanel}
 				>
 					<motion.div>
 						<ChapterTags animate>{tag}</ChapterTags>
@@ -54,12 +54,12 @@ export class Panel extends Component {
 							animate
 							style={{
 								color:
-									index === activeTab
+									index === activePanel
 										? colors.primary
 										: colors.gray,
 							}}
 							className={`chapter-title ${
-								index === activeTab && 'active'
+								index === activePanel && 'active'
 							}`}
 						>
 							{title}
@@ -67,18 +67,18 @@ export class Panel extends Component {
 					</motion.div>
 					<motion.div
 						animate={{
-							transition: index === activeTab ? 1 : 0,
-							rotate: index === activeTab ? 45 : 0,
+							transition: index === activePanel ? 1 : 0,
+							rotate: index === activePanel ? 45 : 0,
 						}}
 						className={`toggle-icon 
-							${index === activeTab && 'open'}`}
+							${index === activePanel && 'open'}`}
 					>
 						<FiPlus />
 					</motion.div>
 				</PanelHeader>
 				<AnimatePresence exitBeforeEnter initial={false}>
 					{isActive && (
-						<PanelContent animate key={activeTab} pages={pages}>
+						<PanelContent animate key={activePanel} pages={pages}>
 							<motion.p animate className='chapter-description'>
 								Beschrijving van dit hoofdstuk
 							</motion.p>
@@ -106,7 +106,7 @@ export class Panel extends Component {
 								<SecondaryButton
 									animate
 									label={label}
-									onClick={activateNextTab}
+									onClick={activateNextPanel}
 								>
 									{label}
 								</SecondaryButton>
@@ -117,7 +117,7 @@ export class Panel extends Component {
 
 				{/* {label && (
 					<PanelFooter title={title} id={id}>
-						<SecondaryButton label={label} onClick={activateTab}>
+						<SecondaryButton label={label} onClick={activatePanel}>
 							{label}
 						</SecondaryButton>
 					</PanelFooter>
@@ -170,8 +170,8 @@ PanelFooter.propTypes = {
 
 // Proptypes Accordion
 Panel.propTypes = {
-	activateTab: PropTypes.any,
-	activeTab: PropTypes.any,
+	activatePanel: PropTypes.any,
+	activePanel: PropTypes.any,
 	content: PropTypes.any,
 	contentTitle: PropTypes.any,
 	id: PropTypes.any,
@@ -200,20 +200,20 @@ class Accordion extends React.Component {
 		super(props);
 
 		this.state = {
-			activeTab: 0,
+			activePanel: 0,
 		};
-		this.activateTab = this.activateTab.bind(this);
-		this.activateNextTab = this.activateTab.bind(this);
+		this.activatePanel = this.activatePanel.bind(this);
+		this.activateNextPanel = this.activatePanel.bind(this);
 	}
 
-	activateTab(index) {
+	activatePanel(index) {
 		this.setState((prev) => ({
-			activeTab: prev.activeTab === index ? -1 : index,
+			activePanel: prev.activePanel === index ? -1 : index,
 		}));
 	}
-	activateNextTab(index) {
+	activateNextPanel(index) {
 		this.setState((next) => ({
-			activeTab: next.activeTab === index ? +1 : index,
+			activePanel: next.activePanel === index ? +1 : index,
 		}));
 	}
 	// const {
@@ -222,13 +222,13 @@ class Accordion extends React.Component {
 	// 			tag,
 	// 			pages,
 	// 			label,
-	// 			activeTab,
+	// 			activePanel,
 	// 			index,
-	// 			activateTab,
+	// 			activatePanel,
 	// 		} = this.props;
 	render() {
 		const { chapters } = this.props;
-		const { activeTab } = this.state;
+		const { activePanel } = this.state;
 		return (
 			<AnimateSharedLayout>
 				<StyledAccordion
@@ -240,18 +240,18 @@ class Accordion extends React.Component {
 					{chapters.map((chapter, index) => (
 						<Panel
 							key={index}
-							activeTab={activeTab}
+							activePanel={activePanel}
 							index={index}
 							title={chapter.title}
 							pages={chapter.pages}
 							label={chapter.label}
 							tag={chapter.tag}
 							onClick={() =>
-								this.activateTab(activeTab === chapter)
+								this.activatePanel(activePanel === chapter)
 							}
 							{...chapter}
-							activateTab={this.activateTab.bind(null, index)}
-							activateNextTab={this.activateNextTab.bind(
+							activatePanel={this.activatePanel.bind(null, index)}
+							activateNextPanel={this.activateNextPanel.bind(
 								null,
 								index + 1
 							)}

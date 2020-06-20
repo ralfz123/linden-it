@@ -1,20 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 export const colors = {
-	primary: '#FC7928',
-	light: '#ffffff',
-	dark: '#000000',
-	gray: '#717171',
-	grayDark: '#3b3b3b',
-	grayLight: '#f4f4f4',
-	grayLighter: '#f8f8f8',
-	grayLightTwo: '#C4C4C4',
-	red: '#D21919;',
-	green: '#77dd77',
-	tagNew: '#5DD8A4',
-	tagProgress: '#FEC32E',
-	tagFinished: '#22C7E4',
-};
+			primary: '#FC7928',
+			light: '#ffffff',
+			dark: '#000000',
+			gray: '#717171',
+			grayDark: '#3b3b3b',
+			grayLight: '#f4f4f4',
+			grayLighter: '#f8f8f8',
+			grayLightTwo: '#C4C4C4',
+			red: '#f44336;',
+			green: '#66BB6A',
+			tagNew: '#5DD8A4',
+			tagProgress: '#FEC32E',
+			tagFinished: '#22C7E4',
+		};
 export const sizes = {
 	paddingTop: '',
 	paddingLeft: 'max(16px, env(safe-area-inset-left))',
@@ -207,6 +207,9 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
+
+
+
 `;
 
 export default GlobalStyle;

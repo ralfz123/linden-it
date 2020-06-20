@@ -39,8 +39,7 @@ class Course extends Component {
 	render() {
 		const { history } = this.props;
 		const { course, size } = this.state;
-		console.log(course.chapters)
-		const { progress, next } = this.props;
+		console.log(course.chapters);
 		console.log(size);
 		if (!course) {
 			return (
@@ -105,10 +104,7 @@ class Course extends Component {
 
 Course.propTypes = {
 	course: PropTypes.object,
-	courses: PropTypes.shape({
-		find: PropTypes.func,
-		length: PropTypes.number,
-	}),
+	courses: PropTypes.array,
 	history: PropTypes.any,
 	match: PropTypes.any,
 	params: PropTypes.shape({

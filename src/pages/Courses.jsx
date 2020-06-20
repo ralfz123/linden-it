@@ -73,6 +73,7 @@ class Courses extends Component {
 						tabs={[
 							{
 								title: 'ALL',
+								color: '#000',
 								render: () => (
 									<>
 										{courses.map((course) => (
@@ -88,6 +89,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -96,13 +100,11 @@ class Courses extends Component {
 							},
 							{
 								title: 'NEW',
+								color: '#035',
 								render: () => (
 									<>
 										{coursesNew.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -114,6 +116,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -122,13 +127,11 @@ class Courses extends Component {
 							},
 							{
 								title: 'IN PROGRESS',
+								color: '#489',
 								render: () => (
 									<>
 										{coursesInProgress.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -140,6 +143,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -148,13 +154,11 @@ class Courses extends Component {
 							},
 							{
 								title: 'FINISHED',
+								color: '#fff',
 								render: () => (
 									<>
 										{coursesFinished.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -166,6 +170,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -206,7 +213,7 @@ const mapStateToProps = (state) => {
 	return {
 		error: state.courses.error,
 		courses: state.courses.courses,
-		pending: getCoursesPending(state),
+		pending: state.courses.pending,
 	};
 };
 

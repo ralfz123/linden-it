@@ -14,7 +14,7 @@ class TabBar extends Component {
 	// };
 	state = {
 		activeTab: 0,
-		scrolling: false,
+		scrolled: false,
 	};
 
 	componentDidMount() {
@@ -29,10 +29,10 @@ class TabBar extends Component {
 		window.removeEventListener('scroll', this.listenToScroll);
 	}
 	// handleScroll() {
-	// 	if (window.scrollY === 0 && this.state.scrolling === true) {
-	// 		this.setState({ scrolling: false });
-	// 	} else if (window.scrollY > 0 && this.state.scrolling === false) {
-	// 		this.setState({ scrolling: true });
+	// 	if (window.scrollY === 0 && this.state.scrolled === true) {
+	// 		this.setState({ scrolled: false });
+	// 	} else if (window.scrollY > 0 && this.state.scrolled === false) {
+	// 		this.setState({ scrolled: true });
 	// 	}
 	// }
 	listenToScroll = () => {
@@ -45,40 +45,40 @@ class TabBar extends Component {
 		const scrolled = winScroll / height;
 
 		if (scrolled <= 0.009 ) {
-			this.setState({ scrolling: false });
+			this.setState({ scrolled: false });
 		} else  {
-			this.setState({ scrolling: true });
+			this.setState({ scrolled: true });
 		}
 
 		console.log(scrolled);
 		// this.setState({
-		// 	scrolling: scrolled,
+		// 	scrolled: scrolled,
 		// });
 	};
 	render() {
 		const { tabs, setPadding } = this.props;
-		const { scrolling, activeTab } = this.state;
+		const { scrolled, activeTab } = this.state;
 		return (
 			<>
-				<TabContainer padding={setPadding} scrolling={scrolling}>
-					<AnimateSharedLayout>
-						<TabButtonGroup>
-							{tabs.map((tab, index) => (
-								<TabButton
+				<TabContainer padding={setPadding} scrolled={scrolled}>
+					
+					<TabButtonGroup>
+						{tabs.map((tab, index) => (
+							<TabButton
 									
-									key={index}
-									active={activeTab === index}
-									onClick={() =>
-										this.setState({
-											activeTab: index,
-										})
-									}
-								>
-									{tab.title}
-								</TabButton>
-							))}
-						</TabButtonGroup>
-					</AnimateSharedLayout>
+								key={index}
+								active={activeTab === index}
+								onClick={() =>
+									this.setState({
+										activeTab: index,
+									})
+								}
+							>
+								{tab.title}
+							</TabButton>
+						))}
+					</TabButtonGroup>
+					
 				</TabContainer>
 				{tabs[activeTab].render()}
 			</>
@@ -105,7 +105,7 @@ const TabContainer = styled.div`
 	transition-duration: 0.1s;
 	transition-timing-function: linear;
 	box-shadow: ${(props) =>
-		props.scrolling
+		props.scrolled
 			? '0px 1px 4px rgba(0, 0, 0, 0.25)'
 			: '0px 1px 4px rgba(0, 0, 0, 0.0)'};
 	/* :after {
@@ -122,7 +122,7 @@ const TabContainer = styled.div`
 `;
 
 TabContainer.defaultProps = {
-	scrolling: {},
+	scrolled: {},
 };
 
 const TabButtonGroup = styled.div`
