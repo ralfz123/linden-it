@@ -4,7 +4,7 @@ import { colors } from '../../GlobalStyle.js';
 const StyledHeader = styled.header`
 	background-color: ${colors.primary};
 	color: ${colors.light};
-	height: 100%;
+	
 	top: 0;
 	position: sticky;
 	flex-direction: column;
@@ -19,6 +19,10 @@ const StyledHeader = styled.header`
 		display: flex;
 		align-items: center;
 		position: relative;
+	}
+
+	&.overlay-header {
+		position:relative;
 	}
 `;
 export default StyledHeader;

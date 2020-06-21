@@ -17,6 +17,7 @@ class Step1 extends Component {
 		return (
 			<>
 				<div className='settinggoals-container'>
+					<p className='step-counter'>Stap {this.props.currentStep - 1} van 2</p>
 					<div className='container'>
 						<label
 						// htmlFor='pages'
@@ -51,103 +52,104 @@ class Step1 extends Component {
 						/>
 					</div>
 
-					<div className='container-pushbuttons'>
+					<div className='container'>
 						<label
 						// htmlFor='pages'
 						>
 							Welke dagen ben je beschikbaar voor je studie?
 						</label>
+						<div className='container-pushbuttons'>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='maandag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Ma</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='maandag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Ma</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='dinsdag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Di</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='dinsdag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Di</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='woensdag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Wo</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='woensdag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Wo</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='donderdag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Do</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='donderdag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Do</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='vrijdag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Vr</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='vrijdag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Vr</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='zaterdag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Za</div>
+							</label>
 
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='zaterdag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Za</div>
-						</label>
-
-						<label className='pushbuttons'>
-							<input
-								type='checkbox'
-								value='zondag'
-								// htmlFor='setStudyDays'
-								name='setStudyDays'
-								id='setStudyDays'
-								checked={this.props.setDays}
-								onChange={this.props.setStudyDaysChange}
-							/>
-							<div>Zo</div>
-						</label>
+							<label className='pushbuttons'>
+								<input
+									type='checkbox'
+									value='zondag'
+									// htmlFor='setStudyDays'
+									name='setStudyDays'
+									id='setStudyDays'
+									checked={this.props.setDays}
+									onChange={this.props.setStudyDaysChange}
+								/>
+								<div>Zo</div>
+							</label>
+						</div>
 					</div>
 
 					<div className='container advice'>

@@ -13,6 +13,9 @@ export const StyledPrimaryButton = styled.button`
 	padding: 0 35px;
 	cursor: pointer;
 
+	&.onboarding-button{
+		
+	}
 	:hover {
 		background-color: ${colors.light};
 		color: ${colors.primary};
@@ -26,12 +29,13 @@ export const StyledPrimaryButton = styled.button`
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
-	background-color: transparent;
-	
-	color: ${colors.primary};
+			background-color: ${colors.light};
 
-	:hover {
-		background-color: ${colors.primary};
-		color: ${colors.light};
-	}
-`;
+			color: ${colors.primary};
+
+			:hover {
+				border: 2px solid ${colors.light};
+				background-color: ${colors.primary};
+				color: ${colors.light};
+			}
+		`;

@@ -9,7 +9,8 @@ import Step2 from './Step2';
 import End from './End';
 import { PrimaryButton } from '../Button';
 import { SecondaryButton } from '../Button';
-
+import Header from '../Header';
+import {ContentOverlay} from '../Content/Content';
 // const StyledOverlay = styled.div`
 // 	background-color: green;
 // `;
@@ -82,7 +83,7 @@ class Goals extends Component {
 		} else if (currentStep == 2) {
 			return (
 				<PrimaryButton
-					className=''
+					className='onboarding-button'
 					type='button'
 					onClick={this._next}
 					label='Volgende stap'
@@ -91,7 +92,7 @@ class Goals extends Component {
 		} else if (currentStep == 3) {
 			return (
 				<PrimaryButton
-					className=''
+					className='onboarding-button'
 					type='submit'
 					onClick={this._next}
 					label='Doelen opslaan'
@@ -102,7 +103,7 @@ class Goals extends Component {
 				<SecondaryButton
 					className='onboarding-button'
 					type='submit'
-					onClick={this._next}
+					onClick={this.props.onRequestClose}
 					label='Start cursus'
 				/>
 			);
@@ -151,43 +152,49 @@ class Goals extends Component {
 		} = this.state;
 		return (
 			<>
-				<p className='step-counter'>Stap {currentStep - 1} van 2</p>
+				<Header title={`Doellen vaststellen`} prevStep={this._prev} className={'overlay-header'}/>
+				<ContentOverlay className={`overlay-` + currentStep}>
+					{/* {currentStep === 2 || currentStep === 3  && (
+					
+					)} */}
 
-				<form onSubmit={this.handleSubmit}>
-					<Start
-						currentStep={currentStep}
-						handleChange={this.handleChange}
-					/>
+					<form className={`doelen-vaststellen`} onSubmit={this.handleSubmit}>
+						<Start
+							currentStep={currentStep}
+							handleChange={this.handleChange}
+						/>
 
-					<Step1
-						currentStep={currentStep}
-						handleChange={this.handleChange}
-						nameRecruiter={nameRecruiter}
-						date={date}
-						studyDays={studyDays}
-						setStudyDaysChange={setStudyDaysChange}
-						studyHours={studyHours}
-					/>
+						<Step1
+							currentStep={currentStep}
+							handleChange={this.handleChange}
+							nameRecruiter={nameRecruiter}
+							date={date}
+							studyDays={studyDays}
+							setStudyDaysChange={setStudyDaysChange}
+							studyHours={studyHours}
+						/>
 
-					<Step2
-						currentStep={currentStep}
-						handleChange={this.handleChange}
-						pageNumbers={pageNumbers}
-						studyTimeDay={studyTimeDay}
-						sameStudyTimeDay={sameStudyTimeDay}
-						setReminderTimeForAllDays={setReminderTimeForAllDays}
-						showStudyReminder={showStudyReminder}
-						setStudyReminderChange={this.setStudyReminderChange}
-						setReminderTimeChange={this.setReminderTimeChange}
-					/>
+						<Step2
+							currentStep={currentStep}
+							handleChange={this.handleChange}
+							pageNumbers={pageNumbers}
+							studyTimeDay={studyTimeDay}
+							sameStudyTimeDay={sameStudyTimeDay}
+							setReminderTimeForAllDays={
+								setReminderTimeForAllDays
+							}
+							showStudyReminder={showStudyReminder}
+							setStudyReminderChange={this.setStudyReminderChange}
+							setReminderTimeChange={this.setReminderTimeChange}
+						/>
 
-					<End
-						currentStep={currentStep}
-						handleChange={this.handleChange}
-					/>
-					{this.previousButton}
-					{this.nextButton}
-				</form>
+						<End
+							currentStep={currentStep}
+							handleChange={this.handleChange}
+						/>
+						{this.nextButton}
+					</form>
+				</ContentOverlay>
 			</>
 		);
 	}

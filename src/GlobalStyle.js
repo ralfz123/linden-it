@@ -1,20 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 export const colors = {
-			primary: '#FC7928',
-			light: '#ffffff',
-			dark: '#000000',
-			gray: '#717171',
-			grayDark: '#3b3b3b',
-			grayLight: '#f4f4f4',
-			grayLighter: '#f8f8f8',
-			grayLightTwo: '#C4C4C4',
-			red: '#f44336;',
-			green: '#66BB6A',
-			tagNew: '#5DD8A4',
-			tagProgress: '#FEC32E',
-			tagFinished: '#22C7E4',
-		};
+	primary: '#FC7928',
+	light: '#ffffff',
+	dark: '#000000',
+	gray: '#717171',
+	grayDark: '#3b3b3b',
+	grayLight: '#f4f4f4',
+	grayLighter: '#f8f8f8',
+	grayLightTwo: '#C4C4C4',
+	red: '#f44336;',
+	green: '#66BB6A',
+	tagNew: '#5DD8A4',
+	tagProgress: '#FEC32E',
+	tagFinished: '#22C7E4',
+};
 export const sizes = {
 	paddingTop: '',
 	paddingLeft: 'max(16px, env(safe-area-inset-left))',
@@ -32,7 +32,7 @@ export const addAlpha = (hex, alpha) => {
 	const g = parseInt(hex.substring(3, 5), 16);
 	const b = parseInt(hex.substring(5, 7), 16);
 	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
+};
 const GlobalStyle = createGlobalStyle`
     ${normalize};
     :root {
@@ -152,7 +152,7 @@ ${'' /* Login page styles */}
         padding-bottom:20px;
     }
     label {
-        display: block;
+        
         font-family: var(--font-family-heading);
         font-style: normal;
         font-weight: normal;
@@ -160,7 +160,7 @@ ${'' /* Login page styles */}
         line-height: 18px;
         color: ${colors.grayDark};
         text-align: left;
-        width: 100%;
+        ${'' /* width: 100%; */}
         padding: 10px 0px;
     }
   
@@ -186,8 +186,6 @@ ${'' /* Login page styles */}
         font-size: 14px;
         line-height: 17px;
         color: ${colors.grayDark};
-        display: block;
-        margin: 0px auto;
         padding: 10px 0px;
     }
     .privacy {
@@ -209,7 +207,183 @@ ${'' /* Login page styles */}
 }
 
 
+${'' /* ***************** Setting goals ***************** */}
+    .settinggoals-container {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;   
+        color: ${colors.grayLightThree};
+    }
+    
+    .container {
+      display:flex;
+      flex-direction:column;
+    }
+    .timereminders {
+        ${
+			'' /* display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row; */
+		}
+    }
+    .timereminders .question {
+        display:flex;
+        align-items:flex-start;
+    }
+                ${'' /* ***************** pushbuttons ***************** */}
+    .container-pushbuttons {
+        display: flex;
+        justify-content: space-between;
+        
+        flex-direction: row;
+        ${'' /* width: auto; */}
+        ${'' /* margin-bottom: 20px; */}
+        
+    }
+ 
+    .pushbuttons {
+        display:flex;
+        
+    }
+    .pushbuttons > div {
+        width: 35px;
+        height: 35px;
+        padding: 5px 7px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        background-color: ${colors.light};
+        color: ${colors.grayLightThree};
+        border: 1px solid ${colors.gray};
+        border-radius: 100%;
+    }
+    .pushbuttons input {
+        position: relative;
+        
+        
+        opacity: 0;
+    }
+    .pushbuttons input:checked + div {
+        background-color: ${colors.primary};
+        color: ${colors.light};
+        border: 1px solid ${colors.primary};
+    }
+    
+    .advice {
+        
+		display:flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+        justify-content: flex-start; 
+        
+    }
+    .advice label:nth-child(3) {
+        ${'' /* width: 30%; */}
+        color: ${colors.grayLightThree};
+        ${'' /* margin: 0px 10px; */}
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1em;
+    }
+    
+    .step-counter {
+        font-family: Josefin Sans;
+        font-size: 1em;
+        color: ${colors.primary};
+        padding:25px 0;
+        ${'' /* margin-top: 0; */}
+    }
+    ${'' /* ********************** onboarding pages ********************** */}
+   .container.onboarding-page {
+        background-color: ${colors.primary};
+        color: ${colors.light};
+        align-items:center;
+        justify-content:space-between;
+        height:100%;
 
+        h2 {
+            font-size:36px;
+        }
+        ${
+			'' /* flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center; */
+		}
+        
+    }
+    .container {
+        
+        justify-content:space-flex-start;
+        height:100%;
+        padding-bottom:2em;
+        ${
+			'' /* flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center; */
+		}
+        
+    }
+    .onboarding-page .onboarding-icon { 
+        font-size: 40px;
+        align-self:center;
+        
+        width: 100%;
+    }
+    .onboarding-page h2 { 
+        ${'' /* width: 50%; */}
+        text-align: center;
+        ${'' /* margin: 10px 10px 30px 10px; */}
+    }
+    
+    .onboarding-page div {
+        font-weight: normal;
+    }
+    .onboarding-page p {
+        color: ${colors.light};
+        font-size: 15px;
+        text-align: center;
+        font-weight:300;
+        ${'' /* width: 60%; */}
+        ${'' /* margin: 10px 10px 30px 10px; */}
+    }
+    .settinggoals-container .studyday-label {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 400;
+        font-size: .8em;
+        ${'' /* margin-bottom: -5px; */}
+}
+.settinggoals-container{
+    display:flex;
+    flex-direction:column;
+
+}
+
+.bottom-drawer {
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    width:100%;
+    background-color:${colors.light};
+    top:30px;
+	bottom:0;
+    height:auto;
+    padding-bottom:0px; 
+        border-radius:10px 10px 0 0;
+        overflow-x:scroll;
+        z-index:9999;
+	}
+.onboarding-button{
+    align-self:center;
+}
+.toggle {
+    top:0;
+    float:right;
+}
 `;
 
 export default GlobalStyle;
