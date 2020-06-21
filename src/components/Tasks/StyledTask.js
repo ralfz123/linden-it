@@ -15,7 +15,7 @@ export const StyledTask = styled.section`
 
 	.bell-icon {
 		fill: ${colors.grayLightThree};
-		background-color: ${colors.grayLightTwo};
+		background-color: ${colors.grayLightFour};
         stroke-width: 1;
         stroke: ${colors.grayLightThree};
 		width: 25px;

@@ -9,6 +9,7 @@ export const colors = {
 	grayLight: '#f4f4f4',
 	grayLightTwo: '#C4C4C4',
 	grayLightThree: '#717171',
+	grayLightFour: '#E5E5E5',
 	red: '#D21919;',
 	green: '#77dd77',
 	tagNew: '#5DD8A4',
