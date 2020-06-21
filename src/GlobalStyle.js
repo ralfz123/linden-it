@@ -292,7 +292,7 @@ ${'' /* ***************** Setting goals ***************** */}
         font-family: Josefin Sans;
         font-size: 1em;
         color: ${colors.primary};
-        padding:25px 0;
+        padding:1em 0;
         ${'' /* margin-top: 0; */}
     }
     ${'' /* ********************** onboarding pages ********************** */}
@@ -317,7 +317,7 @@ ${'' /* ***************** Setting goals ***************** */}
         
         justify-content:space-flex-start;
         height:100%;
-        padding-bottom:2em;
+        padding-bottom:1em;
         ${
 			'' /* flex-wrap: wrap;
         flex-direction: row;
@@ -369,12 +369,14 @@ ${'' /* ***************** Setting goals ***************** */}
     align-items:flex-start;
     width:100%;
     background-color:${colors.light};
-    top:30px;
+    margin-top:30px;
+    top:0;
 	bottom:0;
     height:auto;
     padding-bottom:0px; 
-        border-radius:10px 10px 0 0;
-        overflow-x:scroll;
+    border-radius:10px 10px 0 0;
+        overflow:hidden;
+        min-height:60vh;
         z-index:9999;
 	}
 .onboarding-button{

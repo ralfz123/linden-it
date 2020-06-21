@@ -108,6 +108,7 @@ class Course extends Component {
 							modalElementClass={`bottom-drawer`}
 							containerElementClass={`clooooll`}
 							onRequestClose={this.CloseDrawer}
+							dontApplyListeners={false}
 						>
 							<Goals onRequestClose={this.CloseDrawer} />
 						</StyledDrawer>

@@ -18,7 +18,7 @@ const StyledOverlay = styled.div`
 	background: ${colors.light};
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};
-	flex-grow: 5;
+	
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
@@ -26,7 +26,7 @@ const StyledOverlay = styled.div`
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		height: 100%;
+		height: auto;
 		justify-content: space-between;
 		padding-bottom: 50px;
 	}
