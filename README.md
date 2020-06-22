@@ -1,6 +1,11 @@
 # Linden-IT <img src="https://pbs.twimg.com/profile_images/857153209353326592/8MFdk5Xq_400x400.jpg" width="30" />
 
 This app keeps track of the study progress of IT professionals within Linden-IT.
+# Features
+- Login
+- Indicate which chapter you have completed
+- Establish your goals for learning
+- See your progress
 
 # Technical summary
 **Linden-IT**  is built, using:
