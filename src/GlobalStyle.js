@@ -188,6 +188,25 @@ ${'' /* ********************* Agenda page ********************* */}
     padding: 14px 20px;
 }
 
+.arrowdown-icon {
+
+}
+
+.agenda-icon {
+    font-size: 30px;
+}
+
+.change-icon {	
+    fill: ${colors.primary};
+	background-color: ${colors.light};
+    ${'' /* stroke-width: 1; */}
+    ${'' /* stroke: ${colors.grayLightThree}; */}
+	width: 20px;
+	height: 20px;
+	border-radius: 60px;
+	padding: 1px;
+    }
+
 `;
 
 export default GlobalStyle;
