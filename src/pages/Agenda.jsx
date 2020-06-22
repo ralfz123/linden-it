@@ -9,12 +9,11 @@ class Agenda extends Component {
 		title: 'Mijn agenda',
 	};
 
+	// EMPTY - Fill this page with content
 	render() {
 		return (
 			<>
-				<Header
-					title={this.state.title}
-				/>
+				<Header title={this.state.title} />
 				<Content>
 					<p>Agenda Content</p>
 					<PrimaryButton label='Dit is een primaire button' />

@@ -8,14 +8,17 @@ class Home extends Component {
 		title: 'Home',
 	};
 
+	// EMPTY - Fill this page with content
 	render() {
 		const user = fakeUser;
 		const { title } = this.state;
+
 		return (
 			<>
 				<Header
 					className={'homepage-header'}
-					title={'Hoi ' + user.userName}				/>
+					title={'Hoi ' + user.userName}
+				/>
 				<Content>
 					<p>Content</p>
 				</Content>

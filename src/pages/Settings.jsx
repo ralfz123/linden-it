@@ -6,6 +6,8 @@ class Settings extends Component {
 	state = {
 		title: 'Instellingen',
 	};
+
+	// EMPTY - Fill this page with content
 	render() {
 		const { title } = this.state;
 		return (
@@ -18,4 +20,4 @@ class Settings extends Component {
 		);
 	}
 }
-export default Settings;     
+export default Settings;
