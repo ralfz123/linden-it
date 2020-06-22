@@ -15,9 +15,7 @@ class Settings extends Component {
 			<>
 				<Header title={title} />
 				<Content>
-					<p>Settings Content</p>
-					<PrimaryButton label="Dit is een primaire button" />
-					<SecondaryButton label="Dit is een secundaire button" />
+					<p>Content</p>
 				</Content>
 			</>
 		);

@@ -4,6 +4,7 @@ import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import { PrimaryButton } from '../components/Button';
 import { SecondaryButton } from '../components/Button';
+import { fakeUser } from '../data.json';
 
 class Home extends Component {
 	state = {
@@ -11,14 +12,14 @@ class Home extends Component {
 	};
 
 	render() {
+		const user = fakeUser;
 		const { title } = this.state;
 		return (
 			<>
 				<Header title={title} />
 				<Content>
-					<p>Home Page Content</p>
-					<PrimaryButton label='Dit is een primaire button' />
-					<SecondaryButton label='Dit is een secundaire button' />
+					<h1>Hoi {user.userName}</h1>
+					<p>Content</p>
 				</Content>
 			</>
 		);

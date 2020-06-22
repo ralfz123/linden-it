@@ -130,7 +130,7 @@ padding-top: var(--safe-area-inset-top, 12px);
        flex-grow:1;
         box-sizing:border-box;
         z-index:1;
-        background-color:var(--color-light);
+        background-color: ${colors.light};
         height:auto;
         padding-bottom:50px;
         padding-bottom: calc(50px + env(safe-area-inset-bottom));

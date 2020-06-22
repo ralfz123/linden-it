@@ -2,7 +2,6 @@ const initialState = {
 	isAuthenticated: true,
 	isLoading: false,
 	loginError: false,
-	user: {username:'Mike'}
 };
 
 export const LoginReducer = (state = initialState, action) => {
