@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
 	top: 0;
 	position: sticky;
 	flex-direction: column;
+	
 	.header-toolbar {
 		min-height: 44px;
 		position: relative;
@@ -18,7 +19,7 @@ const StyledHeader = styled.header`
 		.title {
 			font-family:var(--font-family-heading);
 			font-weight:600;
-font-size:21px;
+			font-size:21px;
 		}
 	}
 	.title-large {

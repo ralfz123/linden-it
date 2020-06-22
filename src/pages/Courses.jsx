@@ -38,7 +38,7 @@ class Courses extends Component {
 	};
 
 	state = {
-		title: 'Mijn Cursussen',
+		title: 'Mijn cursussen',
 		courseTitle: 'Titel',
 		tag: 'tag',
 		content: 'short description',

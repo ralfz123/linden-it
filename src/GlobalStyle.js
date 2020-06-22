@@ -8,8 +8,8 @@ export const colors = {
 	grayDark: '#3b3b3b',
 	grayLight: '#f4f4f4',
 	grayLighter: '#f8f8f8',
-    grayLightTwo: '#C4C4C4',
-    grayLightThree: '#717171',
+	grayLightTwo: '#C4C4C4',
+	grayLightThree: '#717171',
 	grayLightFour: '#E5E5E5',
 	red: '#f44336;',
 	green: '#66BB6A',
@@ -18,11 +18,11 @@ export const colors = {
 	tagFinished: '#22C7E4',
 };
 export const sizes = {
-			paddingTop: '',
-			paddingLeft: ' max(16px, var(--safe-area-inset-left))',
-			paddingRight: 'max(16px, var(--safe-area-inset-right))',
-			paddingBottom: '',
-		};
+	paddingTop: '',
+	paddingLeft: ' max(16px, var(--safe-area-inset-left))',
+	paddingRight: 'max(16px, var(--safe-area-inset-right))',
+	paddingBottom: '',
+};
 /**
  * Converts a CSS hex color value to RGBA.
  * @param {string} hex - Expanded hexadecimal CSS color value.
@@ -241,8 +241,8 @@ ${'' /* Login page styles */}
 }
 ${'' /* ***************** Home page ***************** */}
 
-.homepage {
-    min-height: 240px;
+.homepage-header {
+    ${'' /* min-height: 240px; */}
 }
 
 ${'' /* ***************** Setting goals ***************** */}
@@ -259,11 +259,11 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     .timereminders {
         ${
-			'' /* display: flex;
+	'' /* display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: row; */
-		}
+}
     }
     .timereminders .question {
         display:flex;
@@ -345,10 +345,10 @@ ${'' /* ***************** Setting goals ***************** */}
             font-size:36px;
         }
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .container {
@@ -357,10 +357,10 @@ ${'' /* ***************** Setting goals ***************** */}
         height:100%;
         padding-bottom:1em;
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .onboarding-page .onboarding-icon { 
