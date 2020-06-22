@@ -33,11 +33,22 @@ class Agenda extends Component {
 						</div>
 					</div>
 				</Header>
+
 				<Content>
+					{/* <>
+						{studyDays.map((course) => (
+							<Task
+								key={course.id}
+								title={course.title}
+								label={course.label}
+								id={course.id}
+							/>
+						))}
+					</> */}
+
 					<Task>13 pagina&apos;s lezen</Task>
 					{/* 'lezen' --> 'gelezen' */}
 					{/* <AgendaButton label='Examen in 10 dagen' to='#idRouteToExamDay' /> */}
-					{/* dayToExamen */}
 				</Content>
 			</>
 		);
