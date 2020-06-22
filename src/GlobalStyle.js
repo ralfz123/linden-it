@@ -246,7 +246,6 @@ ${'' /* Login page styles */}
         cursor: pointer;
 }
 
-<<<<<<< HEAD
 ${'' /* ********************* Agenda page ********************* */}
 .task-container {
     display: flex;
@@ -311,7 +310,6 @@ ${'' /* ********************* Agenda page ********************* */}
 	padding: 1px;
     }
 
-=======
 
 ${'' /* ***************** Setting goals ***************** */}
     .settinggoals-container {
@@ -492,7 +490,6 @@ ${'' /* ***************** Setting goals ***************** */}
     top:0;
     float:right;
 }
->>>>>>> ab935c75279661e69b7e6ee59f3a2c1d3b832693
 `;
 
 export default GlobalStyle;
