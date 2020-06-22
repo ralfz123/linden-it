@@ -2,7 +2,7 @@ import React, { useState, Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors, sizes } from '../../GlobalStyle';
-import { render } from '@testing-library/react';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 
 class TabBar extends Component {
@@ -14,24 +14,25 @@ class TabBar extends Component {
 	// };
 	state = {
 		activeTab: 0,
-		scrolling: true,
+		scrolled: false,
 	};
 
 	componentDidMount() {
 		// window.addEventListener('scroll', this.handleScroll(this.state), true);
 		window.addEventListener('scroll', this.listenToScroll);
 	}
-	// componentDidUpdate() {
-	// 	window.addEventListener('scroll', this.handleScroll(this.state), true);
-	// }
+	componentDidUpdate() {
+		// window.removeEventListener('scroll', this.listenToScroll);
+		window.addEventListener('scroll', this.listenToScroll);
+	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.listenToScroll);
 	}
 	// handleScroll() {
-	// 	if (window.scrollY === 0 && this.state.scrolling === true) {
-	// 		this.setState({ scrolling: false });
-	// 	} else if (window.scrollY > 0 && this.state.scrolling === false) {
-	// 		this.setState({ scrolling: true });
+	// 	if (window.scrollY === 0 && this.state.scrolled === true) {
+	// 		this.setState({ scrolled: false });
+	// 	} else if (window.scrollY > 0 && this.state.scrolled === false) {
+	// 		this.setState({ scrolled: true });
 	// 	}
 	// }
 	listenToScroll = () => {
@@ -43,26 +44,28 @@ class TabBar extends Component {
 			document.documentElement.clientHeight;
 		const scrolled = winScroll / height;
 
-		if (scrolled <= 0 && this.state.scrolling === true) {
-			this.setState({ scrolling: false });
+		if (scrolled <= 0.009 ) {
+			this.setState({ scrolled: false });
 		} else  {
-			this.setState({ scrolling: true });
+			this.setState({ scrolled: true });
 		}
 
 		console.log(scrolled);
 		// this.setState({
-		// 	scrolling: scrolled,
+		// 	scrolled: scrolled,
 		// });
 	};
 	render() {
 		const { tabs, setPadding } = this.props;
-		const { scrolling, activeTab } = this.state;
+		const { scrolled, activeTab } = this.state;
 		return (
 			<>
-				<TabContainer padding={setPadding} scrolling={scrolling}>
+				<TabContainer padding={setPadding} scrolled={scrolled}>
+					
 					<TabButtonGroup>
 						{tabs.map((tab, index) => (
 							<TabButton
+									
 								key={index}
 								active={activeTab === index}
 								onClick={() =>
@@ -75,6 +78,7 @@ class TabBar extends Component {
 							</TabButton>
 						))}
 					</TabButtonGroup>
+					
 				</TabContainer>
 				{tabs[activeTab].render()}
 			</>
@@ -92,16 +96,22 @@ export default TabBar;
 const TabContainer = styled.div`
 	position: sticky;
 	background-color: ${colors.light};
-	width: 100%;
+	min-width: 100%;
 	top: ${(props) => (props.padding ? props.padding + 'px' : 0)};
 	padding: 12px 0 12px;
+	left: 0;
+	right: 0;
 	z-index: 2;
+	margin-left: -16px;
+	margin-right: -16px;
+	/* margin-left: -${sizes.paddingLeft};
+	margin-right: -${sizes.paddingRight}; */
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};
 	transition-duration: 0.1s;
 	transition-timing-function: linear;
 	box-shadow: ${(props) =>
-		props.scrolling
+		props.scrolled
 			? '0px 1px 4px rgba(0, 0, 0, 0.25)'
 			: '0px 1px 4px rgba(0, 0, 0, 0.0)'};
 	/* :after {
@@ -118,7 +128,7 @@ const TabContainer = styled.div`
 `;
 
 TabContainer.defaultProps = {
-	scrolling: {},
+	scrolled: {},
 };
 
 const TabButtonGroup = styled.div`
@@ -131,7 +141,7 @@ const TabButtonGroup = styled.div`
 	
 	padding: 0 3px;
 `;
-const TabButton = styled.button`
+const TabButton = styled(motion.button)`
 	border: 0;
 	border-radius: ${(state) => (state.active ? '5px' : '0')};
 	color: ${colors.gray};
@@ -146,7 +156,7 @@ const TabButton = styled.button`
 	font-size: 12px;
 	font-weight: ${(state) => (state.active ? '700' : '500')};
 	box-shadow: ${(state) =>
-		state.active ? '1px 1px 4px rgba(0, 0, 0, 0.25)' : ''};
+		state.active ? '0px 1px 4px rgba(156, 156, 156, 0.25)' : ''};
 	z-index: ${(state) => (state.active ? '1' : 'auto')};
 	background: ${(state) => (state.active ? colors.light : colors.grayLighter)};
 	&:focus {

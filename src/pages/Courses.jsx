@@ -13,12 +13,12 @@ import { fetchCourses } from '../store/reducers/actions/CoursesActions';
 
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
-import Title from '../components/Title';
 import Card from '../components/Card';
 import TabBar from '../components/Tabs';
 
+
 // import Goals from '../components/SettingGoals';
-import Goals from '../components/SettingGoals/index'
+
 import { SecondaryButton } from '../components/Button';
 import { Spinner } from '../components/Spinner';
 
@@ -74,8 +74,6 @@ class Courses extends Component {
 					getSize={(size) => this.setState({ size })}
 				/>
 				<Content>
-					<Goals />
-
 					<TabBar
 						setPadding={size}
 						tabs={[
@@ -96,6 +94,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -108,9 +109,6 @@ class Courses extends Component {
 									<>
 										{coursesNew.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -122,6 +120,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -134,9 +135,6 @@ class Courses extends Component {
 									<>
 										{coursesInProgress.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -148,6 +146,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -160,9 +161,6 @@ class Courses extends Component {
 									<>
 										{coursesFinished.map((course) => (
 											<Card
-												onClick={() =>
-													selectCourse(course)
-												}
 												key={course.id}
 												title={course.title}
 												tag={course.tag}
@@ -174,6 +172,9 @@ class Courses extends Component {
 												}
 												label={course.label}
 												id={course.id}
+												startDate={course.startDate}
+												endDate={course.endDate}
+												badge={course.badge}
 												path={url}
 											/>
 										))}
@@ -190,6 +191,7 @@ class Courses extends Component {
 							component={Course}
 						/> */}
 				</Content>
+			
 			</>
 		);
 	}
@@ -214,7 +216,7 @@ const mapStateToProps = (state) => {
 	return {
 		error: state.courses.error,
 		courses: state.courses.courses,
-		pending: getCoursesPending(state),
+		pending: state.courses.pending,
 	};
 };
 

@@ -12,9 +12,10 @@ export const StyledPrimaryButton = styled.button`
 	text-decoration: none;
 	padding: 0 35px;
 	cursor: pointer;
-	font-family: Lato;
-	font-size: 14px;
 
+	&.onboarding-button{
+		
+	}
 	:hover {
 		background-color: ${colors.light};
 		color: ${colors.primary};
@@ -28,12 +29,13 @@ export const StyledPrimaryButton = styled.button`
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
-	background-color: ${colors.light};
-	color: ${colors.primary};
-	border: 2px solid ${colors.light};
+			background-color: ${colors.light};
 
-	:hover {
-		background-color: ${colors.primary};
-		color: ${colors.light};
-	}
-`;
+			color: ${colors.primary};
+
+			:hover {
+				border: 2px solid ${colors.light};
+				background-color: ${colors.primary};
+				color: ${colors.light};
+			}
+		`;

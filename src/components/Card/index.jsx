@@ -4,18 +4,34 @@ import StyledCard, {CardWrapper} from './StyledCard';
 import {CourseTags} from '../Tags';
 import { StyledLink } from '../Link';
 
-export default function Card({tag, content, title, label, id, path, onClick, contentTitle }) {
+export default function Card({tag, content, title, label, id, path, onClick, contentTitle, startDate, endDate, badge }) {
 	return (
 		<CardWrapper>
 			<StyledCard>
 				{tag && (
-					<CardHeader title={title} tag={tag}>
+					<CardHeader title={title} tag={tag} startDate={startDate}>
 						{tag}
 					</CardHeader>
 				)}
 				{content && (
-					<CardContent contentTitle={contentTitle} content={content}>
-						{content}
+					<CardContent badge={badge}>
+						{content && (
+							<CardContentItem
+								badge={badge}
+								contentTitle={contentTitle}
+								content={content}
+							>
+								{content}
+							</CardContentItem>
+						)}
+						{endDate && (
+							<CardContentItem
+								contentTitle={'Datum behaald'}
+								content={endDate}
+							>
+								{endDate}
+							</CardContentItem>
+						)}
 					</CardContent>
 				)}
 
@@ -57,12 +73,21 @@ BaseCard.propTypes = {
 };
 
 
-export const CardHeader = ({tag,title}) => {
+export const CardHeader = ({tag,title, startDate}) => {
 	return (
 		<div className='card-header'>
 			{tag && <CourseTags>{tag}</CourseTags>}
-
-			<h2>{title}</h2>
+			<div className='card-header-content'>
+				<h2>{title}</h2>
+				{startDate && (
+					<div>
+						<p>
+							<b>Startdatum:</b> <br></br>
+							{startDate}
+						</p>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };
@@ -74,13 +99,21 @@ CardHeader.propTypes = {
 };
 
 
-export const CardContent = ({content, contentTitle}) => {
+export const CardContent = ({children, badge}) => {
 	return (
-		<div className="card-content">
-			<p><b>{contentTitle}</b></p>
+		<div className='card-content'>
+			{children}
+		</div>
+	);
+};
+export const CardContentItem = ({ content, contentTitle, badge }) => {
+	return (
+		<div className='card-content-item'>
+			{badge && <img src={badge} alt='Course Badge'></img>}
 			<p>
-				{content}
+				<b>{contentTitle}</b>
 			</p>
+			<p>{content}</p>
 		</div>
 	);
 };

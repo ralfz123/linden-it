@@ -18,8 +18,11 @@ class Step2 extends Component {
 		return (
 			<>
 				<div className='settinggoals-container'>
+					<p className='step-counter'>
+						Stap {this.props.currentStep - 1} van 2
+					</p>
 					<div className='container advice'>
-						<label htmlFor='pages'>
+						<label htmlFor='pages' className='question'>
 							Ons advies voor ITIL 3, lees elke studiedag:
 							{/* ipv ITIL 3 --> {this.state.courseName} */}
 						</label>
@@ -34,23 +37,23 @@ class Step2 extends Component {
 						<label htmlFor='pages'>pagina&apos;s</label>
 					</div>
 
-					<div className='container timereminders'>
+					<div className='container'>
 						<label className='question' htmlFor='pages'>
+							<Switch
+								checked={this.props.showStudyReminder}
+								onColor='#FC7928'
+								ofColor='#717171'
+								uncheckedIcon={false}
+								checkedIcon={false}
+								handleDiameter={18}
+								width={60}
+								className='toggle'
+								onChange={this.props.setStudyReminderChange}
+							/>
 							Herinner mij om te studeren
 						</label>
 
 						{/* map over all inputfields max < 7 */}
-						<Switch
-							checked={this.props.showStudyReminder}
-							onColor='#FC7928'
-							ofColor='#717171'
-							uncheckedIcon={false}
-							checkedIcon={false}
-							handleDiameter={18}
-							width={60}
-							className='toggle'
-							onChange={this.props.setStudyReminderChange}
-						/>
 
 						<p>
 							Selecteer een tijd wanneer je een melding wilt
@@ -70,22 +73,22 @@ class Step2 extends Component {
 						/>
 					</div>
 
-					<div className='container timereminders'>
+					<div className='container'>
 						<label className='question'>
+							<Switch
+								checked={this.props.setReminderTimeForAllDays}
+								onColor='#FC7928'
+								ofColor='#717171'
+								uncheckedIcon={false}
+								checkedIcon={false}
+								handleDiameter={18}
+								width={60}
+								className={'toggle'}
+								onChange={this.props.setReminderTimeChange}
+							/>
 							Hetzelfde tijdstip voor elke studiedag herinnering
 						</label>
 
-						<Switch
-							checked={this.props.setReminderTimeForAllDays}
-							onColor='#FC7928'
-							ofColor='#717171'
-							uncheckedIcon={false}
-							checkedIcon={false}
-							handleDiameter={18}
-							width={60}
-							className={'toggle'}
-							onChange={this.props.setReminderTimeChange}
-						/>
 						{/* This toggle has to toggle BaseTimeInput */}
 						<label className='studyday-label'>Tijdstip</label>
 

@@ -20,10 +20,10 @@ class End extends Component {
 		return (
 			<>
 				<div className='settinggoals-container'>
-					<div className='onboarding-page'>
+					<div className='container onboarding-page'>
 						<FaCheckCircle className='onboarding-icon' />
 						<h2>Goed bezig! Jouw doelen zijn vastgesteld.</h2>
-						<div>Happy learning!</div>
+						<p>Happy learning!</p>
 						<p>
 							Je kunt je doelen altijd nog aanpassen via de
 							agenda.

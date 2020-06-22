@@ -4,27 +4,42 @@ export const colors = {
 	primary: '#FC7928',
 	light: '#ffffff',
 	dark: '#000000',
-	gray: '#989898',
+	gray: '#717171',
 	grayDark: '#3b3b3b',
 	grayLight: '#f4f4f4',
+	grayLighter: '#f8f8f8',
 	grayLightTwo: '#C4C4C4',
-	grayLightThree: '#717171',
-	red: '#D21919;',
-	green: '#77dd77',
+	red: '#f44336;',
+	green: '#66BB6A',
 	tagNew: '#5DD8A4',
 	tagProgress: '#FEC32E',
 	tagFinished: '#22C7E4',
-		};
-export const sizes = {
-	paddingTop: '',
-	paddingLeft: 'max(16px, env(safe-area-inset-left))',
-	paddingRight:'max(16px, env(safe-area-inset-right))',
-	paddingBottom: '',
 };
-
+export const sizes = {
+			paddingTop: '',
+			paddingLeft: ' max(16px, var(--safe-area-inset-left))',
+			paddingRight: 'max(16px, var(--safe-area-inset-right))',
+			paddingBottom: '',
+		};
+/**
+ * Converts a CSS hex color value to RGBA.
+ * @param {string} hex - Expanded hexadecimal CSS color value.
+ * @param {number} alpha - Alpha as a decimal.
+ * @returns {string} RGBA CSS color value.
+ */
+export const addAlpha = (hex, alpha) => {
+	const r = parseInt(hex.substring(1, 3), 16);
+	const g = parseInt(hex.substring(3, 5), 16);
+	const b = parseInt(hex.substring(5, 7), 16);
+	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
 const GlobalStyle = createGlobalStyle`
     ${normalize};
     :root {
+        --safe-area-inset-top   : 16px;
+    --safe-area-inset-right : 16px;
+    --safe-area-inset-bottom: 16px;
+    --safe-area-inset-left  : 16px;  
         --color-primary: #FC7928;
         --color-light: #ffffff;
         --color-dark: #000000;
@@ -36,14 +51,36 @@ const GlobalStyle = createGlobalStyle`
         --tag-new:#5DD8A4;
         --tag-progress:#FEC32E;
         --tag-finished:#22C7E4;
+
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
-        --font-weight-thin: 100;
+
+        @supports (top: constant(safe-area-inset-top)){
+            --safe-area-inset-top : constant(safe-area-inset-top);
+            --safe-area-inset-right : constant(safe-area-inset-right);
+            --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+            --safe-area-inset-left : constant(safe-area-inset-left); 
+        }
+        @supports (top: env(safe-area-inset-top)){
+            --safe-area-inset-top : env(safe-area-inset-top);
+            --safe-area-inset-right : env(safe-area-inset-right);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+            --safe-area-inset-left : env(safe-area-inset-left); 
+        }
+}
+${
+	'' /* 
+body {
+padding-top: 12px;
+padding-top: var(--safe-area-inset-top, 12px);
+} */
+}
     }
     html {
         box-sizing: border-box;
-        background-color: ${colors.primary};
-
+        overflow-y: scroll;
+       
+        
     }
     *, *:before, *:after {
         box-sizing: border-box;
@@ -87,13 +124,16 @@ const GlobalStyle = createGlobalStyle`
         
     }
     main {
+        padding-left: min(16px, env(safe-area-inset-left));
+        padding-right: min(16px, env(safe-area-inset-right));
         position:relative;
        flex-grow:1;
         box-sizing:border-box;
-        z-index:0;
-        background-color: ${colors.light};
-        padding-left: max(16px, env(safe-area-inset-left));
-        padding-right: max(16px, env(safe-area-inset-right));
+        z-index:1;
+        background-color:var(--color-light);
+        height:auto;
+        padding-bottom:50px;
+        padding-bottom: calc(50px + env(safe-area-inset-bottom));
         -webkit-overflow-scrolling: touch;
     }
     footer {
@@ -103,6 +143,9 @@ const GlobalStyle = createGlobalStyle`
         right: 0;
         bottom: 0;
         z-index:3;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
         padding-left: max(0px, env(safe-area-inset-left));
         padding-right: max(0px, env(safe-area-inset-right));
         padding-bottom: max(0px, env(safe-area-inset-bottom));
@@ -110,6 +153,10 @@ const GlobalStyle = createGlobalStyle`
     h1,h2,h3,h4,h5{
         font-family: var(--font-family-heading);
         font-weight:600;
+    }
+    p {
+        margin:0;
+        padding:5px 0;
     }
 
 
@@ -122,17 +169,22 @@ ${'' /* Login page styles */}
 
     .login {
         text-align: center;
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+        /* justify-content: center; */
         padding-top: 4em;
         margin: auto;
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
     }
     .field {
+        /* background-color:lightgreen; */
         text-align:left;
         padding-bottom:20px;
     }
     label {
-        display: block;
+        
         font-family: var(--font-family-heading);
         font-style: normal;
         font-weight: normal;
@@ -140,7 +192,7 @@ ${'' /* Login page styles */}
         line-height: 18px;
         color: ${colors.grayDark};
         text-align: left;
-        width: 100%;
+        ${'' /* width: 100%; */}
         padding: 10px 0px;
     }
   
@@ -151,6 +203,7 @@ ${'' /* Login page styles */}
         position: relative;
     }
     .pw-forgot {
+        /* text-align:left; */
         font-family: var(--font-family);
         font-style: normal;
         font-weight: 300;
@@ -165,9 +218,7 @@ ${'' /* Login page styles */}
         font-size: 14px;
         line-height: 17px;
         color: ${colors.grayDark};
-        display: block;
-        margin: 0px auto;
-        margin: 10px 0px;
+        padding: 10px 0px;
     }
     .privacy {
         margin: 0px auto;
@@ -185,53 +236,48 @@ ${'' /* Login page styles */}
     i:hover {
         color: ${colors.primary};
         cursor: pointer;
-    }
-    
-${'' /* ***************** Setting goals ***************** */}
+}
 
-    .settinggoals-container label {
+
+${'' /* ***************** Setting goals ***************** */}
+    .settinggoals-container {
         font-family: Lato;
         font-style: normal;
         font-weight: bold;   
         color: ${colors.grayLightThree};
     }
-
+    
     .container {
-        margin-bottom: 20px;
+      display:flex;
+      flex-direction:column;
     }
-
     .timereminders {
-        display: flex;
+        ${
+			'' /* display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: row; */
+		}
     }
-
     .timereminders .question {
-        width: 80%;
+        display:flex;
+        align-items:flex-start;
     }
-
                 ${'' /* ***************** pushbuttons ***************** */}
-
     .container-pushbuttons {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        
         flex-direction: row;
-        width: 100%;
-        margin-bottom: 20px;
+        ${'' /* width: auto; */}
+        ${'' /* margin-bottom: 20px; */}
+        
     }
-
-    .container-pushbuttons {
-        font-family: Lato;
-        font-style: normal;
-        font-weight: bold;
-    }
+ 
     .pushbuttons {
-        position: relative;
-        width: 10%;
+        display:flex;
+        
     }
-
     .pushbuttons > div {
         width: 35px;
         height: 35px;
@@ -244,14 +290,12 @@ ${'' /* ***************** Setting goals ***************** */}
         border: 1px solid ${colors.gray};
         border-radius: 100%;
     }
-
     .pushbuttons input {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        
+        
         opacity: 0;
     }
-
     .pushbuttons input:checked + div {
         background-color: ${colors.primary};
         color: ${colors.light};
@@ -259,17 +303,17 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     
     .advice {
-        display:flex;
+        
+		display:flex;
         flex-wrap:wrap;
         flex-direction: row;
-        justify-content: flex-start;
-        margin-bottom: 20px;
+        justify-content: flex-start; 
+        
     }
-
     .advice label:nth-child(3) {
-        width: 30%;
+        ${'' /* width: 30%; */}
         color: ${colors.grayLightThree};
-        margin: 0px 10px;
+        ${'' /* margin: 0px 10px; */}
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
@@ -280,51 +324,100 @@ ${'' /* ***************** Setting goals ***************** */}
         font-family: Josefin Sans;
         font-size: 1em;
         color: ${colors.primary};
-        margin-top: 30px;
+        padding:1em 0;
+        ${'' /* margin-top: 0; */}
     }
-
     ${'' /* ********************** onboarding pages ********************** */}
-
-    .onboarding-page {
+   .container.onboarding-page {
         background-color: ${colors.primary};
         color: ${colors.light};
-        display: flex;
-        flex-wrap: wrap;
+        align-items:center;
+        justify-content:space-between;
+        height:100%;
+
+        h2 {
+            font-size:36px;
+        }
+        ${
+			'' /* flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
+        justify-content: center; */
+		}
         
     }
-
+    .container {
+        
+        justify-content:space-flex-start;
+        height:100%;
+        padding-bottom:1em;
+        ${
+			'' /* flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center; */
+		}
+        
+    }
     .onboarding-page .onboarding-icon { 
         font-size: 40px;
+        align-self:center;
+        
         width: 100%;
     }
-
     .onboarding-page h2 { 
-        width: 50%;
+        ${'' /* width: 50%; */}
         text-align: center;
-        margin: 10px 10px 30px 10px;
+        ${'' /* margin: 10px 10px 30px 10px; */}
     }
     
     .onboarding-page div {
         font-weight: normal;
     }
-
     .onboarding-page p {
         color: ${colors.light};
-        font-size: .7em;
+        font-size: 15px;
         text-align: center;
-        width: 60%;
-        margin: 10px 10px 30px 10px;
+        font-weight:300;
+        ${'' /* width: 60%; */}
+        ${'' /* margin: 10px 10px 30px 10px; */}
     }
-
     .settinggoals-container .studyday-label {
         font-family: Lato;
         font-style: normal;
         font-weight: 400;
         font-size: .8em;
-        margin-bottom: -5px;
-    }
+        ${'' /* margin-bottom: -5px; */}
+}
+.settinggoals-container{
+    display:flex;
+    flex-direction:column;
+
+}
+
+.bottom-drawer {
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    width:100%;
+    background-color:${colors.light};
+    margin-top:30px;
+    top:60px;
+	bottom:0;
+    height:auto;
+    padding-bottom:0px; 
+    border-radius:10px 10px 0 0;
+        overflow:hidden;
+        min-height:60vh;
+        z-index:9999;
+	}
+.onboarding-button{
+    align-self:center;
+}
+.toggle {
+    top:0;
+    float:right;
+}
 `;
 
 export default GlobalStyle;

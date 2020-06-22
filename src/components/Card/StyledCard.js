@@ -10,9 +10,34 @@ const StyledCard = styled.div`
 		background-color: ${colors.grayLight};
 		padding: 20px;
 		position: relative;
+
+		.card-header-content {
+
+			display:flex;
+			align-items:flex-end;
+			justify-content: space-between;
+
+			p {
+				padding-bottom:0;
+			}
+		}
 	}
 	.card-content {
+		/* position:relative; */
 		padding: 20px;
+
+		.card-content-item {
+			img {
+				float: right;
+				
+				width: 100px;
+				
+			}
+		}
+
+		.card-content-item > p ~ p {
+			padding: 0;
+		}
 	}
 	.card-footer {
 		padding: 0 20px 20px 20px;
@@ -28,8 +53,8 @@ const StyledCard = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-			padding-left: ${sizes.paddingLeft};
-			padding-right: ${sizes.paddingRight};
+			/* padding-left: ${sizes.paddingLeft};
+			padding-right: ${sizes.paddingRight}; */
 		`;
 
 export default StyledCard;

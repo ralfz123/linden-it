@@ -20,7 +20,7 @@ class Start extends Component {
 		return (
 			<>
 				<div className='settinggoals-container'>
-					<div className='onboarding-page'>
+					<div className='container onboarding-page'>
 						<FiCalendar className='onboarding-icon' />
 						<h2>Je doelen vaststellen voor ITIL 3</h2>
 						<p>

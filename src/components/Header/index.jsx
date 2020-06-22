@@ -11,25 +11,42 @@ class Header extends Component {
 			this.props.getSize(element.getBoundingClientRect().height);
 		}
 	};
+	
+	
 	componentDidMount() {
 		// if (this.props.getSize !== this.props.getSize) {
 		// 	this.props.getSize(this.elementRef.getBoundingClientRect());
 		// }
 	}
-	componentDidUpdate() {
+	componentDidUpdate(prevProps) {
 		// if (this.props.getSize !== this.props.getSize) {
 		// 	return this.props.getSize(this.elementRef.getBoundingClientRect());
 		// }
-
+		
 	}
 	render() {
+	
 		return (
 			<>
 				{this.props.getSize ? (
-					<StyledHeader ref={this.refCallback}>
+					<StyledHeader
+						ref={this.refCallback}
+						className={this.props.className}
+					>
 						<div className='header-toolbar'>
 							{this.props.history && (
-								<BackButton history={this.props.history} />
+								<BackButton
+									history={this.props.history}
+									onClick={() => this.props.history.goBack()}
+									label={this.props.label}
+								/>
+							)}
+							{this.props.prevStep && (
+								<BackButton
+									history={this.props.history}
+									onClick={this.props.prevStep}
+									label={this.props.label}
+								/>
 							)}
 						</div>
 						<div className='title-large'>
@@ -37,15 +54,34 @@ class Header extends Component {
 						</div>
 					</StyledHeader>
 				) : (
-					<StyledHeader>
+					<StyledHeader className={this.props.className}>
 						<div className='header-toolbar'>
-							{this.props.history && (
-								<BackButton history={this.props.history} />
-							)}
+							<div className='left'>
+								{this.props.history && (
+									<BackButton
+										history={this.props.history}
+										onClick={() =>
+											this.props.history.goBack()
+										}
+										label={this.props.label}
+									/>
+								)}
+								{this.props.prevStep && (
+									<BackButton
+										history={this.props.history}
+										onClick={this.props.prevStep}
+										label={this.props.label}
+									/>
+								)}
+							</div>
+
+							<div className='title'>{this.props.title}</div>
+							<div className='right'></div>
 						</div>
-						<div className='title-large'>
-							<Title title={this.props.title} />
-						</div>
+						{this.props.small
+							? ''
+							: <div className='title-large'><Title title={this.props.title} /></div>
+						}
 					</StyledHeader>
 				)}
 			</>
@@ -75,11 +111,11 @@ cursor: pointer;
 
 `;
 
-export const BackButton = ({ history }) => {
+export const BackButton = ({ history, label, onClick }) => {
 	return (
-		<StyledBackButton onClick={() => history.goBack()}>
+		<StyledBackButton onClick={onClick}>
 			<FiChevronLeft className='react-icons' />
-			Back
+			{label}
 		</StyledBackButton>
 	);
 };

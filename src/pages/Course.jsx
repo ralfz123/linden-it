@@ -6,7 +6,8 @@ import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import TabBar from '../components/Tabs';
-
+import { StyledDrawer } from '../components/BottomDrawer';
+import Goals from '../components/SettingGoals/index';
 import Card from '../components/Card';
 import Accordion from '../components/Accordion';
 import { Redirect } from 'react-router';
@@ -18,10 +19,8 @@ class Course extends Component {
 		content: 'short description',
 		course: {},
 		size: {},
-	};
-	props = {
-		progress: 'IN PROGRESS',
-		next: 'NEXT',
+		settingGoals: true,
+		
 	};
 	componentDidMount() {
 		const { courses, params } = this.props;
@@ -31,17 +30,19 @@ class Course extends Component {
 		}
 	}
 	componentDidUpdate() {
-		console.log(this.state.size);
 		const { pending } = this.props;
 		if (pending === false) return false;
 		return true;
 	}
+	CloseDrawer = () => {
+		let { settingGoals } = this.state;
+
+		this.setState({ settingGoals: false });
+	};
 	render() {
 		const { history } = this.props;
-		const { course, size } = this.state;
-		console.log(course.chapters)
-		const { progress, next } = this.props;
-		console.log(size);
+		const { course, size, settingGoals } = this.state;
+		console.log(course);
 		if (!course) {
 			return (
 				<Redirect
@@ -67,7 +68,10 @@ class Course extends Component {
 									title: 'LEERSTOF',
 									render: () => (
 										<>
-											<Accordion chapters={course.chapters} />				
+											<Accordion
+												chapters={course.chapters}
+												currentChapter={course}
+											/>
 										</>
 									),
 								},
@@ -97,6 +101,18 @@ class Course extends Component {
 							]}
 						/>
 					</Content>
+					{course.tag === 'NEW' && (
+						<StyledDrawer
+							allowClose={false}
+							open={settingGoals}
+							modalElementClass={`bottom-drawer`}
+							containerElementClass={`clooooll`}
+							onRequestClose={this.CloseDrawer}
+							dontApplyListeners={false}
+						>
+							<Goals onRequestClose={this.CloseDrawer} />
+						</StyledDrawer>
+					)}
 				</>
 			);
 		}
@@ -105,10 +121,7 @@ class Course extends Component {
 
 Course.propTypes = {
 	course: PropTypes.object,
-	courses: PropTypes.shape({
-		find: PropTypes.func,
-		length: PropTypes.number,
-	}),
+	courses: PropTypes.array,
 	history: PropTypes.any,
 	match: PropTypes.any,
 	params: PropTypes.shape({
