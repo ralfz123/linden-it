@@ -34,7 +34,6 @@ SecondaryButton.propTypes = {
 	onClick: PropTypes.func,
 	label: PropTypes.string,
 };
-<<<<<<< HEAD
 
 export const AgendaButton = ({ onClick, label }) => {
 	return (
@@ -49,5 +48,3 @@ StyledAgendaButton.propTypes = {
 	label: PropTypes.string,
 	onClick: PropTypes.func,
 };
-=======
->>>>>>> ab935c75279661e69b7e6ee59f3a2c1d3b832693

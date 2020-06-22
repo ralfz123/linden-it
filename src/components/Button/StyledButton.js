@@ -13,8 +13,7 @@ export const StyledPrimaryButton = styled.button`
 	padding: 0 35px;
 	cursor: pointer;
 
-	&.onboarding-button{
-		
+	&.onboarding-button {
 	}
 	:hover {
 		background-color: ${colors.light};
@@ -29,10 +28,11 @@ export const StyledPrimaryButton = styled.button`
 `;
 
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
-			background-color: ${colors.light};
+	background-color: ${colors.light};
+	color: ${colors.primary};
 
-<<<<<<< HEAD
 	:hover {
+		border: 2px solid ${colors.light};
 		background-color: ${colors.primary};
 		color: ${colors.light};
 	}
@@ -50,13 +50,3 @@ export const StyledAgendaButton = styled(StyledPrimaryButton)`
 		color: ${colors.light};
 	}
 `;
-=======
-			color: ${colors.primary};
-
-			:hover {
-				border: 2px solid ${colors.light};
-				background-color: ${colors.primary};
-				color: ${colors.light};
-			}
-		`;
->>>>>>> ab935c75279661e69b7e6ee59f3a2c1d3b832693

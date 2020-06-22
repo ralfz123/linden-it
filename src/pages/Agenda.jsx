@@ -55,6 +55,7 @@ class Agenda extends Component {
 					<div className='header-toolbar agenda-container'>
 						<div className='left'>
 							<h2>Mei</h2>
+							yes
 							<MdKeyboardArrowDown className='arrowdown-icon' />
 						</div>
 
@@ -116,3 +117,4 @@ const mapStateToProps = (state) => {
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Agenda);
 export default Agenda;
+

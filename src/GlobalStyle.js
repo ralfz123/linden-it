@@ -9,15 +9,8 @@ export const colors = {
 	grayLight: '#f4f4f4',
 	grayLighter: '#f8f8f8',
 	grayLightTwo: '#C4C4C4',
-<<<<<<< HEAD
 	grayLightThree: '#717171',
 	grayLightFour: '#E5E5E5',
-	red: '#D21919;',
-	green: '#77dd77',
-	tagNew: '#5DD8A4',
-	tagProgress: '#FEC32E',
-	tagFinished: '#22C7E4',
-=======
 	red: '#f44336;',
 	green: '#66BB6A',
 	tagNew: '#5DD8A4',
@@ -25,11 +18,11 @@ export const colors = {
 	tagFinished: '#22C7E4',
 };
 export const sizes = {
-			paddingTop: '',
-			paddingLeft: ' max(16px, var(--safe-area-inset-left))',
-			paddingRight: 'max(16px, var(--safe-area-inset-right))',
-			paddingBottom: '',
-		};
+	paddingTop: '',
+	paddingLeft: ' max(16px, var(--safe-area-inset-left))',
+	paddingRight: 'max(16px, var(--safe-area-inset-right))',
+	paddingBottom: '',
+};
 /**
  * Converts a CSS hex color value to RGBA.
  * @param {string} hex - Expanded hexadecimal CSS color value.
@@ -41,7 +34,6 @@ export const addAlpha = (hex, alpha) => {
 	const g = parseInt(hex.substring(3, 5), 16);
 	const b = parseInt(hex.substring(5, 7), 16);
 	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
->>>>>>> ab935c75279661e69b7e6ee59f3a2c1d3b832693
 };
 const GlobalStyle = createGlobalStyle`
     ${normalize};
@@ -293,6 +285,8 @@ ${'' /* ********************* Agenda page ********************* */}
 
 .agenda-container .right {
     ${'' /* margin-left: 20px; */}
+    padding: 100px;
+    padding-bottom: 100px;
 }
 
 .agenda-icon {
