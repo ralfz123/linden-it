@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
-import Title from '../components/Title';
-import {PrimaryButton} from '../components/Button';
-import {SecondaryButton} from '../components/Button';
 
 class Settings extends Component {
 	state = {
