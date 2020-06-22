@@ -46,10 +46,8 @@ class Login extends Component {
 		}
 		return (
 			<>
-				{isAuthenticated && <Redirect to='/' />}
-				<Header>
-					<Title title='Inloggen' />
-				</Header>
+				{isAuthenticated && <Redirect to='/courses' />}
+				<Header title='Inloggen'/>
 				<Content>
 					{loginError && (
 						<Popup>

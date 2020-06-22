@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledBaseTextInput, StyledBaseNumberInput} from './StyledInput';
+import { StyledBaseTextInput, StyledBaseNumberInput, StyledBaseTimeInput, StyledBaseDateInput } from './StyledInput';
 
 
 /**
@@ -62,34 +62,54 @@ BaseNumberInput.propTypes = {
 };
 
 
+export const BaseTimeInput = ({ name, placeholder, value, onChange, type, children }) => {
+	return (
+		<StyledBaseTimeInput
+			value={value}
+			placeholder={placeholder}
+			name={name}
+			type={type}
+			onChange={onChange}>
+			{children}
+		</StyledBaseTimeInput>
+	);
+};
 
+BaseTimeInput.defaultProps = {
+	type: 'time'
+};
 
-// const FormInput = ({
-//   name,
-//   type,
-//   placeholder,
-//   onChange,
-//   className,
-//   value,
-//   error,
-//   children,
-//   label,
-//   ...props
-// }) => {
-//   return (
-//     // <StyledInput>
-//     <React.Fragment>
-//       <label htmlFor={name}>{label}</label>
-//       <input
-//         id={name}
-//         name={name}
-//         type={type}
-//         placeholder={placeholder}
-//         onChange={onChange}
-//         value={value}
-//         className={className}
-//       />
-//     </React.Fragment>
-//     // </StyledInput>
-//   );
-// };
+BaseTimeInput.propTypes = {
+	name: PropTypes.string,
+	placeholder: PropTypes.string,
+	type: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	value: PropTypes.any,
+	onChange: PropTypes.func,
+};
+
+export const BaseDateInput = ({ name, placeholder, value, onChange, type, children }) => {
+	return (
+		<StyledBaseDateInput
+			value={value}
+			placeholder={placeholder}
+			name={name}
+			type={type}
+			onChange={onChange}>
+			{children}
+		</StyledBaseDateInput>
+	);
+};
+
+BaseDateInput.defaultProps = {
+	type: 'time'
+};
+
+BaseDateInput.propTypes = {
+	name: PropTypes.string,
+	placeholder: PropTypes.string,
+	type: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	value: PropTypes.any,
+	onChange: PropTypes.func,
+};

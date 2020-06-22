@@ -20,19 +20,21 @@ PrimaryButton.propTypes = {
 	onClick: PropTypes.func,
 };
 
-export const SecondaryButton = ({ onClick, label, disabled }) => {
+export const SecondaryButton = ({ to, className, onClick, label, disabled }) => {
 	return (
-		<StyledSecondaryButton onClick={onClick} disabled={disabled}>
+		<StyledSecondaryButton to={to} className={className} onClick={onClick} disabled={disabled}>
 			{label}
 		</StyledSecondaryButton>
 	);
 };
 
 SecondaryButton.propTypes = {
-	disabled: PropTypes.any,
-	label: PropTypes.string,
+	to: PropTypes.string,
+	className: PropTypes.string,
 	onClick: PropTypes.func,
+	label: PropTypes.string,
 };
+<<<<<<< HEAD
 
 export const AgendaButton = ({ onClick, label }) => {
 	return (
@@ -47,3 +49,5 @@ StyledAgendaButton.propTypes = {
 	label: PropTypes.string,
 	onClick: PropTypes.func,
 };
+=======
+>>>>>>> ab935c75279661e69b7e6ee59f3a2c1d3b832693

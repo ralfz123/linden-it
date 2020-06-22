@@ -31,11 +31,10 @@ class Login extends Component {
 	}
 
 	render() {
+		const { title } = this.state;
 		return (
 			<>
-				<Header>
-					<Title title={this.state.title} />
-				</Header>
+				<Header title={title}/>
 				<Content className='login-wrapper'>
 					<form
 						onSubmit={this.handleSubmit}

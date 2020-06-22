@@ -6,8 +6,10 @@ import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import Title from '../components/Title';
 import TabBar from '../components/Tabs';
-
+import { StyledDrawer } from '../components/BottomDrawer';
+import Goals from '../components/SettingGoals/index';
 import Card from '../components/Card';
+import Accordion from '../components/Accordion';
 import { Redirect } from 'react-router';
 class Course extends Component {
 	state = {
@@ -15,7 +17,9 @@ class Course extends Component {
 		courseTitle: 'Titel',
 		tag: 'tag',
 		content: 'short description',
-		course: {}
+		course: {},
+		size: {},
+		settingGoals: true,
 		
 	};
 	componentDidMount() {
@@ -24,53 +28,65 @@ class Course extends Component {
 			const course = courses.find((course) => course.id == params.id);
 			return this.setState({ course });
 		}
-
 	}
 	componentDidUpdate() {
 		const { pending } = this.props;
 		if (pending === false) return false;
 		return true;
 	}
+	CloseDrawer = () => {
+		let { settingGoals } = this.state;
+
+		this.setState({ settingGoals: false });
+	};
 	render() {
 		const { history } = this.props;
-		const { course } = this.state;
-			
+		const { course, size, settingGoals } = this.state;
+		console.log(course);
 		if (!course) {
 			return (
 				<Redirect
 					to={{
 						pathname: '/courses',
-						
 					}}
 				/>
 			);
 		} else {
-	
-	
 			return (
 				<>
-					<Header history={history}>
-						<Title title={course.title} />
-					</Header>
+					<Header
+						title={course.title}
+						getSize={(size) => this.setState({ size })}
+						history={history}
+					/>
+
 					<Content>
 						<TabBar
+							setPadding={size}
 							tabs={[
 								{
-									title: 'NOTITIES',
+									title: 'LEERSTOF',
 									render: () => (
 										<>
-											<Card
-												contentTitle={'Titel van de notitie'}
-												content={'Hier komt de eerste alinea/tekst die geschreven is in deze notitie. Hier komt de eerste alinea/tekst die geschreven is in deze notitie. '}
+											<Accordion
+												chapters={course.chapters}
+												currentChapter={course}
 											/>
 										</>
 									),
 								},
 								{
-									title: 'LEERSTOF',
+									title: 'NOTITIES',
 									render: () => (
 										<>
-											<div>doei</div>
+											<Card
+												contentTitle={
+													'Titel van de notitie'
+												}
+												content={
+													'Hier komt de eerste alinea/tekst die geschreven is in deze notitie. Hier komt de eerste alinea/tekst die geschreven is in deze notitie. '
+												}
+											/>
 										</>
 									),
 								},
@@ -85,6 +101,18 @@ class Course extends Component {
 							]}
 						/>
 					</Content>
+					{course.tag === 'NEW' && (
+						<StyledDrawer
+							allowClose={false}
+							open={settingGoals}
+							modalElementClass={`bottom-drawer`}
+							containerElementClass={`clooooll`}
+							onRequestClose={this.CloseDrawer}
+							dontApplyListeners={false}
+						>
+							<Goals onRequestClose={this.CloseDrawer} />
+						</StyledDrawer>
+					)}
 				</>
 			);
 		}
@@ -93,10 +121,7 @@ class Course extends Component {
 
 Course.propTypes = {
 	course: PropTypes.object,
-	courses: PropTypes.shape({
-		find: PropTypes.func,
-		length: PropTypes.number,
-	}),
+	courses: PropTypes.array,
 	history: PropTypes.any,
 	match: PropTypes.any,
 	params: PropTypes.shape({
@@ -107,9 +132,8 @@ Course.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-
 	return {
-		courses: state.courses.courses
+		courses: state.courses.courses,
 	};
 };
 
