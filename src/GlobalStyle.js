@@ -87,8 +87,6 @@ const GlobalStyle = createGlobalStyle`
         font-family: var(--font-family-heading);
     }
 
-
-
 ${'' /* Login page styles */}
 
     .login-wrapper {
@@ -188,8 +186,31 @@ ${'' /* ********************* Agenda page ********************* */}
     padding: 14px 20px;
 }
 
-.arrowdown-icon {
+.agenda-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+}
 
+.agenda-container .left {
+    ${'' /* margin-right: 20px;    */}
+    ${'' /* padding-right: 70px; */}
+    width: 150px;
+}
+
+.agenda-container .left h2 {
+    margin-bottom: 0px;
+    font-family: var(--font-family);    
+}
+
+.agenda-container .left .arrowdown-icon {
+    margin-bottom: 0px;
+    
+}
+
+.agenda-container .right {
+    ${'' /* margin-left: 20px; */}
 }
 
 .agenda-icon {

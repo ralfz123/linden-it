@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 class Agenda extends Component {
 	state = {
-		title: 'Mijn Agenda',
+		title: 'Mijn agenda',
 		studyDays: [
 			{
 				id: 1,
@@ -52,15 +52,15 @@ class Agenda extends Component {
 			<>
 				<Header title={title}>
 					<Title title={this.state.title} />
-					<div className='header-toolbar'>
+					<div className='header-toolbar agenda-container'>
 						<div className='left'>
 							<h2>Mei</h2>
 							<MdKeyboardArrowDown className='arrowdown-icon' />
 						</div>
 
 						<div className='right'>
-							<FiCalendar className='agenda-icon' />
 							<TiArrowSync className='change-icon' />
+							<FiCalendar className='agenda-icon' />
 						</div>
 					</div>
 				</Header>
