@@ -7,19 +7,50 @@ import { Task } from '../components/Tasks';
 import { FiCalendar } from 'react-icons/fi';
 import { TiArrowSync } from 'react-icons/ti';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
 class Agenda extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: 'Mijn agenda',
-		};
-	}
+	state = {
+		title: 'Mijn Agenda',
+		studyDays: [
+			{
+				id: 1,
+				studyDay: 'maandag',
+				studyDayDate: '08-06-2020',
+				finished: false
+			},
+			{
+				id: 2,
+				studyDay: 'dinsdag',
+				studyDayDate: '10-06-2020',
+				finished: false
+			}	
+		],
+		size: {},
+	};
+
+	// componentDidMount() {
+	// 	const { fetchCourses } = this.props;
+	// 	fetchCourses();
+	// }
+	// componentDidUpdate() {
+	// 	const { pending } = this.props;
+	// 	if (pending === false) return false;
+	// 	// more tests
+	// 	return true;
+	// }
 
 	render() {
+		// const { studyDays } = this.props;
+		const { title } = this.state;
+		// const studyDays = studyDays.map((studyDay) => studyDay.id);
+
+		// const studyDaysFinished = studyDays.filter((studyDay) => studyDay.tag === '');
+		// const studyDaysToday = studyDays.filter((studyDay) => studyDay.tag === 'IN PROGRESS');
+		// const studyDaysTodo= studyDays.filter((studyDay) => studyDay.tag === 'FINISHED');
 		return (
 			<>
-				<Header>
+				<Header title={title}>
 					<Title title={this.state.title} />
 					<div className='header-toolbar'>
 						<div className='left'>
@@ -36,12 +67,12 @@ class Agenda extends Component {
 
 				<Content>
 					{/* <>
-						{studyDays.map((course) => (
+						{studyDays.map((studyDay) => (
 							<Task
-								key={course.id}
-								title={course.title}
-								label={course.label}
-								id={course.id}
+								key={studyDay.id}
+								title={studyDay.title}
+								label={studyDay.label}
+								id={studyDay.id}
 							/>
 						))}
 					</> */}
@@ -54,4 +85,34 @@ class Agenda extends Component {
 		);
 	}
 }
+
+Agenda.propTypes = {
+	studyDays: PropTypes.array,
+	error: PropTypes.any,
+	// fetchCourses: PropTypes.func,
+	id: PropTypes.string,
+	label: PropTypes.string,
+	match: PropTypes.any,
+	// pending: PropTypes.bool,
+	// selectCourse: PropTypes.func,
+	title: PropTypes.string,
+};
+
+const mapStateToProps = (state) => {
+	return {
+		error: state.studyDays.error,
+		studyDays: state.studyDays.studyDays,
+		// pending: state.courses.pending,
+	};
+};
+
+// const mapDispatchToProps = (dispatch) =>
+// 	bindActionCreators(
+// 		{
+// 			fetchCourses: fetchCourses,
+// 		},
+// 		dispatch
+// 	);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Agenda);
 export default Agenda;
