@@ -1,6 +1,6 @@
 # Linden-IT <img src="https://pbs.twimg.com/profile_images/857153209353326592/8MFdk5Xq_400x400.jpg" width="30" />
 
-This app keeps track of the study progress of IT professionals within Linden IT.
+This app keeps track of the study progress of IT professionals within Linden-IT.
 
 # Technical summary
 **Linden-IT**  is built, using:
@@ -30,3 +30,7 @@ npm start
 
 # :cop: License
 This repository contains a [MIT © License](https://github.com/ralfz123/linden-it/blob/master/LICENSE)
+
+# :busts_in_silhouette: Contributors
+[GiovanniDw](https://github.com/GiovanniDw)  
+[ralfz123](https://github.com/ralfz123)
