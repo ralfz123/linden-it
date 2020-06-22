@@ -10,10 +10,14 @@ export const Task = ({ onClick, label, children }) => {
 			<p>Ma</p>
 			<div>8</div>
 			<StyledTask onClick={onClick} label={label}>
+				{/* <FiCheck className='check-icon' /> */}
 				{/* {Course.done ? <FiCheck /> :  */}
+				
 				<FiBell className='bell-icon' />
 				{children}
+
 				{/* Or a dynamic pageNumbers AND dayNumber */}
+				
 				<FaPencilAlt className='pencil-icon' />
 			</StyledTask>
 		</div>

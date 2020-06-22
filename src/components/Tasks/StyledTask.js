@@ -20,12 +20,11 @@ export const StyledTask = styled.section`
 	margin-left: 25px;
 	color: ${colors.grayLightThree};
 
-
 	.bell-icon {
 		fill: ${colors.grayLightThree};
 		background-color: ${colors.grayLightFour};
-        stroke-width: 1;
-        stroke: ${colors.grayLightThree};
+		stroke-width: 1;
+		stroke: ${colors.grayLightThree};
 		width: 25px;
 		height: 25px;
 		border-radius: 60px;
@@ -45,8 +44,22 @@ export const StyledTask = styled.section`
 		font-weight: 400;
 	}
 
-
 	/* Achieved */
 
-	
+	.check-icon {
+		/* position: absolute; */
+
+		border-radius: 100%;
+		padding: 5px;
+		width: 25px;
+		height: 25px;
+		background: ${colors.green};
+		color: ${colors.light};
+	}
+
+	p:active {
+		color: ${colors.green};
+		
+	}
+	}
 `;

@@ -35,7 +35,7 @@ class Agenda extends Component {
 				</Header>
 				<Content>
 					<Task>13 pagina&apos;s lezen</Task>
-					{/* 13 pagina's lezen */}
+					{/* 'lezen' --> 'gelezen' */}
 					{/* <AgendaButton label='Examen in 10 dagen' to='#idRouteToExamDay' /> */}
 					{/* dayToExamen */}
 				</Content>
