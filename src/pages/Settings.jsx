@@ -4,7 +4,7 @@ import Content from '../components/Content/Content';
 
 class Settings extends Component {
 	state = {
-		title: 'Profiel',
+		title: 'Instellingen',
 	};
 	render() {
 		const { title } = this.state;

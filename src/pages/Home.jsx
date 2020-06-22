@@ -13,9 +13,8 @@ class Home extends Component {
 		const { title } = this.state;
 		return (
 			<>
-				<Header title={title} />
+				<Header className={'homepage'} title={'Hoi ' + user.userName} />
 				<Content>
-					<h1>Hoi {user.userName}</h1>
 					<p>Content</p>
 				</Content>
 			</>

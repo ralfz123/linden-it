@@ -8,7 +8,9 @@ export const colors = {
 	grayDark: '#3b3b3b',
 	grayLight: '#f4f4f4',
 	grayLighter: '#f8f8f8',
-	grayLightTwo: '#C4C4C4',
+    grayLightTwo: '#C4C4C4',
+    grayLightThree: '#717171',
+	grayLightFour: '#E5E5E5',
 	red: '#f44336;',
 	green: '#66BB6A',
 	tagNew: '#5DD8A4',
@@ -237,7 +239,11 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
+${'' /* ***************** Home page ***************** */}
 
+.homepage {
+    min-height: 240px;
+}
 
 ${'' /* ***************** Setting goals ***************** */}
     .settinggoals-container {
