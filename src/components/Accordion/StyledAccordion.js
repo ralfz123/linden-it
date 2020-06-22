@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors, sizes, addAlpha } from '../../GlobalStyle.js';
 import { motion } from 'framer-motion';
 const StyledPanel = styled(motion.div)`
-	margin: 0 0 0 32px;
+	margin: 0 -16px 0 32px;
 	/* padding-left: ${sizes.paddingLeft}; */
 	box-sizing:border-box;
 	background-color: ${(props) =>

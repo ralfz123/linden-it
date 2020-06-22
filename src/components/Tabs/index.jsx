@@ -96,10 +96,16 @@ export default TabBar;
 const TabContainer = styled.div`
 	position: sticky;
 	background-color: ${colors.light};
-	width: 100%;
+	min-width: 100%;
 	top: ${(props) => (props.padding ? props.padding + 'px' : 0)};
 	padding: 12px 0 12px;
+	left: 0;
+	right: 0;
 	z-index: 2;
+	margin-left: -16px;
+	margin-right: -16px;
+	/* margin-left: -${sizes.paddingLeft};
+	margin-right: -${sizes.paddingRight}; */
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};
 	transition-duration: 0.1s;

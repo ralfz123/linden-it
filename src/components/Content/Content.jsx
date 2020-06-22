@@ -7,7 +7,10 @@ import { colors, sizes } from '../../GlobalStyle';
 const StyledMain = styled(motion.main)`
 	/* height: 100%; */
 	/* background:orange; */
-	
+	padding-left: ${sizes.paddingLeft};
+	padding-right: ${sizes.paddingRight};
+	padding-left: 16px;
+	padding-right: 16px;
 `;
 export const Content = ({ children }) => {
 	return <StyledMain>{children}</StyledMain>;
@@ -16,9 +19,10 @@ export const Content = ({ children }) => {
 const StyledOverlay = styled.div`
 	height: 100%;
 	background: ${colors.light};
+	padding-left: 16px;
+	padding-right: 16px;
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};
-	
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;

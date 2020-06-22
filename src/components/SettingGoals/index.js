@@ -152,7 +152,7 @@ class Goals extends Component {
 		} = this.state;
 		return (
 			<>
-				<Header title={`Doellen vaststellen`} prevStep={this._prev} history={this.props.history} className={'overlay-header'}/>
+				<Header title={`Doellen vaststellen`} prevStep={this._prev} history={this.props.history} small={true} className={'overlay-header'}/>
 				<ContentOverlay className={`overlay-` + currentStep}>
 					{/* {currentStep === 2 || currentStep === 3  && (
 					

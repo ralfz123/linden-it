@@ -16,11 +16,11 @@ export const colors = {
 	tagFinished: '#22C7E4',
 };
 export const sizes = {
-	paddingTop: '',
-	paddingLeft: 'max(16px, env(safe-area-inset-left))',
-	paddingRight:'max(16px, env(safe-area-inset-right))',
-	paddingBottom: '',
-};
+			paddingTop: '',
+			paddingLeft: ' max(16px, var(--safe-area-inset-left))',
+			paddingRight: 'max(16px, var(--safe-area-inset-right))',
+			paddingBottom: '',
+		};
 /**
  * Converts a CSS hex color value to RGBA.
  * @param {string} hex - Expanded hexadecimal CSS color value.
@@ -36,6 +36,10 @@ export const addAlpha = (hex, alpha) => {
 const GlobalStyle = createGlobalStyle`
     ${normalize};
     :root {
+        --safe-area-inset-top   : 16px;
+    --safe-area-inset-right : 16px;
+    --safe-area-inset-bottom: 16px;
+    --safe-area-inset-left  : 16px;  
         --color-primary: #FC7928;
         --color-light: #ffffff;
         --color-dark: #000000;
@@ -47,11 +51,34 @@ const GlobalStyle = createGlobalStyle`
         --tag-new:#5DD8A4;
         --tag-progress:#FEC32E;
         --tag-finished:#22C7E4;
+
         --font-family-heading: 'Josefin Sans', sans-serif;
         --font-family: 'Lato', sans-serif;
+
+        @supports (top: constant(safe-area-inset-top)){
+            --safe-area-inset-top : constant(safe-area-inset-top);
+            --safe-area-inset-right : constant(safe-area-inset-right);
+            --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+            --safe-area-inset-left : constant(safe-area-inset-left); 
+        }
+        @supports (top: env(safe-area-inset-top)){
+            --safe-area-inset-top : env(safe-area-inset-top);
+            --safe-area-inset-right : env(safe-area-inset-right);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+            --safe-area-inset-left : env(safe-area-inset-left); 
+        }
+}
+${
+	'' /* 
+body {
+padding-top: 12px;
+padding-top: var(--safe-area-inset-top, 12px);
+} */
+}
     }
     html {
         box-sizing: border-box;
+        overflow-y: scroll;
        
         
     }
@@ -97,6 +124,8 @@ const GlobalStyle = createGlobalStyle`
         
     }
     main {
+        padding-left: min(16px, env(safe-area-inset-left));
+        padding-right: min(16px, env(safe-area-inset-right));
         position:relative;
        flex-grow:1;
         box-sizing:border-box;
@@ -114,6 +143,9 @@ const GlobalStyle = createGlobalStyle`
         right: 0;
         bottom: 0;
         z-index:3;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
         padding-left: max(0px, env(safe-area-inset-left));
         padding-right: max(0px, env(safe-area-inset-right));
         padding-bottom: max(0px, env(safe-area-inset-bottom));
@@ -370,7 +402,7 @@ ${'' /* ***************** Setting goals ***************** */}
     width:100%;
     background-color:${colors.light};
     margin-top:30px;
-    top:0;
+    top:60px;
 	bottom:0;
     height:auto;
     padding-bottom:0px; 

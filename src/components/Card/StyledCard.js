@@ -5,7 +5,7 @@ const StyledCard = styled.div`
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 	margin: 10px 20px 25px 20px;
-
+	
 	.card-header {
 		background-color: ${colors.grayLight};
 		padding: 20px;
@@ -53,8 +53,8 @@ const StyledCard = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-			padding-left: ${sizes.paddingLeft};
-			padding-right: ${sizes.paddingRight};
+			/* padding-left: ${sizes.paddingLeft};
+			padding-right: ${sizes.paddingRight}; */
 		`;
 
 export default StyledCard;

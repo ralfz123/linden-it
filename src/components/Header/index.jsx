@@ -56,24 +56,32 @@ class Header extends Component {
 				) : (
 					<StyledHeader className={this.props.className}>
 						<div className='header-toolbar'>
-							{this.props.history && (
-								<BackButton
-									history={this.props.history}
-									onClick={() => this.props.history.goBack()}
-									label={this.props.label}
-								/>
-							)}
-							{this.props.prevStep && (
-								<BackButton
-									history={this.props.history}
-									onClick={this.props.prevStep}
-									label={this.props.label}
-								/>
-							)}
+							<div className='left'>
+								{this.props.history && (
+									<BackButton
+										history={this.props.history}
+										onClick={() =>
+											this.props.history.goBack()
+										}
+										label={this.props.label}
+									/>
+								)}
+								{this.props.prevStep && (
+									<BackButton
+										history={this.props.history}
+										onClick={this.props.prevStep}
+										label={this.props.label}
+									/>
+								)}
+							</div>
+
+							<div className='title'>{this.props.title}</div>
+							<div className='right'></div>
 						</div>
-						<div className='title-large'>
-							<Title title={this.props.title} />
-						</div>
+						{this.props.small
+							? ''
+							: <div className='title-large'><Title title={this.props.title} /></div>
+						}
 					</StyledHeader>
 				)}
 			</>
