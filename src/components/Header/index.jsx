@@ -28,41 +28,17 @@ class Header extends Component {
 	
 		return (
 			<>
-				{this.props.getSize ? (
-					<StyledHeader
-						ref={this.refCallback}
-						className={this.props.className}
-					>
-						<div className='header-toolbar'>
-							{this.props.history && (
-								<BackButton
-									history={this.props.history}
-									onClick={() => this.props.history.goBack()}
-									label={this.props.label}
-								/>
-							)}
-							{this.props.prevStep && (
-								<BackButton
-									history={this.props.history}
-									onClick={this.props.prevStep}
-									label={this.props.label}
-								/>
-							)}
-						</div>
-						<div className='title-large'>
-							<Title title={this.props.title} />
-						</div>
-					</StyledHeader>
-				) : (
-					<StyledHeader className={this.props.className}>
-						<div className='header-toolbar'>
-							<div className='left'>
+				{this.props.getSize
+					? (
+						<StyledHeader
+							ref={this.refCallback}
+							className={this.props.className}
+						>
+							<div className='header-toolbar'>
 								{this.props.history && (
 									<BackButton
 										history={this.props.history}
-										onClick={() =>
-											this.props.history.goBack()
-										}
+										onClick={() => this.props.history.goBack()}
 										label={this.props.label}
 									/>
 								)}
@@ -74,16 +50,43 @@ class Header extends Component {
 									/>
 								)}
 							</div>
-
-							<div className='title'>{this.props.title}</div>
-							<div className='right'></div>
-						</div>
-						{this.props.small
-							? ''
-							: <div className='title-large'><Title title={this.props.title} /></div>
-						}
-					</StyledHeader>
-				)}
+							<div className='title-large'>
+								<Title title={this.props.title} />
+							</div>
+						</StyledHeader>
+					) : (
+						<StyledHeader className={this.props.className}>
+							<div className='header-toolbar'>
+								<div className='left'>
+									{this.props.history && (
+										<BackButton
+											history={this.props.history}
+											onClick={() =>
+												this.props.history.goBack()
+											}
+											label={this.props.label}
+										/>
+									)}
+									{this.props.prevStep && (
+										<BackButton
+											history={this.props.history}
+											onClick={this.props.prevStep}
+											label={this.props.label}
+										/>
+									)}
+								</div>
+								{this.props.small
+									? <div className='title'>{this.props.title}</div>
+									: ''}	
+								
+								<div className='right'></div>
+							</div>
+							{this.props.small
+								? ''
+								: <div className='title-large'><Title title={this.props.title} /></div>
+							}
+						</StyledHeader>
+					)}
 			</>
 		);
 	}
