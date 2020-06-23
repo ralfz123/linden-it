@@ -95,8 +95,6 @@ padding-top: var(--safe-area-inset-top, 12px);
         min-height:100vh;
         max-width: 100vw;
         font-family: var(--font-family);
-        
-  
     }
     #root{
         -webkit-overflow-scrolling: touch;
@@ -318,14 +316,7 @@ ${'' /* ***************** Setting goals ***************** */}
       display:flex;
       flex-direction:column;
     }
-    .timereminders {
-        ${
-	'' /* display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: row; */
-}
-    }
+    
     .timereminders .question {
         display:flex;
         align-items:flex-start;
@@ -334,16 +325,11 @@ ${'' /* ***************** Setting goals ***************** */}
     .container-pushbuttons {
         display: flex;
         justify-content: space-between;
-        
         flex-direction: row;
-        ${'' /* width: auto; */}
-        ${'' /* margin-bottom: 20px; */}
-        
     }
  
     .pushbuttons {
         display:flex;
-        
     }
     .pushbuttons > div {
         width: 35px;
@@ -359,8 +345,6 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     .pushbuttons input {
         position: relative;
-        
-        
         opacity: 0;
     }
     .pushbuttons input:checked + div {
@@ -370,17 +354,14 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     
     .advice {
-        
 		display:flex;
         flex-wrap:wrap;
         flex-direction: row;
         justify-content: flex-start; 
-        
     }
+    
     .advice label:nth-child(3) {
-        ${'' /* width: 30%; */}
         color: ${colors.grayLightThree};
-        ${'' /* margin: 0px 10px; */}
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
@@ -392,8 +373,8 @@ ${'' /* ***************** Setting goals ***************** */}
         font-size: 1em;
         color: ${colors.primary};
         padding:1em 0;
-        ${'' /* margin-top: 0; */}
     }
+
     ${'' /* ********************** onboarding pages ********************** */}
    .container.onboarding-page {
         background-color: ${colors.primary};
@@ -405,35 +386,20 @@ ${'' /* ***************** Setting goals ***************** */}
         h2 {
             font-size:36px;
         }
-        ${
-	'' /* flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center; */
-}
         
     }
     .container {
-        
         justify-content:space-flex-start;
         height:100%;
         padding-bottom:1em;
-        ${
-	'' /* flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center; */
-}
-        
     }
     .onboarding-page .onboarding-icon { 
         font-size: 40px;
         align-self:center;
-        
         width: 100%;
     }
     .onboarding-page h2 { 
-        ${'' /* width: 50%; */}
         text-align: center;
-        ${'' /* margin: 10px 10px 30px 10px; */}
     }
     
     .onboarding-page div {
@@ -444,20 +410,16 @@ ${'' /* ***************** Setting goals ***************** */}
         font-size: 15px;
         text-align: center;
         font-weight:300;
-        ${'' /* width: 60%; */}
-        ${'' /* margin: 10px 10px 30px 10px; */}
     }
     .settinggoals-container .studyday-label {
         font-family: Lato;
         font-style: normal;
         font-weight: 400;
         font-size: .8em;
-        ${'' /* margin-bottom: -5px; */}
 }
 .settinggoals-container{
     display:flex;
     flex-direction:column;
-
 }
 
 .bottom-drawer {
@@ -474,9 +436,9 @@ ${'' /* ***************** Setting goals ***************** */}
     height:auto;
     padding-bottom:0px; 
     border-radius:10px 10px 0 0;
-        overflow:hidden;
-        min-height:60vh;
-        z-index:9999;
+    overflow:hidden;
+    min-height:60vh;
+    z-index:9999;
 	}
 .onboarding-button{
     align-self:center;
@@ -485,6 +447,7 @@ ${'' /* ***************** Setting goals ***************** */}
     top:0;
     float:right;
 }
+
 `;
 
 export default GlobalStyle;

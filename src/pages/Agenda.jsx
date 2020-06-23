@@ -30,8 +30,9 @@ class Agenda extends Component {
 		size: {},
 	};
 
+	// FETCH Code - NOT FINISHED
 	// componentDidMount() {
-	// 	const { fetchCourses } = this.props;
+	// 	const { fetchStudyDays } = this.props;
 	// 	fetchCourses();
 	// }
 	// componentDidUpdate() {
@@ -46,6 +47,7 @@ class Agenda extends Component {
 		const { title } = this.state;
 		// const studyDays = studyDays.map((studyDay) => studyDay.id);
 
+		// The sorting of the tasks on the page - NOT FINISHED
 		// const studyDaysFinished = studyDays.filter((studyDay) => studyDay.tag === '');
 		// const studyDaysToday = studyDays.filter((studyDay) => studyDay.tag === 'IN PROGRESS');
 		// const studyDaysTodo= studyDays.filter((studyDay) => studyDay.tag === 'FINISHED');
@@ -56,7 +58,6 @@ class Agenda extends Component {
 					<div className='header-toolbar agenda-container'>
 						<div className='left'>
 							<h2>Mei</h2>
-							yes
 							<MdKeyboardArrowDown className='arrowdown-icon' />
 						</div>
 
@@ -69,14 +70,13 @@ class Agenda extends Component {
 
 				<Content>
 					<Task>13 pagina&apos;s lezen</Task>
-	};
-
 				</Content>
 			</>
 		);
 	}
 }
 
+// The PropTypes of the agenda page - NOT FINISHED
 // Agenda.propTypes = {
 // 	studyDays: PropTypes.array,
 // 	error: PropTypes.any,

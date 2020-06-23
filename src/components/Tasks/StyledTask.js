@@ -7,16 +7,11 @@ export const StyledTask = styled.section`
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
-
 	background-color: ${colors.light};
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-	/* min-height: 50px; */
-	/* height: 48px; */
-	/* line-height: 48px; */
 	text-decoration: none;
 	width: 70%;
-	/* padding: 5px 12px; */
 	margin-left: 25px;
 	color: ${colors.grayLightThree};
 
@@ -47,8 +42,6 @@ export const StyledTask = styled.section`
 	/* Achieved */
 
 	.check-icon {
-		/* position: absolute; */
-
 		border-radius: 100%;
 		padding: 5px;
 		width: 25px;
@@ -59,7 +52,5 @@ export const StyledTask = styled.section`
 
 	p:active {
 		color: ${colors.green};
-		
-	}
 	}
 `;

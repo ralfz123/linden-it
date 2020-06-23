@@ -50,7 +50,7 @@ class Login extends Component {
 		}
 		return (
 			<>
-				{isAuthenticated && <Redirect to='/courses' />}
+				{isAuthenticated && <Redirect to='/' />}
 				<Header title='Inloggen' />
 				<Content>
 					{/* When email or/and password are invalid */}
