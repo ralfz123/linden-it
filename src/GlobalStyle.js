@@ -70,19 +70,11 @@ const GlobalStyle = createGlobalStyle`
             --safe-area-inset-left : env(safe-area-inset-left); 
         }
 }
-${
-	'' /* 
-body {
-padding-top: 12px;
-padding-top: var(--safe-area-inset-top, 12px);
-} */
-}
+
     }
     html {
         box-sizing: border-box;
         overflow-y: scroll;
-       
-        
     }
     *, *:before, *:after {
         box-sizing: border-box;
@@ -97,25 +89,23 @@ padding-top: var(--safe-area-inset-top, 12px);
         font-family: var(--font-family);
     }
     #root{
-        -webkit-overflow-scrolling: touch;
-         &:after {
-		content:'';
-		position: fixed;
-		background-color: ${colors.primary};
-		top:0;
-		right:0;
-		left:0;
-		width: 100vw;
-		min-height:50%;
-		z-index:0;
-	}
+    -webkit-overflow-scrolling: touch;
+        &:after {
+            content:'';
+            position: fixed;
+            background-color: ${colors.primary};
+            top:0;
+            right:0;
+            left:0;
+            width: 100vw;
+            min-height:50%;
+            z-index:0;
+	    }
     }
     
     header {
-        ${'' /* position: sticky; */}
         top: 0;
         width: 100%;
-        
        z-index: 2;
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
@@ -159,25 +149,16 @@ padding-top: var(--safe-area-inset-top, 12px);
         padding:5px 0;
     }
 
-${'' /* Login page styles */}
-
-    .login-wrapper {
-        ${'' /* login */}
-    }
+${'' /* Login page  */}
 
     .login {
         text-align: center;
-        /* display: flex; */
-        /* flex-direction: row; */
-        /* flex-wrap: wrap; */
-        /* justify-content: center; */
         padding-top: 4em;
         margin: auto;
         padding-left: max(16px, env(safe-area-inset-left));
         padding-right: max(16px, env(safe-area-inset-right));
     }
     .field {
-        /* background-color:lightgreen; */
         text-align:left;
         padding-bottom:20px;
     }
@@ -190,7 +171,6 @@ ${'' /* Login page styles */}
         line-height: 18px;
         color: ${colors.grayDark};
         text-align: left;
-        ${'' /* width: 100%; */}
         padding: 10px 0px;
     }
   
@@ -201,7 +181,6 @@ ${'' /* Login page styles */}
         position: relative;
     }
     .pw-forgot {
-        /* text-align:left; */
         font-family: var(--font-family);
         font-style: normal;
         font-weight: 300;
@@ -235,7 +214,6 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
-${'' /* ***************** Home page ***************** */}
 
 ${'' /* ********************* Agenda page ********************* */}
 .task-container {
@@ -267,8 +245,6 @@ ${'' /* ********************* Agenda page ********************* */}
 }
 
 .agenda-container .left {
-    ${'' /* margin-right: 20px;    */}
-    ${'' /* padding-right: 70px; */}
     width: 150px;
 }
 
@@ -279,11 +255,9 @@ ${'' /* ********************* Agenda page ********************* */}
 
 .agenda-container .left .arrowdown-icon {
     margin-bottom: 0px;
-    
 }
 
 .agenda-container .right {
-    ${'' /* margin-left: 20px; */}
     padding: 100px;
     padding-bottom: 100px;
 }
@@ -295,8 +269,6 @@ ${'' /* ********************* Agenda page ********************* */}
 .change-icon {	
     fill: ${colors.primary};
 	background-color: ${colors.light};
-    ${'' /* stroke-width: 1; */}
-    ${'' /* stroke: ${colors.grayLightThree}; */}
 	width: 20px;
 	height: 20px;
 	border-radius: 60px;

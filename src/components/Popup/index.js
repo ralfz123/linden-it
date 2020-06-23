@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../../GlobalStyle';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 
+// Popup component styling
 const StyledPopup = styled.div`
 	background-color: ${colors.grayLight};
 	height: 50px;
@@ -36,6 +37,8 @@ const StyledPopup = styled.div`
 		width: 10%;
 	}
 `;
+
+// Export popup component
 export const Popup = ({ children }) => {
 	return (
 		<StyledPopup>
@@ -45,6 +48,7 @@ export const Popup = ({ children }) => {
 	);
 };
 
+// PropTypes popup component
 Popup.propTypes = {
 	children: PropTypes.any,
 };

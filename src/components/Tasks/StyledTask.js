@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../GlobalStyle.js';
 
+// Task component styling
 export const StyledTask = styled.section`
 	display: flex;
 	flex-wrap: wrap;

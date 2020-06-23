@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledHeading from './StyledHeading.js';
 
+// Export Title component
 export const Title = ({ title }) => {
 	return (
 		<StyledHeading>
@@ -10,6 +11,7 @@ export const Title = ({ title }) => {
 	);
 };
 
+// PropTypes Title
 Title.propTypes = {
 	title: PropTypes.string
 };

@@ -23,6 +23,7 @@ export const Task = ({ onClick, label, children }) => {
 	);
 };
 
+// PropTypes Agenda Task
 Task.propTypes = {
 	disabled: PropTypes.any,
 	label: PropTypes.string,

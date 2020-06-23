@@ -24,10 +24,12 @@ export function BaseTextInput ({ name, placeholder, value, onChange, type, child
 	);
 }
 
+// Default props Base Text Input
 BaseTextInput.defaultProps = {
 	type: 'text'
 };
 
+// Proptypes Base Text Input
 BaseTextInput.propTypes = {
 	children: PropTypes.any,
 	className: PropTypes.string,
@@ -38,6 +40,7 @@ BaseTextInput.propTypes = {
 	value: PropTypes.any,
 };
 
+// Export Base Number Input
 export const BaseNumberInput = ({ name, placeholder, value, onChange, type, children }) => {
 	return (
 		<StyledBaseNumberInput
@@ -51,6 +54,7 @@ export const BaseNumberInput = ({ name, placeholder, value, onChange, type, chil
 	);
 };
 
+// PropTypes Base Number Input
 BaseNumberInput.propTypes = {
 	children: PropTypes.any,
 	className: PropTypes.string,
@@ -61,7 +65,7 @@ BaseNumberInput.propTypes = {
 	value: PropTypes.any,
 };
 
-
+// Export Base Time Input
 export const BaseTimeInput = ({ name, placeholder, value, onChange, type, children }) => {
 	return (
 		<StyledBaseTimeInput
@@ -75,10 +79,12 @@ export const BaseTimeInput = ({ name, placeholder, value, onChange, type, childr
 	);
 };
 
+// Default props Base Time Input
 BaseTimeInput.defaultProps = {
 	type: 'time'
 };
 
+// PropTypes Base Time Input
 BaseTimeInput.propTypes = {
 	name: PropTypes.string,
 	placeholder: PropTypes.string,
@@ -88,6 +94,7 @@ BaseTimeInput.propTypes = {
 	onChange: PropTypes.func,
 };
 
+// Export Base Date Input
 export const BaseDateInput = ({ name, placeholder, value, onChange, type, children }) => {
 	return (
 		<StyledBaseDateInput
@@ -101,10 +108,12 @@ export const BaseDateInput = ({ name, placeholder, value, onChange, type, childr
 	);
 };
 
+// Default Props Base Date Input
 BaseDateInput.defaultProps = {
 	type: 'time'
 };
 
+// PropTypes Base Date Input
 BaseDateInput.propTypes = {
 	name: PropTypes.string,
 	placeholder: PropTypes.string,

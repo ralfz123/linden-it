@@ -24,6 +24,7 @@ import { Spinner } from '../components/Spinner';
 
   
 class Courses extends Component {
+	// the default props renders when no courser are loaded from the server/redux
 	static defaultProps = {
 		courses: [
 			{
@@ -45,6 +46,7 @@ class Courses extends Component {
 		courses: [],
 		size: {},
 	};
+	//when the component did mount, the courses will be fetched and added to the props courses: {}
 	componentDidMount() {
 		const { fetchCourses } = this.props;
 		fetchCourses();
@@ -56,26 +58,24 @@ class Courses extends Component {
 		return true;
 	}
 	render() {
-		const { courses, pending, url, selectCourse } = this.props;
+		const { courses, pending, url } = this.props;
 		if (pending) return <Spinner />;
 		const { title, size } = this.state;
-		// const course = courses.map((course) => (course.id));
+		
+		// Filters the courses with the right tag to do display on each TabBar section. 
 		const coursesNew = courses.filter((course) => course.tag === 'NEW');
-		const coursesInProgress = courses.filter(
-			(course) => course.tag === 'IN PROGRESS'
-		);
-		const coursesFinished = courses.filter(
-			(course) => course.tag === 'FINISHED'
-		);
+		const coursesInProgress = courses.filter((course) => course.tag === 'IN PROGRESS');
+		const coursesFinished = courses.filter((course) => course.tag === 'FINISHED');
+
 		return (
 			<>
 				<Header
 					title={title}
-					getSize={(size) => this.setState({ size })}
+					getSize={(size) => this.setState({ size })}// get the height of the current header.
 				/>
 				<Content>
 					<TabBar
-						setPadding={size}
+						setPadding={size}// passes on the size of the header to set a padding top. 
 						tabs={[
 							{
 								title: 'ALL',
@@ -184,12 +184,6 @@ class Courses extends Component {
 						]}
 					/>
 
-					{/* <Route
-							name='course'
-							path={`${url}/:id`}
-
-							component={Course}
-						/> */}
 				</Content>
 			
 			</>

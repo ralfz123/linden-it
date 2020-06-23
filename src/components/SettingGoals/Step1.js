@@ -5,10 +5,8 @@ import React, { Component } from 'react';
 import { BaseTextInput } from '../Form';
 import { BaseNumberInput } from '../Form';
 import { BaseDateInput } from '../Form';
-// import { ToggleButton } from '../Button';
-// import { Popup } from '../components/Popup';
-// import { Spinner } from '../components/Spinner';
 
+// Step 1 of 2 - multi step form
 class Step1 extends Component {
 	render() {
 		if (this.props.currentStep !== 2) {
@@ -17,7 +15,11 @@ class Step1 extends Component {
 		return (
 			<>
 				<div className='settinggoals-container'>
-					<p className='step-counter'>Stap {this.props.currentStep - 1} van 2</p>
+					<p className='step-counter'>
+						Stap {this.props.currentStep - 1} van 2
+					</p>
+
+					{/* Question 1 */}
 					<div className='container'>
 						<label
 						// htmlFor='pages'
@@ -35,6 +37,7 @@ class Step1 extends Component {
 						/>
 					</div>
 
+					{/* Question 2 */}
 					<div className='container'>
 						<label
 						// htmlFor='pages'
@@ -52,6 +55,7 @@ class Step1 extends Component {
 						/>
 					</div>
 
+					{/* Question 3 */}
 					<div className='container'>
 						<label
 						// htmlFor='pages'
@@ -72,6 +76,7 @@ class Step1 extends Component {
 								<div>Ma</div>
 							</label>
 
+							{/* Options for question 3 */}
 							<label className='pushbuttons'>
 								<input
 									type='checkbox'
@@ -152,6 +157,7 @@ class Step1 extends Component {
 						</div>
 					</div>
 
+					{/* Question 4 */}
 					<div className='container advice'>
 						<label
 						// htmlFor='pages'

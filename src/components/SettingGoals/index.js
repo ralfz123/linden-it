@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-// import { colors } from '../../GlobalStyle';
-// import Overlay from 'react-overlays/Overlay';
 import Start from './Start';
 import Step1 from './Step1';
 import Step2 from './Step2';
@@ -10,11 +6,9 @@ import End from './End';
 import { PrimaryButton } from '../Button';
 import { SecondaryButton } from '../Button';
 import Header from '../Header';
-import {ContentOverlay} from '../Content/Content';
-// const StyledOverlay = styled.div`
-// 	background-color: green;
-// `;
+import { ContentOverlay } from '../Content/Content';
 
+// Index page where all pages are included and state - multistep form
 class Goals extends Component {
 	state = {
 		currentStep: 1,
@@ -37,6 +31,7 @@ class Goals extends Component {
 
 	setStudyDaysChange = (bool) => this.setState({ setStudyDays: Array });
 
+	// Next step
 	_next = () => {
 		let currentStep = this.state.currentStep;
 		currentStep = currentStep >= 3 ? 4 : currentStep + 1;
@@ -46,6 +41,7 @@ class Goals extends Component {
 		});
 	};
 
+	// Previous step
 	_prev = () => {
 		let currentStep = this.state.currentStep;
 		currentStep = currentStep <= 1 ? 1 : currentStep - 1;
@@ -110,13 +106,14 @@ class Goals extends Component {
 		}
 		return null;
 	}
-
+	// Function to enter values to the inputs
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
 	};
 
+	// Function to submit the form
 	handleSubmit = (event) => {
 		event.preventDefault(event);
 		const {
@@ -152,13 +149,20 @@ class Goals extends Component {
 		} = this.state;
 		return (
 			<>
-				<Header title={`Doellen vaststellen`} prevStep={this._prev} history={this.props.history} small={true} className={'overlay-header'}/>
-				<ContentOverlay className={`overlay-` + currentStep}>
-					{/* {currentStep === 2 || currentStep === 3  && (
-					
-					)} */}
+				<Header
+					title={`Doellen vaststellen`}
+					prevStep={this._prev}
+					history={this.props.history}
+					small={true}
+					className={'overlay-header'}
+				/>
 
-					<form className={`doelen-vaststellen`} onSubmit={this.handleSubmit}>
+				{/* Form included al pages */}
+				<ContentOverlay className={`overlay-` + currentStep}>
+					<form
+						className={`doelen-vaststellen`}
+						onSubmit={this.handleSubmit}
+					>
 						<Start
 							currentStep={currentStep}
 							handleChange={this.handleChange}

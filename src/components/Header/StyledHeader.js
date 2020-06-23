@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors, sizes } from '../../GlobalStyle.js';
 
+// Header component styling
 const StyledHeader = styled.header`
 	background-color: ${colors.primary};
 	color: ${colors.light};
