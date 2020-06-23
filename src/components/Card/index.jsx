@@ -4,15 +4,16 @@ import StyledCard, {CardWrapper} from './StyledCard';
 import {CourseTags} from '../Tags';
 import { StyledLink } from '../Link';
 
+
 export default function Card({tag, content, title, label, id, path, onClick, contentTitle, startDate, endDate, badge }) {
 	return (
 		<CardWrapper>
 			<StyledCard>
-				{tag && (
-					<CardHeader title={title} tag={tag} startDate={startDate}>
-						{tag}
-					</CardHeader>
+				{/* if thhere is a titile render the header  */}
+				{title && (
+					<CardHeader title={title} tag={tag} startDate={startDate} />
 				)}
+				{/* if thhere is content render card content  */}
 				{content && (
 					<CardContent badge={badge}>
 						{content && (
@@ -24,6 +25,7 @@ export default function Card({tag, content, title, label, id, path, onClick, con
 								{content}
 							</CardContentItem>
 						)}
+						{/* if there is an end date render it  */}
 						{endDate && (
 							<CardContentItem
 								contentTitle={'Datum behaald'}
@@ -34,7 +36,7 @@ export default function Card({tag, content, title, label, id, path, onClick, con
 						)}
 					</CardContent>
 				)}
-
+				{/* the label is the text of the button.  */}
 				{label && (
 					<CardFooter title={title} id={id}>
 						<StyledLink label={label} key={id} to={`${path}/${id}`}>
@@ -59,24 +61,13 @@ Card.propTypes = {
 	title: PropTypes.any
 };
 
-export const BaseCard = ({children}) => {
-	return (
-		<StyledCard>
-			{children}
-		</StyledCard>
-	);
-};
-
-// Proptypes BaseCard
-BaseCard.propTypes = {
-	children: PropTypes.any,
-};
-
 
 export const CardHeader = ({tag,title, startDate}) => {
 	return (
 		<div className='card-header'>
+		{/*  if there is a tagg render the tag otherwise dont */}
 			{tag && <CourseTags>{tag}</CourseTags>}
+			
 			<div className='card-header-content'>
 				<h2>{title}</h2>
 				{startDate && (
@@ -98,7 +89,7 @@ CardHeader.propTypes = {
 	title: PropTypes.string
 };
 
-
+// parent content component
 export const CardContent = ({children, badge}) => {
 	return (
 		<div className='card-content'>
@@ -106,6 +97,7 @@ export const CardContent = ({children, badge}) => {
 		</div>
 	);
 };
+// child content component. 
 export const CardContentItem = ({ content, contentTitle, badge }) => {
 	return (
 		<div className='card-content-item'>

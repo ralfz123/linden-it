@@ -6,6 +6,9 @@ import { SecondaryButton } from '../Button';
 import { FiUsers, FiVideo, FiFileText, FiPlus, FiMinus } from 'react-icons/fi';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { colors, sizes, addAlpha } from '../../GlobalStyle.js';
+
+// this component uses framer.motion for animations. 
+
 export class Panel extends Component {
 	constructor(props) {
 		super(props);
@@ -33,8 +36,10 @@ export class Panel extends Component {
 
 		const isActive = activePanel === index;
 		return (
+			//  the panel header will always be visible even when the panel is closed. 
+			// if the panel isActive, other panels will close. 
 			<StyledPanel animate active={isActive}>
-				<PanelHeader
+				<PanelHeader 
 					animate
 					title={title}
 					tag={tag}
@@ -63,15 +68,17 @@ export class Panel extends Component {
 							rotate: index === activePanel ? 180 : 0,
 						}}
 						className={`toggle-icon 
-							${index === activePanel && 'open'}`}
+							${index === activePanel && 'open'}`}// if the panel is open/closed another icon will be displayed
 					>
 						{index === activePanel ? <FiMinus /> : <FiPlus />}
 						
 					</motion.div>
 				</PanelHeader>
-				<AnimatePresence exitBeforeEnter initial={false}>
+					
+				<AnimatePresence exitBeforeEnter initial={false}> 
+					{/* the panel content will be visible when the pane; header isActive } */}
 					{isActive && (
-						<PanelContent animate key={activePanel} pages={pages}>
+						<PanelContent animate key={activePanel} pages={pages}> 
 							<motion.p animate className='chapter-description'>
 								Beschrijving van dit hoofdstuk
 							</motion.p>
@@ -107,19 +114,11 @@ export class Panel extends Component {
 						</PanelContent>
 					)}
 				</AnimatePresence>
-
-				{/* {label && (
-					<PanelFooter title={title} id={id}>
-						<SecondaryButton label={label} onClick={activatePanel}>
-							{label}
-						</SecondaryButton>
-					</PanelFooter>
-				)} */}
 			</StyledPanel>
 		);
 	}
 }
-export const PanelHeader = ({ tag, title, children, onClick }) => {
+export const PanelHeader = ({ children, onClick }) => {
 	return (
 		<motion.div animate onClick={onClick} className='panel-header'>
 			{children}
@@ -129,8 +128,8 @@ export const PanelHeader = ({ tag, title, children, onClick }) => {
 
 // Proptypes AccordionHeader
 PanelHeader.propTypes = {
-	tag: PropTypes.string,
-	title: PropTypes.string,
+	children: PropTypes.any,
+	onClick: PropTypes.func
 };
 
 export const PanelContent = ({ children }) => {
@@ -148,8 +147,7 @@ export const PanelContent = ({ children }) => {
 
 // Proptypes panelContent
 PanelContent.propTypes = {
-	content: PropTypes.string,
-	contentTitle: PropTypes.any,
+	children: PropTypes.any,
 };
 
 export const PanelFooter = ({ children }) => {
@@ -203,17 +201,18 @@ class Accordion extends React.Component {
 		const { chapters } = this.props;
 		
 		const index = chapters.findIndex((chapter) => chapter.tag === 'IN PROGRESS');
-		
+		// finds 
 		if (prevState.activePanel !== index && prevProps.chapters !== chapters)
 			this.setState({ activePanel: index });
 		console.log('this' + index);
 	}
-	
+	// activatePanel will be called when clicked op the + or - icon in panel header.
 	activatePanel(index) {
 		this.setState((prev) => ({
 			activePanel: prev.activePanel === index ? -1 : index,
 		}));
 	}
+	// activate Next panel will be callen when someone clicks on the Hoofdstuk afronden button.
 	activateNextPanel(index) {
 		this.setState((next) => ({
 			activePanel: next.activePanel === index ? +1 : index,
@@ -231,6 +230,7 @@ class Accordion extends React.Component {
 					transition={{ ease: 'easeOut' }}
 					role='tablist'
 				>
+					{/* the map loop is used to render all chapters of a course */}
 					{chapters.map((chapter, index) => (
 						<Panel
 							key={index}

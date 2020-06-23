@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../GlobalStyle.js';
 
+// Styling Primary Button
 export const StyledPrimaryButton = styled.button`
 	background-color: ${colors.primary};
 	border: 2px solid ${colors.primary};
@@ -27,6 +28,7 @@ export const StyledPrimaryButton = styled.button`
 	}
 `;
 
+// Styling Secondary Button
 export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 	background-color: ${colors.light};
 	color: ${colors.primary};
@@ -38,6 +40,7 @@ export const StyledSecondaryButton = styled(StyledPrimaryButton)`
 	}
 `;
 
+// Styling Agenda Button
 export const StyledAgendaButton = styled(StyledPrimaryButton)`
 	background-color: ${colors.primary};
 	color: ${colors.light};

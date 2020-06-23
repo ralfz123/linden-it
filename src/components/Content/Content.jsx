@@ -5,17 +5,18 @@ import { motion } from 'framer-motion';
 import { colors, sizes } from '../../GlobalStyle';
 
 const StyledMain = styled(motion.main)`
-	/* height: 100%; */
-	/* background:orange; */
 	padding-left: ${sizes.paddingLeft};
 	padding-right: ${sizes.paddingRight};
 	padding-left: 16px;
 	padding-right: 16px;
 `;
+
+// the main component renders on every page. 
 export const Content = ({ children }) => {
 	return <StyledMain>{children}</StyledMain>;
 };
 
+// the overlay styles. when a new course is opened their content is styled here
 const StyledOverlay = styled.div`
 	height: 100%;
 	background: ${colors.light};
@@ -66,6 +67,8 @@ const StyledOverlay = styled.div`
 		}
 	}
 `;
+
+// the content from the overlay aka the bottom drawer. 
 export const ContentOverlay = ({ children, className }) => {
 	return <StyledOverlay className={className}>{children}</StyledOverlay>;
 };

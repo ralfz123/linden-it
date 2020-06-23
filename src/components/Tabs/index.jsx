@@ -5,36 +5,24 @@ import { colors, sizes } from '../../GlobalStyle';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 
+// the tabbar component is used on the courses and course page.
 class TabBar extends Component {
-	// const { activeTab, setActiveTab } = useState(0);
-	// console.log("hallo"+setPadding)
-
-	// static defaultProps = {
-	// 	scrolling: false,
-	// };
+	
 	state = {
 		activeTab: 0,
 		scrolled: false,
 	};
 
 	componentDidMount() {
-		// window.addEventListener('scroll', this.handleScroll(this.state), true);
 		window.addEventListener('scroll', this.listenToScroll);
 	}
 	componentDidUpdate() {
-		// window.removeEventListener('scroll', this.listenToScroll);
 		window.addEventListener('scroll', this.listenToScroll);
 	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.listenToScroll);
 	}
-	// handleScroll() {
-	// 	if (window.scrollY === 0 && this.state.scrolled === true) {
-	// 		this.setState({ scrolled: false });
-	// 	} else if (window.scrollY > 0 && this.state.scrolled === false) {
-	// 		this.setState({ scrolled: true });
-	// 	}
-	// }
+// if scrolled is not 0 show the shadow on the TabBar
 	listenToScroll = () => {
 		const winScroll =
 			document.body.scrollTop || document.documentElement.scrollTop;
@@ -49,11 +37,6 @@ class TabBar extends Component {
 		} else  {
 			this.setState({ scrolled: true });
 		}
-
-		console.log(scrolled);
-		// this.setState({
-		// 	scrolled: scrolled,
-		// });
 	};
 	render() {
 		const { tabs, setPadding } = this.props;
@@ -63,6 +46,8 @@ class TabBar extends Component {
 				<TabContainer padding={setPadding} scrolled={scrolled}>
 					
 					<TabButtonGroup>
+						
+						{/* maps all the given tabs and renders the one that is active */}
 						{tabs.map((tab, index) => (
 							<TabButton
 									

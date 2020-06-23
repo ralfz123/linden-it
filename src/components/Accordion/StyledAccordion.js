@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { colors, sizes, addAlpha } from '../../GlobalStyle.js';
 import { motion } from 'framer-motion';
+
+// Accordion Panel component styling
 const StyledPanel = styled(motion.div)`
 	margin: 0 -16px 0 32px;
 	/* padding-left: ${sizes.paddingLeft}; */
@@ -106,9 +108,9 @@ color:${colors.gray};
 	}
 `;
 
+// Accordion component styling
 export const StyledAccordion = styled(motion.div)`
-height:100%;
-
+	height: 100%;
 `;
 
 export default StyledPanel;

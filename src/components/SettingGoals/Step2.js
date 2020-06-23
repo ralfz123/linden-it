@@ -5,11 +5,9 @@ import { connect } from 'react-redux';
 // import { BaseTextInput } from '../components/Form';
 import { BaseNumberInput } from '../Form';
 import { BaseTimeInput } from '../Form';
-// import { Popup } from '../components/Popup';
-// import { Spinner } from '../components/Spinner';
-// import Toggle from '../Toggle';
 import Switch from 'react-switch';
 
+// Step 2 of 2 - multi step form
 class Step2 extends Component {
 	render() {
 		if (this.props.currentStep !== 3) {
@@ -21,6 +19,8 @@ class Step2 extends Component {
 					<p className='step-counter'>
 						Stap {this.props.currentStep - 1} van 2
 					</p>
+
+					{/* Question 5 */}
 					<div className='container advice'>
 						<label htmlFor='pages' className='question'>
 							Ons advies voor ITIL 3, lees elke studiedag:
@@ -37,6 +37,7 @@ class Step2 extends Component {
 						<label htmlFor='pages'>pagina&apos;s</label>
 					</div>
 
+					{/* Question 6 */}
 					<div className='container'>
 						<label className='question' htmlFor='pages'>
 							<Switch
@@ -53,14 +54,12 @@ class Step2 extends Component {
 							Herinner mij om te studeren
 						</label>
 
-						{/* map over all inputfields max < 7 */}
-
 						<p>
 							Selecteer een tijd wanneer je een melding wilt
 							ontvangen.
 						</p>
 
-						{/* This should be a dynamic value */}
+						{/* Answer for Question 6 */}
 						<label className='studyday-label'>Maandag</label>
 						{/* This toggle has to toggle BaseTimeInput and multiply (sync with {studyDays.length} ) */}
 						<BaseTimeInput
@@ -73,6 +72,7 @@ class Step2 extends Component {
 						/>
 					</div>
 
+					{/* Question 7 */}
 					<div className='container'>
 						<label className='question'>
 							<Switch
@@ -92,6 +92,7 @@ class Step2 extends Component {
 						{/* This toggle has to toggle BaseTimeInput */}
 						<label className='studyday-label'>Tijdstip</label>
 
+						{/* Answer for Question 7 */}
 						<BaseTimeInput
 							id='sameStudyTimeDay'
 							name='sameStudyTimeDay'

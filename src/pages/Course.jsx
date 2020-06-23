@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
-import Title from '../components/Title';
 import TabBar from '../components/Tabs';
-import { StyledDrawer } from '../components/BottomDrawer';
+import Drawer from 'react-drag-drawer';
+// import { StyledDrawer } from '../components/BottomDrawer';
 import Goals from '../components/SettingGoals/index';
 import Card from '../components/Card';
 import Accordion from '../components/Accordion';
@@ -20,12 +20,12 @@ class Course extends Component {
 		course: {},
 		size: {},
 		settingGoals: true,
-		
 	};
 	componentDidMount() {
 		const { courses, params } = this.props;
+
 		if (courses && courses.length > 0) {
-			const course = courses.find((course) => course.id == params.id);
+			const course = courses.find((course) => course.id == params.id); // params is the same id as course id. it will render the right course if the param changes.
 			return this.setState({ course });
 		}
 	}
@@ -37,13 +37,12 @@ class Course extends Component {
 	CloseDrawer = () => {
 		let { settingGoals } = this.state;
 
-		this.setState({ settingGoals: false });
+		this.setState({ settingGoals: false });// if set to true the settingGoals component will be opened (only opens when course.tag === "NEW".)
 	};
 	render() {
 		const { history } = this.props;
 		const { course, size, settingGoals } = this.state;
-		console.log(course);
-		if (!course) {
+		if (!course) {// if there is no course youll be redirected to the courses page
 			return (
 				<Redirect
 					to={{
@@ -94,7 +93,7 @@ class Course extends Component {
 									title: 'FORUM',
 									render: () => (
 										<>
-											<div>hallo</div>
+											<div>Content Forum must be placed here</div>
 										</>
 									),
 								},
@@ -102,16 +101,15 @@ class Course extends Component {
 						/>
 					</Content>
 					{course.tag === 'NEW' && (
-						<StyledDrawer
+						<Drawer
 							allowClose={false}
 							open={settingGoals}
 							modalElementClass={`bottom-drawer`}
-							containerElementClass={`clooooll`}
 							onRequestClose={this.CloseDrawer}
 							dontApplyListeners={false}
 						>
 							<Goals onRequestClose={this.CloseDrawer} />
-						</StyledDrawer>
+						</Drawer>
 					)}
 				</>
 			);

@@ -12,19 +12,11 @@ class Header extends Component {
 		}
 	};
 
-	componentDidMount() {
-		// if (this.props.getSize !== this.props.getSize) {
-		// 	this.props.getSize(this.elementRef.getBoundingClientRect());
-		// }
-	}
-	componentDidUpdate(prevProps) {
-		// if (this.props.getSize !== this.props.getSize) {
-		// 	return this.props.getSize(this.elementRef.getBoundingClientRect());
-		// }
-	}
 	render() {
 		return (
 			<>
+				{/* {if a size is given use callback to pass the header hight to the parent component. use
+				used on the courses and course page to pass padding top to the TabBar */}
 				{this.props.getSize ? (
 					<StyledHeader
 						ref={this.refCallback}
@@ -54,6 +46,7 @@ class Header extends Component {
 					<StyledHeader className={this.props.className}>
 						<div className='header-toolbar'>
 							<div className='left'>
+								{/* if history is given show the back button */}
 								{this.props.history && (
 									<BackButton
 										history={this.props.history}
@@ -63,6 +56,7 @@ class Header extends Component {
 										label={this.props.label}
 									/>
 								)}
+								{/* This backbutton is used on the setting goals component */}
 								{this.props.prevStep && (
 									<BackButton
 										history={this.props.history}
@@ -71,6 +65,8 @@ class Header extends Component {
 									/>
 								)}
 							</div>
+								
+							{/* If proptypes small is true thof the small title, otherwise thow the large title */}
 							{this.props.small ? (
 								<div className='title'>{this.props.title}</div>
 							) : (
@@ -103,14 +99,12 @@ export default Header;
 const StyledBackButton = styled.div`
 	display: flex;
 	align-items: center;
-
 	cursor: pointer;
-
 	.react-icons {
 		font-size: 25px;
 	}
 `;
-
+// back button component
 export const BackButton = ({ history, label, onClick }) => {
 	return (
 		<StyledBackButton onClick={onClick}>

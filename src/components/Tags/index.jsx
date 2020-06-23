@@ -5,6 +5,7 @@ import { colors } from '../../GlobalStyle.js';
 import { FiHome, FiBookmark, FiBarChart2, FiCheck } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
+// Colors of Courses
 const handleColorCourses = (children) => {
 	switch (children) {
 	case 'NEW':
@@ -17,6 +18,8 @@ const handleColorCourses = (children) => {
 		return colors.primary;
 	}
 };
+
+// Colors of Chapters 
 const handleColorChapters = (children) => {
 	switch (children) {
 	case 'NEW':
@@ -31,6 +34,8 @@ const handleColorChapters = (children) => {
 		return colors.primary;
 	}
 };
+
+// Icons of Chapters
 const handleIconChapters = (children) => {
 	switch (children) {
 	case 'IN PROGRESS':
@@ -43,10 +48,12 @@ const handleIconChapters = (children) => {
 		return <ChapterIcon  className='icon' ><FiBookmark /></ChapterIcon>;
 	}
 };
+
+// Tags of Chapters
 const handleTagChapters = (children) => {
 	switch (children) {
-		case 'IN PROGRESS':
-			return <ChapterTag className='chapter-progress'>{children}</ChapterTag>;
+	case 'IN PROGRESS':
+		return <ChapterTag className='chapter-progress'>{children}</ChapterTag>;
 	case 'DONE':
 		return <ChapterTag className='chapter-done'>{children}</ChapterTag>;
 	case 'NEXT':
@@ -55,6 +62,8 @@ const handleTagChapters = (children) => {
 		return <ChapterTag>{children}</ChapterTag>;
 	}
 };
+
+// CourseTag styling
 const CourseTag = styled(motion.div)`
 	position: absolute;
 	padding: 4px 10px;
@@ -64,6 +73,8 @@ const CourseTag = styled(motion.div)`
 	left: -20px;
 	font-size: 12px;
 `;
+
+// ChapterTagWrapper styling
 const ChapterTagWrapper = styled.div`
 	display: flex;
 	position: relative;
@@ -83,16 +94,15 @@ const ChapterTagWrapper = styled.div`
 	}
 	.tag {
 		position: relative;
-		
-		
 		border-radius: 5px;
 		padding: 4px 10px;
 		font-size: 12px;
 	}
 `;
+
+// ChapterIcon styling
 const ChapterIcon = styled.div`
 	position: absolute;
-
 	border-radius: 100%;
 	height: 22px;
 	width: 22px;
@@ -113,6 +123,8 @@ const ChapterIcon = styled.div`
 		color: ${colors.gray};
 	}
 `;
+
+// ChapterTag styling
 const ChapterTag = styled.div`
 	position: relative;
 	background-color: ${({ children }) => handleColorChapters(children)};
@@ -132,20 +144,21 @@ const ChapterTag = styled.div`
 	}
 `;
 
-
+// Tag Component styling
 const Tag = styled.div`
 	padding: 4px 10px;
 	background-color: ${colors.primary};
 	color: ${colors.light};
 	border-radius: 5px;
 	font-size: 12px;
-
-	
 `;
 
+// Export CourseTags
 export const CourseTags = ({ children }) => {
 	return <CourseTag>{children}</CourseTag>;
 };
+
+// Export CourseTags
 export const ChapterTags = ({ children }) => {
 	return (
 		<ChapterTagWrapper>
@@ -155,18 +168,22 @@ export const ChapterTags = ({ children }) => {
 	);
 };
 
+// PropTypes ChapterTags
 ChapterTags.propTypes = {
 	children: PropTypes.any
 };
 
+// PropTypes CourseTags
 CourseTags.propTypes = {
 	children: PropTypes.string
 };
 
+// Export Tags component
 export const Tags = ({ children }) => {
 	return <Tag>{children}</Tag>;
 };
 
+// PropTypes Tags
 Tags.propTypes = {
 	children: PropTypes.string
 };

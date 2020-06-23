@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors } from '../../GlobalStyle';
 
+// Spinner component styling
 const StyledSpinner = styled.div`
 	height: 100vh;
 	width: 100vw;
@@ -70,6 +71,7 @@ const StyledSpinner = styled.div`
 	}
 `;
 
+// Export Spinner component
 export const Spinner = ({ children }) => {
 	return (
 		<StyledSpinner>
@@ -78,6 +80,7 @@ export const Spinner = ({ children }) => {
 	);
 };
 
+// Spinner PropTypes
 Spinner.propTypes = {
 	children: PropTypes.any
 };

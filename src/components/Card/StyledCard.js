@@ -23,7 +23,6 @@ const StyledCard = styled.div`
 		}
 	}
 	.card-content {
-		/* position:relative; */
 		padding: 20px;
 
 		.card-content-item {
