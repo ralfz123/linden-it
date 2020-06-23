@@ -11,8 +11,7 @@ class Header extends Component {
 			this.props.getSize(element.getBoundingClientRect().height);
 		}
 	};
-	
-	
+
 	componentDidMount() {
 		// if (this.props.getSize !== this.props.getSize) {
 		// 	this.props.getSize(this.elementRef.getBoundingClientRect());
@@ -22,10 +21,8 @@ class Header extends Component {
 		// if (this.props.getSize !== this.props.getSize) {
 		// 	return this.props.getSize(this.elementRef.getBoundingClientRect());
 		// }
-		
 	}
 	render() {
-	
 		return (
 			<>
 				{this.props.getSize ? (
@@ -74,14 +71,20 @@ class Header extends Component {
 									/>
 								)}
 							</div>
-
-							<div className='title'>{this.props.title}</div>
+							{this.props.small ? (
+								<div className='title'>{this.props.title}</div>
+							) : (
+								''
+							)}
 							<div className='right'></div>
 						</div>
-						{this.props.small
-							? ''
-							: <div className='title-large'><Title title={this.props.title} /></div>
-						}
+						{this.props.small ? (
+							''
+						) : (
+							<div className='title-large'>
+								<Title title={this.props.title} />
+							</div>
+						)}
 					</StyledHeader>
 				)}
 			</>
@@ -97,18 +100,15 @@ Header.propTypes = {
 
 export default Header;
 
-
 const StyledBackButton = styled.div`
+	display: flex;
+	align-items: center;
 
-display:flex;
-align-items:center;
+	cursor: pointer;
 
-cursor: pointer;
-
-.react-icons {
-	font-size:25px;
-}
-
+	.react-icons {
+		font-size: 25px;
+	}
 `;
 
 export const BackButton = ({ history, label, onClick }) => {
@@ -121,6 +121,6 @@ export const BackButton = ({ history, label, onClick }) => {
 };
 BackButton.propTypes = {
 	history: PropTypes.shape({
-		goBack: PropTypes.func
-	})
+		goBack: PropTypes.func,
+	}),
 };
