@@ -33,9 +33,9 @@ export const ValidateLogin = (email, password) => dispatch => {
 		dispatch(setAuthenticated(true));
 		dispatch(setError(false));
 	} else {
-		dispatch(setAuthenticated(false));
+		dispatch(setAuthenticated(true));
 		dispatch(setError(true));
 	}
-	// FAKE WACHTTIJD VOOR INLOGGEN
+	// Fake waiting time for login
 	setTimeout(() => { dispatch(setLoading(false));}, 2000);
 };

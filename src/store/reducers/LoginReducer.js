@@ -1,5 +1,5 @@
 const initialState = {
-	isAuthenticated: true,
+	isAuthenticated: false,
 	isLoading: false,
 	loginError: false,
 };
@@ -15,6 +15,7 @@ export const LoginReducer = (state = initialState, action) => {
 		return {
 			...state,
 			isAuthenticated: action.value,
+			user: action.value,
 		};
 	case 'LOGIN::SET_ERROR':
 		return {

@@ -9,9 +9,9 @@ export const StyledLink = styled(Link)`
 	border-radius: 100px;
 	min-height: 50px;
 	height: 48px;
-	line-height: 48px;
+	line-height: 45px;
 	text-decoration: none;
-	padding: 0 64px;
+	padding: 0 35px;
 	cursor: pointer;
 	display: inline-block;
 

@@ -2,92 +2,267 @@
 	"courses": [
 		{
 			"id": 1,
-			"title": "MD-100",
+			"title": "ITIL 3",
 			"tag": "NEW",
 			"shortDescription": "This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
 			"label": "Cursus Starten",
 			"chapters": [
 				{
 					"id": 1,
-					"title": "CHAPTER 1 Deploy Windows",
-					"subjects": [
-						{
-							"title": "Deploy Windows 10",
-							"content": [
-								"configure language packs",
-								"migrate user data",
-								"perform a clean installation",
-								"perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.)",
-								"select the appropriate Windows edition",
-								"troubleshoot activation issues"
-							]
-						},
-						{
-							"title": "Perform post-installation configuration",
-							"content": [
-								"configure Edge and Internet Explorer",
-								"configure mobility settings",
-								"configure sign-in options",
-								"customize the Windows desktop"
-							]
-						}
-					]
+					"title": "H1: Configure language packs",
+					"tag": "IN PROGRESS",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 2,
-					"title": "Chapter 2 Manage Devices and Data"
+					"title": "H1: migrate user data",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 3,
-					"title": "Chapter 3 Configure Connectivity"
+					"title": "H1: perform a clean installation",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
 				},
 				{
 					"id": 4,
-					"title": "Chapter 4 Maintain Windows"
+					"title": "H1: perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 5,
+					"title": "H1: select the appropriate Windows edition",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 6,
+					"title": "H1: troubleshoot activation issues",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 7,
+					"title": "H1: configure Edge and Internet Explorer",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 8,
+					"title": "H1: configure mobility settings",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 9,
+					"title": "H1: configure sign-in options",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 10,
+					"title": "H1: configure sign-in options",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 11,
+					"title": "H1: customize the Windows desktop",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
 				}
 			]
 		},
 		{
-			"title": "MD-200",
+			"title": "MD-100",
 			"id": 2,
 			"tag": "IN PROGRESS",
 			"label": "Open Cursus",
 			"shortDescription": "This exam measures your ability to accomplish the following technical tasks: deploy and update operating systems; manage policies and profiles; manage and protect devices; and manage apps and data. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification.  ",
+			"startDate": "21-04-2020",
 			"chapters": [
 				{
+					"id": 1,
+					"title": "H1: Configure language packs",
+					"tag": "DONE",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
 					"id": 2,
-					"title": "CHAPTER 1 Deploy Windows",
-					"subjects": [
-						{
-							"title": "Deploy Windows 10",
-							"content": [
-								"configure language packs",
-								"migrate user data",
-								"perform a clean installation",
-								"perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.)",
-								"select the appropriate Windows edition",
-								"troubleshoot activation issues"
-							]
-						},
-						{
-							"title": "Perform post-installation configuration",
-							"content": [
-								"configure Edge and Internet Explorer",
-								"configure mobility settings",
-								"configure sign-in options",
-								"customize the Windows desktop"
-							]
-						}
-					]
+					"title": "H1: migrate user data",
+					"tag": "DONE",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 3,
+					"title": "H1: perform a clean installation",
+					"tag": "DONE",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 4,
+					"title": "H1: perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.",
+					"tag": "DONE",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 5,
+					"title": "H1: select the appropriate Windows edition",
+					"tag": "DONE",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 6,
+					"title": "H1: troubleshoot activation issues",
+					"tag": "IN PROGRESS",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 7,
+					"title": "H1: configure Edge and Internet Explorer",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 8,
+					"title": "H1: configure mobility settings",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 9,
+					"title": "H1: configure sign-in options",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 10,
+					"title": "H1: configure sign-in options",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
+				},
+				{
+					"id": 11,
+					"title": "H1: customize the Windows desktop",
+					"tag": "NEXT",
+					"pages": "32-34",
+					"label": "Hoofdstuk afronden"
 				}
 			]
 		},
 		{
 			"id": 3,
-			"title": "MD-300",
+			"title": "MD-88",
 			"tag": "FINISHED",
 			"label": "Cursus Bekijken",
-			"shortDescription": "This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. "
+			"shortDescription": "This exam measures your ability to accomplish the following technical tasks: deploy Windows; manage devices and data; configure connectivity; and maintain Windows. If you passed Exam 70-698 before it expired on March 31, 2019, you only need to take MD-101 to earn the Modern Desktop certification. ",
+			"endDate": "18-03-2018",
+			"badge": "https://docs.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
+			"chapters":[
+						{
+							"id": 1,
+							"title": "H1: Configure language packs",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 2,
+							"title": "H1: migrate user data",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 3,
+							"title": "H1: perform a clean installation",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 4,
+							"title": "H1: perform an in-place upgrade (using tools such as MDT, WDS, ADK, etc.",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 5,
+							"title": "H1: select the appropriate Windows edition",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 6,
+							"title": "H1: troubleshoot activation issues",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 7,
+							"title": "H1: configure Edge and Internet Explorer",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 8,
+							"title": "H1: configure mobility settings",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 9,
+							"title": "H1: configure sign-in options",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 10,
+							"title": "H1: configure sign-in options",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						},
+						{
+							"id": 11,
+							"title": "H1: customize the Windows desktop",
+							"tag": "DONE",
+							"pages": "32-34",
+							"label": "Hoofdstuk afronden"
+						}
+					]
 		}
-	]
+	],
+	"fakeUser": {
+		"userName": "Mike"
+	}
 }

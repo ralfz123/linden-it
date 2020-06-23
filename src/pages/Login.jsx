@@ -16,23 +16,27 @@ import { Popup } from '../components/Popup';
 import { Spinner } from '../components/Spinner';
 
 class Login extends Component {
+	// Start state
 	state = {
 		email: '',
 		password: '',
 		title: 'Inloggen',
 	};
 
+	// Function to enter values
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
 	};
 
+	// Function to submit and login
 	handleSubmit = (event) => {
 		event.preventDefault(event);
 		this.props.ValidateLogin(this.state.email, this.state.password);
 	};
 
+	// Function to enable the submit button
 	checkButtonEnabledState = () => {
 		const { email, password } = this.state;
 		return email.length < 5 && password.length < 6;
@@ -46,11 +50,10 @@ class Login extends Component {
 		}
 		return (
 			<>
-				{isAuthenticated && <Redirect to='/' />}
-				<Header>
-					<Title title='Inloggen' />
-				</Header>
+				{isAuthenticated && <Redirect to='/courses' />}
+				<Header title='Inloggen' />
 				<Content>
+					{/* When email or/and password are invalid */}
 					{loginError && (
 						<Popup>
 							<div>
@@ -60,6 +63,7 @@ class Login extends Component {
 							</div>
 						</Popup>
 					)}
+					{/* Login form with email and password inputs */}
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
@@ -90,9 +94,7 @@ class Login extends Component {
 								minLength='6'
 								required
 							/>
-							{/* <i className='eye password-icon'></i> */}
-							{/* <AiOutlineEye className="eye password-icon" /> */}
-
+							{/* Link when you forgot your password */}
 							<Link
 								className='link pw-forgot'
 								to='/reset-password'
@@ -101,12 +103,13 @@ class Login extends Component {
 							</Link>
 						</div>
 
+						{/* Login form with email and password inputs */}
 						<PrimaryButton
 							disabled={buttonState}
 							type='submit'
 							label='Inloggen'
 						/>
-
+						{/* Privary Disclaimer */}
 						<p className='privacy'>
 							Je gaat akkoord met het Privacy Statement van
 							Linden-IT
@@ -118,6 +121,7 @@ class Login extends Component {
 	}
 }
 
+// State management - Props
 const mapStateToProps = (state) => {
 	return {
 		isLoading: getLoginLoadingState(state),
@@ -125,9 +129,9 @@ const mapStateToProps = (state) => {
 		loginError: getLoginErrorState(state),
 	};
 };
-
+// State management - Actions
 const actions = {
 	ValidateLogin,
 };
-
+// Export
 export default connect(mapStateToProps, actions)(Login);

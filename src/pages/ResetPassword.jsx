@@ -1,42 +1,36 @@
-// Deze is NIET af - validating - submitting
-
 import React, { Component } from 'react';
-import Title from '../components/Title';
 import Header from '../components/Header';
 import Content from '../components/Content/Content';
 import { BaseTextInput } from '../components/Form';
 import { PrimaryButton } from '../components/Button';
 
 class Login extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			password: '',
-			title: 'Wachtwoord veranderen',
-		};
+	// Start state
+	state = {
+		password: '',
+		title: 'Wachtwoord veranderen',
+	};
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-	}
-
-	handleChange(event) {
+	// Function to enter values
+	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
-	}
+	};
 
-	handleSubmit(event) {
+	// Function to submit - don't works yet
+	handleSubmit = (event) => {
 		event.preventDefault(event);
-		const { password } = this.state;
-	}
+		// this.props.ValidateLogin(this.state.email, this.state.password);
+	};
 
 	render() {
+		const { title } = this.state;
 		return (
 			<>
-				<Header>
-					<Title title={this.state.title} />
-				</Header>
+				<Header title={title} />
 				<Content className='login-wrapper'>
+					{/* Password forgot page */}
 					<form
 						onSubmit={this.handleSubmit}
 						className='login'
@@ -54,13 +48,11 @@ class Login extends Component {
 								minLength='6'
 								required
 							/>
-							{/* <i className='eye password-icon'></i> */}
-							{/* <AiOutlineEye className="eye password-icon" /> */}
 						</div>
 
 						<div className='field'>
 							<label htmlFor='password'>
-								Bevestig nieuw wachtwoord
+								Herhaal nieuw wachtwoord
 							</label>
 							<BaseTextInput
 								label='Wachtwoord'
@@ -72,10 +64,9 @@ class Login extends Component {
 								minLength='6'
 								required
 							/>
-							{/* <i className='eye password-icon'></i> */}
-							{/* <AiOutlineEye className="eye password-icon" /> */}
 						</div>
 
+						{/* Button to submit the form */}
 						<PrimaryButton
 							label='Wachtwoord opslaan'
 							type='submit'
