@@ -132,7 +132,7 @@ padding-top: var(--safe-area-inset-top, 12px);
        flex-grow:1;
         box-sizing:border-box;
         z-index:1;
-        background-color:var(--color-light);
+        background-color: ${colors.light};
         height:auto;
         padding-bottom:50px;
         padding-bottom: calc(50px + env(safe-area-inset-bottom));
@@ -237,6 +237,7 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
+${'' /* ***************** Home page ***************** */}
 
 ${'' /* ********************* Agenda page ********************* */}
 .task-container {
@@ -319,11 +320,11 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     .timereminders {
         ${
-			'' /* display: flex;
+	'' /* display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: row; */
-		}
+}
     }
     .timereminders .question {
         display:flex;
@@ -405,10 +406,10 @@ ${'' /* ***************** Setting goals ***************** */}
             font-size:36px;
         }
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .container {
@@ -417,10 +418,10 @@ ${'' /* ***************** Setting goals ***************** */}
         height:100%;
         padding-bottom:1em;
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .onboarding-page .onboarding-icon { 

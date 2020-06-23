@@ -9,6 +9,7 @@ import { TiArrowSync } from 'react-icons/ti';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import PropTypes from 'prop-types';
 
+
 class Agenda extends Component {
 	state = {
 		title: 'Mijn agenda',
@@ -67,45 +68,34 @@ class Agenda extends Component {
 				</Header>
 
 				<Content>
-					{/* <>
-						{studyDays.map((studyDay) => (
-							<Task
-								key={studyDay.id}
-								title={studyDay.title}
-								label={studyDay.label}
-								id={studyDay.id}
-							/>
-						))}
-					</> */}
-
 					<Task>13 pagina&apos;s lezen</Task>
-					{/* 'lezen' --> 'gelezen' */}
-					{/* <AgendaButton label='Examen in 10 dagen' to='#idRouteToExamDay' /> */}
+	};
+
 				</Content>
 			</>
 		);
 	}
 }
 
-Agenda.propTypes = {
-	studyDays: PropTypes.array,
-	error: PropTypes.any,
-	// fetchCourses: PropTypes.func,
-	id: PropTypes.string,
-	label: PropTypes.string,
-	match: PropTypes.any,
-	// pending: PropTypes.bool,
-	// selectCourse: PropTypes.func,
-	title: PropTypes.string,
-};
+// Agenda.propTypes = {
+// 	studyDays: PropTypes.array,
+// 	error: PropTypes.any,
+// 	// fetchCourses: PropTypes.func,
+// 	id: PropTypes.string,
+// 	label: PropTypes.string,
+// 	match: PropTypes.any,
+// 	// pending: PropTypes.bool,
+// 	// selectCourse: PropTypes.func,
+// 	title: PropTypes.string,
+// };
 
-const mapStateToProps = (state) => {
-	return {
-		error: state.studyDays.error,
-		studyDays: state.studyDays.studyDays,
-		// pending: state.courses.pending,
-	};
-};
+// const mapStateToProps = (state) => {
+// 	return {
+// 		error: state.studyDays.error,
+// 		studyDays: state.studyDays.studyDays,
+// 		// pending: state.courses.pending,
+// 	};
+// };
 
 // const mapDispatchToProps = (dispatch) =>
 // 	bindActionCreators(
