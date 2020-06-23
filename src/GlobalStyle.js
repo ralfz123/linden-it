@@ -9,6 +9,8 @@ export const colors = {
 	grayLight: '#f4f4f4',
 	grayLighter: '#f8f8f8',
 	grayLightTwo: '#C4C4C4',
+	grayLightThree: '#717171',
+	grayLightFour: '#E5E5E5',
 	red: '#f44336;',
 	green: '#66BB6A',
 	tagNew: '#5DD8A4',
@@ -16,11 +18,11 @@ export const colors = {
 	tagFinished: '#22C7E4',
 };
 export const sizes = {
-			paddingTop: '',
-			paddingLeft: ' max(16px, var(--safe-area-inset-left))',
-			paddingRight: 'max(16px, var(--safe-area-inset-right))',
-			paddingBottom: '',
-		};
+	paddingTop: '',
+	paddingLeft: ' max(16px, var(--safe-area-inset-left))',
+	paddingRight: 'max(16px, var(--safe-area-inset-right))',
+	paddingBottom: '',
+};
 /**
  * Converts a CSS hex color value to RGBA.
  * @param {string} hex - Expanded hexadecimal CSS color value.
@@ -130,7 +132,7 @@ padding-top: var(--safe-area-inset-top, 12px);
        flex-grow:1;
         box-sizing:border-box;
         z-index:1;
-        background-color:var(--color-light);
+        background-color: ${colors.light};
         height:auto;
         padding-bottom:50px;
         padding-bottom: calc(50px + env(safe-area-inset-bottom));
@@ -237,7 +239,11 @@ ${'' /* Login page styles */}
         color: ${colors.primary};
         cursor: pointer;
 }
+${'' /* ***************** Home page ***************** */}
 
+.homepage-header {
+    ${'' /* min-height: 240px; */}
+}
 
 ${'' /* ***************** Setting goals ***************** */}
     .settinggoals-container {
@@ -253,11 +259,11 @@ ${'' /* ***************** Setting goals ***************** */}
     }
     .timereminders {
         ${
-			'' /* display: flex;
+	'' /* display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: row; */
-		}
+}
     }
     .timereminders .question {
         display:flex;
@@ -339,10 +345,10 @@ ${'' /* ***************** Setting goals ***************** */}
             font-size:36px;
         }
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .container {
@@ -351,10 +357,10 @@ ${'' /* ***************** Setting goals ***************** */}
         height:100%;
         padding-bottom:1em;
         ${
-			'' /* flex-wrap: wrap;
+	'' /* flex-wrap: wrap;
         flex-direction: row;
         justify-content: center; */
-		}
+}
         
     }
     .onboarding-page .onboarding-icon { 
