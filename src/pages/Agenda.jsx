@@ -69,8 +69,6 @@ class Agenda extends Component {
 
 				<Content>
 					<Task>13 pagina&apos;s lezen</Task>
-	};
-
 				</Content>
 			</>
 		);
