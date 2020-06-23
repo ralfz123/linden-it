@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import { FaPencilAlt } from 'react-icons/fa';
 import { FiBell, FiCheck } from 'react-icons/fi';
 
+// Agenda task component - NOT FINISHED
 export const Task = ({ onClick, label, children }) => {
 	return (
 		<div className='task-container'>
 			<p>Ma</p>
 			<div>8</div>
 			<StyledTask onClick={onClick} label={label}>
-				{/* <FiCheck className='check-icon' /> */}
-				{/* {Course.done ? <FiCheck /> :  */}
-				
+				{/* <FiCheck className='check-icon' /> */}		
 				<FiBell className='bell-icon' />
 				{children}
 
