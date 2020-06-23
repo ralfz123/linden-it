@@ -1,10 +1,21 @@
 {
-    "env": {
-        "development": {
-            "sourceMaps": true,
-            "plugins": ["source-map-support"]
-        }
-    },
+	"env": {
+		"development": {
+			"sourceMaps": true,
+			"plugins": [
+				"source-map-support",
+				[
+					"babel-plugin-styled-components",
+					{
+						"ssr": false,
+						"fileName": true,
+						"minify": false
+					}
+				],
+				"@babel/plugin-syntax-dynamic-import"
+			]
+		}
+	},
 	"presets": [
 		[
 			"@babel/env",
@@ -16,20 +27,8 @@
 					"safari": "11.1"
 				},
 				"useBuiltIns": "usage"
-			}
+			},
+			"@babel/preset-react"
 		]
-    ]
-    ,"plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
-        "ssr": false,
-        "displayName": false,
-        "fileName": true,
-        "minify": false,
-        "transpileTemplateLiterals": false,
-        "pure": true
-      }
-    ]
-  ]
+	]
 }
